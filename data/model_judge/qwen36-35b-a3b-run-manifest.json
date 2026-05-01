@@ -7,6 +7,5 @@
   "item_count": 90,
   "concurrency": 6,
   "timeout_ms": 240000,
-  "pairwise": true,
-  "created_at": "2026-04-30T23:10:19.055Z"
+  "pairwise": true
 }

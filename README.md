@@ -112,9 +112,9 @@ real-world decision-quality evaluation. Judges score fidelity to
 synthetic/composite case facts on a 0--2 rubric and choose pairwise winners
 among blinded outputs.
 
-The included run manifests record model identifiers, access dates, provider
-strings, concurrency, and timeout settings. They intentionally omit API keys and
-local machine paths.
+The checked-in run manifests record model identifiers, provider strings,
+concurrency, and timeout settings. They intentionally omit API keys, precise
+calendar timestamps, and local machine paths.
 
 ## Citation
 
