@@ -15,6 +15,8 @@ server configuration.
 - `data/results/`: matched offline generation metrics and per-row scores.
 - `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
   and run manifests.
+- `data/test_cases/`: minimal synthetic shape checks for the final appendix
+  tables; these are not empirical evidence.
 - `scripts/`: fixture generation, matched-run, model-judge, summary, and
   privacy-boundary scripts.
 - `docs/rubric.md`: the fidelity scoring rubric used for the model-judge audit.
@@ -46,7 +48,8 @@ npm run check
 
 This writes model-judge summary files under `runs/llm-judge-summary/` and runs
 the automatic-metric, bootstrap-interval, model-judge, and privacy-boundary
-checks under `runs/`.
+checks under `runs/`. It also validates the minimal public table test cases for
+the final appendix tables.
 
 To regenerate the 90 synthetic/composite fixtures:
 

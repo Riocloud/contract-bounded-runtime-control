@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "artifact_kind": "public_minimal_table_test_cases",
+    "fixture_scope": "synthetic_minimal",
+    "purpose": "Validate the released table schemas for appendix Tables 9-12 without exposing internal data.",
+    "notes": [
+      "Rows are synthetic shape checks, not empirical evidence.",
+      "Values are small fixed examples chosen to exercise denominators and comparison rows."
+    ]
+  },
+  "privacy": {
+    "contains_internal_data": false,
+    "release_status": "public_synthetic_shape_only",
+    "excluded_material": [
+      "raw histories",
+      "raw biographies",
+      "contact information",
+      "billing records",
+      "individual timestamps",
+      "identifiable life-event combinations",
+      "credentials"
+    ]
+  },
+  "tables": {
+    "table_9_full_automatic_metrics": [
+      {
+        "method": "raw_prompt_stuffing",
+        "attempted_runs": 3,
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 0.6667,
+        "ohcvr": 0.0,
+        "ecf": 0.0,
+        "witness_drop": 0.5,
+        "consequence_failure": 0.0,
+        "repair_correctness": 0.5,
+        "surface_failure": 0.3333,
+        "latency_ms": 1200
+      },
+      {
+        "method": "cbea_lcv_runtime",
+        "attempted_runs": 3,
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 0.6667,
+        "ohcvr": 0.0,
+        "ecf": 0.0,
+        "witness_drop": 0.0,
+        "consequence_failure": 0.0,
+        "repair_correctness": 1.0,
+        "surface_failure": 0.0,
+        "latency_ms": 900
+      },
+      {
+        "method": "oracle_evidence_upper_bound",
+        "attempted_runs": 3,
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 0.6667,
+        "ohcvr": 0.0,
+        "ecf": 0.0,
+        "witness_drop": 0.0,
+        "consequence_failure": 0.0,
+        "repair_correctness": 1.0,
+        "surface_failure": 0.0,
+        "latency_ms": 0
+      }
+    ],
+    "table_10_paired_bootstrap": [
+      {
+        "surface": "Structured availability",
+        "diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "interpretation": "Shape check for availability interval reporting."
+      },
+      {
+        "surface": "Parse retries per fixture",
+        "diff": -0.3333,
+        "ci_low": -0.6667,
+        "ci_high": 0.0,
+        "interpretation": "Negative values favor fewer retries."
+      },
+      {
+        "surface": "All-row repair correctness",
+        "diff": 0.5,
+        "ci_low": 0.0,
+        "ci_high": 1.0,
+        "interpretation": "Positive values favor repair correctness."
+      }
+    ],
+    "table_11_targeted_ablation": [
+      {
+        "variant": "cbea_lcv",
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 0.6667,
+        "ohcvr": 0.0,
+        "ecf": 0.0,
+        "witness_drop": 0.0,
+        "consequence_failure": 0.0,
+        "no_feasible_emission": 0.0,
+        "repair_correctness": 1.0
+      },
+      {
+        "variant": "no_validator",
+        "invalid_rows": 1,
+        "structured_commitment_availability_rate": 0.5,
+        "ohcvr": 0.5,
+        "ecf": 0.5,
+        "witness_drop": 0.5,
+        "consequence_failure": 0.0,
+        "no_feasible_emission": 0.5,
+        "repair_correctness": 0.5
+      },
+      {
+        "variant": "no_repair_abstain",
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 1.0,
+        "ohcvr": 0.5,
+        "ecf": 0.0,
+        "witness_drop": 0.0,
+        "consequence_failure": 0.0,
+        "no_feasible_emission": 0.5,
+        "repair_correctness": 0.0
+      },
+      {
+        "variant": "no_coverage_tail",
+        "invalid_rows": 0,
+        "structured_commitment_availability_rate": 0.6667,
+        "ohcvr": 0.0,
+        "ecf": 1.0,
+        "witness_drop": 1.0,
+        "consequence_failure": 0.5,
+        "no_feasible_emission": 0.0,
+        "repair_correctness": 1.0
+      }
+    ],
+    "table_12_model_judge": {
+      "means": [
+        {
+          "judge": "judge_a",
+          "system": "cbea_lcv",
+          "overall": 1.8,
+          "evidence": 1.7,
+          "consequence": 1.8,
+          "surface": 1.9
+        },
+        {
+          "judge": "judge_a",
+          "system": "raw_prompt_stuffing",
+          "overall": 1.6,
+          "evidence": 1.5,
+          "consequence": 1.5,
+          "surface": 1.8
+        },
+        {
+          "judge": "judge_a",
+          "system": "validator_only",
+          "overall": 1.4,
+          "evidence": 1.2,
+          "consequence": 1.3,
+          "surface": 1.7
+        },
+        {
+          "judge": "judge_b",
+          "system": "cbea_lcv",
+          "overall": 1.7,
+          "evidence": 1.6,
+          "consequence": 1.8,
+          "surface": 1.8
+        },
+        {
+          "judge": "judge_b",
+          "system": "raw_prompt_stuffing",
+          "overall": 1.6,
+          "evidence": 1.6,
+          "consequence": 1.5,
+          "surface": 1.7
+        },
+        {
+          "judge": "judge_b",
+          "system": "validator_only",
+          "overall": 1.5,
+          "evidence": 1.3,
+          "consequence": 1.4,
+          "surface": 1.6
+        }
+      ],
+      "agreement": {
+        "dimension_label_count": 18,
+        "exact_agreement_rate": 0.7778,
+        "pairwise_case_count": 3,
+        "pairwise_agreement_rate": 0.6667
+      }
+    }
+  }
+}

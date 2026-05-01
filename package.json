@@ -10,7 +10,8 @@
     "summarize:bootstrap": "node scripts/bootstrap-headline-diffs.mjs --input=data/results/real-pilot-results.csv --out=runs/bootstrap-headline-diffs.csv",
     "summarize:judge": "node scripts/summarize-llm-fidelity-audit.mjs --labels=data/model_judge/combined-labels.csv --pairwise=data/model_judge/combined-pairwise.csv --out=runs/llm-judge-summary",
     "check:privacy": "node scripts/check-privacy-boundary.mjs",
-    "check": "npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:judge && npm run check:privacy"
+    "check:table-cases": "node scripts/check-public-table-cases.mjs",
+    "check": "npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:judge && npm run check:table-cases && npm run check:privacy"
   },
   "engines": {
     "node": ">=20"
