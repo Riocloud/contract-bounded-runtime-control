@@ -1,9 +1,7 @@
-// Research-side port of the production JSON cleanup path.
-// Source rules mirror src/lib/aiService.ts and server/src/services/resultHydration.ts:
+// JSON cleanup for OpenAI-compatible model responses:
 // strip markdown code fences, strip complete/incomplete <think> blocks, then
-// try strict JSON, common repairs, and truncated-object repair. Keep changes
-// here aligned with production parser behavior; do not add benchmark-specific
-// parsing semantics.
+// try strict JSON, common repairs, and truncated-object repair. The parser is
+// intentionally generic and does not add benchmark-specific parsing semantics.
 
 export function stripCodeFences(text) {
   return String(text ?? '').replace(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/g, '$1');
@@ -82,7 +80,7 @@ export function extractJsonObject(text) {
     try {
       return JSON.parse(candidate);
     } catch {
-      // try next production-compatible cleanup candidate
+      // try next generic cleanup candidate
     }
   }
   throw new Error('json_parse_failed');

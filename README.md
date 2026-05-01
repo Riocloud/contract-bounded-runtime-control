@@ -14,8 +14,7 @@ server configuration.
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
 - `data/results/`: matched offline generation metrics and per-row scores.
 - `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
-  and run manifests. Full generated output text is not included in this public
-  repository.
+  and run manifests.
 - `scripts/`: fixture generation, matched-run, model-judge, summary, and
   privacy-boundary scripts.
 - `docs/rubric.md`: the fidelity scoring rubric used for the model-judge audit.
@@ -29,8 +28,8 @@ mismatch. They do not include raw production histories, raw biographies,
 identifiers, contact information, billing records, individual timestamps, or
 identifiable life-event combinations.
 
-The included production-derived claims are aggregate-only in the paper; this
-repository does not publish production session rows.
+The deployment diagnostics discussed in the accompanying paper are
+aggregate-only; this repository does not publish session rows.
 
 ## Reproduce Summary Tables
 
@@ -88,11 +87,10 @@ node scripts/run-cbea-lcv-real-pilot.mjs \
   --concurrency=8
 ```
 
-To re-run the model-judge audit with an OpenAI-compatible judge endpoint, first
+To re-run the model-judge audit with an OpenAI-compatible judge endpoint,
 provide an annotation item CSV with the same columns used by
-`scripts/run-llm-fidelity-audit.mjs` (`annotation_id`, `case_id`,
-`system_label`, case metadata columns, and `output_text`). The public repository
-does not include full output text.
+`scripts/run-llm-fidelity-audit.mjs`: `annotation_id`, `case_id`,
+`system_label`, case metadata columns, and `output_text`.
 
 ```bash
 export LLM_JUDGE_BASE_URL="https://api.example.com/v1"
@@ -100,7 +98,7 @@ export LLM_JUDGE_MODEL="Qwen/Qwen3.6-35B-A3B"
 export LLM_JUDGE_API_KEY="..."
 
 node scripts/run-llm-fidelity-audit.mjs \
-  --items=data/model_judge/annotation-items.csv \
+  --items=path/to/annotation-items.csv \
   --out=runs/qwen-judge \
   --concurrency=6 \
   --timeout-ms=240000 \
@@ -120,7 +118,7 @@ local machine paths.
 
 ## Citation
 
-If you use these artifacts, cite the accompanying paper draft:
+If you use these artifacts, cite the accompanying paper:
 
 > Contract-Bounded Runtime Control for Long-Horizon Personalized Language
 > Systems.

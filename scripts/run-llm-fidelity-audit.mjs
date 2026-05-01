@@ -227,7 +227,7 @@ async function runPool(items, workerCount, worker) {
   return results;
 }
 
-const itemsPath = path.resolve(readArg('items', 'data/model_judge/annotation-items.csv'));
+const itemsPath = path.resolve(readArg('items', 'annotation-items.csv'));
 const outDir = path.resolve(readArg('out', 'runs/llm-judge'));
 const baseUrl = readArg('base-url', process.env.LLM_JUDGE_BASE_URL || '');
 const model = readArg('model', process.env.LLM_JUDGE_MODEL || '');

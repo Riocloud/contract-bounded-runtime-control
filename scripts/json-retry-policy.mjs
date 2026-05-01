@@ -1,10 +1,10 @@
-export const PRODUCTION_JSON_RETRY_PREFIX = '你的上一条回复格式不正确，无法被解析。请严格按照 JSON 格式重新输出';
+export const JSON_RETRY_PREFIX = 'The previous response could not be parsed. Return strict JSON only';
 
 export function buildBenchmarkJsonRetryMessage() {
   return [
-    `${PRODUCTION_JSON_RETRY_PREFIX}。`,
-    '请保留原始 benchmark 请求要求的 JSON object schema，只重新输出最终 JSON 对象。',
-    '不要输出 <think>、思考过程、markdown 代码块、analysis 文本或任何 JSON 外文字。',
+    `${JSON_RETRY_PREFIX}.`,
+    'Preserve the JSON object schema requested by the benchmark prompt.',
+    'Do not output <think>, chain-of-thought, markdown code fences, analysis text, or any text outside the JSON object.',
   ].join('');
 }
 

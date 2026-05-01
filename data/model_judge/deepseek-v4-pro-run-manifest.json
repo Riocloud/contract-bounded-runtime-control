@@ -1,5 +1,5 @@
 {
-  "items_path": "data/model_judge/annotation-items.csv",
+  "items_path": "held-out annotation item CSV",
   "out_dir": "data/model_judge/deepseek-v4-pro",
   "base_url": "https://api.deepseek.com/v1",
   "model": "deepseek-v4-pro",

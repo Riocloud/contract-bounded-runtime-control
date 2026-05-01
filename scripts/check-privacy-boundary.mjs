@@ -10,6 +10,8 @@ const DENY_PATTERNS = [
   /\/opt\/prediction/,
   /Prediction-cn-backend/,
   /decisionsandbox\.cn/,
+  /minimax-turn/i,
+  /MiniMax-M2\.7-highspeed/i,
   /session_token/i,
   /SUPABASE/i,
   /MINIMAX_API_KEY/i,

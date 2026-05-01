@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 
-import { extractJsonObject } from './production-json-parser.mjs';
-import { buildRetryMessages } from './production-json-retry-policy.mjs';
+import { extractJsonObject } from './json-object-parser.mjs';
+import { buildRetryMessages } from './json-retry-policy.mjs';
 
 const BENCHMARK_SYSTEM_MESSAGE = 'Return valid JSON for a synthetic research benchmark. Do not output <think>, chain-of-thought, markdown, or any text outside the JSON object.';
 
