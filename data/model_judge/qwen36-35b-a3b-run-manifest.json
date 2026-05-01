@@ -1,0 +1,12 @@
+{
+  "items_path": "data/model_judge/annotation-items.csv",
+  "out_dir": "data/model_judge/qwen36-35b-a3b",
+  "base_url": "OpenAI-compatible endpoint",
+  "model": "qwen3.6-35b-a3b",
+  "annotator_id": "llm_qwen36_35b_a3b",
+  "item_count": 90,
+  "concurrency": 6,
+  "timeout_ms": 240000,
+  "pairwise": true,
+  "created_at": "2026-04-30T23:10:19.055Z"
+}

@@ -1,0 +1,4802 @@
+[
+  {
+    "fixture_id": "synthetic_investment_tail_01_01_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_tail_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_tail_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_tail_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_tail_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_tail_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_tail_01_01_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_tail_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_tail_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_tail_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_tail_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_tail_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_tail_01_01_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_tail_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_tail_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_tail_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_tail_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_tail_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_infeasible_01_02_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_infeasible_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_infeasible_must_do_action_now",
+      "investment_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_infeasible_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_infeasible_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_infeasible_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_infeasible_r01_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_infeasible_01_02_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_infeasible_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_infeasible_must_do_action_now",
+      "investment_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_infeasible_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_infeasible_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_infeasible_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_infeasible_r02_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_infeasible_01_02_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_infeasible_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_infeasible_must_do_action_now",
+      "investment_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_infeasible_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_infeasible_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_infeasible_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_infeasible_r03_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_falsehard_01_03_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_falsehard_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_falsehard_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_falsehard_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_falsehard_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_falsehard_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_falsehard_01_03_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_falsehard_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_falsehard_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_falsehard_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_falsehard_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_falsehard_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_falsehard_01_03_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_falsehard_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_falsehard_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_falsehard_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_falsehard_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_falsehard_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_exception_01_04_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_exception_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_exception_r01_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_exception_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_exception_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_exception_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_exception_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_exception_01_04_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_exception_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_exception_r02_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_exception_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_exception_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_exception_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_exception_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_exception_01_04_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_exception_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available",
+      "investment_exception_r03_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_exception_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_exception_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_exception_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_exception_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_surface_01_05_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_surface_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_surface_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_surface_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_surface_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_surface_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_surface_01_05_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_surface_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_surface_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_surface_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_surface_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_surface_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_surface_01_05_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_surface_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_surface_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_surface_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_surface_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_surface_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_debt_01_06_r01",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_debt_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_debt_r01_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_debt_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_debt_r01"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_debt_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_debt_01_06_r02",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_debt_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_debt_r02_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_debt_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_debt_r02"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_debt_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_investment_debt_01_06_r03",
+    "scenario_focus": "investment",
+    "noisy_user_observations": [
+      "Composite synthetic investment planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: household_boundary_tail_debt_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "protected_cash_must_remain_outside_high_volatility_position",
+      "household_buffer_must_stay_available"
+    ],
+    "mutable_state_facts": [
+      "risk_position_size_can_change",
+      "rebalance_timing_can_change",
+      "investment_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "relationship_family"
+    ],
+    "required_detail_slots": [
+      "protected_cash",
+      "household_cost",
+      "late_tail_witness",
+      "investment_debt_r03_slot"
+    ],
+    "required_witnesses": [
+      "protected_cash_anchor",
+      "position_size_anchor",
+      "investment_debt_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "household_boundary_tail_debt_r03"
+    ],
+    "consequence_debt": [
+      "household_liquidity_followup",
+      "investment_debt_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "decision",
+      "risk_boundary",
+      "next_check"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_tail_02_01_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_tail_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_tail_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_tail_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_tail_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_tail_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_tail_02_01_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_tail_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_tail_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_tail_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_tail_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_tail_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_tail_02_01_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_tail_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_tail_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_tail_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_tail_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_tail_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_infeasible_02_02_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_infeasible_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_infeasible_must_do_action_now",
+      "love_choice_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_infeasible_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_infeasible_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_infeasible_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_infeasible_r01_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_infeasible_02_02_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_infeasible_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_infeasible_must_do_action_now",
+      "love_choice_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_infeasible_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_infeasible_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_infeasible_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_infeasible_r02_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_infeasible_02_02_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_infeasible_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_infeasible_must_do_action_now",
+      "love_choice_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_infeasible_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_infeasible_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_infeasible_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_infeasible_r03_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_falsehard_02_03_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_falsehard_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_falsehard_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_falsehard_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_falsehard_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_falsehard_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_falsehard_02_03_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_falsehard_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_falsehard_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_falsehard_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_falsehard_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_falsehard_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_falsehard_02_03_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_falsehard_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_falsehard_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_falsehard_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_falsehard_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_falsehard_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_exception_02_04_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_exception_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_exception_r01_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_exception_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_exception_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_exception_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_exception_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_exception_02_04_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_exception_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_exception_r02_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_exception_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_exception_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_exception_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_exception_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_exception_02_04_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_exception_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal",
+      "love_choice_exception_r03_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_exception_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_exception_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_exception_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_exception_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_surface_02_05_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_surface_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_surface_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_surface_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_surface_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_surface_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_surface_02_05_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_surface_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_surface_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_surface_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_surface_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_surface_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_surface_02_05_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_surface_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_surface_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_surface_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_surface_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_surface_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_debt_02_06_r01",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_debt_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_debt_r01_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_debt_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_debt_r01"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_debt_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_debt_02_06_r02",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_debt_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_debt_r02_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_debt_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_debt_r02"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_debt_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_love_choice_debt_02_06_r03",
+    "scenario_focus": "love_choice",
+    "noisy_user_observations": [
+      "Composite synthetic relationship pacing fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: family_meeting_tail_debt_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "relationship_status_is_stable",
+      "no_explicit_breakup_signal"
+    ],
+    "mutable_state_facts": [
+      "shared_living_timeline_can_change",
+      "family_meeting_timing_can_change",
+      "love_choice_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "relationship_detail",
+      "relationship_aftershock",
+      "late_tail_witness",
+      "love_choice_debt_r03_slot"
+    ],
+    "required_witnesses": [
+      "stable_relationship_anchor",
+      "pacing_boundary_anchor",
+      "love_choice_debt_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "family_meeting_tail_debt_r03"
+    ],
+    "consequence_debt": [
+      "shared_living_followup",
+      "love_choice_debt_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "relationship_boundary",
+      "timeline",
+      "family_consequence"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_tail_03_01_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_tail_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_tail_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_tail_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_tail_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_tail_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_tail_03_01_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_tail_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_tail_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_tail_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_tail_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_tail_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_tail_03_01_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_tail_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_tail_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_tail_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_tail_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_tail_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_infeasible_03_02_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_infeasible_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_infeasible_must_do_action_now",
+      "career_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_infeasible_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_infeasible_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_infeasible_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_infeasible_r01_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_infeasible_03_02_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_infeasible_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_infeasible_must_do_action_now",
+      "career_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_infeasible_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_infeasible_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_infeasible_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_infeasible_r02_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_infeasible_03_02_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_infeasible_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_infeasible_must_do_action_now",
+      "career_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_infeasible_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_infeasible_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_infeasible_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_infeasible_r03_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_falsehard_03_03_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_falsehard_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_falsehard_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_falsehard_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_falsehard_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_falsehard_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_falsehard_03_03_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_falsehard_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_falsehard_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_falsehard_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_falsehard_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_falsehard_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_falsehard_03_03_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_falsehard_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_falsehard_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_falsehard_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_falsehard_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_falsehard_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_exception_03_04_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_exception_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_exception_r01_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_exception_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_exception_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_exception_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_exception_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_exception_03_04_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_exception_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_exception_r02_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_exception_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_exception_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_exception_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_exception_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_exception_03_04_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_exception_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold",
+      "career_exception_r03_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_exception_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_exception_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_exception_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_exception_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_surface_03_05_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_surface_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_surface_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_surface_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_surface_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_surface_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_surface_03_05_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_surface_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_surface_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_surface_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_surface_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_surface_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_surface_03_05_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_surface_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_surface_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_surface_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_surface_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_surface_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_debt_03_06_r01",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_debt_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_debt_r01_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_debt_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_debt_r01"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_debt_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_debt_03_06_r02",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_debt_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_debt_r02_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_debt_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_debt_r02"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_debt_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_career_debt_03_06_r03",
+    "scenario_focus": "career",
+    "noisy_user_observations": [
+      "Composite synthetic career transition fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiver_schedule_tail_debt_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "visa_or_contract_deadline_must_be_respected",
+      "minimum_income_floor_must_hold"
+    ],
+    "mutable_state_facts": [
+      "application_sequence_can_change",
+      "skill_investment_can_change",
+      "career_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "finance",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "role_detail",
+      "income_bridge",
+      "late_tail_witness",
+      "career_debt_r03_slot"
+    ],
+    "required_witnesses": [
+      "deadline_anchor",
+      "income_floor_anchor",
+      "career_debt_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiver_schedule_tail_debt_r03"
+    ],
+    "consequence_debt": [
+      "career_delay_followup",
+      "career_debt_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "career_step",
+      "income_boundary",
+      "fallback_plan"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_tail_04_01_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_tail_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_tail_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_tail_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_tail_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_tail_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_tail_04_01_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_tail_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_tail_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_tail_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_tail_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_tail_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_tail_04_01_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_tail_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_tail_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_tail_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_tail_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_tail_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_infeasible_04_02_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_infeasible_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_infeasible_must_do_action_now",
+      "relocation_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_infeasible_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_infeasible_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_infeasible_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_infeasible_r01_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_infeasible_04_02_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_infeasible_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_infeasible_must_do_action_now",
+      "relocation_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_infeasible_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_infeasible_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_infeasible_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_infeasible_r02_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_infeasible_04_02_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_infeasible_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_infeasible_must_do_action_now",
+      "relocation_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_infeasible_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_infeasible_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_infeasible_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_infeasible_r03_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_falsehard_04_03_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_falsehard_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_falsehard_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_falsehard_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_falsehard_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_falsehard_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_falsehard_04_03_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_falsehard_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_falsehard_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_falsehard_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_falsehard_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_falsehard_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_falsehard_04_03_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_falsehard_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_falsehard_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_falsehard_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_falsehard_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_falsehard_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_exception_04_04_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_exception_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_exception_r01_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_exception_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_exception_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_exception_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_exception_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_exception_04_04_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_exception_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_exception_r02_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_exception_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_exception_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_exception_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_exception_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_exception_04_04_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_exception_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed",
+      "relocation_exception_r03_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_exception_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_exception_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_exception_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_exception_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_surface_04_05_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_surface_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_surface_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_surface_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_surface_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_surface_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_surface_04_05_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_surface_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_surface_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_surface_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_surface_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_surface_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_surface_04_05_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_surface_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_surface_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_surface_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_surface_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_surface_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_debt_04_06_r01",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_debt_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_debt_r01_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_debt_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_debt_r01"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_debt_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_debt_04_06_r02",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_debt_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_debt_r02_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_debt_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_debt_r02"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_debt_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_relocation_debt_04_06_r03",
+    "scenario_focus": "relocation",
+    "noisy_user_observations": [
+      "Composite synthetic relocation decision fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: caregiving_tail_anchor_debt_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "weekly_in_person_obligation_cannot_move",
+      "new_role_presence_requirement_is_fixed"
+    ],
+    "mutable_state_facts": [
+      "start_date_can_shift",
+      "commute_plan_can_change",
+      "relocation_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "settlement_detail",
+      "move_caused_career_consequence",
+      "late_tail_witness",
+      "relocation_debt_r03_slot"
+    ],
+    "required_witnesses": [
+      "presence_requirement_anchor",
+      "care_schedule_anchor",
+      "relocation_debt_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "caregiving_tail_anchor_debt_r03"
+    ],
+    "consequence_debt": [
+      "caregiving_followup",
+      "career_delay_followup",
+      "relocation_debt_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification",
+      "relocation_boundary"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_tail_05_01_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_tail_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_tail_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_tail_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_tail_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_tail_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_tail_05_01_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_tail_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_tail_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_tail_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_tail_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_tail_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_tail_05_01_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A rare late witness is decisive but appears after more salient background details.",
+      "No raw production history is used; this fixture preserves only an abstract tail_witness stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_tail_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_tail_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_tail_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_tail_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_tail_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_tail_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "witness_drop",
+      "consequence_debt"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_infeasible_05_02_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_infeasible_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_infeasible_must_do_action_now",
+      "comprehensive_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_infeasible_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_infeasible_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_infeasible_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_infeasible_r01_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_infeasible_05_02_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_infeasible_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_infeasible_must_do_action_now",
+      "comprehensive_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_infeasible_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_infeasible_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_infeasible_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_infeasible_r02_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_infeasible_05_02_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. Two explicitly confirmed requirements cannot both be satisfied by any available commitment.",
+      "No raw production history is used; this fixture preserves only an abstract no_feasible stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_infeasible_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_infeasible_must_do_action_now",
+      "comprehensive_infeasible_must_not_do_action_now"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_infeasible_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_infeasible_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_infeasible_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_infeasible_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_infeasible_r03_followup"
+    ],
+    "oracle_feasible_set_empty": true,
+    "expected_repair_or_abstain": true,
+    "expected_valid_commitment_fields": [
+      "abstain_reason",
+      "needed_clarification"
+    ],
+    "failure_surface": [
+      "no_feasible_candidate",
+      "hidden_exception"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_falsehard_05_03_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_falsehard_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_falsehard_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_falsehard_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_falsehard_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_falsehard_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_falsehard_05_03_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_falsehard_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_falsehard_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_falsehard_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_falsehard_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_falsehard_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_falsehard_05_03_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.",
+      "No raw production history is used; this fixture preserves only an abstract false_hardening stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_falsehard_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_falsehard_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_falsehard_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_falsehard_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_falsehard_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_falsehard_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "false_hardening",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_exception_05_04_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_exception_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_exception_r01_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_exception_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_exception_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_exception_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_exception_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_exception_05_04_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_exception_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_exception_r02_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_exception_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_exception_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_exception_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_exception_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_exception_05_04_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.",
+      "No raw production history is used; this fixture preserves only an abstract hidden_exception stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_exception_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved",
+      "comprehensive_exception_r03_scoped_exception"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_exception_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_exception_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_exception_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_exception_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_exception_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "hidden_exception",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_surface_05_05_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_surface_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_surface_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_surface_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_surface_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_surface_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_surface_05_05_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_surface_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_surface_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_surface_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_surface_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_surface_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_surface_05_05_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. The structured commitment can be valid while the realized prose implies an unsupported stronger claim.",
+      "No raw production history is used; this fixture preserves only an abstract surface_mismatch stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_surface_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_surface_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_surface_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_surface_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_surface_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_surface_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "surface_mismatch",
+      "over_personalization"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_debt_05_06_r01",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_debt_r01.",
+      "Replicate 1 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_debt_r01_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_debt_r01_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_debt_r01"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_debt_r01_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_debt_05_06_r02",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_debt_r02.",
+      "Replicate 2 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_debt_r02_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_debt_r02_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_debt_r02"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_debt_r02_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  },
+  {
+    "fixture_id": "synthetic_comprehensive_debt_05_06_r03",
+    "scenario_focus": "comprehensive",
+    "noisy_user_observations": [
+      "Composite synthetic multi-domain life planning fixture. An earlier local choice creates a later obligation that must be carried into the result.",
+      "No raw production history is used; this fixture preserves only an abstract consequence_debt stress mechanism.",
+      "Noisy self-report contains recent excitement, older constraints, and one low-frequency witness: role_conflict_tail_debt_r03.",
+      "Replicate 3 varies the witness and follow-up labels while preserving the same oracle stress surface."
+    ],
+    "confirmed_hard_constraints": [
+      "medical_or_family_boundary_must_not_be_overridden",
+      "fixed_cashflow_obligation_must_be_preserved"
+    ],
+    "mutable_state_facts": [
+      "sequence_of_actions_can_change",
+      "support_request_timing_can_change",
+      "comprehensive_debt_local_priority_can_change"
+    ],
+    "required_dimensions": [
+      "finance",
+      "career",
+      "relationship_family",
+      "time_window"
+    ],
+    "required_detail_slots": [
+      "cashflow_detail",
+      "role_conflict_detail",
+      "late_tail_witness",
+      "comprehensive_debt_r03_slot"
+    ],
+    "required_witnesses": [
+      "cashflow_obligation_anchor",
+      "family_boundary_anchor",
+      "comprehensive_debt_r03_anchor"
+    ],
+    "tail_witnesses": [
+      "role_conflict_tail_debt_r03"
+    ],
+    "consequence_debt": [
+      "multi_domain_followup",
+      "comprehensive_debt_r03_followup"
+    ],
+    "oracle_feasible_set_empty": false,
+    "expected_repair_or_abstain": false,
+    "expected_valid_commitment_fields": [
+      "priority_order",
+      "constraint_boundary",
+      "followup_trigger"
+    ],
+    "failure_surface": [
+      "consequence_debt",
+      "witness_drop"
+    ]
+  }
+]

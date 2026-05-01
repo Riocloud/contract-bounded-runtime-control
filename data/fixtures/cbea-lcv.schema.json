@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synthetic CBEA/LCV Benchmark Fixture",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "fixture_id",
+      "scenario_focus",
+      "noisy_user_observations",
+      "confirmed_hard_constraints",
+      "mutable_state_facts",
+      "required_dimensions",
+      "required_detail_slots",
+      "required_witnesses",
+      "tail_witnesses",
+      "consequence_debt",
+      "oracle_feasible_set_empty",
+      "expected_repair_or_abstain",
+      "expected_valid_commitment_fields",
+      "failure_surface"
+    ],
+    "properties": {
+      "fixture_id": { "type": "string", "minLength": 1 },
+      "scenario_focus": {
+        "type": "string",
+        "enum": ["investment", "love_choice", "career", "relocation", "comprehensive"]
+      },
+      "noisy_user_observations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "confirmed_hard_constraints": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "mutable_state_facts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "required_dimensions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "required_detail_slots": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "required_witnesses": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "tail_witnesses": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "consequence_debt": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "oracle_feasible_set_empty": { "type": "boolean" },
+      "expected_repair_or_abstain": { "type": "boolean" },
+      "expected_valid_commitment_fields": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "failure_surface": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "false_hardening",
+            "hidden_exception",
+            "witness_drop",
+            "no_feasible_candidate",
+            "consequence_debt",
+            "over_personalization",
+            "surface_mismatch"
+          ]
+        }
+      }
+    }
+  }
+}

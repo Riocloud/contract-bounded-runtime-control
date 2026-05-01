@@ -1,0 +1,10 @@
+baseline_id,attempted_runs,invalid_run_count,invalid_run_rate,evaluable_runs,system_completion_pass_rate,output_availability_rate,structured_commitment_availability_rate,hard_constraint_violation_rate,evidence_coverage_failure_rate,witness_drop_rate,consequence_continuity_failure_rate,no_feasible_emission_rate,abstention_repair_correctness_rate,inappropriate_personalization_rate,surface_realization_failure_rate,avg_latency_ms,avg_prompt_cost_units
+raw_prompt_stuffing,90,0,0,90,1,1,0.8222,0.0405,0.027,0.0405,0.027,0,0.9375,0,0.8222,25158,3259
+summarized_profile,90,6,0.0667,84,1,1,0.6071,0.098,0.6863,0.3922,0.0784,0,0.4242,0,0.6333,32478,3507
+dense_retrieval_rag,90,2,0.0222,88,1,1,0.7614,0.0299,0.3731,0.9701,0.0746,0,0.7143,0,0.7667,26478,2854
+long_context_llm,90,2,0.0222,88,1,1,0.7955,0.1286,0.1143,0.1,0.1286,0,0.8333,0,0.8,25436,3231
+tool_memory_agent,90,1,0.0111,89,1,1,0.7865,0.0429,0.0571,0.2,0.0429,0,0.7895,0,0.7889,30027,3698
+validator_only,90,2,0.0222,88,1,1,0.7386,0.0769,0.4,1,0.0615,0,0.6522,0,0.7444,25756,2789
+runtime_without_cbea,90,1,0.0111,89,1,1,0.7865,0.0857,0.3,0.5429,0.1714,0,0.7895,0,0.7889,29253,3549
+cbea_lcv_runtime,90,0,0,90,1,1,0.8333,0.0933,0.1067,0.08,0.12,0,1,0,0.8333,23600,3017
+oracle_evidence_upper_bound,90,0,0,90,1,1,0.8333,0,0,0,0,0,1,0,0,0,0

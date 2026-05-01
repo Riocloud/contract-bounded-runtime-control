@@ -1,0 +1,12 @@
+{
+  "items_path": "data/model_judge/annotation-items.csv",
+  "out_dir": "data/model_judge/deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "model": "deepseek-v4-pro",
+  "annotator_id": "llm_deepseek_v4_pro",
+  "item_count": 90,
+  "concurrency": 8,
+  "timeout_ms": 180000,
+  "pairwise": true,
+  "created_at": "2026-04-30T20:17:44.688Z"
+}
