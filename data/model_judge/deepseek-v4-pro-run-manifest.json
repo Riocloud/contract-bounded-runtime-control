@@ -1,7 +1,7 @@
 {
   "items_path": "held-out annotation item CSV",
   "out_dir": "data/model_judge/deepseek-v4-pro",
-  "base_url": "https://api.deepseek.com/v1",
+  "base_url": "OpenAI-compatible endpoint",
   "model": "deepseek-v4-pro",
   "annotator_id": "llm_deepseek_v4_pro",
   "item_count": 90,

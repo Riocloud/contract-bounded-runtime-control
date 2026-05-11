@@ -1,0 +1,7 @@
+baseline_id,horizon_group,fixture_count,structured_count,hard_constraint_violation_rate,witness_drop_rate,consequence_continuity_failure_rate,repair_correctness_rate,avg_parse_retries,avg_latency_ms
+raw_prompt_stuffing,2-domain,144,122,0.0902,0.1148,0.0656,0.9167,0.05,25871.89
+raw_prompt_stuffing,3-domain,144,121,0.0496,0.0579,0.0496,0.8800,0.09,28434.90
+raw_prompt_stuffing,4-domain,72,61,0.1148,0.0984,0.0656,0.7692,0.06,28760.86
+cbea_lcv_runtime,2-domain,144,120,0.0750,0.0500,0.0583,0.9200,0.06,25100.72
+cbea_lcv_runtime,3-domain,144,121,0.0496,0.0413,0.0413,0.9583,0.04,26420.99
+cbea_lcv_runtime,4-domain,72,60,0.0667,0.0500,0.0500,1.0000,0.03,25882.42

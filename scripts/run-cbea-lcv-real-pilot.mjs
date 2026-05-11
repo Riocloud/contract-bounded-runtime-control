@@ -17,6 +17,9 @@ const METHODS = [
   'validator_only',
   'runtime_without_cbea',
   'cbea_lcv_runtime',
+  'cbea_no_validator',
+  'cbea_no_repair_abstain',
+  'cbea_no_coverage_tail',
   'oracle_evidence_upper_bound',
 ];
 
@@ -29,6 +32,9 @@ const METHOD_LABELS = {
   validator_only: 'Validator-only',
   runtime_without_cbea: 'Runtime without CBEA',
   cbea_lcv_runtime: 'CBEA + LCV runtime',
+  cbea_no_validator: 'CBEA without validator',
+  cbea_no_repair_abstain: 'CBEA + LCV without repair/abstention',
+  cbea_no_coverage_tail: 'CBEA + LCV without coverage/tail terms',
   oracle_evidence_upper_bound: 'Oracle evidence upper bound',
 };
 
@@ -128,8 +134,19 @@ function selectMethodEvidence(fixture, method) {
   if (method === 'runtime_without_cbea') {
     return all.filter((item) => !fixture.tail_witnesses.includes(item.id));
   }
-  if (method === 'cbea_lcv_runtime') {
+  if (method === 'cbea_lcv_runtime' || method === 'cbea_no_validator' || method === 'cbea_no_repair_abstain') {
     return all;
+  }
+  if (method === 'cbea_no_coverage_tail') {
+    const banned = new Set([
+      ...fixture.required_witnesses,
+      ...fixture.tail_witnesses,
+      ...fixture.consequence_debt,
+    ]);
+    return all.filter((item) => {
+      if (banned.has(item.id)) return false;
+      return ![...banned].some((token) => token && item.text.includes(token));
+    });
   }
   return all;
 }
@@ -152,6 +169,12 @@ function methodInstruction(method) {
       return 'Use structured state and validator with simple retrieval, but no CBEA objective, tail reservation, or consequence-debt coverage.';
     case 'cbea_lcv_runtime':
       return 'Use contract-bounded evidence activation: preserve hard constraints, required witnesses, tail witnesses, and consequence debt; validate lexicographically; repair or abstain when infeasible.';
+    case 'cbea_no_validator':
+      return 'Ablation: use the same activated evidence as CBEA, but do not apply lexicographic commitment validation. Choose and realize the best-looking structured commitment directly; do not use a validator gate.';
+    case 'cbea_no_repair_abstain':
+      return 'Ablation: use CBEA evidence and validator information, but disable repair, abstention, fallback, and recontract. You must emit a commitment_type of commit even when the available evidence suggests infeasibility.';
+    case 'cbea_no_coverage_tail':
+      return 'Ablation: use hard constraints and local relevance, but remove required-coverage, tail-witness, and consequence-debt terms from evidence activation. Do not reserve budget for rare witnesses or downstream obligations.';
     default:
       return 'Use the available evidence.';
   }
@@ -159,6 +182,13 @@ function methodInstruction(method) {
 
 function buildPrompt(fixture, method) {
   const selectedEvidence = selectMethodEvidence(fixture, method);
+  const hideCoverageTargets = method === 'cbea_no_coverage_tail';
+  const hideNoFeasibleOracle = method === 'cbea_no_validator' || method === 'cbea_no_repair_abstain';
+  const requiredWitnesses = hideCoverageTargets ? [] : fixture.required_witnesses;
+  const tailWitnesses = hideCoverageTargets ? [] : fixture.tail_witnesses;
+  const consequenceDebt = hideCoverageTargets ? [] : fixture.consequence_debt;
+  const repairOrAbstainHint = hideNoFeasibleOracle ? 'withheld_for_ablation' : fixture.expected_repair_or_abstain;
+  const oracleNoFeasibleFlag = hideNoFeasibleOracle ? 'withheld_for_ablation' : fixture.oracle_feasible_set_empty;
   const outputSchema = {
     commitment_type: 'commit | repair | abstain | recontract',
     selected_option: 'short option or null',
@@ -179,8 +209,8 @@ function buildPrompt(fixture, method) {
     `Method behavior: ${methodInstruction(method)}`,
     '',
     `Scenario focus: ${fixture.scenario_focus}`,
-    `Oracle no-feasible flag: ${fixture.oracle_feasible_set_empty}`,
-    `Expected repair or abstain: ${fixture.expected_repair_or_abstain}`,
+    `Oracle no-feasible flag: ${oracleNoFeasibleFlag}`,
+    `Expected repair or abstain: ${repairOrAbstainHint}`,
     '',
     'Confirmed hard constraints:',
     JSON.stringify(fixture.confirmed_hard_constraints, null, 2),
@@ -195,13 +225,13 @@ function buildPrompt(fixture, method) {
     JSON.stringify(fixture.required_detail_slots, null, 2),
     '',
     'Required witnesses:',
-    JSON.stringify(fixture.required_witnesses, null, 2),
+    JSON.stringify(requiredWitnesses, null, 2),
     '',
     'Tail witnesses:',
-    JSON.stringify(fixture.tail_witnesses, null, 2),
+    JSON.stringify(tailWitnesses, null, 2),
     '',
     'Consequence debt:',
-    JSON.stringify(fixture.consequence_debt, null, 2),
+    JSON.stringify(consequenceDebt, null, 2),
     '',
     'Evidence made available to this method:',
     JSON.stringify(selectedEvidence, null, 2),
@@ -233,9 +263,12 @@ async function callModel(providerConfig, messages, options) {
   const timeoutMs = Math.max(1, options.requestTimeoutMs || 180_000);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const chatCompletionsUrl = providerConfig.baseUrl.endsWith('/v1')
+    ? `${providerConfig.baseUrl}/chat/completions`
+    : `${providerConfig.baseUrl}/v1/chat/completions`;
   let response;
   try {
-    response = await fetch(`${providerConfig.baseUrl}/v1/chat/completions`, {
+    response = await fetch(chatCompletionsUrl, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${providerConfig.apiKey}`,
@@ -394,7 +427,8 @@ function average(values) {
 }
 
 function aggregate(results) {
-  return METHODS.map((method) => {
+  const observedMethods = METHODS.filter((method) => results.some((row) => row.baseline_id === method));
+  return observedMethods.map((method) => {
     const rows = results.filter((row) => row.baseline_id === method);
     const attempted = rows.filter((row) => row.attempted);
     const evaluable = attempted.filter((row) => !row.invalid_run);
@@ -422,7 +456,7 @@ function aggregate(results) {
       no_feasible_emission_rate: rate(structured.filter((row) => row.no_feasible_emission).length, structured.length),
       abstention_repair_correctness_rate: rate(repairRows.filter((row) => row.repair_correct).length, repairRows.length),
       inappropriate_personalization_rate: rate(structured.filter((row) => row.inappropriate_personalization).length, structured.length),
-      surface_realization_failure_rate: rate(attempted.filter((row) => row.surface_realization_failure).length, attempted.length) || 0,
+      surface_realization_failure_rate: rate(evaluable.filter((row) => row.surface_realization_failure).length, evaluable.length) || 0,
       avg_latency_ms: average(attempted.map((row) => row.latency_ms)),
       avg_input_tokens: average(attempted.map((row) => row.input_tokens)),
       avg_output_tokens: average(attempted.map((row) => row.output_tokens)),
@@ -450,6 +484,7 @@ async function main() {
   const envPath = readArg('env', null);
   const preferredProvider = readArg('provider', null);
   const limit = Number.parseInt(readArg('limit', '0'), 10);
+  const taskPairsPath = readArg('task-pairs', null);
   const temperature = Number.parseFloat(readArg('temperature', '0.2'));
   const maxTokens = Number.parseInt(readArg('max-tokens', '700'), 10);
   const maxParseRetries = Number.parseInt(readArg('max-parse-retries', '0'), 10);
@@ -462,6 +497,24 @@ async function main() {
     .filter(Boolean);
   const fixtures = JSON.parse(fs.readFileSync(fixturePath, 'utf8'));
   const selectedFixtures = limit > 0 ? fixtures.slice(0, limit) : fixtures;
+  const fixtureById = new Map(selectedFixtures.map((fixture) => [fixture.fixture_id, fixture]));
+  const taskPairs = taskPairsPath
+    ? JSON.parse(fs.readFileSync(path.resolve(taskPairsPath), 'utf8'))
+    : null;
+  if (taskPairs && !Array.isArray(taskPairs)) {
+    throw new Error('--task-pairs must point to a JSON array of {fixture_id, method} entries.');
+  }
+  if (taskPairs) {
+    for (const pair of taskPairs) {
+      const method = pair.method || pair.baseline_id;
+      if (!fixtureById.has(pair.fixture_id)) {
+        throw new Error(`Unknown fixture_id in --task-pairs: ${pair.fixture_id}`);
+      }
+      if (!METHODS.includes(method)) {
+        throw new Error(`Unknown method in --task-pairs: ${method}`);
+      }
+    }
+  }
   const needsProvider = methods.some((method) => method !== 'oracle_evidence_upper_bound');
   const env = mergeEnv(parseEnvFile(envPath));
   const providerConfig = needsProvider
@@ -477,7 +530,12 @@ async function main() {
     }
   }
 
-  const tasks = selectedFixtures.flatMap((fixture) => methods.map((method) => ({ fixture, method })));
+  const tasks = taskPairs
+    ? taskPairs.map((pair) => ({
+        fixture: fixtureById.get(pair.fixture_id),
+        method: pair.method || pair.baseline_id,
+      }))
+    : selectedFixtures.flatMap((fixture) => methods.map((method) => ({ fixture, method })));
 
   fs.mkdirSync(outDir, { recursive: true });
 
@@ -577,7 +635,7 @@ async function main() {
           repair_triggered: false,
           repair_correct: false,
           inappropriate_personalization: false,
-          surface_realization_failure: true,
+          surface_realization_failure: false,
           latency_ms: totalLatencyMs || null,
           input_tokens: totalInputTokens || null,
           output_tokens: totalOutputTokens || null,

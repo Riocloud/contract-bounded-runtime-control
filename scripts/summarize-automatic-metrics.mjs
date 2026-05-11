@@ -11,6 +11,9 @@ const METHODS = [
   'validator_only',
   'runtime_without_cbea',
   'cbea_lcv_runtime',
+  'cbea_no_validator',
+  'cbea_no_repair_abstain',
+  'cbea_no_coverage_tail',
   'oracle_evidence_upper_bound',
 ];
 
@@ -90,7 +93,8 @@ const inputPath = path.resolve(readArg('input', 'data/results/real-pilot-results
 const outPath = path.resolve(readArg('out', 'runs/automatic-metrics.csv'));
 const rows = parseCsv(fs.readFileSync(inputPath, 'utf8'));
 
-const summary = METHODS.map((method) => {
+const observedMethods = METHODS.filter((method) => rows.some((row) => row.baseline_id === method));
+const summary = observedMethods.map((method) => {
   const methodRows = rows.filter((row) => row.baseline_id === method);
   const attempted = methodRows.filter((row) => bool(row.attempted));
   const evaluable = attempted.filter((row) => !bool(row.invalid_run));
@@ -117,7 +121,7 @@ const summary = METHODS.map((method) => {
     no_feasible_emission_rate: rate(structured.filter((row) => bool(row.no_feasible_emission)).length, structured.length),
     abstention_repair_correctness_rate: rate(repairRows.filter((row) => bool(row.repair_correct)).length, repairRows.length),
     inappropriate_personalization_rate: rate(structured.filter((row) => bool(row.inappropriate_personalization)).length, structured.length),
-    surface_realization_failure_rate: rate(attempted.filter((row) => bool(row.surface_realization_failure)).length, attempted.length),
+    surface_realization_failure_rate: rate(evaluable.filter((row) => bool(row.surface_realization_failure)).length, evaluable.length),
     avg_latency_ms: average(attempted.map((row) => number(row.latency_ms))),
     avg_prompt_cost_units: average(attempted.map((row) => number(row.prompt_cost_units))),
   };

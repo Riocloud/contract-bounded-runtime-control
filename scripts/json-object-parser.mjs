@@ -65,15 +65,74 @@ export function repairTruncatedJson(text, dropTrailingField = false) {
   return json;
 }
 
+export function findJsonObjectCandidates(text) {
+  const source = String(text ?? '');
+  const candidates = [];
+  let outerInString = false;
+  let outerEscape = false;
+  for (let start = 0; start < source.length; start += 1) {
+    const outerCh = source[start];
+    if (outerEscape) {
+      outerEscape = false;
+      continue;
+    }
+    if (outerCh === '\\' && outerInString) {
+      outerEscape = true;
+      continue;
+    }
+    if (outerCh === '"') {
+      outerInString = !outerInString;
+      continue;
+    }
+    if (outerInString) continue;
+    if (source[start] !== '{') continue;
+    let openBraces = 0;
+    let openBrackets = 0;
+    let inString = false;
+    let escape = false;
+    for (let index = start; index < source.length; index += 1) {
+      const ch = source[index];
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (ch === '\\' && inString) {
+        escape = true;
+        continue;
+      }
+      if (ch === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (inString) continue;
+      if (ch === '{') openBraces += 1;
+      else if (ch === '}') openBraces -= 1;
+      else if (ch === '[') openBrackets += 1;
+      else if (ch === ']') openBrackets -= 1;
+      if (openBraces === 0 && openBrackets === 0) {
+        candidates.push(source.slice(start, index + 1));
+        start = index;
+        break;
+      }
+      if (openBraces < 0 || openBrackets < 0) break;
+    }
+  }
+  return [...new Set(candidates)];
+}
+
 export function extractJsonObject(text) {
   const cleaned = stripCodeFences(stripThinkBlocks(text)).trim();
-  const firstObject = cleaned.match(/\{[\s\S]*\}/)?.[0] ?? null;
+  const cleanedObjects = findJsonObjectCandidates(cleaned);
+  const rawObjects = findJsonObjectCandidates(stripCodeFences(text));
   const candidates = [
     cleaned,
-    firstObject,
-    repairCommonJson(firstObject ?? cleaned),
+    ...cleanedObjects.slice().reverse(),
+    ...rawObjects.slice().reverse(),
+    repairCommonJson(cleanedObjects.at(-1) ?? rawObjects.at(-1) ?? cleaned),
     repairTruncatedJson(cleaned),
     repairTruncatedJson(cleaned, true),
+    repairTruncatedJson(stripCodeFences(text)),
+    repairTruncatedJson(stripCodeFences(text), true),
   ].filter(Boolean);
 
   for (const candidate of candidates) {

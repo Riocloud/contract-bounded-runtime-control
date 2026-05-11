@@ -1,19 +1,18 @@
 {
   "evidence_status": "matched_real_model_outputs",
   "submission_use": "paper_reproduction_artifact",
-  "warning": "Synthetic/composite fixtures only; no raw production histories or user identifiers are included.",
-  "fixture_count": 90,
+  "warning": "Synthetic/composite fixtures only; no raw production histories, user identifiers, credentials, raw model outputs, local paths, or endpoint URLs are included.",
+  "fixture_count": 360,
   "method_count": 9,
-  "result_count": 810,
+  "result_count": 3240,
   "provider": "external-api",
-  "provider_key_env": "PROVIDER_API_KEY",
   "model": "MiniMax-M2.7",
   "decoding": {
     "temperature": 0.2,
     "max_tokens": 2200,
-    "max_parse_retries": 1,
+    "max_parse_retries": 3,
     "request_timeout_ms": 180000
   },
-  "concurrency": 8,
-  "fixture_file": "data/fixtures/cbea-lcv.expanded90.synthetic.json"
+  "concurrency": 16,
+  "fixture_file": "data/fixtures/cbea-lcv.expanded360.synthetic.json"
 }

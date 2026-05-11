@@ -12,7 +12,7 @@ server configuration.
 ## Contents
 
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
-- `data/results/`: matched offline generation metrics and per-row scores.
+- `data/results/`: sanitized matched-run score tables and aggregate summaries.
 - `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
   and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
@@ -33,6 +33,13 @@ identifiable life-event combinations.
 The deployment diagnostics discussed in the accompanying paper are
 aggregate-only; this repository does not publish session rows.
 
+The checked-in result CSVs are release artifacts, not raw run logs. They contain
+fixture identifiers, method labels, automatic score flags, aggregate metrics,
+token/cost summaries, and normalized model-family labels. They do not contain
+raw model outputs, provider responses, API endpoints, API keys, local machine
+paths, or exact run timestamps. Local reruns should write raw JSON and progress
+files under `runs/` or another ignored directory.
+
 ## Reproduce Summary Tables
 
 Requirements:
@@ -51,7 +58,7 @@ the automatic-metric, bootstrap-interval, model-judge, and privacy-boundary
 checks under `runs/`. It also validates the minimal public table test cases for
 the final appendix tables.
 
-To regenerate the 90 synthetic/composite fixtures:
+To regenerate the 360 synthetic/composite fixtures:
 
 ```bash
 npm run generate:fixtures
@@ -63,18 +70,26 @@ To summarize the released model-judge labels only:
 npm run summarize:judge
 ```
 
-To recompute automatic metrics and paired bootstrap intervals from the released
-per-row results:
+To recompute automatic metrics, paired bootstrap intervals, and horizon
+stability from the released per-row score table:
 
 ```bash
 npm run summarize:metrics
 npm run summarize:bootstrap
+npm run summarize:horizon
 ```
+
+Additional checked-in aggregate files:
+
+- `data/results/cbea-ablation-metrics.csv`: 360-fixture CBEA/LCV ablations.
+- `data/results/backend-robustness-deepseek360.csv`: aggregate backend
+  robustness check over three methods. Endpoint-dependent latency is omitted
+  from this robustness table.
 
 ## Re-run Model Calls
 
-The checked-in results were generated with external OpenAI-compatible APIs over
-synthetic/composite fixtures. To re-run generation with your own provider:
+The checked-in results were generated with external OpenAI-compatible endpoints
+over synthetic/composite fixtures. To re-run generation with your own provider:
 
 ```bash
 export PROVIDER_BASE_URL="https://api.example.com"
@@ -82,13 +97,31 @@ export PROVIDER_MODEL="MiniMax-M2.7"
 export PROVIDER_API_KEY="..."
 
 node scripts/run-cbea-lcv-real-pilot.mjs \
-  --fixtures=data/fixtures/cbea-lcv.expanded90.synthetic.json \
+  --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json \
   --out=runs/real-model \
   --temperature=0.2 \
   --max-tokens=2200 \
-  --max-parse-retries=1 \
-  --concurrency=8
+  --max-parse-retries=3 \
+  --concurrency=16
 ```
+
+For recovery-only reruns after transient parse or transport failures, pass a
+JSON task-pair list with `fixture_id` and `method` fields:
+
+```bash
+node scripts/run-cbea-lcv-real-pilot.mjs \
+  --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json \
+  --task-pairs=runs/recovery-task-pairs.json \
+  --out=runs/recovery \
+  --temperature=0.2 \
+  --max-tokens=2200 \
+  --max-parse-retries=3 \
+  --concurrency=16
+```
+
+Use `scripts/merge-recovered-results.mjs` to merge recovered rows into a
+release-safe per-row score CSV. Do not commit the raw JSON outputs produced by
+reruns.
 
 To re-run the model-judge audit with an OpenAI-compatible judge endpoint,
 provide an annotation item CSV with the same columns used by
@@ -115,9 +148,9 @@ real-world decision-quality evaluation. Judges score fidelity to
 synthetic/composite case facts on a 0--2 rubric and choose pairwise winners
 among blinded outputs.
 
-The checked-in run manifests record model identifiers, provider strings,
-concurrency, and timeout settings. They intentionally omit API keys, precise
-calendar timestamps, and local machine paths.
+The checked-in run manifests record model identifiers, concurrency, and timeout
+settings. They intentionally omit API keys, endpoint URLs, precise calendar
+timestamps, raw provider responses, and local machine paths.
 
 ## Citation
 

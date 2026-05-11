@@ -1,17 +1,20 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const ROOT = process.cwd();
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'runs']);
 const SKIP_FILES = new Set(['scripts/check-privacy-boundary.mjs']);
 const DENY_PATTERNS = [
-  /sk-[A-Za-z0-9]{16,}/,
+  /sk-[A-Za-z0-9_-]{16,}/,
   /\/opt\/prediction/,
+  /\/Users\/vino/,
   /Prediction-cn-backend/,
   /decisionsandbox\.cn/,
   /minimax-turn/i,
   /MiniMax-M2\.7-highspeed/i,
+  /api\.deepseek\.com/i,
   /session_token/i,
   /SUPABASE/i,
   /MINIMAX_API_KEY/i,
@@ -34,10 +37,27 @@ function walk(dir) {
   });
 }
 
+function candidateFiles() {
+  try {
+    return execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], {
+      cwd: ROOT,
+      encoding: 'utf8',
+    })
+      .split(/\r?\n/)
+      .filter(Boolean)
+      .map((file) => path.resolve(ROOT, file))
+      .filter((file) => fs.existsSync(file) && fs.statSync(file).isFile());
+  } catch {
+    return walk(ROOT);
+  }
+}
+
 const findings = [];
-for (const filePath of walk(ROOT)) {
+const files = candidateFiles();
+for (const filePath of files) {
   const relativePath = path.relative(ROOT, filePath);
   if (SKIP_FILES.has(relativePath)) continue;
+  if (relativePath.split(path.sep).some((part) => SKIP_DIRS.has(part))) continue;
   const text = fs.readFileSync(filePath, 'utf8');
   const lines = text.split(/\r?\n/);
   lines.forEach((line, index) => {
@@ -54,4 +74,4 @@ if (findings.length > 0) {
   process.exit(1);
 }
 
-console.log(JSON.stringify({ privacy_boundary_check: 'passed', files_checked: walk(ROOT).length }, null, 2));
+console.log(JSON.stringify({ privacy_boundary_check: 'passed', files_checked: files.length }, null, 2));

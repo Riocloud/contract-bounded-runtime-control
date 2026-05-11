@@ -1,0 +1,4 @@
+baseline_id,attempted_runs,invalid_run_count,invalid_run_rate,evaluable_runs,structured_commitment_availability_rate,hard_constraint_violation_rate,evidence_coverage_failure_rate,witness_drop_rate,consequence_continuity_failure_rate,no_feasible_emission_rate,abstention_repair_correctness_rate,surface_realization_failure_rate,avg_input_tokens,avg_output_tokens,avg_prompt_cost_units
+raw_prompt_stuffing,360,0,0,360,0.8361,0.2525,0.0698,0.0332,0.0797,0.0066,0.9667,0.8361,1294,2142,3436
+long_context_llm,360,0,0,360,0.8333,0.2767,0.04,0.03,0.0467,0,1,0.8333,1177,1897,3075
+cbea_lcv_runtime,360,0,0,360,0.8333,0.2133,0.0033,0.0033,0.0033,0,1,0.8333,1117,1554,2671
