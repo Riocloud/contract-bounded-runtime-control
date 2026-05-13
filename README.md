@@ -141,6 +141,18 @@ node scripts/run-llm-fidelity-audit.mjs \
   --pairwise=true
 ```
 
+To build a larger balanced judge sample from the released synthetic/composite
+fixtures and matched outputs:
+
+```bash
+npm run judge:sample
+```
+
+This writes a 90-case balanced sample under `data/model_judge/balanced-90/`.
+If you have a separate production profile file, `scripts/build-model-judge-sample.mjs`
+also accepts `--profile=path/to/profile.json` so the sample can be reweighted
+without changing the rest of the audit pipeline.
+
 ## Model-Judge Audit Scope
 
 The model-judge audit is diagnostic evidence, not human validation and not a

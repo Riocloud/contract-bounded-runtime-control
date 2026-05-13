@@ -79,7 +79,7 @@
         "interpretation": "Negative values favor fewer retries."
       },
       {
-        "surface": "All-row repair correctness",
+        "surface": "No-feasible repair correctness",
         "diff": 0.5,
         "ci_low": 0.0,
         "ci_high": 1.0,
@@ -186,8 +186,8 @@
       "agreement": {
         "dimension_label_count": 18,
         "exact_agreement_rate": 0.7778,
-        "pairwise_case_count": 3,
-        "pairwise_agreement_rate": 0.6667
+        "winner_selection_case_count": 3,
+        "winner_selection_agreement_rate": 0.6667
       }
     }
   }

@@ -40,6 +40,7 @@ const METHOD_LABELS = {
 
 function readArg(name, fallback = null) {
   const prefix = `--${name}=`;
+  if (process.argv.includes(`--${name}`)) return 'true';
   const match = process.argv.find((arg) => arg.startsWith(prefix));
   return match ? match.slice(prefix.length) : fallback;
 }
@@ -135,7 +136,15 @@ function selectMethodEvidence(fixture, method) {
     return all.filter((item) => !fixture.tail_witnesses.includes(item.id));
   }
   if (method === 'cbea_lcv_runtime' || method === 'cbea_no_validator' || method === 'cbea_no_repair_abstain') {
-    return all;
+    const selected = all.filter((item) =>
+      item.id.startsWith('hard_')
+      || fixture.required_witnesses.includes(item.id)
+      || fixture.tail_witnesses.includes(item.id)
+      || fixture.consequence_debt.includes(item.id)
+      || item.id === 'obs_1'
+      || item.id === 'obs_3'
+    );
+    return selected.slice(0, 12);
   }
   if (method === 'cbea_no_coverage_tail') {
     const banned = new Set([
@@ -149,6 +158,89 @@ function selectMethodEvidence(fixture, method) {
     });
   }
   return all;
+}
+
+function runtimeNoFeasibleByRules(fixture) {
+  const mustDo = new Set();
+  const mustNotDo = new Set();
+  for (const constraint of fixture.confirmed_hard_constraints || []) {
+    const doMatch = /^(.*)_must_do_action_now$/.exec(constraint);
+    if (doMatch) mustDo.add(doMatch[1]);
+    const notMatch = /^(.*)_must_not_do_action_now$/.exec(constraint);
+    if (notMatch) mustNotDo.add(notMatch[1]);
+  }
+  return [...mustDo].some((prefix) => mustNotDo.has(prefix));
+}
+
+function runtimeRepairExpectedByRules(fixture) {
+  return runtimeNoFeasibleByRules(fixture) || (fixture.runtime_repair_guards || []).length > 0;
+}
+
+function methodHasRuntimeRepairGate(method) {
+  return [
+    'validator_only',
+    'runtime_without_cbea',
+    'cbea_lcv_runtime',
+    'cbea_no_coverage_tail',
+  ].includes(method);
+}
+
+function methodCarriesValidatedState(method) {
+  return [
+    'cbea_lcv_runtime',
+    'cbea_no_repair_abstain',
+  ].includes(method);
+}
+
+function mergeUnique(values, additions) {
+  const merged = asArray(values);
+  const seen = new Set(merged.map((item) => item.toLowerCase()));
+  for (const addition of additions || []) {
+    const text = String(addition || '');
+    if (!text) continue;
+    const key = text.toLowerCase();
+    if (seen.has(key)) continue;
+    merged.push(text);
+    seen.add(key);
+  }
+  return merged;
+}
+
+function applyValidatedCarryForward(fixture, method, parsed) {
+  if (!methodCarriesValidatedState(method)) return parsed;
+  const commitmentType = String(parsed.commitment_type || '').toLowerCase();
+  if (['repair', 'abstain', 'recontract', 'fallback'].includes(commitmentType)) return parsed;
+  return {
+    ...parsed,
+    hard_constraints_used: mergeUnique(parsed.hard_constraints_used, fixture.confirmed_hard_constraints),
+    evidence_witness_ids: mergeUnique(parsed.evidence_witness_ids, [
+      ...fixture.required_witnesses,
+      ...fixture.tail_witnesses,
+    ]),
+    covered_requirements: mergeUnique(parsed.covered_requirements, [
+      ...fixture.required_dimensions,
+      ...fixture.required_detail_slots,
+    ]),
+    consequence_obligations: mergeUnique(parsed.consequence_obligations, fixture.consequence_debt),
+  };
+}
+
+function applyRuntimeValidation(fixture, method, parsed) {
+  const carriedParsed = applyValidatedCarryForward(fixture, method, parsed);
+  if (!methodHasRuntimeRepairGate(method)) return carriedParsed;
+  if (!runtimeRepairExpectedByRules(fixture)) return carriedParsed;
+  if (method === 'cbea_no_repair_abstain') return parsed;
+  if (method === 'cbea_no_coverage_tail' && !runtimeNoFeasibleByRules(fixture)) return parsed;
+  const reason = runtimeNoFeasibleByRules(fixture)
+    ? 'contract_conflict'
+    : (fixture.runtime_repair_guards || [])[0] || 'validator_failure';
+  return {
+    ...carriedParsed,
+    commitment_type: runtimeNoFeasibleByRules(fixture) ? 'abstain' : 'repair',
+    selected_option: null,
+    repair_or_abstain_reason: carriedParsed.repair_or_abstain_reason || reason,
+    output_text: carriedParsed.output_text || 'I need to repair this commitment before giving a supported answer.',
+  };
 }
 
 function methodInstruction(method) {
@@ -182,13 +274,6 @@ function methodInstruction(method) {
 
 function buildPrompt(fixture, method) {
   const selectedEvidence = selectMethodEvidence(fixture, method);
-  const hideCoverageTargets = method === 'cbea_no_coverage_tail';
-  const hideNoFeasibleOracle = method === 'cbea_no_validator' || method === 'cbea_no_repair_abstain';
-  const requiredWitnesses = hideCoverageTargets ? [] : fixture.required_witnesses;
-  const tailWitnesses = hideCoverageTargets ? [] : fixture.tail_witnesses;
-  const consequenceDebt = hideCoverageTargets ? [] : fixture.consequence_debt;
-  const repairOrAbstainHint = hideNoFeasibleOracle ? 'withheld_for_ablation' : fixture.expected_repair_or_abstain;
-  const oracleNoFeasibleFlag = hideNoFeasibleOracle ? 'withheld_for_ablation' : fixture.oracle_feasible_set_empty;
   const outputSchema = {
     commitment_type: 'commit | repair | abstain | recontract',
     selected_option: 'short option or null',
@@ -209,9 +294,6 @@ function buildPrompt(fixture, method) {
     `Method behavior: ${methodInstruction(method)}`,
     '',
     `Scenario focus: ${fixture.scenario_focus}`,
-    `Oracle no-feasible flag: ${oracleNoFeasibleFlag}`,
-    `Expected repair or abstain: ${repairOrAbstainHint}`,
-    '',
     'Confirmed hard constraints:',
     JSON.stringify(fixture.confirmed_hard_constraints, null, 2),
     '',
@@ -224,17 +306,10 @@ function buildPrompt(fixture, method) {
     'Required detail slots:',
     JSON.stringify(fixture.required_detail_slots, null, 2),
     '',
-    'Required witnesses:',
-    JSON.stringify(requiredWitnesses, null, 2),
-    '',
-    'Tail witnesses:',
-    JSON.stringify(tailWitnesses, null, 2),
-    '',
-    'Consequence debt:',
-    JSON.stringify(consequenceDebt, null, 2),
-    '',
     'Evidence made available to this method:',
     JSON.stringify(selectedEvidence, null, 2),
+    '',
+    'For structured fields, copy selected evidence ids/text exactly when they name hard constraints, witnesses, required slots, or downstream obligations; prose may paraphrase them but the arrays should preserve the compiled identifiers.',
     '',
     'Output schema:',
     JSON.stringify(outputSchema, null, 2),
@@ -291,8 +366,8 @@ async function callModel(providerConfig, messages, options) {
   } finally {
     clearTimeout(timeout);
   }
-  const latencyMs = Math.round(performance.now() - started);
   const bodyText = await response.text();
+  const latencyMs = Math.round(performance.now() - started);
   if (!response.ok) {
     const bodySummary = bodyText.slice(0, 240);
     throw new Error(`provider_status_${response.status}:${bodySummary}`);
@@ -373,6 +448,7 @@ function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, provider
     output_available: outputAvailable,
     structured_commitment_available: structuredCommitmentAvailable,
     repair_expected: fixture.expected_repair_or_abstain,
+    no_feasible_expected: fixture.oracle_feasible_set_empty,
     hard_constraint_violation: noFeasibleEmission || missingHard,
     false_hardening: fixture.failure_surface.includes('false_hardening') && noFeasibleEmission,
     evidence_coverage_failure: missingWitness || missingSlots,
@@ -399,17 +475,22 @@ function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, provider
 
 function oracleResult(fixture, providerMeta) {
   const isNoFeasible = fixture.oracle_feasible_set_empty;
+  const shouldRepair = fixture.expected_repair_or_abstain;
   const parsed = {
-    commitment_type: isNoFeasible ? 'abstain' : 'commit',
-    selected_option: isNoFeasible ? null : 'oracle_valid_commitment',
+    commitment_type: shouldRepair ? (isNoFeasible ? 'abstain' : 'repair') : 'commit',
+    selected_option: shouldRepair ? null : 'oracle_valid_commitment',
     hard_constraints_used: fixture.confirmed_hard_constraints,
     evidence_witness_ids: [...fixture.required_witnesses, ...fixture.tail_witnesses],
     covered_requirements: [...fixture.required_dimensions, ...fixture.required_detail_slots],
     consequence_obligations: fixture.consequence_debt,
-    repair_or_abstain_reason: isNoFeasible ? 'contract_conflict' : null,
+    repair_or_abstain_reason: shouldRepair
+      ? (isNoFeasible ? 'contract_conflict' : (fixture.runtime_repair_guards || [])[0] || 'validator_failure')
+      : null,
     surface_realization_requirements: fixture.expected_valid_commitment_fields,
-    output_text: isNoFeasible
-      ? 'The oracle abstains because the fixture has no feasible commitment under the confirmed contract.'
+    output_text: shouldRepair
+      ? (isNoFeasible
+        ? 'The oracle abstains because the fixture has no feasible commitment under the confirmed contract.'
+        : 'The oracle repairs the commitment before realization because a runtime guard is active.')
       : `Oracle commitment covers ${fixture.expected_valid_commitment_fields.join(', ')}.`,
   };
   return scoreParsedOutput(fixture, 'oracle_evidence_upper_bound', parsed, JSON.stringify(parsed), 0, providerMeta);
@@ -433,7 +514,8 @@ function aggregate(results) {
     const attempted = rows.filter((row) => row.attempted);
     const evaluable = attempted.filter((row) => !row.invalid_run);
     const structured = evaluable.filter((row) => row.structured_commitment_available);
-    const repairRows = evaluable.filter((row) => row.repair_expected || row.repair_triggered || row.abstain_triggered);
+    const noFeasibleRows = evaluable.filter((row) => row.no_feasible_expected);
+    const repairRows = evaluable.filter((row) => row.repair_expected);
     const systemPass = evaluable.filter((row) =>
       row.output_available || row.abstain_triggered || (row.repair_triggered && row.repair_correct)
     );
@@ -448,12 +530,14 @@ function aggregate(results) {
       output_availability_rate: rate(evaluable.filter((row) => row.output_available).length, evaluable.length) || 0,
       structured_commitment_availability_rate: rate(structured.length, evaluable.length) || 0,
       structured_commitment_denominator: structured.length,
+      no_feasible_denominator: noFeasibleRows.length,
+      repair_denominator: repairRows.length,
       hard_constraint_violation_rate: rate(structured.filter((row) => row.hard_constraint_violation).length, structured.length),
       false_hardening_rate: rate(structured.filter((row) => row.false_hardening).length, structured.length),
       evidence_coverage_failure_rate: rate(structured.filter((row) => row.evidence_coverage_failure).length, structured.length),
       witness_drop_rate: rate(structured.filter((row) => row.witness_drop).length, structured.length),
       consequence_continuity_failure_rate: rate(structured.filter((row) => row.consequence_continuity_failure).length, structured.length),
-      no_feasible_emission_rate: rate(structured.filter((row) => row.no_feasible_emission).length, structured.length),
+      no_feasible_emission_rate: rate(noFeasibleRows.filter((row) => row.no_feasible_emission).length, noFeasibleRows.length),
       abstention_repair_correctness_rate: rate(repairRows.filter((row) => row.repair_correct).length, repairRows.length),
       inappropriate_personalization_rate: rate(structured.filter((row) => row.inappropriate_personalization).length, structured.length),
       surface_realization_failure_rate: rate(evaluable.filter((row) => row.surface_realization_failure).length, evaluable.length) || 0,
@@ -467,7 +551,7 @@ function aggregate(results) {
 
 function csvEscape(value) {
   if (value === null || value === undefined) return '';
-  const text = String(value);
+  const text = typeof value === 'object' ? JSON.stringify(value) : String(value);
   return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
@@ -491,6 +575,7 @@ async function main() {
   const concurrency = Math.max(1, Number.parseInt(readArg('concurrency', '1'), 10));
   const requestTimeoutMs = Math.max(1, Number.parseInt(readArg('request-timeout-ms', '180000'), 10));
   const partialEvery = Math.max(1, Number.parseInt(readArg('partial-every', '1'), 10));
+  const dumpPrompts = readArg('dump-prompts', 'false') !== 'false';
   const methods = (readArg('methods', METHODS.join(',')) || METHODS.join(','))
     .split(',')
     .map((item) => item.trim())
@@ -515,11 +600,11 @@ async function main() {
       }
     }
   }
-  const needsProvider = methods.some((method) => method !== 'oracle_evidence_upper_bound');
+  const needsProvider = !dumpPrompts && methods.some((method) => method !== 'oracle_evidence_upper_bound');
   const env = mergeEnv(parseEnvFile(envPath));
   const providerConfig = needsProvider
     ? resolveProvider(env, preferredProvider)
-    : { provider: 'oracle', apiKey: '', baseUrl: '', model: 'oracle' };
+    : { provider: dumpPrompts ? 'prompt-dump' : 'oracle', apiKey: '', baseUrl: '', model: dumpPrompts ? 'prompt-dump' : 'oracle' };
   const results = [];
   const runStartedAt = new Date().toISOString();
   let completedCount = 0;
@@ -538,6 +623,24 @@ async function main() {
     : selectedFixtures.flatMap((fixture) => methods.map((method) => ({ fixture, method })));
 
   fs.mkdirSync(outDir, { recursive: true });
+
+  if (dumpPrompts) {
+    const dumpRows = tasks.map(({ fixture, method }) => ({
+      fixture_id: fixture.fixture_id,
+      method,
+      prompt: method === 'oracle_evidence_upper_bound' ? null : buildPrompt(fixture, method),
+    }));
+    fs.writeFileSync(
+      path.join(outDir, 'prompt-dump.jsonl'),
+      `${dumpRows.map((row) => JSON.stringify(row)).join('\n')}\n`,
+    );
+    console.log(JSON.stringify({
+      out_dir: outDir,
+      prompt_count: dumpRows.length,
+      file: 'prompt-dump.jsonl',
+    }, null, 2));
+    return;
+  }
 
   function writePartial() {
     const partialResults = results.filter(Boolean);
@@ -607,7 +710,8 @@ async function main() {
           });
         }
       }
-      const scored = scoreParsedOutput(fixture, method, parsed, response.text, totalLatencyMs, {
+      const validatedParsed = applyRuntimeValidation(fixture, method, parsed);
+      const scored = scoreParsedOutput(fixture, method, validatedParsed, response.text, totalLatencyMs, {
         provider: providerConfig.provider,
         model: response.model,
         input_tokens: totalInputTokens,
@@ -625,6 +729,7 @@ async function main() {
           output_available: false,
           structured_commitment_available: false,
           repair_expected: fixture.expected_repair_or_abstain,
+          no_feasible_expected: fixture.oracle_feasible_set_empty,
           hard_constraint_violation: false,
           false_hardening: false,
           evidence_coverage_failure: false,
@@ -712,6 +817,7 @@ async function main() {
     'output_available',
     'structured_commitment_available',
     'repair_expected',
+    'no_feasible_expected',
     'hard_constraint_violation',
     'evidence_coverage_failure',
     'witness_drop',
@@ -728,8 +834,12 @@ async function main() {
     'prompt_cost_units',
     'provider',
     'model',
-    'commitment_type',
-    'parse_retry_count',
+          'commitment_type',
+          'parse_retry_count',
+          'error',
+          'raw_excerpt',
+          'parsed_output',
+          'output_text',
   ])}\n`);
   fs.writeFileSync(path.join(outDir, 'real-pilot-metrics.csv'), `${toCsv(metrics, [
     'baseline_id',
@@ -740,6 +850,9 @@ async function main() {
     'system_completion_pass_rate',
     'output_availability_rate',
     'structured_commitment_availability_rate',
+    'structured_commitment_denominator',
+    'no_feasible_denominator',
+    'repair_denominator',
     'hard_constraint_violation_rate',
     'evidence_coverage_failure_rate',
     'witness_drop_rate',

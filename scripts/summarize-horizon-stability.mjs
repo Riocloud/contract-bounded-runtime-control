@@ -102,9 +102,7 @@ for (const method of methods) {
     const attempted = groupRows.filter((row) => bool(row.attempted));
     const evaluable = attempted.filter((row) => !bool(row.invalid_run));
     const structured = evaluable.filter((row) => bool(row.structured_commitment_available));
-    const repairRows = evaluable.filter((row) =>
-      bool(row.repair_expected) || bool(row.repair_triggered) || bool(row.abstain_triggered)
-    );
+    const repairRows = evaluable.filter((row) => bool(row.repair_expected));
 
     summary.push({
       baseline_id: method,

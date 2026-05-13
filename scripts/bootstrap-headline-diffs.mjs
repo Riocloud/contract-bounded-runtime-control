@@ -77,7 +77,11 @@ function percentile(values, p) {
 
 function toCsv(rows) {
   const headers = ['surface', 'diff', 'ci_low', 'ci_high'];
-  return `${headers.join(',')}\n${rows.map((row) => headers.map((header) => row[header]).join(',')).join('\n')}\n`;
+  const escape = (value) => {
+    const text = String(value ?? '');
+    return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+  };
+  return `${headers.join(',')}\n${rows.map((row) => headers.map((header) => escape(row[header])).join(',')).join('\n')}\n`;
 }
 
 const inputPath = path.resolve(readArg('input', 'data/results/real-pilot-results.csv'));
@@ -109,7 +113,8 @@ const surfaces = [
     value: (row) => numeric(row.parse_retry_count),
   },
   {
-    surface: 'All-row repair correctness',
+    surface: 'Repair/abstention correctness',
+    include: (pair) => bool(pair.raw.repair_expected) || bool(pair.cbea.repair_expected),
     value: (row) => (bool(row.repair_correct) ? 1 : 0),
   },
   {
@@ -119,7 +124,8 @@ const surfaces = [
 ];
 
 const summary = surfaces.map((surface) => {
-  const deltas = pairs.map((pair) => surface.value(pair.cbea) - surface.value(pair.raw));
+  const surfacePairs = surface.include ? pairs.filter((pair) => surface.include(pair)) : pairs;
+  const deltas = surfacePairs.map((pair) => surface.value(pair.cbea) - surface.value(pair.raw));
   const observed = mean(deltas);
   const samples = [];
   for (let i = 0; i < iterations; i += 1) {

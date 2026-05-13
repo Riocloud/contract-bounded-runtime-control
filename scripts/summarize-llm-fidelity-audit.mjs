@@ -78,7 +78,7 @@ function mean(values) {
 
 const labelsPath = path.resolve(readArg('labels'));
 const keyPath = path.resolve(readArg('key', 'data/model_judge/annotation-key.csv'));
-const pairwisePath = path.resolve(readArg('pairwise', ''));
+const winnerSelectionPath = path.resolve(readArg('winner-selection', readArg('pairwise', '')));
 const outDir = path.resolve(readArg('out', 'runs/llm-judge-summary'));
 
 if (!labelsPath || !fs.existsSync(labelsPath)) {
@@ -118,13 +118,13 @@ const summaryRows = [...bySystem.entries()]
     };
   });
 
-let pairwiseRows = [];
-let pairwiseSummaryRows = [];
-if (pairwisePath && fs.existsSync(pairwisePath)) {
-  pairwiseRows = parseCsv(fs.readFileSync(pairwisePath, 'utf8'));
+let winnerSelectionRows = [];
+let winnerSelectionSummaryRows = [];
+if (winnerSelectionPath && fs.existsSync(winnerSelectionPath)) {
+  winnerSelectionRows = parseCsv(fs.readFileSync(winnerSelectionPath, 'utf8'));
   const wins = new Map();
   let validChoices = 0;
-  for (const row of pairwiseRows) {
+  for (const row of winnerSelectionRows) {
     const label = row.best_system_label;
     if (label === 'tie' || label === 'none') {
       wins.set(label, (wins.get(label) ?? 0) + 1);
@@ -135,7 +135,7 @@ if (pairwisePath && fs.existsSync(pairwisePath)) {
     wins.set(baseline, (wins.get(baseline) ?? 0) + 1);
     validChoices += 1;
   }
-  pairwiseSummaryRows = [...wins.entries()]
+  winnerSelectionSummaryRows = [...wins.entries()]
     .sort(([left], [right]) => left.localeCompare(right))
     .map(([winner, count]) => ({
       winner,
@@ -146,23 +146,23 @@ if (pairwisePath && fs.existsSync(pairwisePath)) {
 
 const summary = {
   label_count: labels.length,
-  pairwise_count: pairwiseRows.length,
+  winner_selection_count: winnerSelectionRows.length,
   by_system: summaryRows,
-  pairwise: pairwiseSummaryRows,
+  winner_selection: winnerSelectionSummaryRows,
 };
 
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(path.join(outDir, 'llm-fidelity-summary.json'), `${JSON.stringify(summary, null, 2)}\n`);
 fs.writeFileSync(path.join(outDir, 'llm-fidelity-summary.csv'), toCsv(summaryRows, ['system', 'n_outputs', ...DIMENSIONS, 'overall_mean']));
-fs.writeFileSync(path.join(outDir, 'llm-fidelity-pairwise-summary.csv'), toCsv(pairwiseSummaryRows, ['winner', 'count', 'win_rate']));
+fs.writeFileSync(path.join(outDir, 'llm-fidelity-winner-selection-summary.csv'), toCsv(winnerSelectionSummaryRows, ['winner', 'count', 'win_rate']));
 
 console.log(JSON.stringify({
   out_dir: outDir,
   label_count: labels.length,
-  pairwise_count: pairwiseRows.length,
+  winner_selection_count: winnerSelectionRows.length,
   files: [
     'llm-fidelity-summary.json',
     'llm-fidelity-summary.csv',
-    'llm-fidelity-pairwise-summary.csv',
+    'llm-fidelity-winner-selection-summary.csv',
   ],
 }, null, 2));

@@ -39,6 +39,7 @@
       "household_liquidity_followup",
       "investment_tail_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -91,6 +92,7 @@
       "household_liquidity_followup",
       "investment_tail_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -143,6 +145,7 @@
       "household_liquidity_followup",
       "investment_tail_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -195,6 +198,7 @@
       "household_liquidity_followup",
       "investment_tail_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -247,6 +251,7 @@
       "household_liquidity_followup",
       "investment_tail_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -299,6 +304,7 @@
       "household_liquidity_followup",
       "investment_tail_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -351,6 +357,7 @@
       "household_liquidity_followup",
       "investment_tail_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -403,6 +410,7 @@
       "household_liquidity_followup",
       "investment_tail_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -455,6 +463,7 @@
       "household_liquidity_followup",
       "investment_tail_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -507,6 +516,7 @@
       "household_liquidity_followup",
       "investment_tail_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -559,6 +569,7 @@
       "household_liquidity_followup",
       "investment_tail_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -611,6 +622,7 @@
       "household_liquidity_followup",
       "investment_tail_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -665,6 +677,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -717,6 +732,9 @@
     "consequence_debt": [
       "household_liquidity_followup",
       "investment_infeasible_r02_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -771,6 +789,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -823,6 +844,9 @@
     "consequence_debt": [
       "household_liquidity_followup",
       "investment_infeasible_r04_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -877,6 +901,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -929,6 +956,9 @@
     "consequence_debt": [
       "household_liquidity_followup",
       "investment_infeasible_r06_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -983,6 +1013,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -1035,6 +1068,9 @@
     "consequence_debt": [
       "household_liquidity_followup",
       "investment_infeasible_r08_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -1089,6 +1125,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -1141,6 +1180,9 @@
     "consequence_debt": [
       "household_liquidity_followup",
       "investment_infeasible_r10_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -1195,6 +1237,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -1248,6 +1293,9 @@
       "household_liquidity_followup",
       "investment_infeasible_r12_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -1299,6 +1347,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1351,6 +1400,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1403,6 +1453,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1455,6 +1506,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1507,6 +1559,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1559,6 +1612,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1611,6 +1665,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1663,6 +1718,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1715,6 +1771,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1767,6 +1824,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1819,6 +1877,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1871,6 +1930,7 @@
       "household_liquidity_followup",
       "investment_falsehard_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -1924,8 +1984,11 @@
       "household_liquidity_followup",
       "investment_exception_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -1977,6 +2040,7 @@
       "household_liquidity_followup",
       "investment_exception_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2030,8 +2094,11 @@
       "household_liquidity_followup",
       "investment_exception_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2083,6 +2150,7 @@
       "household_liquidity_followup",
       "investment_exception_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2136,8 +2204,11 @@
       "household_liquidity_followup",
       "investment_exception_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2189,6 +2260,7 @@
       "household_liquidity_followup",
       "investment_exception_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2242,8 +2314,11 @@
       "household_liquidity_followup",
       "investment_exception_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2295,6 +2370,7 @@
       "household_liquidity_followup",
       "investment_exception_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2348,8 +2424,11 @@
       "household_liquidity_followup",
       "investment_exception_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2401,6 +2480,7 @@
       "household_liquidity_followup",
       "investment_exception_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2454,8 +2534,11 @@
       "household_liquidity_followup",
       "investment_exception_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2507,6 +2590,7 @@
       "household_liquidity_followup",
       "investment_exception_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2559,8 +2643,11 @@
       "household_liquidity_followup",
       "investment_surface_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2611,6 +2698,7 @@
       "household_liquidity_followup",
       "investment_surface_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2663,8 +2751,11 @@
       "household_liquidity_followup",
       "investment_surface_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2715,6 +2806,7 @@
       "household_liquidity_followup",
       "investment_surface_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2767,8 +2859,11 @@
       "household_liquidity_followup",
       "investment_surface_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2819,6 +2914,7 @@
       "household_liquidity_followup",
       "investment_surface_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2871,8 +2967,11 @@
       "household_liquidity_followup",
       "investment_surface_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -2923,6 +3022,7 @@
       "household_liquidity_followup",
       "investment_surface_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -2975,8 +3075,11 @@
       "household_liquidity_followup",
       "investment_surface_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3027,6 +3130,7 @@
       "household_liquidity_followup",
       "investment_surface_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3079,8 +3183,11 @@
       "household_liquidity_followup",
       "investment_surface_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3131,6 +3238,7 @@
       "household_liquidity_followup",
       "investment_surface_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3183,8 +3291,11 @@
       "household_liquidity_followup",
       "investment_debt_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3235,6 +3346,7 @@
       "household_liquidity_followup",
       "investment_debt_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3287,6 +3399,7 @@
       "household_liquidity_followup",
       "investment_debt_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3339,8 +3452,11 @@
       "household_liquidity_followup",
       "investment_debt_r04_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3391,6 +3507,7 @@
       "household_liquidity_followup",
       "investment_debt_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3443,6 +3560,7 @@
       "household_liquidity_followup",
       "investment_debt_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3495,8 +3613,11 @@
       "household_liquidity_followup",
       "investment_debt_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3547,6 +3668,7 @@
       "household_liquidity_followup",
       "investment_debt_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3599,6 +3721,7 @@
       "household_liquidity_followup",
       "investment_debt_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3651,8 +3774,11 @@
       "household_liquidity_followup",
       "investment_debt_r10_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "decision",
       "risk_boundary",
@@ -3703,6 +3829,7 @@
       "household_liquidity_followup",
       "investment_debt_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3755,6 +3882,7 @@
       "household_liquidity_followup",
       "investment_debt_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3807,6 +3935,7 @@
       "shared_living_followup",
       "love_choice_tail_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3859,6 +3988,7 @@
       "shared_living_followup",
       "love_choice_tail_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3911,6 +4041,7 @@
       "shared_living_followup",
       "love_choice_tail_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -3963,6 +4094,7 @@
       "shared_living_followup",
       "love_choice_tail_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4015,6 +4147,7 @@
       "shared_living_followup",
       "love_choice_tail_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4067,6 +4200,7 @@
       "shared_living_followup",
       "love_choice_tail_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4119,6 +4253,7 @@
       "shared_living_followup",
       "love_choice_tail_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4171,6 +4306,7 @@
       "shared_living_followup",
       "love_choice_tail_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4223,6 +4359,7 @@
       "shared_living_followup",
       "love_choice_tail_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4275,6 +4412,7 @@
       "shared_living_followup",
       "love_choice_tail_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4327,6 +4465,7 @@
       "shared_living_followup",
       "love_choice_tail_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4379,6 +4518,7 @@
       "shared_living_followup",
       "love_choice_tail_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -4433,6 +4573,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -4485,6 +4628,9 @@
     "consequence_debt": [
       "shared_living_followup",
       "love_choice_infeasible_r02_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -4539,6 +4685,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -4591,6 +4740,9 @@
     "consequence_debt": [
       "shared_living_followup",
       "love_choice_infeasible_r04_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -4645,6 +4797,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -4697,6 +4852,9 @@
     "consequence_debt": [
       "shared_living_followup",
       "love_choice_infeasible_r06_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -4751,6 +4909,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -4803,6 +4964,9 @@
     "consequence_debt": [
       "shared_living_followup",
       "love_choice_infeasible_r08_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -4857,6 +5021,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -4909,6 +5076,9 @@
     "consequence_debt": [
       "shared_living_followup",
       "love_choice_infeasible_r10_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -4963,6 +5133,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -5016,6 +5189,9 @@
       "shared_living_followup",
       "love_choice_infeasible_r12_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -5067,6 +5243,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5119,6 +5296,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5171,6 +5349,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5223,6 +5402,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5275,6 +5455,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5327,6 +5508,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5379,6 +5561,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5431,6 +5614,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5483,6 +5667,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5535,6 +5720,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5587,6 +5773,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5639,6 +5826,7 @@
       "shared_living_followup",
       "love_choice_falsehard_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5692,8 +5880,11 @@
       "shared_living_followup",
       "love_choice_exception_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -5745,6 +5936,7 @@
       "shared_living_followup",
       "love_choice_exception_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5798,8 +5990,11 @@
       "shared_living_followup",
       "love_choice_exception_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -5851,6 +6046,7 @@
       "shared_living_followup",
       "love_choice_exception_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -5904,8 +6100,11 @@
       "shared_living_followup",
       "love_choice_exception_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -5957,6 +6156,7 @@
       "shared_living_followup",
       "love_choice_exception_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6010,8 +6210,11 @@
       "shared_living_followup",
       "love_choice_exception_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6063,6 +6266,7 @@
       "shared_living_followup",
       "love_choice_exception_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6116,8 +6320,11 @@
       "shared_living_followup",
       "love_choice_exception_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6169,6 +6376,7 @@
       "shared_living_followup",
       "love_choice_exception_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6222,8 +6430,11 @@
       "shared_living_followup",
       "love_choice_exception_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6275,6 +6486,7 @@
       "shared_living_followup",
       "love_choice_exception_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6327,8 +6539,11 @@
       "shared_living_followup",
       "love_choice_surface_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6379,6 +6594,7 @@
       "shared_living_followup",
       "love_choice_surface_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6431,8 +6647,11 @@
       "shared_living_followup",
       "love_choice_surface_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6483,6 +6702,7 @@
       "shared_living_followup",
       "love_choice_surface_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6535,8 +6755,11 @@
       "shared_living_followup",
       "love_choice_surface_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6587,6 +6810,7 @@
       "shared_living_followup",
       "love_choice_surface_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6639,8 +6863,11 @@
       "shared_living_followup",
       "love_choice_surface_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6691,6 +6918,7 @@
       "shared_living_followup",
       "love_choice_surface_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6743,8 +6971,11 @@
       "shared_living_followup",
       "love_choice_surface_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6795,6 +7026,7 @@
       "shared_living_followup",
       "love_choice_surface_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6847,8 +7079,11 @@
       "shared_living_followup",
       "love_choice_surface_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -6899,6 +7134,7 @@
       "shared_living_followup",
       "love_choice_surface_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -6951,8 +7187,11 @@
       "shared_living_followup",
       "love_choice_debt_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -7003,6 +7242,7 @@
       "shared_living_followup",
       "love_choice_debt_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7055,6 +7295,7 @@
       "shared_living_followup",
       "love_choice_debt_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7107,8 +7348,11 @@
       "shared_living_followup",
       "love_choice_debt_r04_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -7159,6 +7403,7 @@
       "shared_living_followup",
       "love_choice_debt_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7211,6 +7456,7 @@
       "shared_living_followup",
       "love_choice_debt_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7263,8 +7509,11 @@
       "shared_living_followup",
       "love_choice_debt_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -7315,6 +7564,7 @@
       "shared_living_followup",
       "love_choice_debt_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7367,6 +7617,7 @@
       "shared_living_followup",
       "love_choice_debt_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7419,8 +7670,11 @@
       "shared_living_followup",
       "love_choice_debt_r10_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "relationship_boundary",
       "timeline",
@@ -7471,6 +7725,7 @@
       "shared_living_followup",
       "love_choice_debt_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7523,6 +7778,7 @@
       "shared_living_followup",
       "love_choice_debt_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7576,6 +7832,7 @@
       "career_delay_followup",
       "career_tail_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7629,6 +7886,7 @@
       "career_delay_followup",
       "career_tail_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7682,6 +7940,7 @@
       "career_delay_followup",
       "career_tail_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7735,6 +7994,7 @@
       "career_delay_followup",
       "career_tail_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7788,6 +8048,7 @@
       "career_delay_followup",
       "career_tail_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7841,6 +8102,7 @@
       "career_delay_followup",
       "career_tail_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7894,6 +8156,7 @@
       "career_delay_followup",
       "career_tail_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -7947,6 +8210,7 @@
       "career_delay_followup",
       "career_tail_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8000,6 +8264,7 @@
       "career_delay_followup",
       "career_tail_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8053,6 +8318,7 @@
       "career_delay_followup",
       "career_tail_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8106,6 +8372,7 @@
       "career_delay_followup",
       "career_tail_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8159,6 +8426,7 @@
       "career_delay_followup",
       "career_tail_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8214,6 +8482,9 @@
       "career_delay_followup",
       "career_infeasible_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8267,6 +8538,9 @@
     "consequence_debt": [
       "career_delay_followup",
       "career_infeasible_r02_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -8322,6 +8596,9 @@
       "career_delay_followup",
       "career_infeasible_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8375,6 +8652,9 @@
     "consequence_debt": [
       "career_delay_followup",
       "career_infeasible_r04_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -8430,6 +8710,9 @@
       "career_delay_followup",
       "career_infeasible_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8483,6 +8766,9 @@
     "consequence_debt": [
       "career_delay_followup",
       "career_infeasible_r06_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -8538,6 +8824,9 @@
       "career_delay_followup",
       "career_infeasible_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8591,6 +8880,9 @@
     "consequence_debt": [
       "career_delay_followup",
       "career_infeasible_r08_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -8646,6 +8938,9 @@
       "career_delay_followup",
       "career_infeasible_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8699,6 +8994,9 @@
     "consequence_debt": [
       "career_delay_followup",
       "career_infeasible_r10_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -8754,6 +9052,9 @@
       "career_delay_followup",
       "career_infeasible_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8808,6 +9109,9 @@
       "career_delay_followup",
       "career_infeasible_r12_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -8860,6 +9164,7 @@
       "career_delay_followup",
       "career_falsehard_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8913,6 +9218,7 @@
       "career_delay_followup",
       "career_falsehard_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -8966,6 +9272,7 @@
       "career_delay_followup",
       "career_falsehard_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9019,6 +9326,7 @@
       "career_delay_followup",
       "career_falsehard_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9072,6 +9380,7 @@
       "career_delay_followup",
       "career_falsehard_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9125,6 +9434,7 @@
       "career_delay_followup",
       "career_falsehard_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9178,6 +9488,7 @@
       "career_delay_followup",
       "career_falsehard_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9231,6 +9542,7 @@
       "career_delay_followup",
       "career_falsehard_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9284,6 +9596,7 @@
       "career_delay_followup",
       "career_falsehard_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9337,6 +9650,7 @@
       "career_delay_followup",
       "career_falsehard_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9390,6 +9704,7 @@
       "career_delay_followup",
       "career_falsehard_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9443,6 +9758,7 @@
       "career_delay_followup",
       "career_falsehard_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9497,8 +9813,11 @@
       "career_delay_followup",
       "career_exception_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -9551,6 +9870,7 @@
       "career_delay_followup",
       "career_exception_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9605,8 +9925,11 @@
       "career_delay_followup",
       "career_exception_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -9659,6 +9982,7 @@
       "career_delay_followup",
       "career_exception_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9713,8 +10037,11 @@
       "career_delay_followup",
       "career_exception_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -9767,6 +10094,7 @@
       "career_delay_followup",
       "career_exception_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9821,8 +10149,11 @@
       "career_delay_followup",
       "career_exception_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -9875,6 +10206,7 @@
       "career_delay_followup",
       "career_exception_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -9929,8 +10261,11 @@
       "career_delay_followup",
       "career_exception_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -9983,6 +10318,7 @@
       "career_delay_followup",
       "career_exception_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10037,8 +10373,11 @@
       "career_delay_followup",
       "career_exception_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10091,6 +10430,7 @@
       "career_delay_followup",
       "career_exception_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10144,8 +10484,11 @@
       "career_delay_followup",
       "career_surface_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10197,6 +10540,7 @@
       "career_delay_followup",
       "career_surface_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10250,8 +10594,11 @@
       "career_delay_followup",
       "career_surface_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10303,6 +10650,7 @@
       "career_delay_followup",
       "career_surface_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10356,8 +10704,11 @@
       "career_delay_followup",
       "career_surface_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10409,6 +10760,7 @@
       "career_delay_followup",
       "career_surface_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10462,8 +10814,11 @@
       "career_delay_followup",
       "career_surface_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10515,6 +10870,7 @@
       "career_delay_followup",
       "career_surface_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10568,8 +10924,11 @@
       "career_delay_followup",
       "career_surface_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10621,6 +10980,7 @@
       "career_delay_followup",
       "career_surface_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10674,8 +11034,11 @@
       "career_delay_followup",
       "career_surface_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10727,6 +11090,7 @@
       "career_delay_followup",
       "career_surface_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10780,8 +11144,11 @@
       "career_delay_followup",
       "career_debt_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10833,6 +11200,7 @@
       "career_delay_followup",
       "career_debt_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10886,6 +11254,7 @@
       "career_delay_followup",
       "career_debt_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -10939,8 +11308,11 @@
       "career_delay_followup",
       "career_debt_r04_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -10992,6 +11364,7 @@
       "career_delay_followup",
       "career_debt_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11045,6 +11418,7 @@
       "career_delay_followup",
       "career_debt_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11098,8 +11472,11 @@
       "career_delay_followup",
       "career_debt_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -11151,6 +11528,7 @@
       "career_delay_followup",
       "career_debt_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11204,6 +11582,7 @@
       "career_delay_followup",
       "career_debt_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11257,8 +11636,11 @@
       "career_delay_followup",
       "career_debt_r10_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "career_step",
       "income_boundary",
@@ -11310,6 +11692,7 @@
       "career_delay_followup",
       "career_debt_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11363,6 +11746,7 @@
       "career_delay_followup",
       "career_debt_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11417,6 +11801,7 @@
       "career_delay_followup",
       "relocation_tail_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11471,6 +11856,7 @@
       "career_delay_followup",
       "relocation_tail_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11525,6 +11911,7 @@
       "career_delay_followup",
       "relocation_tail_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11579,6 +11966,7 @@
       "career_delay_followup",
       "relocation_tail_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11633,6 +12021,7 @@
       "career_delay_followup",
       "relocation_tail_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11687,6 +12076,7 @@
       "career_delay_followup",
       "relocation_tail_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11741,6 +12131,7 @@
       "career_delay_followup",
       "relocation_tail_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11795,6 +12186,7 @@
       "career_delay_followup",
       "relocation_tail_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11849,6 +12241,7 @@
       "career_delay_followup",
       "relocation_tail_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11903,6 +12296,7 @@
       "career_delay_followup",
       "relocation_tail_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -11957,6 +12351,7 @@
       "career_delay_followup",
       "relocation_tail_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12011,6 +12406,7 @@
       "career_delay_followup",
       "relocation_tail_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12067,6 +12463,9 @@
       "career_delay_followup",
       "relocation_infeasible_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12121,6 +12520,9 @@
       "caregiving_followup",
       "career_delay_followup",
       "relocation_infeasible_r02_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -12177,6 +12579,9 @@
       "career_delay_followup",
       "relocation_infeasible_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12231,6 +12636,9 @@
       "caregiving_followup",
       "career_delay_followup",
       "relocation_infeasible_r04_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -12287,6 +12695,9 @@
       "career_delay_followup",
       "relocation_infeasible_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12341,6 +12752,9 @@
       "caregiving_followup",
       "career_delay_followup",
       "relocation_infeasible_r06_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -12397,6 +12811,9 @@
       "career_delay_followup",
       "relocation_infeasible_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12451,6 +12868,9 @@
       "caregiving_followup",
       "career_delay_followup",
       "relocation_infeasible_r08_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -12507,6 +12927,9 @@
       "career_delay_followup",
       "relocation_infeasible_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12561,6 +12984,9 @@
       "caregiving_followup",
       "career_delay_followup",
       "relocation_infeasible_r10_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -12617,6 +13043,9 @@
       "career_delay_followup",
       "relocation_infeasible_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12672,6 +13101,9 @@
       "career_delay_followup",
       "relocation_infeasible_r12_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -12725,6 +13157,7 @@
       "career_delay_followup",
       "relocation_falsehard_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12779,6 +13212,7 @@
       "career_delay_followup",
       "relocation_falsehard_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12833,6 +13267,7 @@
       "career_delay_followup",
       "relocation_falsehard_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12887,6 +13322,7 @@
       "career_delay_followup",
       "relocation_falsehard_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12941,6 +13377,7 @@
       "career_delay_followup",
       "relocation_falsehard_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -12995,6 +13432,7 @@
       "career_delay_followup",
       "relocation_falsehard_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13049,6 +13487,7 @@
       "career_delay_followup",
       "relocation_falsehard_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13103,6 +13542,7 @@
       "career_delay_followup",
       "relocation_falsehard_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13157,6 +13597,7 @@
       "career_delay_followup",
       "relocation_falsehard_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13211,6 +13652,7 @@
       "career_delay_followup",
       "relocation_falsehard_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13265,6 +13707,7 @@
       "career_delay_followup",
       "relocation_falsehard_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13319,6 +13762,7 @@
       "career_delay_followup",
       "relocation_falsehard_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13374,8 +13818,11 @@
       "career_delay_followup",
       "relocation_exception_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13429,6 +13876,7 @@
       "career_delay_followup",
       "relocation_exception_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13484,8 +13932,11 @@
       "career_delay_followup",
       "relocation_exception_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13539,6 +13990,7 @@
       "career_delay_followup",
       "relocation_exception_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13594,8 +14046,11 @@
       "career_delay_followup",
       "relocation_exception_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13649,6 +14104,7 @@
       "career_delay_followup",
       "relocation_exception_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13704,8 +14160,11 @@
       "career_delay_followup",
       "relocation_exception_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13759,6 +14218,7 @@
       "career_delay_followup",
       "relocation_exception_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13814,8 +14274,11 @@
       "career_delay_followup",
       "relocation_exception_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13869,6 +14332,7 @@
       "career_delay_followup",
       "relocation_exception_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -13924,8 +14388,11 @@
       "career_delay_followup",
       "relocation_exception_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -13979,6 +14446,7 @@
       "career_delay_followup",
       "relocation_exception_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14033,8 +14501,11 @@
       "career_delay_followup",
       "relocation_surface_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14087,6 +14558,7 @@
       "career_delay_followup",
       "relocation_surface_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14141,8 +14613,11 @@
       "career_delay_followup",
       "relocation_surface_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14195,6 +14670,7 @@
       "career_delay_followup",
       "relocation_surface_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14249,8 +14725,11 @@
       "career_delay_followup",
       "relocation_surface_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14303,6 +14782,7 @@
       "career_delay_followup",
       "relocation_surface_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14357,8 +14837,11 @@
       "career_delay_followup",
       "relocation_surface_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14411,6 +14894,7 @@
       "career_delay_followup",
       "relocation_surface_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14465,8 +14949,11 @@
       "career_delay_followup",
       "relocation_surface_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14519,6 +15006,7 @@
       "career_delay_followup",
       "relocation_surface_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14573,8 +15061,11 @@
       "career_delay_followup",
       "relocation_surface_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14627,6 +15118,7 @@
       "career_delay_followup",
       "relocation_surface_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14681,8 +15173,11 @@
       "career_delay_followup",
       "relocation_debt_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14735,6 +15230,7 @@
       "career_delay_followup",
       "relocation_debt_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14789,6 +15285,7 @@
       "career_delay_followup",
       "relocation_debt_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14843,8 +15340,11 @@
       "career_delay_followup",
       "relocation_debt_r04_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -14897,6 +15397,7 @@
       "career_delay_followup",
       "relocation_debt_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -14951,6 +15452,7 @@
       "career_delay_followup",
       "relocation_debt_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15005,8 +15507,11 @@
       "career_delay_followup",
       "relocation_debt_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -15059,6 +15564,7 @@
       "career_delay_followup",
       "relocation_debt_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15113,6 +15619,7 @@
       "career_delay_followup",
       "relocation_debt_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15167,8 +15674,11 @@
       "career_delay_followup",
       "relocation_debt_r10_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "abstain_reason",
       "needed_clarification",
@@ -15221,6 +15731,7 @@
       "career_delay_followup",
       "relocation_debt_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15275,6 +15786,7 @@
       "career_delay_followup",
       "relocation_debt_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15329,6 +15841,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15383,6 +15896,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15437,6 +15951,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15491,6 +16006,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15545,6 +16061,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15599,6 +16116,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15653,6 +16171,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15707,6 +16226,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15761,6 +16281,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15815,6 +16336,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15869,6 +16391,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15923,6 +16446,7 @@
       "multi_domain_followup",
       "comprehensive_tail_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -15979,6 +16503,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16033,6 +16560,9 @@
     "consequence_debt": [
       "multi_domain_followup",
       "comprehensive_infeasible_r02_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -16089,6 +16619,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16143,6 +16676,9 @@
     "consequence_debt": [
       "multi_domain_followup",
       "comprehensive_infeasible_r04_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -16199,6 +16735,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16253,6 +16792,9 @@
     "consequence_debt": [
       "multi_domain_followup",
       "comprehensive_infeasible_r06_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -16309,6 +16851,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16363,6 +16908,9 @@
     "consequence_debt": [
       "multi_domain_followup",
       "comprehensive_infeasible_r08_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -16419,6 +16967,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16473,6 +17024,9 @@
     "consequence_debt": [
       "multi_domain_followup",
       "comprehensive_infeasible_r10_followup"
+    ],
+    "runtime_repair_guards": [
+      "contract_conflict"
     ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
@@ -16529,6 +17083,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16584,6 +17141,9 @@
       "multi_domain_followup",
       "comprehensive_infeasible_r12_followup"
     ],
+    "runtime_repair_guards": [
+      "contract_conflict"
+    ],
     "oracle_feasible_set_empty": true,
     "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
@@ -16637,6 +17197,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r01_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16691,6 +17252,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16745,6 +17307,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16799,6 +17362,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16853,6 +17417,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16907,6 +17472,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -16961,6 +17527,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r07_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17015,6 +17582,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17069,6 +17637,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17123,6 +17692,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17177,6 +17747,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17231,6 +17802,7 @@
       "multi_domain_followup",
       "comprehensive_falsehard_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17286,8 +17858,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17341,6 +17916,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17396,8 +17972,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17451,6 +18030,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17506,8 +18086,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17561,6 +18144,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17616,8 +18200,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17671,6 +18258,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17726,8 +18314,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17781,6 +18372,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17836,8 +18428,11 @@
       "multi_domain_followup",
       "comprehensive_exception_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "missing_evidence"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17891,6 +18486,7 @@
       "multi_domain_followup",
       "comprehensive_exception_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -17945,8 +18541,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -17999,6 +18598,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18053,8 +18653,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r03_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18107,6 +18710,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r04_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18161,8 +18765,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r05_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18215,6 +18822,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18269,8 +18877,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18323,6 +18934,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18377,8 +18989,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r09_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18431,6 +19046,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r10_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18485,8 +19101,11 @@
       "multi_domain_followup",
       "comprehensive_surface_r11_followup"
     ],
+    "runtime_repair_guards": [
+      "unsupported_commitment"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18539,6 +19158,7 @@
       "multi_domain_followup",
       "comprehensive_surface_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18593,8 +19213,11 @@
       "multi_domain_followup",
       "comprehensive_debt_r01_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18647,6 +19270,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r02_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18701,6 +19325,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r03_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18755,8 +19380,11 @@
       "multi_domain_followup",
       "comprehensive_debt_r04_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18809,6 +19437,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r05_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18863,6 +19492,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r06_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -18917,8 +19547,11 @@
       "multi_domain_followup",
       "comprehensive_debt_r07_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -18971,6 +19604,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r08_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -19025,6 +19659,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r09_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -19079,8 +19714,11 @@
       "multi_domain_followup",
       "comprehensive_debt_r10_followup"
     ],
+    "runtime_repair_guards": [
+      "validator_failure"
+    ],
     "oracle_feasible_set_empty": false,
-    "expected_repair_or_abstain": false,
+    "expected_repair_or_abstain": true,
     "expected_valid_commitment_fields": [
       "priority_order",
       "constraint_boundary",
@@ -19133,6 +19771,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r11_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [
@@ -19187,6 +19826,7 @@
       "multi_domain_followup",
       "comprehensive_debt_r12_followup"
     ],
+    "runtime_repair_guards": [],
     "oracle_feasible_set_empty": false,
     "expected_repair_or_abstain": false,
     "expected_valid_commitment_fields": [

@@ -99,9 +99,8 @@ const summary = observedMethods.map((method) => {
   const attempted = methodRows.filter((row) => bool(row.attempted));
   const evaluable = attempted.filter((row) => !bool(row.invalid_run));
   const structured = evaluable.filter((row) => bool(row.structured_commitment_available));
-  const repairRows = evaluable.filter((row) =>
-    bool(row.repair_expected) || bool(row.repair_triggered) || bool(row.abstain_triggered)
-  );
+  const noFeasibleRows = evaluable.filter((row) => bool(row.no_feasible_expected));
+  const repairRows = evaluable.filter((row) => bool(row.repair_expected));
   const systemPass = evaluable.filter((row) =>
     bool(row.output_available) || bool(row.abstain_triggered) || (bool(row.repair_triggered) && bool(row.repair_correct))
   );
@@ -114,11 +113,14 @@ const summary = observedMethods.map((method) => {
     system_completion_pass_rate: rate(systemPass.length, evaluable.length),
     output_availability_rate: rate(evaluable.filter((row) => bool(row.output_available)).length, evaluable.length),
     structured_commitment_availability_rate: rate(structured.length, evaluable.length),
+    structured_commitment_denominator: structured.length,
+    no_feasible_denominator: noFeasibleRows.length,
+    repair_denominator: repairRows.length,
     hard_constraint_violation_rate: rate(structured.filter((row) => bool(row.hard_constraint_violation)).length, structured.length),
     evidence_coverage_failure_rate: rate(structured.filter((row) => bool(row.evidence_coverage_failure)).length, structured.length),
     witness_drop_rate: rate(structured.filter((row) => bool(row.witness_drop)).length, structured.length),
     consequence_continuity_failure_rate: rate(structured.filter((row) => bool(row.consequence_continuity_failure)).length, structured.length),
-    no_feasible_emission_rate: rate(structured.filter((row) => bool(row.no_feasible_emission)).length, structured.length),
+    no_feasible_emission_rate: rate(noFeasibleRows.filter((row) => bool(row.no_feasible_emission)).length, noFeasibleRows.length),
     abstention_repair_correctness_rate: rate(repairRows.filter((row) => bool(row.repair_correct)).length, repairRows.length),
     inappropriate_personalization_rate: rate(structured.filter((row) => bool(row.inappropriate_personalization)).length, structured.length),
     surface_realization_failure_rate: rate(evaluable.filter((row) => bool(row.surface_realization_failure)).length, evaluable.length),
@@ -136,6 +138,9 @@ const headers = [
   'system_completion_pass_rate',
   'output_availability_rate',
   'structured_commitment_availability_rate',
+  'structured_commitment_denominator',
+  'no_feasible_denominator',
+  'repair_denominator',
   'hard_constraint_violation_rate',
   'evidence_coverage_failure_rate',
   'witness_drop_rate',

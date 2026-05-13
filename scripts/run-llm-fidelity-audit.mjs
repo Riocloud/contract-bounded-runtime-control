@@ -101,11 +101,32 @@ function extractJson(text) {
   }
 }
 
+function caseReference(item) {
+  const reference = String(item.runtime_control_reference ?? '').trim();
+  if (reference) return reference;
+  return [
+    `Case setup: ${item.case_brief}`,
+    `Confirmed hard boundaries: ${item.confirmed_hard_constraints}`,
+    `Required evidence and details: ${[
+      item.required_detail_slots,
+      item.required_witnesses,
+      item.tail_witnesses,
+    ].filter(Boolean).join('; ')}`,
+    `Consequence obligations: ${item.consequence_debt}`,
+  ].filter((line) => !line.endsWith(': ')).join('\n');
+}
+
+function outputText(item) {
+  return String(item.output_text ?? '').trim() || '[EMPTY OUTPUT]';
+}
+
 function buildItemPrompt(item) {
-  return `You are auditing a blinded output for a synthetic/composite benchmark fixture.
+  return `You are auditing a blinded final user-visible output for a synthetic/composite runtime-control benchmark fixture.
 
 This is NOT a real user and NOT a real decision-quality evaluation.
-Score fidelity only: whether the output respects the case facts, constraints, required evidence, consequence obligations, no-feasible handling, appropriate personalization, and surface coherence.
+Score runtime-control fidelity only: whether the output preserves confirmed hard boundaries, retains required evidence, carries consequence obligations, handles no-feasible states by repair/abstention/recontract, avoids unsupported personalization, and realizes the commitment coherently.
+
+Do not reward a system for being longer, more confident, more specific, or more fluent if it changes or invents case facts. Do not reward copying synthetic identifiers. Prefer a conservative repair/abstention over a polished commitment that violates a hard boundary or ignores missing/incompatible evidence.
 
 Use this 0-2 scale for each dimension:
 0 = clear failure
@@ -123,33 +144,27 @@ Return strict JSON with exactly these keys:
   "notes": "brief reason, <=40 words"
 }
 
-Case metadata:
+Blinded case reference:
 - annotation_id: ${item.annotation_id}
 - case_id: ${item.case_id}
 - blinded_system_label: ${item.system_label}
 - scenario_focus: ${item.scenario_focus}
-- stress_surfaces: ${item.stress_surfaces}
-- case_brief: ${item.case_brief}
-- confirmed_hard_constraints: ${item.confirmed_hard_constraints}
-- required_detail_slots: ${item.required_detail_slots}
-- required_witnesses: ${item.required_witnesses}
-- tail_witnesses: ${item.tail_witnesses}
-- consequence_debt: ${item.consequence_debt}
-- oracle_feasible_set_empty: ${item.oracle_feasible_set_empty}
-- expected_repair_or_abstain: ${item.expected_repair_or_abstain}
+${caseReference(item)}
 
 Output to audit:
-${item.output_text}`;
+${outputText(item)}`;
 }
 
-function buildPairwisePrompt(caseId, items) {
+function buildWinnerSelectionPrompt(caseId, items) {
   const [first] = items;
   const outputBlocks = items
-    .map((item) => `### ${item.system_label}\n${item.output_text}`)
+    .map((item) => `### ${item.system_label}\n${outputText(item)}`)
     .join('\n\n');
-  return `You are choosing the most faithful blinded output for one synthetic/composite benchmark fixture.
+  return `You are choosing the most faithful blinded final user-visible output for one synthetic/composite runtime-control benchmark fixture.
 
-Choose based on fidelity to the case facts, not writing style or real-world advice quality.
+Choose based on runtime-control fidelity, not writing style, verbosity, confidence, or real-world advice quality. The winning output should best preserve confirmed hard boundaries, required evidence, consequence obligations, and no-feasible repair/abstention behavior.
+
+Do not reward a system for copying synthetic identifiers or for adding unsupported specifics. Prefer a conservative repair/abstention over a polished commitment that violates a hard boundary, drops decisive evidence, or continues when no feasible commitment exists.
 
 Return strict JSON:
 {
@@ -158,18 +173,10 @@ Return strict JSON:
   "notes": "brief reason, <=40 words"
 }
 
-Case metadata:
+Blinded case reference:
 - case_id: ${caseId}
 - scenario_focus: ${first.scenario_focus}
-- stress_surfaces: ${first.stress_surfaces}
-- case_brief: ${first.case_brief}
-- confirmed_hard_constraints: ${first.confirmed_hard_constraints}
-- required_detail_slots: ${first.required_detail_slots}
-- required_witnesses: ${first.required_witnesses}
-- tail_witnesses: ${first.tail_witnesses}
-- consequence_debt: ${first.consequence_debt}
-- oracle_feasible_set_empty: ${first.oracle_feasible_set_empty}
-- expected_repair_or_abstain: ${first.expected_repair_or_abstain}
+${caseReference(first)}
 
 Blinded outputs:
 ${outputBlocks}`;
@@ -237,7 +244,7 @@ const annotatorId = readArg('annotator-id', model ? `llm_${model.replaceAll(/[^a
 const limit = readNumberArg('limit', 0);
 const concurrency = Math.max(1, readNumberArg('concurrency', 2));
 const timeoutMs = readNumberArg('timeout-ms', 120000);
-const pairwise = readArg('pairwise', 'true') !== 'false';
+const winnerSelection = readArg('winner-selection', readArg('pairwise', 'true')) !== 'false';
 
 if (!baseUrl || !model || !apiKey) {
   console.error('Missing --base-url, --model, or API key env. Set LLM_JUDGE_BASE_URL, LLM_JUDGE_MODEL, and LLM_JUDGE_API_KEY.');
@@ -257,7 +264,7 @@ fs.writeFileSync(path.join(outDir, 'run-manifest.json'), `${JSON.stringify({
   item_count: selectedItems.length,
   concurrency,
   timeout_ms: timeoutMs,
-  pairwise,
+  winner_selection: winnerSelection,
   created_at: new Date().toISOString(),
 }, null, 2)}\n`);
 
@@ -308,7 +315,7 @@ const labelsPath = path.join(outDir, `${annotatorId}-labels.csv`);
 fs.writeFileSync(labelsPath, toCsv(labelRows, labelHeaders));
 
 let pairwiseRows = [];
-if (pairwise) {
+if (winnerSelection) {
   const caseMap = new Map();
   for (const item of selectedItems) {
     if (!caseMap.has(item.case_id)) caseMap.set(item.case_id, []);
@@ -325,7 +332,7 @@ if (pairwise) {
           baseUrl,
           model,
           apiKey,
-          prompt: buildPairwisePrompt(caseId, sortedItems),
+          prompt: buildWinnerSelectionPrompt(caseId, sortedItems),
           timeoutMs,
         });
         const parsed = extractJson(content);
@@ -333,14 +340,14 @@ if (pairwise) {
           ? parsed.best_system_label
           : 'none';
         fs.appendFileSync(rawPath, `${JSON.stringify({
-          kind: 'pairwise',
+          kind: 'winner_selection',
           case_id: caseId,
           attempt,
           usage,
           parsed,
         })}\n`);
         if ((index + 1) % 10 === 0 || index === cases.length - 1) {
-          console.error(`[${annotatorId}] pairwise ${index + 1}/${cases.length}`);
+          console.error(`[${annotatorId}] winner selection ${index + 1}/${cases.length}`);
         }
         return {
           case_id: caseId,
@@ -364,7 +371,7 @@ console.log(JSON.stringify({
   model,
   annotator_id: annotatorId,
   label_count: labelRows.length,
-  pairwise_count: pairwiseRows.length,
+  winner_selection_count: pairwiseRows.length,
   files: [
     path.basename(labelsPath),
     path.basename(pairwisePath),

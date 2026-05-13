@@ -77,6 +77,7 @@ const variantSpecs = [
     suffix: 'tail',
     failure: ['witness_drop', 'consequence_debt'],
     infeasible: false,
+    repairGuard: () => null,
     observation: 'A rare late witness is decisive but appears after more salient background details.',
   },
   {
@@ -84,6 +85,7 @@ const variantSpecs = [
     suffix: 'infeasible',
     failure: ['no_feasible_candidate', 'hidden_exception'],
     infeasible: true,
+    repairGuard: () => 'contract_conflict',
     observation: 'Two explicitly confirmed requirements cannot both be satisfied by any available commitment.',
   },
   {
@@ -91,6 +93,7 @@ const variantSpecs = [
     suffix: 'falsehard',
     failure: ['false_hardening', 'over_personalization'],
     infeasible: false,
+    repairGuard: () => null,
     observation: 'A soft preference is phrased emotionally and can be mistaken for a confirmed hard predicate.',
   },
   {
@@ -98,6 +101,7 @@ const variantSpecs = [
     suffix: 'exception',
     failure: ['hidden_exception', 'witness_drop'],
     infeasible: false,
+    repairGuard: (replicateIndex) => (replicateIndex % 2 === 0 ? 'missing_evidence' : null),
     observation: 'A confirmed predicate has a scoped exception that is easy to lose when compressing evidence.',
   },
   {
@@ -105,6 +109,7 @@ const variantSpecs = [
     suffix: 'surface',
     failure: ['surface_mismatch', 'over_personalization'],
     infeasible: false,
+    repairGuard: (replicateIndex) => (replicateIndex % 2 === 0 ? 'unsupported_commitment' : null),
     observation: 'The structured commitment can be valid while the realized prose implies an unsupported stronger claim.',
   },
   {
@@ -112,6 +117,7 @@ const variantSpecs = [
     suffix: 'debt',
     failure: ['consequence_debt', 'witness_drop'],
     infeasible: false,
+    repairGuard: (replicateIndex) => (replicateIndex % 3 === 0 ? 'validator_failure' : null),
     observation: 'An earlier local choice creates a later obligation that must be carried into the result.',
   },
 ];
@@ -123,6 +129,7 @@ function withVariant(base, variant, focusIndex, variantIndex, replicateIndex) {
   const hiddenException = `${base.focus}_${variant.suffix}_${replicateSuffix}_scoped_exception`;
   const tailWitness = `${base.tail[0]}_${variant.suffix}_${replicateSuffix}`;
   const requiredWitnesses = [...base.witnesses, variantAnchor];
+  const repairGuard = variant.repairGuard(replicateIndex);
   const hard = variant.infeasible
     ? [
       ...base.hard,
@@ -152,8 +159,9 @@ function withVariant(base, variant, focusIndex, variantIndex, replicateIndex) {
     required_witnesses: requiredWitnesses,
     tail_witnesses: [tailWitness],
     consequence_debt: [...base.debt, `${base.focus}_${variant.suffix}_${replicateSuffix}_followup`],
+    runtime_repair_guards: repairGuard ? [repairGuard] : [],
     oracle_feasible_set_empty: variant.infeasible,
-    expected_repair_or_abstain: variant.infeasible,
+    expected_repair_or_abstain: Boolean(repairGuard),
     expected_valid_commitment_fields: variant.infeasible
       ? ['abstain_reason', 'needed_clarification']
       : base.validFields,

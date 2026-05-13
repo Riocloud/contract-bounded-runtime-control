@@ -16,6 +16,7 @@
       "required_witnesses",
       "tail_witnesses",
       "consequence_debt",
+      "runtime_repair_guards",
       "oracle_feasible_set_empty",
       "expected_repair_or_abstain",
       "expected_valid_commitment_fields",
@@ -35,6 +36,13 @@
       "required_witnesses": { "type": "array", "items": { "type": "string", "minLength": 1 } },
       "tail_witnesses": { "type": "array", "items": { "type": "string", "minLength": 1 } },
       "consequence_debt": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "runtime_repair_guards": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["contract_conflict", "missing_evidence", "unsupported_commitment", "validator_failure"]
+        }
+      },
       "oracle_feasible_set_empty": { "type": "boolean" },
       "expected_repair_or_abstain": { "type": "boolean" },
       "expected_valid_commitment_fields": { "type": "array", "items": { "type": "string", "minLength": 1 } },

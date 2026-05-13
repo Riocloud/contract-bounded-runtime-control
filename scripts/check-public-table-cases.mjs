@@ -133,8 +133,8 @@ for (const row of table12.means) {
 requireFields(table12.agreement ?? {}, [
   'dimension_label_count',
   'exact_agreement_rate',
-  'pairwise_case_count',
-  'pairwise_agreement_rate',
+  'winner_selection_case_count',
+  'winner_selection_agreement_rate',
 ], 'table 12 agreement');
 
 console.log(JSON.stringify({
