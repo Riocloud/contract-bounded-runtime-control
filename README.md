@@ -109,7 +109,8 @@ Additional checked-in aggregate files:
   over blinded model-judge winner selections.
 - `data/results/selector-baseline-mmr.csv`: selector-level comparison between
   CBEA activation and an MMR relevance-diversity baseline at the same evidence
-  budget.
+  budget. This diagnostic replays the fixed runtime activation policy used by
+  the released harness; it is not a learned or tuned CBEA selector.
 - `data/results/production-data-wash-summary.csv` and
   `data/results/production-runtime-coverage.csv`: aggregate-only production
   data-wash denominators and runtime-object coverage.
