@@ -9,7 +9,7 @@ const SKIP_FILES = new Set(['scripts/check-privacy-boundary.mjs']);
 const DENY_PATTERNS = [
   /sk-[A-Za-z0-9_-]{16,}/,
   /\/opt\/prediction/,
-  /\/Users\/vino/,
+  /\/Users\/[^/\s]+/,
   /Prediction-cn-backend/,
   /decisionsandbox\.cn/,
   /minimax-turn/i,
@@ -42,6 +42,7 @@ function candidateFiles() {
     return execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], {
       cwd: ROOT,
       encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
     })
       .split(/\r?\n/)
       .filter(Boolean)
