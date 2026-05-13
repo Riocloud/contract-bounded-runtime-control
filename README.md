@@ -2,10 +2,10 @@
 
 This repository contains a sanitized reproducibility package for experiments on
 contract-bounded runtime control in long-horizon personalized language systems.
-It is intended to support paper review and follow-up replication of the
+It is intended to support artifact review and follow-up replication of the
 synthetic/composite benchmark results.
 
-The repository does not contain the paper source, LaTeX, PDF, production
+The repository does not contain write-up source, compiled documents, production
 backend code, raw production histories, user identifiers, credentials, or
 server configuration.
 
@@ -31,11 +31,11 @@ mismatch. They do not include raw production histories, raw biographies,
 identifiers, contact information, billing records, individual timestamps, or
 identifiable life-event combinations.
 
-The deployment diagnostics discussed in the accompanying paper are
-aggregate-only; this repository does not publish session rows. Long-history
-payload diagnostics contain only synthetic fixture identifiers, method labels,
-provider-reported usage counts, and latency measurements; prompts and generated
-text are not included.
+The deployment diagnostics included in this release are aggregate-only; this
+repository does not publish session rows. Long-history payload diagnostics
+contain only synthetic fixture identifiers, method labels, provider-reported
+usage counts, and latency measurements; prompts and generated text are not
+included.
 
 The checked-in result CSVs are release artifacts, not raw run logs. They contain
 fixture identifiers, method labels, automatic score flags, aggregate metrics,
@@ -59,9 +59,9 @@ npm run check
 
 This writes model-judge summary files under `runs/llm-judge-summary/` and runs
 the automatic-metric, bootstrap-interval, horizon-stability, long-history
-payload, model-judge, final-paper table, and privacy-boundary checks under
-`runs/`. It also validates the minimal public table test cases for the final
-appendix tables.
+payload, model-judge, release-table, and privacy-boundary checks under
+`runs/`. It also validates the minimal public table test cases for the release
+tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -86,10 +86,10 @@ npm run summarize:horizon
 npm run summarize:long-history
 ```
 
-To validate the checked-in artifacts against the final paper table values:
+To validate the checked-in artifacts against the release table values:
 
 ```bash
-npm run check:paper
+npm run check:release
 ```
 
 Additional checked-in aggregate files:
@@ -161,7 +161,7 @@ node scripts/run-llm-fidelity-audit.mjs \
   --pairwise=true
 ```
 
-The final-paper 90-case blinded judge sample is checked in under
+The release 90-case blinded judge sample is checked in under
 `data/model_judge/balanced-90/`. To build a fresh balanced sample from the
 released synthetic/composite fixtures and matched score rows:
 
@@ -184,13 +184,6 @@ among blinded outputs.
 The checked-in run manifests record model identifiers, concurrency, and timeout
 settings. They intentionally omit API keys, endpoint URLs, precise calendar
 timestamps, raw provider responses, and local machine paths.
-
-## Citation
-
-If you use these artifacts, cite the accompanying paper:
-
-> Contract-Bounded Runtime Control for Long-Horizon Personalized Language
-> Systems.
 
 ## License
 

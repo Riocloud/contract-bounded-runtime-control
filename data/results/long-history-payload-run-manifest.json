@@ -1,6 +1,6 @@
 {
   "evidence_status": "matched_long_history_payload_diagnostic",
-  "submission_use": "paper_reproduction_artifact",
+  "release_use": "reproduction_artifact",
   "warning": "Synthetic/composite fixture identifiers and aggregate provider usage only; no prompts, model outputs, raw production histories, credentials, endpoint URLs, local paths, or timestamps are included.",
   "prompt_count": 100,
   "paired_fixture_count": 50,

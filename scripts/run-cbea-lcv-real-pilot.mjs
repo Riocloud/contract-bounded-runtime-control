@@ -785,7 +785,7 @@ async function main() {
   const runFinishedAt = new Date().toISOString();
   const manifest = {
     evidence_status: 'matched_real_model_outputs',
-    submission_use: 'paper_reproduction_artifact',
+    release_use: 'reproduction_artifact',
     warning: 'Synthetic/composite fixtures only; no raw production histories or user identifiers are included.',
     fixture_count: selectedFixtures.length,
     method_count: methods.length,

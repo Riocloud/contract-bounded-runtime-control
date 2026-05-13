@@ -1,6 +1,6 @@
 {
   "evidence_status": "matched_real_model_outputs",
-  "submission_use": "paper_reproduction_artifact",
+  "release_use": "reproduction_artifact",
   "warning": "Synthetic/composite fixtures only; no raw production histories, user identifiers, credentials, raw model outputs, local paths, or endpoint URLs are included.",
   "fixture_count": 360,
   "method_count": 9,

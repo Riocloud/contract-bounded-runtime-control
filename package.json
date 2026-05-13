@@ -18,8 +18,8 @@
     "test:harness": "node --test scripts/check-clean-harness.test.mjs",
     "check:privacy": "node scripts/check-privacy-boundary.mjs",
     "check:table-cases": "node scripts/check-public-table-cases.mjs",
-    "check:paper": "node scripts/check-paper-tables.mjs",
-    "check": "npm run test:harness && npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:horizon && npm run summarize:long-history && npm run summarize:judge && npm run check:paper && npm run check:table-cases && npm run check:privacy"
+    "check:release": "node scripts/check-release-tables.mjs",
+    "check": "npm run test:harness && npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:horizon && npm run summarize:long-history && npm run summarize:judge && npm run check:release && npm run check:table-cases && npm run check:privacy"
   },
   "engines": {
     "node": ">=20"

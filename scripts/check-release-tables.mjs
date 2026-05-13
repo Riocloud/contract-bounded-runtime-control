@@ -271,4 +271,4 @@ assertEqual(readCsv('data/results/long-history-payload-results.csv').length, 300
 assertEqual(readCsv('data/model_judge/combined-labels.csv').length, 540, 'combined model-judge label count');
 assertEqual(readCsv('data/model_judge/combined-pairwise.csv').length, 180, 'combined model-judge winner-selection count');
 
-console.log(JSON.stringify({ paper_table_check: 'passed' }, null, 2));
+console.log(JSON.stringify({ release_table_check: 'passed' }, null, 2));

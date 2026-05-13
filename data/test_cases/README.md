@@ -1,7 +1,7 @@
 # Minimal Public Table Test Cases
 
-This directory contains tiny synthetic shape checks for the final appendix
-tables in the accompanying paper.
+This directory contains tiny synthetic shape checks for the released aggregate
+tables.
 
 These files are not the benchmark evidence. They are release-safe test cases
 for validating table schemas, denominators, and privacy boundaries.
