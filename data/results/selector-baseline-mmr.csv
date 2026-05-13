@@ -1,0 +1,3 @@
+selector,fixture_count,avg_selected,hard_constraint_recall,required_witness_recall,tail_witness_recall,consequence_debt_recall,control_evidence_recall
+cbea_lcv_selector,360,10.67,1.0000,1.0000,1.0000,0.9889,0.9970
+mmr_relevance_diversity,360,12.00,1.0000,0.9444,0.6667,0.0000,0.6960

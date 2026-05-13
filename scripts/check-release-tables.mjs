@@ -219,6 +219,35 @@ const winnerSummary = {
   validator_only: { count: '32', win_rate: '0.1778' },
 };
 
+const judgeWinnerBootstrap = {
+  cbea_lcv_runtime: { observed: '0.5000', ci_low: '0.4167', ci_high: '0.5833' },
+  raw_prompt_stuffing: { observed: '0.3056', ci_low: '0.2278', ci_high: '0.3833' },
+  validator_only: { observed: '0.1778', ci_low: '0.1111', ci_high: '0.2500' },
+  tie: { observed: '0.0167', ci_low: '0.0000', ci_high: '0.0389' },
+  cbea_minus_raw: { observed: '0.1944', ci_low: '0.0500', ci_high: '0.3389' },
+};
+
+const selectorBaselines = {
+  cbea_lcv_selector: {
+    fixture_count: '360',
+    avg_selected: '10.67',
+    hard_constraint_recall: '1.0000',
+    required_witness_recall: '1.0000',
+    tail_witness_recall: '1.0000',
+    consequence_debt_recall: '0.9889',
+    control_evidence_recall: '0.9970',
+  },
+  mmr_relevance_diversity: {
+    fixture_count: '360',
+    avg_selected: '12.00',
+    hard_constraint_recall: '1.0000',
+    required_witness_recall: '0.9444',
+    tail_witness_recall: '0.6667',
+    consequence_debt_recall: '0.0000',
+    control_evidence_recall: '0.6960',
+  },
+};
+
 const longHistory = {
   MiniMax: { n_pairs: '50', raw_input_p50: '20401', cbea_input_p50: '5154', delta_input_p50: '15258', raw_output_p50: '700', cbea_output_p50: '700', delta_latency_mean_s: '1.74', delta_latency_p50_s: '1.54' },
   DeepSeek: { n_pairs: '50', raw_input_p50: '21364', cbea_input_p50: '5484', delta_input_p50: '15929', raw_output_p50: '700', cbea_output_p50: '700', delta_latency_mean_s: '2.06', delta_latency_p50_s: '1.97' },
@@ -260,6 +289,10 @@ if (fs.existsSync('runs/horizon-stability.csv')) {
 
 assertCsvRows('runs/llm-judge-summary/llm-fidelity-summary.csv', 'system', judgeSummary);
 assertCsvRows('runs/llm-judge-summary/llm-fidelity-winner-selection-summary.csv', 'winner', winnerSummary);
+assertCsvRows('data/results/judge-winner-bootstrap.csv', 'statistic', judgeWinnerBootstrap);
+if (fs.existsSync('runs/judge-winner-bootstrap.csv')) assertCsvRows('runs/judge-winner-bootstrap.csv', 'statistic', judgeWinnerBootstrap);
+assertCsvRows('data/results/selector-baseline-mmr.csv', 'selector', selectorBaselines);
+if (fs.existsSync('runs/selector-baseline-mmr.csv')) assertCsvRows('runs/selector-baseline-mmr.csv', 'selector', selectorBaselines);
 
 assertCsvRows('data/results/long-history-payload-summary.csv', 'endpoint', longHistory);
 if (fs.existsSync('runs/long-history-payload-summary.csv')) assertCsvRows('runs/long-history-payload-summary.csv', 'endpoint', longHistory);

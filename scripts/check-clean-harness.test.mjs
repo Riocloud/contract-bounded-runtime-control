@@ -173,6 +173,36 @@ test('LCV-gated CBEA carries compiled consequence obligations forward structural
   assert.match(source, /consequence_obligations:\s*mergeUnique\(parsed\.consequence_obligations,\s*fixture\.consequence_debt\)/);
 });
 
+test('raw and long-context LCV-gated baselines are runnable prompt-dump methods', () => {
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-lcv-gate-prompts-'));
+  const result = runNode([
+    'scripts/run-cbea-lcv-real-pilot.mjs',
+    '--fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json',
+    '--limit=1',
+    '--methods=raw_prompt_stuffing_lcv_gate,long_context_lcv_gate',
+    '--dump-prompts',
+    `--out=${outDir}`,
+  ]);
+
+  assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  const promptDump = fs.readFileSync(path.join(outDir, 'prompt-dump.jsonl'), 'utf8');
+  assert.match(promptDump, /Raw prompt stuffing \+ LCV gate/);
+  assert.match(promptDump, /Long-context LLM \+ LCV gate/);
+  assert.match(promptDump, /apply the same post-generation structured validator/);
+  assert.match(promptDump, /Do not use contract-bounded evidence activation/);
+});
+
+test('LCV-gated raw and long-context baselines use full evidence but no CBEA carry-forward', () => {
+  const source = fs.readFileSync(path.join(repoRoot, 'scripts/run-cbea-lcv-real-pilot.mjs'), 'utf8');
+  const carryForwardFunction = source.match(/function methodCarriesValidatedState\(method\) \{[\s\S]*?\n\}/)?.[0] || '';
+
+  assert.match(source, /raw_prompt_stuffing_lcv_gate/);
+  assert.match(source, /long_context_lcv_gate/);
+  assert.match(source, /methodHasCoverageValidationGate/);
+  assert.doesNotMatch(carryForwardFunction, /raw_prompt_stuffing_lcv_gate/);
+  assert.doesNotMatch(carryForwardFunction, /long_context_lcv_gate/);
+});
+
 test('result rescore treats normalized consequence obligations as covered', () => {
   const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-rescore-consequence-'));
   const fixturesPath = path.join(outDir, 'fixtures.json');
@@ -253,4 +283,56 @@ test('judge sample builder produces a 90-case balanced audit set', () => {
   assert.equal(manifest.group_count, 30);
   assert.equal(manifest.selected_cases, 90);
   assert.equal(manifest.reference_mode, 'plain_english_runtime_control_reference');
+});
+
+test('judge winner bootstrap reports case-clustered confidence intervals', () => {
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-judge-bootstrap-'));
+  const pairwisePath = path.join(outDir, 'pairwise.csv');
+  const keyPath = path.join(outDir, 'key.csv');
+  const outPath = path.join(outDir, 'judge-winner-bootstrap.csv');
+  fs.writeFileSync(pairwisePath, [
+    'case_id,annotator_id,best_system_label,notes',
+    'C001,j1,System A,',
+    'C001,j2,System B,',
+    'C002,j1,System A,',
+    'C002,j2,System A,',
+  ].join('\n') + '\n');
+  fs.writeFileSync(keyPath, [
+    'annotation_id,case_id,fixture_id,system_label,baseline_id',
+    'C001-A,C001,f1,System A,cbea_lcv_runtime',
+    'C001-B,C001,f1,System B,raw_prompt_stuffing',
+    'C002-A,C002,f2,System A,cbea_lcv_runtime',
+    'C002-B,C002,f2,System B,raw_prompt_stuffing',
+  ].join('\n') + '\n');
+
+  const result = runNode([
+    'scripts/bootstrap-judge-wins.mjs',
+    `--pairwise=${pairwisePath}`,
+    `--key=${keyPath}`,
+    `--out=${outPath}`,
+    '--iterations=200',
+    '--seed=7',
+  ]);
+
+  assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  const output = fs.readFileSync(outPath, 'utf8');
+  assert.match(output, /cbea_lcv_runtime,0\.7500,/);
+  assert.match(output, /cbea_minus_raw,0\.5000,/);
+});
+
+test('selector diagnostic compares CBEA against an MMR retrieval baseline', () => {
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-selector-baseline-'));
+  const outPath = path.join(outDir, 'selector-baseline-mmr.csv');
+  const result = runNode([
+    'scripts/summarize-selector-baselines.mjs',
+    '--fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json',
+    `--out=${outPath}`,
+    '--limit=24',
+  ]);
+
+  assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  const output = fs.readFileSync(outPath, 'utf8');
+  assert.match(output, /^selector,fixture_count,avg_selected,hard_constraint_recall,required_witness_recall,tail_witness_recall,consequence_debt_recall,control_evidence_recall/m);
+  assert.match(output, /^cbea_lcv_selector,24,/m);
+  assert.match(output, /^mmr_relevance_diversity,24,/m);
 });

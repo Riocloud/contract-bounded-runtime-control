@@ -59,9 +59,9 @@ npm run check
 
 This writes model-judge summary files under `runs/llm-judge-summary/` and runs
 the automatic-metric, bootstrap-interval, horizon-stability, long-history
-payload, model-judge, release-table, and privacy-boundary checks under
-`runs/`. It also validates the minimal public table test cases for the release
-tables.
+payload, model-judge, judge-winner bootstrap, selector-baseline, release-table,
+and privacy-boundary checks under `runs/`. It also validates the minimal public
+table test cases for the release tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -73,17 +73,20 @@ To summarize the released model-judge labels only:
 
 ```bash
 npm run summarize:judge
+npm run summarize:judge-bootstrap
 ```
 
 To recompute automatic metrics, paired bootstrap intervals, and horizon
 stability from the released per-row score table, plus the long-history payload
-summary from the released latency diagnostic rows:
+summary from the released latency diagnostic rows and the selector-level MMR
+diagnostic:
 
 ```bash
 npm run summarize:metrics
 npm run summarize:bootstrap
 npm run summarize:horizon
 npm run summarize:long-history
+npm run summarize:selector-baselines
 ```
 
 To validate the checked-in artifacts against the release table values:
@@ -102,6 +105,11 @@ Additional checked-in aggregate files:
   and latency rows for the long-history payload diagnostic.
 - `data/results/long-history-payload-summary.csv`: aggregate values reported in
   the long-history payload table.
+- `data/results/judge-winner-bootstrap.csv`: case-cluster bootstrap intervals
+  over blinded model-judge winner selections.
+- `data/results/selector-baseline-mmr.csv`: selector-level comparison between
+  CBEA activation and an MMR relevance-diversity baseline at the same evidence
+  budget.
 - `data/results/production-data-wash-summary.csv` and
   `data/results/production-runtime-coverage.csv`: aggregate-only production
   data-wash denominators and runtime-object coverage.

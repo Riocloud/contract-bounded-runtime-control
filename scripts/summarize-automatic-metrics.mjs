@@ -4,9 +4,11 @@ import path from 'node:path';
 
 const METHODS = [
   'raw_prompt_stuffing',
+  'raw_prompt_stuffing_lcv_gate',
   'summarized_profile',
   'dense_retrieval_rag',
   'long_context_llm',
+  'long_context_lcv_gate',
   'tool_memory_agent',
   'validator_only',
   'runtime_without_cbea',

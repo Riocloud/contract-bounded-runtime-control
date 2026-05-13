@@ -10,9 +10,11 @@ const BENCHMARK_SYSTEM_MESSAGE = 'Return valid JSON for a synthetic research ben
 
 const METHODS = [
   'raw_prompt_stuffing',
+  'raw_prompt_stuffing_lcv_gate',
   'summarized_profile',
   'dense_retrieval_rag',
   'long_context_llm',
+  'long_context_lcv_gate',
   'tool_memory_agent',
   'validator_only',
   'runtime_without_cbea',
@@ -25,9 +27,11 @@ const METHODS = [
 
 const METHOD_LABELS = {
   raw_prompt_stuffing: 'Raw prompt stuffing',
+  raw_prompt_stuffing_lcv_gate: 'Raw prompt stuffing + LCV gate',
   summarized_profile: 'Summarized profile',
   dense_retrieval_rag: 'Dense retrieval RAG',
   long_context_llm: 'Long-context LLM',
+  long_context_lcv_gate: 'Long-context LLM + LCV gate',
   tool_memory_agent: 'Tool/memory agent',
   validator_only: 'Validator-only',
   runtime_without_cbea: 'Runtime without CBEA',
@@ -123,7 +127,12 @@ function selectMethodEvidence(fixture, method) {
       || fixture.required_witnesses.includes(item.id)
     ).slice(0, 5);
   }
-  if (method === 'long_context_llm' || method === 'raw_prompt_stuffing') {
+  if (
+    method === 'long_context_llm'
+    || method === 'long_context_lcv_gate'
+    || method === 'raw_prompt_stuffing'
+    || method === 'raw_prompt_stuffing_lcv_gate'
+  ) {
     return all;
   }
   if (method === 'tool_memory_agent') {
@@ -178,6 +187,8 @@ function runtimeRepairExpectedByRules(fixture) {
 
 function methodHasRuntimeRepairGate(method) {
   return [
+    'raw_prompt_stuffing_lcv_gate',
+    'long_context_lcv_gate',
     'validator_only',
     'runtime_without_cbea',
     'cbea_lcv_runtime',
@@ -189,6 +200,13 @@ function methodCarriesValidatedState(method) {
   return [
     'cbea_lcv_runtime',
     'cbea_no_repair_abstain',
+  ].includes(method);
+}
+
+function methodHasCoverageValidationGate(method) {
+  return [
+    'raw_prompt_stuffing_lcv_gate',
+    'long_context_lcv_gate',
   ].includes(method);
 }
 
@@ -225,34 +243,68 @@ function applyValidatedCarryForward(fixture, method, parsed) {
   };
 }
 
+function candidateFailsCoverageValidation(fixture, parsed) {
+  const commitmentType = String(parsed.commitment_type || '').toLowerCase();
+  if (['repair', 'abstain', 'recontract', 'fallback'].includes(commitmentType)) return false;
+  const outputText = String(parsed.output_text || '');
+  const hardText = joinedLower(asArray(parsed.hard_constraints_used));
+  const witnessText = joinedLower([
+    ...asArray(parsed.evidence_witness_ids),
+    ...asArray(parsed.covered_requirements),
+    outputText,
+  ]);
+  const consequenceText = joinedLower([
+    ...asArray(parsed.consequence_obligations),
+    outputText,
+  ]);
+  return (
+    !includesAll(hardText, fixture.confirmed_hard_constraints)
+    || !includesAll(witnessText, fixture.required_witnesses)
+    || (fixture.tail_witnesses.length > 0 && !includesAll(witnessText, fixture.tail_witnesses))
+    || !includesAll(witnessText, fixture.required_detail_slots)
+    || (fixture.consequence_debt.length > 0 && !includesAll(consequenceText, fixture.consequence_debt))
+  );
+}
+
+function repairLikeParsed(fixture, parsed, reason) {
+  return {
+    ...parsed,
+    commitment_type: runtimeNoFeasibleByRules(fixture) ? 'abstain' : 'repair',
+    selected_option: null,
+    repair_or_abstain_reason: parsed.repair_or_abstain_reason || reason,
+    output_text: parsed.output_text || 'I need to repair this commitment before giving a supported answer.',
+  };
+}
+
 function applyRuntimeValidation(fixture, method, parsed) {
   const carriedParsed = applyValidatedCarryForward(fixture, method, parsed);
   if (!methodHasRuntimeRepairGate(method)) return carriedParsed;
-  if (!runtimeRepairExpectedByRules(fixture)) return carriedParsed;
   if (method === 'cbea_no_repair_abstain') return parsed;
   if (method === 'cbea_no_coverage_tail' && !runtimeNoFeasibleByRules(fixture)) return parsed;
   const reason = runtimeNoFeasibleByRules(fixture)
     ? 'contract_conflict'
     : (fixture.runtime_repair_guards || [])[0] || 'validator_failure';
-  return {
-    ...carriedParsed,
-    commitment_type: runtimeNoFeasibleByRules(fixture) ? 'abstain' : 'repair',
-    selected_option: null,
-    repair_or_abstain_reason: carriedParsed.repair_or_abstain_reason || reason,
-    output_text: carriedParsed.output_text || 'I need to repair this commitment before giving a supported answer.',
-  };
+  if (methodHasCoverageValidationGate(method) && candidateFailsCoverageValidation(fixture, carriedParsed)) {
+    return repairLikeParsed(fixture, carriedParsed, runtimeNoFeasibleByRules(fixture) ? 'contract_conflict' : 'unsupported_commitment');
+  }
+  if (!runtimeRepairExpectedByRules(fixture)) return carriedParsed;
+  return repairLikeParsed(fixture, carriedParsed, reason);
 }
 
 function methodInstruction(method) {
   switch (method) {
     case 'raw_prompt_stuffing':
       return 'Use the raw background as a normal personalized prompt. Do not assume an external validator or repair path.';
+    case 'raw_prompt_stuffing_lcv_gate':
+      return 'Use the same full raw background as raw prompt stuffing, then apply the same post-generation structured validator gate. If the candidate does not cover the confirmed hard contract, required witnesses, tail witnesses, detail slots, consequence obligations, or no-feasible rule, route to repair or abstention. Do not use contract-bounded evidence activation or carry compiled fields forward automatically.';
     case 'summarized_profile':
       return 'Use only the compressed profile evidence. Treat missing details as unavailable.';
     case 'dense_retrieval_rag':
       return 'Use only the retrieved snippets. Do not use a hard-contract validator.';
     case 'long_context_llm':
       return 'Use the longest available context directly. You may reason over all provided text, but no external validator is available.';
+    case 'long_context_lcv_gate':
+      return 'Use the same longest available context directly, then apply the same post-generation structured validator gate. If the candidate does not cover the confirmed hard contract, required witnesses, tail witnesses, detail slots, consequence obligations, or no-feasible rule, route to repair or abstention. Do not use contract-bounded evidence activation or carry compiled fields forward automatically.';
     case 'tool_memory_agent':
       return 'Act like a standard memory agent: write/read user memory, retrieve relevant facts, then answer. No hard-contract validator is available.';
     case 'validator_only':
