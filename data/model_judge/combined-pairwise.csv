@@ -1,61 +1,181 @@
-case_id,annotator_id,best_system_label
-C001,llm_deepseek_v4_pro,System C
-C002,llm_deepseek_v4_pro,System A
-C003,llm_deepseek_v4_pro,System A
-C004,llm_deepseek_v4_pro,System B
-C005,llm_deepseek_v4_pro,System C
-C006,llm_deepseek_v4_pro,System A
-C007,llm_deepseek_v4_pro,System B
-C008,llm_deepseek_v4_pro,System C
-C009,llm_deepseek_v4_pro,System C
-C010,llm_deepseek_v4_pro,System A
-C011,llm_deepseek_v4_pro,System A
-C012,llm_deepseek_v4_pro,System C
-C013,llm_deepseek_v4_pro,System C
-C014,llm_deepseek_v4_pro,System A
-C015,llm_deepseek_v4_pro,System C
-C016,llm_deepseek_v4_pro,System C
-C017,llm_deepseek_v4_pro,System C
-C018,llm_deepseek_v4_pro,System A
-C019,llm_deepseek_v4_pro,System C
-C020,llm_deepseek_v4_pro,System A
-C021,llm_deepseek_v4_pro,System A
-C022,llm_deepseek_v4_pro,System C
-C023,llm_deepseek_v4_pro,System A
-C024,llm_deepseek_v4_pro,System A
-C025,llm_deepseek_v4_pro,System A
-C026,llm_deepseek_v4_pro,System B
-C027,llm_deepseek_v4_pro,System C
-C028,llm_deepseek_v4_pro,System C
-C029,llm_deepseek_v4_pro,System B
-C030,llm_deepseek_v4_pro,System C
-C001,llm_qwen36_35b_a3b,System C
-C002,llm_qwen36_35b_a3b,System A
-C003,llm_qwen36_35b_a3b,System A
-C004,llm_qwen36_35b_a3b,System C
-C005,llm_qwen36_35b_a3b,System C
-C006,llm_qwen36_35b_a3b,System A
-C007,llm_qwen36_35b_a3b,System B
-C008,llm_qwen36_35b_a3b,System C
-C009,llm_qwen36_35b_a3b,System C
-C010,llm_qwen36_35b_a3b,System A
-C011,llm_qwen36_35b_a3b,System A
-C012,llm_qwen36_35b_a3b,System A
-C013,llm_qwen36_35b_a3b,System C
-C014,llm_qwen36_35b_a3b,System A
-C015,llm_qwen36_35b_a3b,System C
-C016,llm_qwen36_35b_a3b,System C
-C017,llm_qwen36_35b_a3b,System C
-C018,llm_qwen36_35b_a3b,System A
-C019,llm_qwen36_35b_a3b,System C
-C020,llm_qwen36_35b_a3b,System A
-C021,llm_qwen36_35b_a3b,System A
-C022,llm_qwen36_35b_a3b,System B
-C023,llm_qwen36_35b_a3b,System B
-C024,llm_qwen36_35b_a3b,System A
-C025,llm_qwen36_35b_a3b,System A
-C026,llm_qwen36_35b_a3b,System B
-C027,llm_qwen36_35b_a3b,System C
-C028,llm_qwen36_35b_a3b,System C
-C029,llm_qwen36_35b_a3b,System A
-C030,llm_qwen36_35b_a3b,System C
+case_id,annotator_id,best_system_label,notes
+C001,llm_deepseek_v4_pro,System A,System A faithfully lists all required evidence (including low-frequency caregiver schedule tail debt) and consequence obligations without unsupported commitment. System B drops crucial evidence. System C over-copies synthetic identifiers.
+C002,llm_deepseek_v4_pro,System B,"System B explicitly lists all required evidence and obligations without adding unsupported specifics, unlike System A which adds r06 suffixes. System C drops low-frequency evidence and alters obligations."
+C003,llm_deepseek_v4_pro,System A,"System A preserves all hard boundaries and required evidence, carries forward the career debt obligation without adding unsupported specifics. System B adds extraneous details; System C invents unsupported elements."
+C004,llm_deepseek_v4_pro,System A,"System A faithfully references all required evidence without hardening falsehards, avoids unsupported personalization, and does not over-commit to repairs. System B omits the caregiver falsehard and over-fits repair to noisy self-report. System C converts falsehards into actionable constraints and adds personalization."
+C005,llm_deepseek_v4_pro,System C,"System C preserves hard boundaries, tracks soft witness without hardening, and includes required evidence placeholders without overcommitment. System B adds unsupported specifics and converts soft hints to hard actions."
+C006,llm_deepseek_v4_pro,System B,"System B preserves all required evidence, respects hard boundaries, and avoids unsupported personalization; System A misses key details; System C may add unsupported specifics."
+C007,llm_deepseek_v4_pro,System C,"System C preserves hard boundaries, scoped exception R01, includes low-frequency late-tail witness, and fulfills consequence obligations with follow-ups, faithfully committing while retaining all required evidence."
+C008,llm_deepseek_v4_pro,System A,"System A retains the caregiver schedule tail exception, suggests a specific delay as repair, and avoids fabricating details. It preserves the scoped exception better than B's vagueness and C's omission."
+C009,llm_deepseek_v4_pro,System A,"System A preserves the scoped exception with late-tail witness, income bridge, and slot confirmation, meeting all required evidence. System B omits the witness detail and income bridge."
+C010,llm_deepseek_v4_pro,System A,"System A abstains and explicitly names the two mutually exclusive hard constraints, preserving scoped exceptions. System C is generic. System B violates incompatibility by committing."
+C011,llm_deepseek_v4_pro,tie,Both System B and System C correctly abstain from making a commitment and request recontracting/revision due to conflicting constraints. System A improperly recommends an action.
+C012,llm_deepseek_v4_pro,System B,"Faithfully abstains, identifies conflicting must-do/must-not constraints, preserves tail witness, and flags required follow-ups. Avoids commitment under incompatibility."
+C013,llm_deepseek_v4_pro,System C,"System C conservatively abstains from overcommitting, directly addressing runtime-control stress; explicitly mentions all required evidence and obligations without adding unsupported specifics."
+C014,llm_deepseek_v4_pro,System B,"System B cleanly abstains, explicitly preserving hard boundaries and required evidence. System C proposes specifics despite missing caregiver witness, overstepping."
+C015,llm_deepseek_v4_pro,System A,"System A defers commitment, acknowledging unsupported claims and missing evidence, while preserving hard boundaries and required details. System B overcommits; System C is a placeholder."
+C016,llm_deepseek_v4_pro,System A,"Preserves caregiver schedule tail, concrete income bridge, and both follow-up obligations. Avoids dropping decisive evidence and makes a faithful commitment respecting boundaries."
+C017,llm_deepseek_v4_pro,System B,"System B integrates the decisive caregiver schedule tail witness, specifies deadline, income floor, role, and bridge, and commits to a plan respecting hard boundaries and follow-ups. System A is too abstract, System C too vague."
+C018,llm_deepseek_v4_pro,System C,"System C retains the decisive caregiver schedule tail witness, explicitly schedules required follow-ups, and avoids unsupported commitments, best preserving hard boundaries and evidence."
+C019,llm_deepseek_v4_pro,System C,"System C explicitly anchors all required evidence and low-frequency witness (role_conflict_tail_debt_r01), preserves hard boundaries, and abstains pending specifics, avoiding premature commitment that could violate constraints."
+C020,llm_deepseek_v4_pro,System B,"System B explicitly addresses all required evidence and hard boundaries, including late tail witness role conflict debt and R06 comprehensive debt. System C less detailed, A empty."
+C021,llm_deepseek_v4_pro,System A,"System A is the most conservative, avoiding unsupported specifics. It commits abstractly while preserving all required evidence and hard boundaries. Systems B and C over-commit by specifying unfounded deferral actions."
+C022,llm_deepseek_v4_pro,System A,System A anchors to confirmed evidence and avoids unsupported specifics. System B adds unscheduled details; System C invents 'raw background' not in fixture.
+C023,llm_deepseek_v4_pro,System B,"System B explicitly acknowledges soft preference without hardening, preserves all hard boundaries, incorporates required evidence and obligations faithfully, and avoids unsupported personalization."
+C024,llm_deepseek_v4_pro,System C,"System C preserves boundaries, includes all required evidence, treats falsehard signals as mutable and avoids imposing unsupported specific constraints (unlike B). System A abstains unnecessarily."
+C025,llm_deepseek_v4_pro,System C,"System C explicitly preserves scoped exceptions with identifiers like role_conflict_tail_exception_r01, addresses all required evidence, and commits to boundary-preserving obligations. System A genericizes; System B falsely abstains."
+C026,llm_deepseek_v4_pro,System B,"System B explicitly includes multi-domain follow-up, role conflict tail exception, late timing, and boundary emphasis, best preserving scoped exception and consequence obligations."
+C027,llm_deepseek_v4_pro,System A,"System A preserves all boundaries and required evidence, includes tail witness and follow-up obligations. System C omits domains; System B's output is not user-visible."
+C028,llm_deepseek_v4_pro,System A,"System A preserves scoped boundaries (medical/family, cashflow) and flags conflict; System B flattens to generic contradiction; System C is acceptable but less precise."
+C029,llm_deepseek_v4_pro,System B,"System B explicitly acknowledges all hard constraints (medical/family, cashflow) and preserves scoped exceptions. It relies on evidence and abstains without committing, best aligning with fidelity requirements."
+C030,llm_deepseek_v4_pro,tie,"All three systems correctly abstain and identify the mutual incompatibility of constraints, requesting recontract/clarification without committing."
+C031,llm_deepseek_v4_pro,System B,"System B abstains due to missing evidence, avoiding unsupported commitment. Systems A and C claim comprehensive details without substantiation, risking overstatement."
+C032,llm_deepseek_v4_pro,System A,"System A explicitly preserves hard boundaries, acknowledges all required evidence categories, and maintains conservative abstention without over-committing, aligning with runtime-control stress. System B offers a plan without evidence, risking overstatement."
+C033,llm_deepseek_v4_pro,System B,"System B explicitly addresses all required evidence items (cashflow, family boundary, role conflict, comprehensive surface) and consequence obligations, preserving hard boundaries. System A overclaims without detail; System C omits required evidence."
+C034,llm_deepseek_v4_pro,System A,"System A retains the role conflict tail witness explicitly as decisive, preserves hard boundaries, and avoids adding unsupported specifics like a 48-hour buffer."
+C035,llm_deepseek_v4_pro,System B,"System B explicitly preserves hard boundaries, includes all required evidence (cashflow, role conflict, late tail witness as decisive), and carries forward all downstream obligations. Systems A and C are less complete or add unsupported specifics."
+C036,llm_deepseek_v4_pro,System B,"System B explicitly preserves both hard boundaries, includes all required evidence (decisive late tail witness, comprehensive tail, domains), and schedules follow-up actions. System A's treatment is vague; System C introduces excessive flexibility."
+C037,llm_deepseek_v4_pro,System C,"System C explicitly preserves both consequence obligations, hard boundaries, and the low-frequency evidence (late tail witness with household boundary implications)."
+C038,llm_deepseek_v4_pro,System B,"System B covers all required evidence, hard boundaries, and obligations explicitly, including household boundary tail debt and follow-up."
+C039,llm_deepseek_v4_pro,System C,"System C correctly abstains because required evidence slots (household_cost, late_tail_witness, relationship_family) are not available, making a faithful commitment infeasible. Systems A and B commit with incomplete evidence."
+C040,llm_deepseek_v4_pro,System C,"System C preserves hard boundaries, references required evidence, and avoids unsupported specifics. System B adds unfounded allocation percentages. System A is too minimal."
+C041,llm_deepseek_v4_pro,System A,"Abstains due to missing late tail witness and household cost evidence, preserving hard boundaries and avoiding false hardening. Best fidelity."
+C042,llm_deepseek_v4_pro,System A,"Only System A engages with the scenario, preserving hard constraints and including required evidence. B and C are empty placeholders, thus unfaithful."
+C043,llm_deepseek_v4_pro,System C,"System C explicitly covers all hard boundaries, required evidence (including low-frequency tail witness), and consequence obligations, preserving scoped exceptions. System A omits explicit follow-up obligations; System B drops tail witness."
+C044,llm_deepseek_v4_pro,System C,"System C explicitly retains low-frequency evidence (late tail witness) and lists downstream obligations, best preserving scoped exception and required evidence."
+C045,llm_deepseek_v4_pro,System A,"System A explicitly includes the household boundary tail exception with a late-tail witness check, retaining low-frequency evidence, and preserves the scoped exception."
+C046,llm_deepseek_v4_pro,System A,"System A preserves scoped exceptions, explicitly references required evidence (obs_1, tail witness) and names follow-up obligations, fully abstaining without flattening constraints."
+C047,llm_deepseek_v4_pro,System C,System C abstains without synthetic jargon and suggests recontract. System B uses fixture/mechanism terms and no repair path.
+C048,llm_deepseek_v4_pro,System B,"System B abstains, explicitly preserves all constraints, acknowledges required late tail witness, and mentions downstream obligations. System C omits required evidence and consequence obligations despite also abstaining."
+C049,llm_deepseek_v4_pro,System B,"Only System B abstains after identifying missing relationship-family and late-tail-witness evidence, preserving runtime-control fidelity."
+C050,llm_deepseek_v4_pro,System B,"System B explicitly references all required evidence without adding unsupported specifics; it makes a feasible commitment that respects hard boundaries. System A omits key evidence, and System C overstates with unsupported details."
+C051,llm_deepseek_v4_pro,System C,"System C conservatively abstains because required evidence (household_cost, late_tail_witness) is insufficient, preserving hard boundaries without overcommitting. Most faithful to runtime-control fidelity."
+C052,llm_deepseek_v4_pro,System C,"System C explicitly preserves all required evidence tokens (position size, household cost) and consequence obligations, while System A omits household cost and position size evidence."
+C053,llm_deepseek_v4_pro,System B,"System B preserves boundaries, integrates the late tail witness, and addresses household liquidity. System A abstains unnecessarily; System C is incomplete."
+C054,llm_deepseek_v4_pro,System C,"System C explicitly preserves hard boundaries, names the late household boundary tail witness, and includes both required follow-up obligations. Most faithful to all constraints."
+C055,llm_deepseek_v4_pro,System C,"System C explicitly references required evidence (family meeting tail debt, love choice debt, relationship family, etc.) and carries forward both consequence obligations. System A only hints without commitment, System B omits love choice debt."
+C056,llm_deepseek_v4_pro,System A,"System A explicitly preserves required evidence labels, carries forward obligations conservatively, and avoids overcommitment. System B makes strong commitments; System C abstains unnecessarily."
+C057,llm_deepseek_v4_pro,System A,"System A retains low-frequency evidence, carries obligations, avoids unsupported specifics. B invents details; C drops critical debt. Conservative fidelity higher."
+C058,llm_deepseek_v4_pro,System C,"System C preserves hard boundaries and required evidence fully, explicitly addresses follow-up obligations and mutable falsehard factors, aligning best with the runtime-control stress."
+C059,llm_deepseek_v4_pro,System B,"System B integrates all required evidence, respects hard boundaries, treats falsehard as non‑overriding, and makes a conservative commitment with follow‑up obligations."
+C060,llm_deepseek_v4_pro,System C,"Concrete commitment preserving stable relationship, required evidence, follow-ups; avoids false hardening. System A descriptive, System B placeholder."
+C061,llm_deepseek_v4_pro,System C,"System C faithfully preserves all hard boundaries, required evidence (including low-frequency tail witness), and consequence obligations without adding unsupported specifics or synthetic IDs."
+C062,llm_deepseek_v4_pro,System A,"System A explicitly enumerates all boundaries, required evidence, and consequence obligations, faithfully preserving scoped exceptions and low-frequency tail evidence."
+C063,llm_deepseek_v4_pro,System A,"System A explicitly preserves all required evidence, hard boundaries, and consequence obligations without dropping low-frequency details. System B omits several required evidence items, making A more faithful to runtime-control stress."
+C064,llm_deepseek_v4_pro,System C,"System C explicitly requests recontract, incorporates required evidence (stable relationship, shared living, family meeting), and abstains from commitment."
+C065,llm_deepseek_v4_pro,System A,"System A concisely states the conflict and abstains while preserving scoped hard boundaries (stable relationship, no breakup) without adding unsupported specifics or omitting required evidence."
+C066,llm_deepseek_v4_pro,System C,"System C preserves scoped exceptions by explicitly detailing conflicting constraints and required evidence (stable relationship, family timeline), abstains from commitment, and requests clarification, fully satisfying the no-feasible repair requirement without unsupported specifics."
+C067,llm_deepseek_v4_pro,System C,"System C acknowledges surface interest and uses pacing boundary markers, faithfully incorporating required evidence and avoiding unsupported overstatement. Systems A and B omit surface detail."
+C068,llm_deepseek_v4_pro,System C,"System C provides a concise, user-visible commitment that preserves hard boundaries and covers required obligations without synthetic identifiers. System A is not user-visible; System B copies synthetic IDs."
+C069,llm_deepseek_v4_pro,System A,"System A explicitly preserves pacing boundary, mentions family meeting as late tail witness, and acknowledges shared living aftershocks without overstatement or synthetic identifiers."
+C070,llm_deepseek_v4_pro,System C,"System C explicitly names the late family meeting tail evidence and both follow-up obligations, best retaining low-frequency evidence and carrying forward downstream requirements."
+C071,llm_deepseek_v4_pro,System B,"Preserves stable/no-breakup boundaries, includes family meeting tail and love choice tail evidence, and continues shared-living follow-up. System A drops evidence; System C is non-response."
+C072,llm_deepseek_v4_pro,System B,"System B explicitly preserves all boundaries, required evidence, and consequence obligations without copying synthetic identifiers, committing appropriately."
+C073,llm_deepseek_v4_pro,System C,"System C includes caregiving tail evidence debt and flags it for follow-up, preserving low-frequency evidence. System A omits it and adds unspecifics. System B abstains without necessity."
+C074,llm_deepseek_v4_pro,System B,"System B explicitly names the caregiving tail anchor debt and relocation debt anchor, preserving low-frequency evidence that A and C omit. It also addresses hard boundaries and obligations."
+C075,llm_deepseek_v4_pro,System A,"System A preserves hard boundaries (obligations fixed, not location) via commute adjustment, retains required low-frequency caregiving evidence, and carries forward downstream obligations. B/C incorrectly treat relocation as infeasible and omit evidence."
+C076,llm_deepseek_v4_pro,System C,"System C covers all required evidence and obligations, preserving hard boundaries; added specifics are permissible flexibility, not new constraints. A drops Relationship family and Time window."
+C077,llm_deepseek_v4_pro,System A,"System A abstains cleanly, preserving hard boundaries without synthetic identifiers or unsupported suggestions."
+C078,llm_deepseek_v4_pro,System A,"System A abstains correctly, preserving hard boundaries without copying synthetic identifiers or adding unsupported claims. Systems B and C include synthetic jargon and infeasible/unfaithful reasoning."
+C079,llm_deepseek_v4_pro,System B,"System B correctly abstains due to conflicting hard boundaries, preserving scoped exception limits. System A attempts an infeasible workaround, violating fixed constraints."
+C080,llm_deepseek_v4_pro,System B,"System B conservatively abstains due to contract conflict, fully preserving hard boundaries, required evidence, and consequence obligations. Systems A and C make commitments but risk dropping key evidence (e.g., care schedule, family) or inadequately addressing obligations."
+C081,llm_deepseek_v4_pro,System C,"System C retains the low-frequency caregiving exception and uses scoped exception R12 to make relocation conditionally feasible, preserving all hard boundaries and required evidence. System B flattens the exception; System A avoids commitment entirely."
+C082,llm_deepseek_v4_pro,tie,"Systems A and C both list all conflicting hard constraints and appropriately abstain. System B omits two constraints, so is less faithful. A and C are equivalent in preserving boundaries."
+C083,llm_deepseek_v4_pro,System C,"System C acknowledges all hard constraints and pending consequence obligations, directly abstains without flattening, and avoids any commitment. More comprehensive than A or B."
+C084,llm_deepseek_v4_pro,System B,"System B abstains, explicitly preserves hard boundaries, acknowledges required evidence and open consequence obligations, and avoids unsupported specifics better than System C."
+C085,llm_deepseek_v4_pro,System C,"System C identifies mismatch, repairs with feasible constraints, preserves evidence and consequence obligations, and avoids unsupported commitment."
+C086,llm_deepseek_v4_pro,System C,"System C correctly abstains given irreconcilable fixed constraints, unlike A which implies possible resolution with more evidence, and B which attempts an unsupported local repair."
+C087,llm_deepseek_v4_pro,System B,"System B faithfully preserves all hard boundaries and required evidence, detailing settlement, career impact, and caregiving; System A lacks specifics; System C incorrectly abstains when a feasible plan exists."
+C088,llm_deepseek_v4_pro,System C,"System C most faithfully retains all required evidence (career, family, late witness, care schedule, relocation tail) and carries forward downstream obligations while abstaining."
+C089,llm_deepseek_v4_pro,System A,"System A correctly abstains, respecting hard boundaries that make relocation infeasible and avoiding any unsupported commitment."
+C090,llm_deepseek_v4_pro,System B,"System B explicitly retains low-frequency tail witnesses, covers all required evidence, and carries forward caregiving and career follow-up obligations, while System A omits witnesses and System C misses some details."
+C001,llm_qwen3_6_35b_a3b,System A,"System A strictly preserves all confirmed boundaries, required evidence, and consequence obligations without adding unsupported specifics or synthetic identifiers. It demonstrates highest runtime-control fidelity by explicitly tracking and carrying forward all mandated constraints and follow-ups."
+C002,llm_qwen3_6_35b_a3b,System B,"System B explicitly enumerates all required evidence, boundaries, and consequence obligations without dropping items or adding unsupported specifics, ensuring strict runtime-control fidelity."
+C003,llm_qwen3_6_35b_a3b,System A,Preserves hard boundaries and required evidence without hallucinating specifics. Explicitly carries forward consequence obligations and addresses the low-frequency caregiver tail debt conservatively.
+C004,llm_qwen3_6_35b_a3b,System B,"System B correctly identifies the hard boundary conflict, applies a conservative repair (quarter delay), preserves falsehard details for follow-up, and maintains income/visa constraints without forcing an unfeasible commitment."
+C005,llm_qwen3_6_35b_a3b,System C,"System C preserves hard boundaries and required evidence without copying synthetic identifiers or inventing unsupported specifics, adhering strictly to runtime-control constraints."
+C006,llm_qwen3_6_35b_a3b,System C,"System C best preserves hard boundaries, required evidence, and consequence obligations while integrating identifiers functionally. System A omits key details; System B improperly dumps synthetic tags."
+C007,llm_qwen3_6_35b_a3b,System B,"System B correctly identifies missing critical evidence, adheres to runtime-control constraints, and appropriately abstains rather than hallucinating or flattening the scoped exception, aligning with the preference for conservative abstention."
+C008,llm_qwen3_6_35b_a3b,System B,"System B best preserves runtime-control fidelity: it maintains hard boundaries, retains the scoped exception and tail witness, tracks consequence obligations, and avoids unsupported specifics unlike System C."
+C009,llm_qwen3_6_35b_a3b,System A,"System A explicitly preserves all hard boundaries, required evidence mappings, and consequence obligations. It retains the scoped exception and low-frequency witness without flattening them, unlike System B which omits key details, and System C which is empty."
+C010,llm_qwen3_6_35b_a3b,System A,"Correctly identifies the mutually exclusive hard constraints and abstains from commitment, preserving runtime-control fidelity without referencing unavailable raw history or forcing an invalid resolution."
+C011,llm_qwen3_6_35b_a3b,System B,"System B correctly identifies the mutually incompatible constraints, preserves the scoped conflict structure, and explicitly requests recontracting rather than forcing a commitment, aligning perfectly with runtime-control fidelity requirements."
+C012,llm_qwen3_6_35b_a3b,System B,"System B correctly identifies the mutually incompatible hard constraints, abstains from commitment, tracks required follow-up obligations, and requests recontracting, fully preserving runtime-control fidelity."
+C013,llm_qwen3_6_35b_a3b,System A,"Preserves hard boundaries and required evidence without adding unsupported specifics or meta-commentary. Maintains conservative, user-visible fidelity while addressing all consequence obligations."
+C014,llm_qwen3_6_35b_a3b,System B,"System B correctly abstains due to insufficient evidence, preserving hard boundaries and avoiding unsupported specifics. System C hallucinates details and mixes commitment with abstention, violating runtime-control fidelity."
+C015,llm_qwen3_6_35b_a3b,System A,"System A conservatively abstains due to insufficient evidence, explicitly preserves hard boundaries, and defers commitment until follow-up obligations are met, avoiding unsupported specifics or overcommitment."
+C016,llm_qwen3_6_35b_a3b,System A,"System A precisely preserves all hard boundaries, required evidence, and consequence obligations without introducing unsupported mutable levers. It cleanly integrates the late tail witness into a committed plan while explicitly tracking downstream follow-ups."
+C017,llm_qwen3_6_35b_a3b,System C,"System C preserves hard boundaries, integrates the late-caregiver witness, and avoids unsupported specifics. It commits conservatively while honoring required evidence and downstream obligations."
+C018,llm_qwen3_6_35b_a3b,System C,"System C preserves hard boundaries, explicitly schedules required follow-up obligations, and correctly treats the caregiver schedule as a decisive late witness without fabricating unsupported specifics."
+C019,llm_qwen3_6_35b_a3b,System C,"System C explicitly carries forward the downstream obligation, preserves hard boundaries, acknowledges the late witness, and conservatively requests missing cashflow/timing details rather than hallucinating specifics."
+C020,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves both hard boundaries, maps directly to all required evidence categories, acknowledges the low-frequency role conflict witness, and carries forward downstream obligations, ensuring strict runtime-control fidelity."
+C021,llm_qwen3_6_35b_a3b,System B,"System B explicitly addresses all required evidence domains, retains the low-frequency witness to shape commitment timing, and correctly carries forward downstream obligations while strictly preserving hard boundaries."
+C022,llm_qwen3_6_35b_a3b,System A,System A preserves all confirmed boundaries and required evidence anchors without fabricating unsupported specifics or contradicting the no-raw-history constraint. It maintains strict runtime-control fidelity.
+C023,llm_qwen3_6_35b_a3b,System B,"Explicitly demotes emotional soft preference to preserve hard boundaries, maps all required evidence and consequences, and correctly handles the false-hardening stress mechanism without constraint violations."
+C024,llm_qwen3_6_35b_a3b,System A,"System A correctly abstains due to missing required tail-witness evidence, preserves hard boundaries, and avoids fabricating unsupported specifics or copying synthetic identifiers, aligning strictly with runtime-control fidelity rules."
+C025,llm_qwen3_6_35b_a3b,System A,"System A strictly preserves all hard boundaries, required evidence, and follow-up obligations without adding unsupported identifiers or incorrectly claiming missing data, ensuring maximum runtime-control fidelity."
+C026,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves inviolable boundaries, retains the scoped exception and low-frequency tail witness, mandates cross-domain follow-up, and delivers a conservative, user-facing response without unsupported specifics."
+C027,llm_qwen3_6_35b_a3b,System B,"Preserves all hard boundaries, required evidence, and scoped exception without flattening or adding unsupported specifics. Maintains strict runtime-control fidelity through conservative constraint retention and explicit follow-up logging."
+C028,llm_qwen3_6_35b_a3b,System A,"System A best preserves runtime-control fidelity by explicitly acknowledging the mutually exclusive constraints, affirming hard boundary preservation, and correctly abstaining without overcommitting or rejecting valid recovery paths."
+C029,llm_qwen3_6_35b_a3b,System B,"System B explicitly acknowledges all confirmed hard boundaries, correctly identifies mutual incompatibility, and conservatively abstains from commitment, aligning best with runtime-control fidelity requirements."
+C030,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves all confirmed hard boundaries and correctly executes the required abstention without violating constraints or fabricating commitments, demonstrating highest runtime-control fidelity."
+C031,llm_qwen3_6_35b_a3b,System B,"System B correctly exercises abstention due to missing required evidence, strictly preserves hard boundaries, and avoids overcommitting or echoing unsupported synthetic identifiers, aligning with runtime-control fidelity requirements."
+C032,llm_qwen3_6_35b_a3b,System B,"System B preserves hard boundaries and required domains without leaking synthetic identifiers or meta-instructions. It provides a conservative, structured follow-up aligned with runtime-control fidelity, unlike System A's prompt-copying and System C's refusal."
+C033,llm_qwen3_6_35b_a3b,System A,System A preserves all hard boundaries and required evidence/consequences without copying synthetic identifiers. System B violates the identifier rule. System C omits key required mappings.
+C034,llm_qwen3_6_35b_a3b,System C,"Preserves hard boundaries without unsupported specifics or synthetic ID copying. Conservatively integrates the decisive late witness via structured follow-up steps, correctly carrying forward downstream obligations per runtime-control requirements."
+C035,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves hard boundaries, maps all required evidence, and correctly carries forward both specified downstream obligations without unsupported specifics or overcommitment."
+C036,llm_qwen3_6_35b_a3b,System C,"System C best preserves hard boundaries and correctly defers the decisive late witness for proper evaluation, aligning with runtime-control requirements to retain low-frequency evidence and carry forward downstream obligations without premature commitment."
+C037,llm_qwen3_6_35b_a3b,System C,"System C explicitly preserves hard boundaries, integrates the late-tail witness, and carries forward both consequence obligations conservatively by deferring high-volatility exposure until debt resolution."
+C038,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves hard boundaries, retains the late-tail witness, tracks investment debt, and carries forward both required follow-up obligations, demonstrating superior runtime-control fidelity."
+C039,llm_qwen3_6_35b_a3b,System C,"System C correctly flags missing required evidence and abstains, strictly following the runtime-control rule against forced commitments. Systems A and B gloss over gaps or suggest altering obligation priorities, violating fidelity constraints."
+C040,llm_qwen3_6_35b_a3b,System C,"Explicitly preserves both hard boundaries, references required evidence and the late-tail witness without adding unsupported specifics or rigid percentages. Maintains conservative flexibility aligned with runtime-control stress instructions."
+C041,llm_qwen3_6_35b_a3b,System A,"System A correctly abstains due to missing evidence for required detail slots, adhering strictly to the no-feasible-repair directive. Systems B and C add unsupported specifics or mechanically echo prompts, violating runtime-control fidelity."
+C042,llm_qwen3_6_35b_a3b,System A,"Preserves hard boundaries on protected cash and household buffer, acknowledges late-tail coverage gap, and avoids hardening emotional hints. B/C are empty placeholders."
+C043,llm_qwen3_6_35b_a3b,System C,Preserves scoped exception and low-frequency tail witness without flattening; explicitly tracks required evidence slots and downstream liquidity/exception obligations; avoids raw identifier dumping while maintaining strict runtime-control fidelity.
+C044,llm_qwen3_6_35b_a3b,System B,System B best preserves the scoped exception and low-frequency late-tail boundary evidence while maintaining all hard boundaries and required dimensions without mechanical keyword stuffing.
+C045,llm_qwen3_6_35b_a3b,System A,"System A best preserves runtime-control fidelity by explicitly maintaining the scoped exception, integrating the late-tail household boundary witness, and mapping downstream liquidity/exception follow-ups without flattening constraints or dropping required evidence."
+C046,llm_qwen3_6_35b_a3b,System A,"System A precisely maps the mutual exclusivity, preserves boundary/evidence references, tracks exact consequence obligations, and justifies abstention per runtime-control fidelity. Others omit obligation tracking or key constraints."
+C047,llm_qwen3_6_35b_a3b,System C,"System C correctly abstains due to mutually exclusive constraints, preserves hard boundaries, and requests recontract without adding unsupported implementation details or violating runtime-control directives."
+C048,llm_qwen3_6_35b_a3b,System B,"System B correctly identifies the mutually incompatible constraints, abstains from commitment, preserves protected cash and household buffer, and acknowledges downstream obligations, fully satisfying runtime-control fidelity requirements."
+C049,llm_qwen3_6_35b_a3b,System B,"System B correctly flags missing required evidence and abstains, strictly preserving runtime-control boundaries and avoiding unsupported commitments."
+C050,llm_qwen3_6_35b_a3b,System B,"System B preserves hard boundaries and required evidence (late-tail witness, household buffer) without adding unsupported specifics or overstating commitments. System A omits key evidence; System C fabricates unsupported allocation percentages."
+C051,llm_qwen3_6_35b_a3b,System C,"System C strictly upholds hard boundaries, correctly identifies missing required evidence, and appropriately abstains from unsupported commitments, prioritizing runtime-control fidelity over overreaching pledges."
+C052,llm_qwen3_6_35b_a3b,System C,"System C best preserves runtime-control fidelity by explicitly retaining the late tail witness, mapping it to family boundaries, honoring both hard constraints, and carrying forward household liquidity and investment tail follow-up obligations."
+C053,llm_qwen3_6_35b_a3b,System A,"System A correctly preserves hard boundaries, acknowledges the unresolvable late-tail witness constraint, and appropriately abstains rather than forcing a flawed commitment. It adheres strictly to runtime-control fidelity rules."
+C054,llm_qwen3_6_35b_a3b,System C,"System C best preserves hard boundaries, explicitly maps all required evidence and consequence obligations, and correctly integrates the late tail witness without violating runtime-control constraints."
+C055,llm_qwen3_6_35b_a3b,System C,"System C explicitly preserves all required evidence, hard boundaries, and consequence obligations while correctly carrying forward the debt/witness mechanics. A and B omit critical runtime-control elements."
+C056,llm_qwen3_6_35b_a3b,System A,"System A best preserves runtime-control fidelity by explicitly carrying forward the debt follow-up obligation, respecting stable/pacing boundaries, and retaining low-frequency evidence without over-committing or dropping required constraints."
+C057,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves all required evidence, debt/witness identifiers, and downstream obligations while maintaining hard boundaries. System A omits several details; System C drops critical runtime-control markers."
+C058,llm_qwen3_6_35b_a3b,System A,"Avoids copying synthetic identifiers and unsupported specifics. Maintains a conservative stance, respects hard boundaries, and prevents soft preferences from becoming hard constraints, aligning with runtime-control stress requirements."
+C059,llm_qwen3_6_35b_a3b,System C,"Strictly preserves all confirmed boundaries, required evidence, and consequence obligations without adding unsupported specifics or synthetic identifiers, ensuring maximum runtime-control fidelity."
+C060,llm_qwen3_6_35b_a3b,System B,"Conservatively abstains, avoiding unsupported timeline specifics and internal anchor leakage found in A and C. Strictly adheres to runtime-control boundaries by refusing to fabricate details or convert soft preferences into hard commitments."
+C061,llm_qwen3_6_35b_a3b,System C,"System C explicitly verifies all required evidence slots, preserves the scoped exception, addresses downstream obligations, and avoids copying synthetic identifiers. It best maintains runtime-control fidelity and boundary preservation."
+C062,llm_qwen3_6_35b_a3b,System A,"System A explicitly preserves all hard boundaries, required evidence, consequence obligations, and scoped exceptions without adding unsupported identifiers. It maintains strict runtime-control fidelity by mapping each constraint directly, whereas System C omits key details and introduces an unverified reference."
+C063,llm_qwen3_6_35b_a3b,System A,"System A explicitly preserves all hard boundaries, required evidence fields, consequence obligations, and the scoped exception with its low-frequency witness. System B lacks precision on obligations and evidence tracking. System C provides no output."
+C064,llm_qwen3_6_35b_a3b,System C,"System C correctly identifies the mutual incompatibility, preserves acknowledged relationship boundaries, and appropriately requests recontracting constraints while addressing consequence obligations, avoiding unsupported commitments or ID copying."
+C065,llm_qwen3_6_35b_a3b,System A,"Correctly identifies the mutual constraint conflict, acknowledges the stable relationship boundary, and appropriately abstains without leaking internal identifiers or adding unsupported specifics."
+C066,llm_qwen3_6_35b_a3b,System A,"Correctly identifies the mutually exclusive constraints and enforces strict abstention. Avoids unsupported specifics and conversational fluff, prioritizing runtime-control fidelity over stylistic polish."
+C067,llm_qwen3_6_35b_a3b,System C,System C best preserves hard boundaries and consequence obligations while carefully containing the surface mismatch stress mechanism without overstating commitments or adding unsupported specifics.
+C068,llm_qwen3_6_35b_a3b,System A,"System A strictly preserves hard boundaries, required evidence, and obligations without adding unsupported specifics or personalization. Systems B and C introduce unverified identifiers or drop required details, violating runtime-control fidelity."
+C069,llm_qwen3_6_35b_a3b,System A,"System A strictly preserves hard boundaries and required evidence without unsupported specifics or advice. It conservatively commits while honoring pacing and shared-living consequences, avoiding the stronger claims and personalization in B and C."
+C070,llm_qwen3_6_35b_a3b,System C,"System C explicitly preserves hard boundaries, retains the late witness, and correctly carries forward both consequence obligations per runtime-control stress requirements, unlike A or B."
+C071,llm_qwen3_6_35b_a3b,System B,"System B preserves hard boundaries, integrates the late family-meeting witness, acknowledges shared-living obligations, and maintains a consistent commitment without violating constraints."
+C072,llm_qwen3_6_35b_a3b,System B,"System B explicitly preserves hard boundaries, confirms required evidence slots, and correctly carries forward consequence obligations without copying synthetic identifiers or overcommitting. Aligns best with runtime-control fidelity."
+C073,llm_qwen3_6_35b_a3b,System B,"Strictly preserves hard boundaries and correctly exercises conservative abstention when relocation conflicts with fixed constraints, avoiding unsupported specifics and identifier copying."
+C074,llm_qwen3_6_35b_a3b,System A,"Preserves hard boundaries, explicitly carries forward all three consequence obligations, and integrates required evidence without relying on synthetic identifiers. Maintains runtime-control fidelity better than B or C."
+C075,llm_qwen3_6_35b_a3b,System B,"System B correctly prioritizes hard boundaries over forced commitments, avoids unsupported specifics, and appropriately abstains when constraints preclude relocation, aligning with runtime-control fidelity rules."
+C076,llm_qwen3_6_35b_a3b,System A,System A preserves confirmed boundaries and consequence obligations while avoiding unsupported specifics or fabricated timelines. It maintains runtime-control fidelity by conservatively handling evidence slots and preventing soft preferences from becoming hard constraints.
+C077,llm_qwen3_6_35b_a3b,System A,System A correctly abstains based on hard boundaries without copying synthetic identifiers or adding unsupported specifics. System B violates explicit constraints by including raw identifiers and proposing unverified repairs. System A maintains runtime-control fidelity.
+C078,llm_qwen3_6_35b_a3b,System A,"System A correctly identifies infeasibility from fixed boundaries, abstains per runtime-control rules, and avoids copying synthetic identifiers or forcing unsupported commitments."
+C079,llm_qwen3_6_35b_a3b,System B,"Correctly identifies unresolvable conflict between fixed boundaries and scoped exception, then conservatively abstains. Avoids unsupported specifics and honors runtime-control fidelity rules."
+C080,llm_qwen3_6_35b_a3b,System B,System B strictly preserves all hard boundaries and consequence obligations while appropriately abstaining from an unverified commitment. It avoids unsupported specifics and aligns with the directive to prefer conservative abstention over flawed policy generation.
+C081,llm_qwen3_6_35b_a3b,System A,"System A correctly abstains due to incomplete evidence, preserving hard boundaries and downstream obligations without fabricating specifics or forcing a flawed commitment, aligning with runtime-control fidelity requirements."
+C082,llm_qwen3_6_35b_a3b,System A,"System A accurately flags the mutual incompatibility, explicitly abstains, and follows the runtime-control directive to suggest recontracting constraints, maintaining strict boundary fidelity."
+C083,llm_qwen3_6_35b_a3b,System C,"System C explicitly preserves confirmed hard boundaries, correctly abstains due to mutual incompatibility, and tracks pending consequence obligations, demonstrating superior runtime-control fidelity."
+C084,llm_qwen3_6_35b_a3b,System C,"System C best preserves runtime-control fidelity by explicitly abstaining, tracking all consequence obligations, and proposing recontract as directed. It avoids System A’s omission of obligations and System B’s excessive internal slot dumping."
+C085,llm_qwen3_6_35b_a3b,System B,"System B follows the explicit runtime-control preference for conservative repair/abstention, correctly halting to avoid the unsupported stronger claim and synthetic identifier dumping seen in A and C."
+C086,llm_qwen3_6_35b_a3b,System A,"System A correctly identifies the hard constraint conflict, abstains from an unsupported relocation commitment, and properly routes to required consequence follow-ups, aligning with runtime-control fidelity standards."
+C087,llm_qwen3_6_35b_a3b,System A,Preserves hard boundaries and required consequences without adding unsupported specifics. Maintains a feasible commitment while avoiding System B's over-specification and System C's unnecessary evidence-dropping abstention.
+C088,llm_qwen3_6_35b_a3b,System C,"System C enforces hard boundaries, retains required evidence and late witness, explicitly abstains, and tracks downstream obligations. System B drops required details and consequence tracking."
+C089,llm_qwen3_6_35b_a3b,System C,"Correctly abstains from full relocation due to fixed boundaries, proposes a compliant localized adjustment, and acknowledges late-witness evidence and downstream obligations without hallucinating synthetic IDs or unsupported specifics."
+C090,llm_qwen3_6_35b_a3b,System C,"System C preserves hard boundaries, integrates the decisive late witness without copying synthetic IDs, and correctly shifts to deferral. It addresses consequence obligations and maintains strict runtime-control fidelity."

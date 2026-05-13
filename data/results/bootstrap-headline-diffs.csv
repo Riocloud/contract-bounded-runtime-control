@@ -1,5 +1,5 @@
 surface,diff,ci_low,ci_high
-Structured availability,-0.0083,-0.0278,0.0083
-Parse retries per fixture,-0.0222,-0.0556,0.0111
-All-row repair correctness,0.0139,-0.0028,0.0333
-Latency, ms,-1690,-3135,-244
+Structured availability,-0.2833,-0.3361,-0.2306
+Parse retries per fixture,0.0333,-0.0250,0.0944
+Repair/abstention correctness,0.5429,0.4571,0.6286
+"Latency, ms",1141,-882,3132

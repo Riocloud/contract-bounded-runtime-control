@@ -1,0 +1,10 @@
+metric,count,denominator,rate,use
+attempted_sessions,524,524,1.0000,deployment denominator
+semantic_session_pool,447,524,0.8531,after data wash
+completed_sessions,398,524,0.7595,funnel state
+final_evaluable_sessions,323,524,0.6164,result analysis
+active_unfinished_sessions,98,524,0.1870,not correct outputs
+operational_invalid_sessions,77,524,0.1469,excluded from semantics
+evaluable_turn_requests,6018,6082,0.9895,turn denominator
+provider_requests,28815,28815,1.0000,request denominator
+provider_successes,19988,28815,0.6937,reliability

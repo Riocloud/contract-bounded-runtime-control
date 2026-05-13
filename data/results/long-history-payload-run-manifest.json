@@ -1,0 +1,26 @@
+{
+  "evidence_status": "matched_long_history_payload_diagnostic",
+  "submission_use": "paper_reproduction_artifact",
+  "warning": "Synthetic/composite fixture identifiers and aggregate provider usage only; no prompts, model outputs, raw production histories, credentials, endpoint URLs, local paths, or timestamps are included.",
+  "prompt_count": 100,
+  "paired_fixture_count": 50,
+  "max_tokens": 700,
+  "concurrency": 8,
+  "endpoints": [
+    {
+      "endpoint": "MiniMax",
+      "provider_label": "external-api",
+      "model_family": "MiniMax-M2.7"
+    },
+    {
+      "endpoint": "DeepSeek",
+      "provider_label": "external-api",
+      "model_family": "deepseek-v4-pro"
+    },
+    {
+      "endpoint": "Qwen",
+      "provider_label": "external-api",
+      "model_family": "qwen3.6-35b-a3b"
+    }
+  ]
+}

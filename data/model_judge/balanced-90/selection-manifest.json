@@ -1,7 +1,6 @@
 {
   "fixtures_path": "data/fixtures/cbea-lcv.expanded360.synthetic.json",
   "results_path": "data/results/real-pilot-results.csv",
-  "profile_source": null,
   "group_count": 30,
   "selected_cases": 90,
   "cases_per_group": 3,
@@ -39,5 +38,6 @@
       "raw_prompt_stuffing"
     ]
   ],
+  "profile_source": null,
   "manifest_version": 1
 }

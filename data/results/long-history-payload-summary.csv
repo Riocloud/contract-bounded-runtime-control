@@ -1,0 +1,4 @@
+endpoint,n_pairs,raw_input_p50,cbea_input_p50,delta_input_p50,raw_output_p50,cbea_output_p50,delta_latency_mean_ms,delta_latency_p50_ms,delta_latency_mean_s,delta_latency_p50_s
+MiniMax,50,20401,5154,15258,700,700,1735,1544,1.74,1.54
+DeepSeek,50,21364,5484,15929,700,700,2059,1975,2.06,1.97
+Qwen,50,21709,5376,16279,2194,2657,-804,-1333,-0.80,-1.33

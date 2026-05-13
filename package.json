@@ -9,6 +9,7 @@
     "summarize:metrics": "node scripts/summarize-automatic-metrics.mjs --input=data/results/real-pilot-results.csv --out=runs/automatic-metrics.csv",
     "summarize:bootstrap": "node scripts/bootstrap-headline-diffs.mjs --input=data/results/real-pilot-results.csv --out=runs/bootstrap-headline-diffs.csv",
     "summarize:horizon": "node scripts/summarize-horizon-stability.mjs --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json --input=data/results/real-pilot-results.csv --out=runs/horizon-stability.csv",
+    "summarize:long-history": "node scripts/summarize-long-history-payload.mjs --input=data/results/long-history-payload-results.csv --out=runs/long-history-payload-summary.csv",
     "summarize:judge": "node scripts/summarize-llm-fidelity-audit.mjs --labels=data/model_judge/combined-labels.csv --pairwise=data/model_judge/combined-pairwise.csv --out=runs/llm-judge-summary",
     "judge:sample": "node scripts/build-model-judge-sample.mjs --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json --results=data/results/real-pilot-results.csv --out=data/model_judge/balanced-90 --cases-per-group=3",
     "make:task-shards": "node scripts/make-cbea-task-shards.mjs",
@@ -17,7 +18,8 @@
     "test:harness": "node --test scripts/check-clean-harness.test.mjs",
     "check:privacy": "node scripts/check-privacy-boundary.mjs",
     "check:table-cases": "node scripts/check-public-table-cases.mjs",
-    "check": "npm run test:harness && npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:horizon && npm run summarize:judge && npm run check:table-cases && npm run check:privacy"
+    "check:paper": "node scripts/check-paper-tables.mjs",
+    "check": "npm run test:harness && npm run summarize:metrics && npm run summarize:bootstrap && npm run summarize:horizon && npm run summarize:long-history && npm run summarize:judge && npm run check:paper && npm run check:table-cases && npm run check:privacy"
   },
   "engines": {
     "node": ">=20"

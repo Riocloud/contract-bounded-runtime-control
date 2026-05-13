@@ -1,181 +1,541 @@
-annotation_id,annotator_id,constraint_fidelity,evidence_coverage,consequence_continuity,no_feasible_handling,appropriate_personalization,surface_coherence
-C001-A,llm_deepseek_v4_pro,2,1,1,2,2,2
-C001-B,llm_deepseek_v4_pro,1,0,1,2,0,2
-C001-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C002-A,llm_deepseek_v4_pro,2,2,1,2,2,2
-C002-B,llm_deepseek_v4_pro,2,0,0,2,0,2
-C002-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C003-A,llm_deepseek_v4_pro,2,2,2,2,2,2
-C003-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C003-C,llm_deepseek_v4_pro,2,0,2,2,0,2
-C004-A,llm_deepseek_v4_pro,2,1,1,2,0,2
-C004-B,llm_deepseek_v4_pro,2,2,1,2,2,2
-C004-C,llm_deepseek_v4_pro,2,1,2,2,1,2
-C005-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C005-B,llm_deepseek_v4_pro,2,1,0,2,2,2
-C005-C,llm_deepseek_v4_pro,2,0,2,2,2,2
-C006-A,llm_deepseek_v4_pro,2,2,1,2,2,2
-C006-B,llm_deepseek_v4_pro,2,1,0,2,1,2
-C006-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C007-A,llm_deepseek_v4_pro,1,0,0,0,0,2
-C007-B,llm_deepseek_v4_pro,2,1,2,2,1,2
-C007-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C008-A,llm_deepseek_v4_pro,2,1,1,2,2,2
-C008-B,llm_deepseek_v4_pro,0,0,0,0,0,0
-C008-C,llm_deepseek_v4_pro,1,0,1,2,1,2
-C009-A,llm_deepseek_v4_pro,2,2,2,2,2,2
-C009-B,llm_deepseek_v4_pro,0,0,1,2,0,2
-C009-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C010-A,llm_deepseek_v4_pro,2,0,0,2,0,2
-C010-B,llm_deepseek_v4_pro,2,2,1,2,2,1
-C010-C,llm_deepseek_v4_pro,2,1,2,2,0,2
-C011-A,llm_deepseek_v4_pro,2,2,2,2,2,2
-C011-B,llm_deepseek_v4_pro,2,0,0,2,2,2
-C011-C,llm_deepseek_v4_pro,2,0,2,2,2,2
-C012-A,llm_deepseek_v4_pro,2,1,1,2,2,2
-C012-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C012-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C013-A,llm_deepseek_v4_pro,2,1,2,2,1,2
-C013-B,llm_deepseek_v4_pro,2,2,2,2,1,2
-C013-C,llm_deepseek_v4_pro,2,1,2,2,1,2
-C014-A,llm_deepseek_v4_pro,2,2,2,2,2,2
-C014-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C014-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C015-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C015-B,llm_deepseek_v4_pro,2,1,2,2,2,2
-C015-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C016-A,llm_deepseek_v4_pro,2,1,1,2,1,2
-C016-B,llm_deepseek_v4_pro,2,0,0,2,0,2
-C016-C,llm_deepseek_v4_pro,2,1,2,2,1,2
-C017-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C017-B,llm_deepseek_v4_pro,2,1,2,2,2,2
-C017-C,llm_deepseek_v4_pro,2,1,1,2,1,2
-C018-A,llm_deepseek_v4_pro,2,1,1,2,2,2
-C018-B,llm_deepseek_v4_pro,2,1,0,2,1,2
-C018-C,llm_deepseek_v4_pro,2,1,1,2,1,2
-C019-A,llm_deepseek_v4_pro,2,0,2,2,0,2
-C019-B,llm_deepseek_v4_pro,2,1,2,2,2,2
-C019-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C020-A,llm_deepseek_v4_pro,2,2,2,2,2,2
-C020-B,llm_deepseek_v4_pro,2,0,1,2,2,2
-C020-C,llm_deepseek_v4_pro,2,1,1,2,2,1
-C021-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C021-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C021-C,llm_deepseek_v4_pro,2,0,0,2,0,2
-C022-A,llm_deepseek_v4_pro,2,0,0,2,0,2
-C022-B,llm_deepseek_v4_pro,2,1,0,2,1,2
-C022-C,llm_deepseek_v4_pro,2,0,2,2,0,2
-C023-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C023-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C023-C,llm_deepseek_v4_pro,2,0,2,2,2,2
-C024-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C024-B,llm_deepseek_v4_pro,2,1,1,2,2,2
-C024-C,llm_deepseek_v4_pro,2,2,2,2,2,2
-C025-A,llm_deepseek_v4_pro,2,1,2,2,2,2
-C025-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C025-C,llm_deepseek_v4_pro,2,1,1,2,1,2
-C026-A,llm_deepseek_v4_pro,2,1,1,2,0,2
-C026-B,llm_deepseek_v4_pro,2,2,2,2,2,2
-C026-C,llm_deepseek_v4_pro,2,0,2,2,1,2
-C027-A,llm_deepseek_v4_pro,2,1,2,2,1,2
-C027-B,llm_deepseek_v4_pro,2,1,2,2,1,2
-C027-C,llm_deepseek_v4_pro,1,0,2,2,0,2
-C028-A,llm_deepseek_v4_pro,2,0,1,2,0,2
-C028-B,llm_deepseek_v4_pro,2,0,0,2,0,2
-C028-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C029-A,llm_deepseek_v4_pro,2,1,2,2,1,2
-C029-B,llm_deepseek_v4_pro,2,1,2,2,1,2
-C029-C,llm_deepseek_v4_pro,2,0,0,0,0,2
-C030-A,llm_deepseek_v4_pro,2,2,1,2,2,2
-C030-B,llm_deepseek_v4_pro,2,1,1,2,1,2
-C030-C,llm_deepseek_v4_pro,2,1,2,2,2,2
-C001-A,llm_qwen36_35b_a3b,2,1,1,2,2,2
-C001-B,llm_qwen36_35b_a3b,1,0,1,2,0,1
-C001-C,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C002-A,llm_qwen36_35b_a3b,2,2,1,2,2,2
-C002-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C002-C,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C003-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C003-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C003-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C004-A,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C004-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C004-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C005-A,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C005-B,llm_qwen36_35b_a3b,2,1,1,2,1,1
-C005-C,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C006-A,llm_qwen36_35b_a3b,2,2,1,2,2,2
-C006-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C006-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C007-A,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C007-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C007-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C008-A,llm_qwen36_35b_a3b,2,1,1,2,2,1
-C008-B,llm_qwen36_35b_a3b,0,0,0,0,0,0
-C008-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C009-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C009-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C009-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C010-A,llm_qwen36_35b_a3b,1,0,0,2,0,2
-C010-B,llm_qwen36_35b_a3b,1,0,0,2,0,1
-C010-C,llm_qwen36_35b_a3b,2,0,0,2,0,2
-C011-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C011-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C011-C,llm_qwen36_35b_a3b,2,1,2,2,1,1
-C012-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C012-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C012-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C013-A,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C013-B,llm_qwen36_35b_a3b,2,2,2,2,1,2
-C013-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C014-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C014-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C014-C,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C015-A,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C015-B,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C015-C,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C016-A,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C016-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C016-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C017-A,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C017-B,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C017-C,llm_qwen36_35b_a3b,2,1,2,2,1,1
-C018-A,llm_qwen36_35b_a3b,2,1,1,2,2,2
-C018-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C018-C,llm_qwen36_35b_a3b,2,1,1,2,2,2
-C019-A,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C019-B,llm_qwen36_35b_a3b,2,1,2,2,2,2
-C019-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C020-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C020-B,llm_qwen36_35b_a3b,2,1,1,2,2,1
-C020-C,llm_qwen36_35b_a3b,2,1,1,2,1,1
-C021-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C021-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C021-C,llm_qwen36_35b_a3b,2,1,0,2,1,2
-C022-A,llm_qwen36_35b_a3b,2,0,0,2,1,1
-C022-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C022-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C023-A,llm_qwen36_35b_a3b,1,1,1,2,1,2
-C023-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C023-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C024-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C024-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C024-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C025-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C025-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C025-C,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C026-A,llm_qwen36_35b_a3b,2,1,1,2,2,2
-C026-B,llm_qwen36_35b_a3b,2,2,1,2,2,2
-C026-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C027-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C027-B,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C027-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C028-A,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C028-B,llm_qwen36_35b_a3b,2,0,0,2,0,1
-C028-C,llm_qwen36_35b_a3b,2,1,2,2,1,2
-C029-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C029-B,llm_qwen36_35b_a3b,2,1,1,2,2,2
-C029-C,llm_qwen36_35b_a3b,1,0,0,0,0,1
-C030-A,llm_qwen36_35b_a3b,2,2,2,2,2,2
-C030-B,llm_qwen36_35b_a3b,2,1,1,2,1,2
-C030-C,llm_qwen36_35b_a3b,2,2,2,2,2,2
+annotation_id,annotator_id,constraint_fidelity,evidence_coverage,consequence_continuity,no_feasible_handling,appropriate_personalization,surface_coherence,notes
+C001-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, covers all required evidence, carries forward obligations, and presents a feasible plan without unsupported personalization."
+C001-B,llm_deepseek_v4_pro,2,1,0,2,2,2,"Omits caregiver schedule tail debt evidence, fails to carry forward consequence obligations (career delay/debt follow-up), weakening evidence coverage and continuity."
+C001-C,llm_deepseek_v4_pro,2,1,2,1,2,2,"States constraints respected but lacks concrete evidence details (time window, role detail, specific floor/deadline). No infeasibility handling shown. Coherent and avoids personalization."
+C002-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"All hard boundaries respected, required evidence referenced, obligations explicitly carried forward, no unsupported personalization."
+C002-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly retains all hard boundaries, required evidence, and consequence obligations, with coherent structure and no unsupported personalization."
+C002-C,llm_deepseek_v4_pro,2,1,0,2,2,2,Misses late tail witness and caregiver schedule tail debt. Fails to carry forward Career delay and Career debt follow-up obligations.
+C003-A,llm_deepseek_v4_pro,2,1,1,2,2,2,Mentions key constraints but lacks concrete evidence; partially covers obligations (missing delay follow-up); coherent commitment.
+C003-B,llm_deepseek_v4_pro,2,2,1,0,2,2,"Covers constraints and evidence, but does not handle infeasibility; consequence follow-up for career delay is implied rather than explicit."
+C003-C,llm_deepseek_v4_pro,2,0,0,0,2,2,"Missed caregiver schedule tail debt evidence. No follow-up on career delay/debt obligations. No infeasibility handling, but hard constraints met."
+C004-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves hard boundaries, but missing finance/time-window/income-bridge evidence and career delay follow-up."
+C004-B,llm_deepseek_v4_pro,2,1,2,2,2,2,Omits caregiver schedule tail falsehard and late tail witness; key hard evidence covered.
+C004-C,llm_deepseek_v4_pro,1,2,0,1,2,2,"Output hardens caregiver schedule as must-accommodate, likely violating soft preference boundary. Missing follow-up for career delay and falsehard."
+C005-A,llm_deepseek_v4_pro,2,0,0,0,2,2,"Output omits all required evidence beyond two boundaries, ignores consequence obligations, and assumes feasibility without addressing missing/conflicting caregiver tail falsehard."
+C005-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output respects hard boundaries, covers all required evidence, follows consequence obligations, no infeasible states mishandled, avoids intrusive personalization, and is coherent."
+C005-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Preserves hard boundaries and evidence, but does not explicitly address career delay follow-up consequence obligation."
+C006-A,llm_deepseek_v4_pro,2,0,0,2,2,2,Preserves hard boundaries but omits required falsehard evidence and consequence follow-ups. No infeasibility; no personalization; coherent surface.
+C006-B,llm_deepseek_v4_pro,2,2,1,2,2,2,Career falsehard follow-up obligation not mentioned; only career delay follow-up is carried forward.
+C006-C,llm_deepseek_v4_pro,1,2,1,2,1,1,"Treats caregiver falsehard as hard constraint; misses career delay follow-up; includes synthetic IDs, hurting personalization and coherence."
+C007-A,llm_deepseek_v4_pro,2,0,0,0,2,0,"Placeholder output states hard boundaries but lacks required evidence, follow-ups, or coherent plan content."
+C007-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Abstention correctly cites missing late_tail_witness, preserving boundaries and avoiding unsupported commitment."
+C007-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Explicitly states follow-up for career delay, but not for career exception follow-up obligation. All boundaries and evidence are addressed, no infeasibility or unsupported personalization."
+C008-A,llm_deepseek_v4_pro,1,1,1,1,2,2,Mentions key boundaries but suggestion to delay may conflict with deadline; lacks required evidence details; no explicit follow-up handling; assumes feasibility without repair.
+C008-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Preserves scoped exception, deadline, income floor; covers tail witness and consequence; coherent. All boundaries respected."
+C008-C,llm_deepseek_v4_pro,2,0,1,2,2,2,"Omits caregiver schedule tail exception evidence. No career delay follow-up, only exception follow-up."
+C009-A,llm_deepseek_v4_pro,2,2,1,2,2,2,"Output preserves hard boundaries, covers required evidence, but consequence follow-up is only partially explicit (monitoring deadline vs. explicit delay follow-up)."
+C009-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Preserves visa deadline, income floor, and scoped exception. Retains caregiver schedule tail and schedules required follow-ups. No unsupported additions."
+C009-C,llm_deepseek_v4_pro,0,0,0,0,0,0,Output is a non-answer placeholder; fails to preserve any case facts or requirements.
+C010-A,llm_deepseek_v4_pro,2,2,1,2,2,2,"Output abstains due to conflict, respects constraints; but does not explicitly mention career delay follow-up or infeasible follow-up obligations."
+C010-B,llm_deepseek_v4_pro,0,0,0,0,2,2,"Output commits to role satisfying incompatible constraints and ignores must-not-do boundary, violating no-feasible handling."
+C010-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Respects boundaries and abstains, but lacks specific evidence and follow-up obligations. Partial evidence coverage, no consequence continuity."
+C011-A,llm_deepseek_v4_pro,0,1,1,0,2,2,Makes a commitment despite mutually incompatible constraints; fails to repair/abstain. Omits late tail witness and caregiver infeasibility.
+C011-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output recognizes incompatible constraints and proposes recontracting. Some required evidence (finance, time window, role detail, income bridge, deadline, income floor) not explicitly referenced, but essential incompatibility is handled."
+C011-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Correctly abstains and identifies conflict. Lacks explicit mention of follow-up obligations, but asks for input to resolve."
+C012-A,llm_deepseek_v4_pro,0,1,0,0,0,2,"Output ignores the conflicting must-not-do-action-now requirement and commits immediately, failing to abstain or repair."
+C012-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstains correctly, flags follow-ups. Mentions tail witness and anchoring evidence but omits some required evidence details."
+C012-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Output abstains and suggests recontracting, preserving constraints, but lacks mention of consequence follow-ups and detailed evidence coverage."
+C013-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Income bridge evidence missing, otherwise covers required evidence. No personalization or constraint violations."
+C013-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output respects both hard boundaries and includes most required evidence, but omits the caregiver schedule tail surface. No infeasibility or unsupported personalization."
+C013-C,llm_deepseek_v4_pro,2,1,2,2,2,2,Preserves hard boundaries; explicitly mentions many required evidence types but not all; clear on obligations; impersonal; coherent.
+C014-A,llm_deepseek_v4_pro,0,0,0,0,0,0,No output text provided to audit; unable to evaluate.
+C014-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"System correctly abstains, cites need for repair/abstention, preserves boundaries, and notes follow-up obligations. No commitment made, so no evidence detailed."
+C014-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Abstains from commitment due to witness issue, respects boundaries. Lacks explicit follow-up for delay and career surface obligations."
+C015-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Faithful abstention: respects deadlines and income floor, acknowledges missing evidence and follow-ups, no unsupported personalization."
+C015-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output strictly adheres to hard boundaries, covers required evidence, carries obligations, avoids unsupported personalization, and is coherent."
+C015-C,llm_deepseek_v4_pro,0,0,0,0,2,0,"Output is an opaque identifier with no prose, failing to address any case requirements or constraints."
+C016-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output preserves hard boundaries, covers all required evidence, carries forward obligations, and remains coherent without unsupported personalization."
+C016-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output asserts deadline and income floor respected, but omits caregiver schedule tail and income floor evidence. Mentions but doesn't materialize late tail witness. Career delay follow-up missing."
+C016-C,llm_deepseek_v4_pro,2,1,1,0,2,2,Preserves hard boundaries; uses anchors but lacks income bridge and career delay follow-up; no handling of infeasible states; no unsupported personalization.
+C017-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Misses caregiver schedule tail evidence; consequence follow-ups only generic revalidation, not specific delay/tail follow-ups."
+C017-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output respects hard boundaries, includes all required evidence, integrates the late tail witness, and carries forward consequences. No infeasible state or unsupported personalization detected."
+C017-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Preserves boundaries and includes late-tail evidence, but omits explicit career delay/tail follow-up and full evidence list, leaving coverage partial."
+C018-A,llm_deepseek_v4_pro,2,1,1,2,2,2,Missing caregiver schedule tail as late witness; career delay follow-up not addressed.
+C018-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output mentions constraints and key evidence slots but lacks concrete details for deadline/income floor; obligations are generic placeholders, not specific follow-ups."
+C018-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output directly preserves confirmed hard boundaries, covers required evidence, and carries forward follow-up obligations without adding unsupported details."
+C019-A,llm_deepseek_v4_pro,0,0,0,0,0,0,No output provided for audit.
+C019-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly addresses all required boundaries, evidence, and obligations; no violations detected."
+C019-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves both hard boundaries and anchors key obligations. Lacks integration of required evidence like finance, career, and time window details, asking user for missing info instead."
+C020-A,llm_deepseek_v4_pro,0,0,0,0,0,0,No output provided to audit; empty or missing.
+C020-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves boundaries and cashflow obligations, covers all required evidence categories, carries forward consequences, addresses role conflict debt, avoids unsupported personalization, and is coherent."
+C020-C,llm_deepseek_v4_pro,0,0,0,0,2,2,"Output is a claim of compliance without presenting required evidence or concrete details; fails to demonstrate boundary preservation, evidence, or consequence handling."
+C021-A,llm_deepseek_v4_pro,2,1,1,1,2,2,"Mentions only some required evidence; generic plan lacks explicit follow-up and conflict resolution, though constraints are acknowledged and no unsupported personalization."
+C021-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Covers evidence items generically; lacks depth, so evidence coverage partial. Otherwise adheres to constraints, continuity, and coherence."
+C021-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Defers request, preserving boundaries. Covers many evidence items but omits finance, career, relationship family. Coherent, impersonal, maintains obligations."
+C022-A,llm_deepseek_v4_pro,2,0,1,1,2,2,"Output lacks required details beyond listing identifiers; claims to preserve boundaries and includes falsehard follow-up, but no actual evidence or multi-domain follow-up are shown."
+C022-B,llm_deepseek_v4_pro,2,1,1,2,2,2,Output preserves boundaries but only touches on a few required evidence items; follow-up is vague. Coherent and not overly personalized.
+C022-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Respects boundaries, names key evidence, includes monitoring language. Comprehensive falsehard follow-up not explicit, but implied by monitoring."
+C023-A,llm_deepseek_v4_pro,0,0,0,0,2,0,"Output is a placeholder summary with no actual plan, evidence, or follow-up. Claims to respect boundaries but provides no verifiable specifics."
+C023-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output clearly respects hard boundaries, retains required evidence, and follows consequence obligations. No unsupported personalization."
+C023-C,llm_deepseek_v4_pro,2,0,2,2,2,2,"Evidence coverage fails: lists evidence labels but provides no actual details, so required evidence is not retained. Other dimensions appear satisfied by declaration."
+C024-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstains due to missing tail-witness; hard boundaries acknowledged. Evidence coverage partial, advises escalation."
+C024-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output preserves hard boundaries, covers all required evidence, includes follow-up, and avoids unsupported personalization."
+C024-C,llm_deepseek_v4_pro,2,2,2,1,2,2,"Output preserves hard boundaries and covers required evidence but does not explicitly demonstrate repair/abstention/recontract for no-feasible states; merely asserts flexible scheduling, which is ambiguous."
+C025-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves all hard boundaries, lists required evidence, and defines follow-ups. No evidence of boundary violation or unsupported personalization. Appears faithful."
+C025-B,llm_deepseek_v4_pro,2,2,1,2,2,2,"Response appropriately abstains due to missing required evidence and unaddressed dimensions, preserving boundaries. Consequence follow-up is not explicitly offered but abstention minimizes risk."
+C025-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Explicitly commits to all boundaries and exceptions, references required evidence anchors, and includes follow-up obligations; no personalization or infeasibility issues."
+C026-A,llm_deepseek_v4_pro,2,2,1,2,2,2,Output commits to required components but lacks explicit mention of multi-domain and exception follow-up actions.
+C026-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves all hard boundaries, references required evidence, and mandates multi-domain follow-up. No violations."
+C026-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves all hard boundaries, covers all required evidence dimensions, and commits to a comprehensive plan without unsupported personalization or infeasibility signals."
+C027-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves boundaries, covers required evidence, and includes follow-ups. No unsupported personalization. Coherent."
+C027-B,llm_deepseek_v4_pro,2,2,2,1,2,2,"Explicitly preserves boundaries, covers required evidence, carries obligations. No explicit no-feasible handling, but includes monitoring and adjustment."
+C027-C,llm_deepseek_v4_pro,2,0,0,0,2,2,Omits role conflict tail exception and many required evidence elements; no follow-up; ignores no-feasible handling.
+C028-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstains correctly, preserves boundaries, but omits all required case-specific evidence, treating conflict generically."
+C028-B,llm_deepseek_v4_pro,2,2,0,2,2,2,"Abstains correctly from contradictory constraints, but provides no follow-up or next steps, violating consequence obligations."
+C028-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstention preserves hard boundaries and avoids commitment. Mentions key constraints but lacks explicit evidence details. Suggests recontracting, maintaining follow-up."
+C029-A,llm_deepseek_v4_pro,2,0,1,2,2,2,"Correctly abstains and requests recontract. No reference to required evidence, failing evidence coverage. Partial follow-up initiated."
+C029-B,llm_deepseek_v4_pro,2,1,0,2,2,2,Abstains correctly but lacks required evidence details and follow-up prompts.
+C029-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Abstention correctly handles infeasibility but does not explicitly reference required evidence or follow-up obligations.
+C030-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output identifies conflict, preserves cashflow obligation, requests recontract instead of committing, and avoids unsupported personalization."
+C030-B,llm_deepseek_v4_pro,2,1,1,2,2,2,Abstains correctly but doesn’t cover all required evidence domains or mention follow‑on steps; personalization avoided.
+C030-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Abstains correctly but lacks explicit mention of all required evidence details; renegotiation suggestion is appropriate.
+C031-A,llm_deepseek_v4_pro,1,0,0,0,2,2,Output makes vague commitments without providing any required evidence or concrete plan details; fails to demonstrate boundary preservation or consequence handling.
+C031-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Confirms boundaries and abstains from full commitment due to missing evidence, but doesn't provide evidence for the confirmations made."
+C031-C,llm_deepseek_v4_pro,2,0,1,2,2,2,"Output references all required evidence types but provides no concrete details, just placeholder mentions. It explicitly preserves hard boundaries and handles no-feasible states."
+C032-A,llm_deepseek_v4_pro,2,0,1,2,2,2,Output only meta-acknowledges evidence categories without retaining required details; no concrete follow-up plan. Boundaries are explicitly preserved. Conservative commitment avoids overstatement.
+C032-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Mentions all required evidence types but only proposes plan, doesn't provide actual details; boundaries respected."
+C032-C,llm_deepseek_v4_pro,0,0,0,0,0,0,No output provided to audit; cannot evaluate.
+C033-A,llm_deepseek_v4_pro,1,0,1,1,2,2,Claims to preserve boundaries and address evidence but provides no actual details or concrete follow-through beyond naming elements. No evidence included.
+C033-B,llm_deepseek_v4_pro,1,1,1,1,2,2,"Output copies synthetic identifiers without substantive detail, restates constraints but doesn't demonstrate fidelity or integration of evidence, making it partially faithful."
+C033-C,llm_deepseek_v4_pro,2,1,1,0,2,2,"Respects boundaries, avoids unsupported personalization, but missing role conflict/witness evidence and no infeasibility handling."
+C034-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output reiterates constraints and mentions late tail witnesses but lacks other required evidence like finance, career, cashflow details, leaving evidence coverage incomplete."
+C034-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output coherently integrates all required evidence, preserves hard boundaries, ensures follow-up, and avoids unsupported personalization."
+C034-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, covers all required evidence via listed elements, includes both consequence follow-ups, avoids unsupported personalization, and is coherent."
+C035-A,llm_deepseek_v4_pro,1,0,1,0,2,2,"Output is a generic summary lacking specific evidence for cashflow, family boundaries, or tail witness. Claims without demonstration fail to retain required evidence."
+C035-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output asserts adherence to all hard boundaries and evidence requirements, and carries forward obligations. No infeasibility or unsupported personalization present."
+C035-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Explicitly preserves boundaries and handles low-frequency evidence; abstention fallback present. However, only a few required evidence items are named; many are merely asserted without detail."
+C036-A,llm_deepseek_v4_pro,2,1,1,0,2,2,"Output omits required role conflict evidence, which may create a no-feasible state, thus failing to handle it. Coverage and continuity are partial."
+C036-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, incorporates late tail witness, and plans multi-domain actions while retaining required evidence. No violations detected."
+C036-C,llm_deepseek_v4_pro,2,1,2,2,2,2,Covers key constraints and tail evidence but omits explicit time window detail; overall coherent and boundary-respecting.
+C037-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations, but evidence coverage is partial – missing explicit mentions of relationship family, household cost, and household boundary tail debt."
+C037-B,llm_deepseek_v4_pro,2,1,1,2,2,2,Preserves boundaries; mentions some but not all required evidence; implicitly carries obligations; no infeasibility; avoids personalization; coherent.
+C037-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output omits explicit 'Relationship family' evidence required by case, else covers key items and preserves boundaries, obligations, and handles via deferral."
+C038-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output respects hard boundaries, incorporates required evidence including late-tail witness, carries consequence obligations, and avoids unsupported personalization."
+C038-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output explicitly preserves hard boundaries and obligations, but only partially enumerates required evidence, relying on a general claim of honoring all slots."
+C038-C,llm_deepseek_v4_pro,0,0,0,0,0,0,"Output is a bare identifier with no substantive content, failing all fidelity dimensions."
+C039-A,llm_deepseek_v4_pro,2,1,2,2,2,2,Output covers most evidence but omits position size evidence explicitly; late tail witness mention may cover household boundary tail debt. So evidence coverage partial.
+C039-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Household cost evidence is absent; otherwise evidence is covered. Hard boundaries preserved, follow-ups honored."
+C039-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Refusal preserves boundaries and acknowledges missing evidence, but does not explicitly carry forward consequence obligations (household liquidity, investment debt follow-up)."
+C040-A,llm_deepseek_v4_pro,2,0,1,2,2,1,"Minimal label covers one obligation but omits required evidence; no boundary violations or personalization, but coherence is weak."
+C040-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves hard boundaries; partially covers required evidence (missing relationship, late tail witness, etc.); addresses follow-ups implicitly; no personalization issues."
+C040-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output respects hard boundaries, includes required evidence, and avoids unsupported personalization. All dimensions satisfied."
+C041-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output correctly abstains due to missing evidence, preserving all boundaries and avoiding unsupported commitments."
+C041-B,llm_deepseek_v4_pro,2,1,2,2,2,2,Preserves hard boundaries and obligations. Partially covers all required evidence; missing explicit reference to some evidence items like protected cash evidence and position size evidence. Avoids over-personalization.
+C041-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, covers all required evidence and consequences, avoids personalization, and is coherent."
+C042-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves hard boundaries, mentions key evidence but omits relationship/family and some evidence details. Acknowledges missing tail coverage. Follow-up is implicit, not explicit."
+C042-B,llm_deepseek_v4_pro,2,0,0,2,2,0,"Abstention avoids boundary violation and unsupported personalization, but omits all required evidence and consequences, leaving no case-specific commitment."
+C042-C,llm_deepseek_v4_pro,0,0,0,0,1,0,"No output provided; cannot confirm boundary adherence, evidence inclusion, or consequence handling."
+C043-A,llm_deepseek_v4_pro,2,1,0,2,2,2,Covers hard boundaries well. Names many evidence items but lacks substantive evidential backing. No explicit follow-up for household liquidity or investment exception.
+C043-B,llm_deepseek_v4_pro,2,1,0,2,2,2,Output respects hard boundaries but lacks explicit low-frequency evidence (late tail witness) and omits required follow-ups.
+C043-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output faithfully preserves boundaries, covers required evidence, notes obligations, and remains coherent."
+C044-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves hard constraints and exception, but omits explicit late tail witness and household cost evidence; lacks clear follow-up commitments."
+C044-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves boundaries, scoped exception. Evidence coverage partial: missing household cost, evidence markers. Consequence follow-up implicit rather than explicit."
+C044-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Hard boundaries preserved, required evidence covered. Household liquidity follow-up not explicit; investment exception follow-up addressed as 'updating investment exception local priority'."
+C045-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Explicitly preserves hard boundaries and obligations, but blanket claim of covering all detail slots lacks explicit evidence inclusion, so evidence coverage is partial."
+C045-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves all hard boundaries and exception; evidence coverage is claimed but not detailed, partial; follow-ups implied by monitoring, not explicit; no infeasible state; no unsupported personalization; coherent."
+C045-C,llm_deepseek_v4_pro,2,1,0,2,2,2,Misses consequence follow-ups; evidence list omits Late tail witness and Household boundary tail exception.
+C046-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstains correctly due to contradictory constraints, references key evidence but omits some required items. Maintains follow-ups."
+C046-B,llm_deepseek_v4_pro,2,1,1,2,2,2,Abstains correctly due to conflicting constraints. Lacks explicit evidence details and follow-up steps.
+C046-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Correctly abstains; mentions key constraints but not all required evidence. Follow-ups implied but not explicit.
+C047-A,llm_deepseek_v4_pro,0,0,0,0,0,0,"Output commits to R06 despite mutually incompatible constraints, violating hard boundaries and ignoring no-feasible requirement."
+C047-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output correctly abstains, preserving conflicting constraints and consequence obligations. Mentions only some required evidence types; lacks explicit reference to all listed evidence details but that is acceptable for abstention."
+C047-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Correctly identifies mutual exclusivity, abstains, preserves boundaries. Could more explicitly mention household liquidity follow-up."
+C048-A,llm_deepseek_v4_pro,0,0,0,0,2,2,Output commits to invest despite mutually incompatible constraints; ignores infeasibility evidence and required follow-ups.
+C048-B,llm_deepseek_v4_pro,2,1,2,2,2,2,Abstains as required; preserves constraints and obligations. Evidence referenced but not all items explicitly covered.
+C048-C,llm_deepseek_v4_pro,2,2,2,2,2,2,Output correctly identifies conflict and abstains from commitment; covers key boundaries and requests resolution.
+C049-A,llm_deepseek_v4_pro,2,1,0,2,2,2,"Boundaries maintained; evidence partially covered (relationship family omitted, explicit evidence lacking); consequence obligations (household and investment surface follow-ups) not addressed."
+C049-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Correctly abstains due to missing required evidence, preserves hard boundaries, and avoids unsupported personalization."
+C049-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Partial evidence coverage: tail witness explicit, others implied in commitment. Else fully faithful."
+C050-A,llm_deepseek_v4_pro,1,0,0,0,2,2,"Preserves cash and buffer boundaries, but adds unsupported rebalance advice, omits required evidence and follow-ups, no infeasibility handling, coherent but generic."
+C050-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Retains hard boundaries; includes some evidence but omits Finance, Relationship family, Household cost, and explicit evidence references."
+C050-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output respects hard boundaries, mentions most required evidence but only via synthetic labels without concrete details. Follow-up implied. Coherent and appropriately impersonal."
+C051-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves hard boundaries, references key evidence but omits some required details like household cost and position size. Follow-ups addressed, repair stated."
+C051-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves boundaries, lists follow-ups, mentions witness. Evidence coverage is vague; uses 'required detail slots' without explicit listing, so partial."
+C051-C,llm_deepseek_v4_pro,2,2,0,2,2,2,"Abstains appropriately for missing evidence and confirms hard boundaries. However, fails to carry consequence obligations (follow-ups) and thus is incomplete."
+C052-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Partially covers required evidence (missing household cost, position size) and omits explicit household liquidity follow-up; otherwise respects constraints and coherence."
+C052-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves boundaries, but misses required low-frequency evidence (late tail witness) and specific evidence details."
+C052-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves both hard boundaries, covers all required evidence, mentions follow-ups, avoids unsupported personalization, and is coherent."
+C053-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Acknowledges hard boundaries and late tail witness gap, abstains. Partial evidence coverage: mentions tail witness but not all required details. Implicit follow-up only."
+C053-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output preserves hard boundaries, incorporates late tail witness, carries forward obligations, and avoids unsupported personalization. All required evidence is covered."
+C053-C,llm_deepseek_v4_pro,2,1,0,0,2,0,"Output truncated; acknowledges hard boundaries but incomplete on evidence, consequences, and coherence."
+C054-A,llm_deepseek_v4_pro,2,1,2,2,2,2,Covers many required evidence items but misses Relationship family and presents some as placeholders rather than evidence.
+C054-B,llm_deepseek_v4_pro,2,1,1,0,2,2,"Hard boundaries preserved; evidence partially covered (household boundary tail, protected cash/position size evidence not explicit); consequences hinted but household liquidity follow-up unclear; no infeasibility handling; family personalization supported."
+C054-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, covers all required evidence, and carries forward consequence obligations. No infeasibility or unsupported personalization."
+C055-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves boundaries and obligations but does not explicitly cover all required evidence like pacing boundary evidence or relationship family, making coverage partial."
+C055-B,llm_deepseek_v4_pro,2,0,1,0,2,2,Respects stable/no-breakup boundary but omits nearly all required evidence and love choice debt follow-up; commits without repair/abstention despite missing evidence.
+C055-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output maintains stability, mentions all required evidence slots and follow-up obligations, avoids personalization, and is coherent."
+C056-A,llm_deepseek_v4_pro,2,1,1,2,2,2,Preserves hard boundaries. Misses relationship aftershock and explicit relationship family; carries love choice debt but only implies shared living follow-up. No infeasible states or unsupported personalization; coherent.
+C056-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Missing explicit mention of 'Relationship family' evidence, otherwise covers requirements."
+C056-C,llm_deepseek_v4_pro,2,2,1,2,2,2,Abstention due to insufficient info respects boundaries and avoids unsupported personalization. Consequence obligations unaddressed but infeasibility handling is appropriate.
+C057-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves hard boundaries and obligations but missing explicit mention of time window, relationship detail, and aftershock."
+C057-B,llm_deepseek_v4_pro,2,2,2,2,2,2,Preserves all hard boundaries and required evidence; carries obligations; avoids unsupported personalization; coherent plan.
+C057-C,llm_deepseek_v4_pro,2,0,1,2,2,2,"Fails to include required evidence like love choice debt, family meeting tail debt, pacing boundary evidence. Partially addresses shared living follow-up but not love choice debt."
+C058-A,llm_deepseek_v4_pro,2,1,0,2,2,2,Output preserves boundaries but lacks explicit evidence coverage and does not address consequence follow-ups.
+C058-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output lacks explicit mention of family meeting tail falsehard, late tail witness, and relationship aftershock; missing shared living follow-up. Otherwise preserves boundaries and avoids hardening."
+C058-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"All boundaries respected, evidence covered, mutable factors highlighted as follow-up, no unsupported personalization."
+C059-A,llm_deepseek_v4_pro,2,0,0,2,2,2,Output preserves hard boundaries but omits required evidence and consequence follow-ups. Generic recommendation is coherent and avoids unsupported personalization.
+C059-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output faithfully preserves boundaries, covers required evidence, follows consequence obligations, avoids unsupported personalization, and is coherent."
+C059-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output faithfully lists preserved boundaries, required evidence, and follow-ups without violating constraints or adding unsupported personalization."
+C060-A,llm_deepseek_v4_pro,2,0,0,2,2,1,"Output is a meta-instruction listing anchor types, not a user response. Fails to present required evidence or consequence follow-up. No unsupported personalization, but copies synthetic identifiers."
+C060-B,llm_deepseek_v4_pro,0,0,0,0,0,0,"Output is a meta placeholder, not a user-facing answer; fails all dimensions."
+C060-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output fully respects stable relationship boundary, includes all required evidence, follows consequence obligations, treats soft preference correctly, avoids unsupported personalization, and maintains coherence."
+C061-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves boundaries and exceptions, covers key evidence but omits some required details (e.g., relationship family, aftershock), addresses consequences, no unsupported personalization."
+C061-B,llm_deepseek_v4_pro,1,0,0,2,2,2,Output mentions hard boundaries but flattens the scoped exception and ignores all required evidence and consequence follow-ups.
+C061-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Meta-claim of evidence coverage without explicit detail; love choice exception follow-up omitted from downstream obligations.
+C062-A,llm_deepseek_v4_pro,2,0,0,2,2,2,"Output only recites requirement labels without providing any case-specific evidence or details, failing to retain evidence or carry consequences meaningfully."
+C062-B,llm_deepseek_v4_pro,0,0,0,0,0,0,"Output is a metadata placeholder, not a valid response. No boundaries, evidence, or obligations addressed."
+C062-C,llm_deepseek_v4_pro,2,1,0,2,2,2,Claims evidence addressed but doesn't show it; omits shared living and exception follow-up.
+C063-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves hard boundaries and exceptions, but pacing boundary evidence is not explicitly mentioned, leaving evidence coverage partial."
+C063-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves hard boundaries and consequences. Covers key exceptions but omits required evidence terms like Relationship family and detail, making coverage partial."
+C063-C,llm_deepseek_v4_pro,0,0,0,0,0,0,No user-facing output provided to audit.
+C064-A,llm_deepseek_v4_pro,2,2,0,2,2,2,"Correctly abstains due to conflicting constraints. Ignores required consequence obligations, failing to carry them forward even via acknowledgment."
+C064-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output correctly identifies conflict and abstains, preserving all boundaries and avoiding unsupported commitment."
+C064-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output correctly identifies infeasibility, avoids commitment, proposes recontract, and carries obligations. All hard boundaries respected."
+C065-A,llm_deepseek_v4_pro,2,1,1,2,2,2,Abstains appropriately given mutual incompatibility. Does not detail all required evidence but preserves core constraints.
+C065-B,llm_deepseek_v4_pro,2,1,0,2,2,2,"Correctly abstains due to contradictory constraints. Omits consequence obligations and key evidence like family meeting tail, reducing coverage."
+C065-C,llm_deepseek_v4_pro,2,0,0,2,2,2,"Correctly identifies conflicting constraints and abstains, but provides no evidence and fails to address consequences."
+C066-A,llm_deepseek_v4_pro,2,1,2,2,2,2,Correctly abstains due to conflicting constraints. Omits specific evidence but avoids fabrication and respects boundaries.
+C066-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Abstains correctly due to incompatible constraints. Lacks explicit evidence items and follow-up details, but flags conflict for review."
+C066-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Properly abstains, identifies mutual incompatibility, and requests clarification without violating boundaries or inventing facts."
+C067-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves boundaries and carries consequences but omits some required evidence like aftershock and late tail witness, making coverage partial."
+C067-B,llm_deepseek_v4_pro,2,1,0,2,2,2,"Preserves boundaries but omits most required evidence (time window, aftershock, witness, etc.) and all consequence follow-ups."
+C067-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves stable relationship and no breakup signals, acknowledges surface interest without overstating, but does not explicitly reference all required evidence items."
+C068-A,llm_deepseek_v4_pro,2,0,0,2,2,2,"Meta-summary, not user response; lacks required evidence and follow-up details. Claims adherence but provides no case content."
+C068-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Mentions key evidence but does not explicitly cover all required pieces (e.g., Relationship detail, aftershock). Evidence coverage is partial."
+C068-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output faithfully preserves stable relationship, no breakup, includes shared living and family meeting, addresses consequences, no unsupported personalization."
+C069-A,llm_deepseek_v4_pro,2,1,2,2,2,2,Preserves boundaries; lacks explicit time window/relationship detail; handles consequences appropriately.
+C069-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Covers hard boundary and consequences, but missing several required evidence details (e.g., relationship aftershock, late tail witness). Provides only partial evidence coverage."
+C069-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Respects stable status, avoids overstatement. Partially covers required evidence, omitting love choice surface and late tail witness details."
+C070-A,llm_deepseek_v4_pro,2,1,0,2,2,2,Mentions stable status/no breakup; late witness. But fails to address shared living/love choice follow-ups. Evidence coverage partial (asserts timeline/relationship details without demonstrating them).
+C070-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output adheres to hard boundaries but only partially references required evidence and consequence obligations, mentioning some but omitting key details like time window and family meeting tail."
+C070-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output adheres to hard boundaries and carries forward obligations. Misses several required evidence details (relationship family, time window, etc.), only partially covering them."
+C071-A,llm_deepseek_v4_pro,2,0,0,0,2,2,Abstains but fails to engage required evidence or handle late witness; reason insufficient given case details. No consequence follow-up. Personalization absent.
+C071-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves stable relationship, no breakup. Covers late witness, love choice tail, shared living. Misses relationship family, time window, relationship detail, aftershock, pacing boundary evidence."
+C071-C,llm_deepseek_v4_pro,0,0,0,0,0,0,No output provided for auditing.
+C072-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves stable relationship and no breakup. Mentions family and shared living vaguely, but omits required low-frequency family meeting tail and late tail witness specifics."
+C072-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output labels evidence but never presents the actual required details, making evidence coverage only partial."
+C072-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves stable boundary, includes low-frequency witness, and carries forward obligations. Some required evidence (time window, relationship detail) is omitted, making coverage partial."
+C073-A,llm_deepseek_v4_pro,2,1,1,2,2,2,Misses caregiving tail evidence debt and caregiving follow-up; other evidence and boundaries preserved.
+C073-B,llm_deepseek_v4_pro,2,0,0,2,2,2,"Correctly abstains due to hard constraints, but completely omits required evidence and consequence obligations."
+C073-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Evidence coverage is partial: care schedule evidence and relocation debt detail lacking. Consequence continuity: career delay follow-up not explicitly carried.
+C074-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output respects hard boundaries and consequence obligations, but evidence coverage is shallow: many required details (career, family, time window, settlement specifics, relocation debt detail) are not retained, only mentioned."
+C074-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output preserves hard boundaries, covers all required evidence, carries forward caregiving/career/relocation obligations, avoids unsupported personalization, and is coherent."
+C074-C,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves boundaries, covers some evidence but misses caregiving, late tail witness, time window, settlement. Consequence follow-up limited. Handles feasibility via adjustment. Appropriate generic personalization."
+C075-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Omits explicit mention of relationship/family and time window from required evidence, making coverage partial."
+C075-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output correctly abstains, preserving hard boundaries. Lacks explicit evidence and consequence follow-up, making evidence/continuity partial."
+C075-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Abstains correctly on hard boundaries, but omits required evidence and all consequence obligations, so evidence coverage is partial and consequence continuity fails."
+C076-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Covers key evidence but omits relationship family, time window, presence requirement evidence, and care schedule evidence; otherwise preserves boundaries and obligations."
+C076-B,llm_deepseek_v4_pro,2,1,0,2,2,2,Lacks caregiving/career delay follow-ups and care evidence; otherwise preserves boundaries and avoids falsehard personalization.
+C076-C,llm_deepseek_v4_pro,2,2,2,2,2,2,"Preserves hard boundaries, covers all required evidence, includes all follow-ups, handles caregiving contingency with conditional deferral, and avoids unsupported personalization."
+C077-A,llm_deepseek_v4_pro,2,1,0,2,2,2,"Preserves hard boundaries but barely covers required evidence and omits all consequence follow-ups, making it an insufficiently accountable abstention."
+C077-B,llm_deepseek_v4_pro,2,0,1,2,2,2,"Missing required evidence: career, relationship, time window, settlement, late tail witness, etc. Only partial mention of some evidence."
+C077-C,llm_deepseek_v4_pro,0,0,0,0,0,0,No output provided.
+C078-A,llm_deepseek_v4_pro,2,1,0,2,2,2,"Correctly abstains due to hard conflicts. Evidence coverage is minimal, omitting required elements. No consequence follow-ups mentioned."
+C078-B,llm_deepseek_v4_pro,2,1,2,1,2,2,"Preserves hard boundaries, but evidence coverage partial (care schedule absent) and commits without verifying commuting feasibility."
+C078-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Preserves hard boundaries, handles infeasibility, but lacks explicit consequence follow-ups and does not cover all required evidence (e.g., relationship family, relocation falsehard)."
+C079-A,llm_deepseek_v4_pro,2,2,2,2,2,2,"All hard boundaries preserved, required evidence covered, consequences followed, no infeasibility, no unsupported personalization, coherent plan."
+C079-B,llm_deepseek_v4_pro,2,1,0,2,2,2,"Output abstains correctly on no-feasible state, preserves hard constraints, but lacks evidence coverage and consequence follow-up."
+C079-C,llm_deepseek_v4_pro,2,1,0,2,2,2,"Output abstains, avoiding boundary violations and unsupported personalization. No evidence or consequences are included, which is acceptable given the repair statement."
+C080-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves hard boundaries and exception but omits required evidence (late tail witness, relationship, time window, settlement, career consequence)."
+C080-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Abstention preserves boundaries and acknowledges follow-ups, but does not explicitly list required evidence (e.g., caregiving tail)."
+C080-C,llm_deepseek_v4_pro,2,1,1,0,2,2,"Output ignores caregiving tail evidence and late tail witness, dismissing required low-frequency exception and omitting caregiving consequence obligation."
+C081-A,llm_deepseek_v4_pro,2,1,2,2,2,2,Abstention preserves boundaries and follow-up obligations. Evidence coverage is implicitly acknowledged but not detailed; partially satisfied.
+C081-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves hard boundaries and scoped exception. Evidence missing time window, care schedule, relationship. Consequence follow-up implicit for caregiving. Decision clear and coherent."
+C081-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Preserves hard constraints and scoped exception; misses low-frequency evidence like tail witness and caregiving exception. Career delay follow-up omitted.
+C082-A,llm_deepseek_v4_pro,2,0,0,2,2,2,Output abstains correctly but omits all required evidence and consequence obligations.
+C082-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Abstains correctly due to conflicting hard constraints. Does not reference required evidence or mention follow-up obligations, but conflict handling is appropriate."
+C082-C,llm_deepseek_v4_pro,2,1,0,2,2,2,Abstains correctly but omits mention of required evidence details and explicit follow-up obligations.
+C083-A,llm_deepseek_v4_pro,2,1,0,2,2,2,"Abstention correct due to conflict, but missing required evidence details and follow-up obligations."
+C083-B,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output correctly identifies conflict, abstains, requests clarification, but omits some required evidence details like career, family."
+C083-C,llm_deepseek_v4_pro,2,1,1,2,2,2,"Abstains correctly for incompatible constraints, but omits some required evidence and relocation infeasible follow-up obligation."
+C084-A,llm_deepseek_v4_pro,2,1,0,2,2,2,"Abstains correctly but omits required consequence follow-ups; only partially covers evidence, focusing solely on constraints."
+C084-B,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output correctly identifies mutual incompatibility and abstains, but omits relocation_infeasible_followup obligation and does not cover required evidence, only noting it as missing."
+C084-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output correctly abstains and requests recontract, preserving hard boundaries. Mentions some evidence but not all required items; still no contradiction. Follow-up obligations retained. No personalization. Coherent."
+C085-A,llm_deepseek_v4_pro,2,2,2,2,1,2,"Respects hard boundaries and carries obligations, but adds unsupported personalization about commute plan and local priorities beyond confirmed evidence."
+C085-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output abstains to repair commitment, preserving boundaries and avoiding unsupported claims. Handles infeasibility conservatively without violating evidence or consequences."
+C085-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Output preserves hard constraints, handles infeasibility via repair. Covers most evidence but only explicitly tracks career delay obligation, missing caregiving/relocation follow-ups."
+C086-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Preserves boundaries, abstains from commitment. Covers caregiving and career follow-up but omits relocation surface follow-up. Only caregiving tail evidence referenced; other required evidence unaddressed."
+C086-B,llm_deepseek_v4_pro,2,1,2,2,2,2,Required evidence Relationship family is missing; all other evidence and obligations are addressed.
+C086-C,llm_deepseek_v4_pro,2,2,2,2,2,2,Correct abstention acknowledges hard constraints and infeasibility; no boundary or personalization violations; evidence and consequences implicitly respected.
+C087-A,llm_deepseek_v4_pro,2,1,2,2,2,2,"Output preserves hard boundaries, acknowledges consequences, and avoids personalization. Evidence coverage is partial due to vague references (e.g., 'career impact addressed')."
+C087-B,llm_deepseek_v4_pro,2,2,2,2,2,2,"Output faithfully preserves hard boundaries, covers required evidence, includes all consequence follow-ups, handles no infeasibility, personalization is appropriate, and is coherent."
+C087-C,llm_deepseek_v4_pro,2,0,0,2,2,2,"Abstention preserves hard boundaries but omits all required evidence and consequence follow-ups. No personalization, coherent."
+C088-A,llm_deepseek_v4_pro,0,0,0,0,0,0,No output text provided to audit.
+C088-B,llm_deepseek_v4_pro,2,1,0,2,2,2,"Output correctly respects hard boundaries and abstains, but does not mention required evidence beyond constraints nor carry forward consequence obligations."
+C088-C,llm_deepseek_v4_pro,2,2,1,2,2,2,"Preserves constraints, abstains wisely, covers most evidence, but omits explicit relocation tail follow-up from consequence obligations."
+C089-A,llm_deepseek_v4_pro,2,0,0,2,2,2,"Preserves hard boundaries, correctly identifies infeasibility, but omits all required evidence and consequence follow-ups. Evidence and consequence continuity lacking."
+C089-B,llm_deepseek_v4_pro,2,1,2,2,2,2,Missing required 'Relationship family' evidence; all other evidence and obligations are addressed.
+C089-C,llm_deepseek_v4_pro,2,1,1,2,2,2,Respects hard boundaries but evidence coverage is vague; lacks specific required details and consequence continuity is implied but not explicit.
+C090-A,llm_deepseek_v4_pro,2,1,1,2,2,2,"Output preserves hard boundaries and is coherent. Evidence coverage is partial; misses settlement detail, late tail witness, career consequence, caregiving tail. Consequence obligations only partially addressed."
+C090-B,llm_deepseek_v4_pro,2,1,1,2,2,2,Evidence coverage mostly there but lacks explicit care schedule evidence; consequence continuity omits relocation tail follow-up.
+C090-C,llm_deepseek_v4_pro,2,1,2,2,2,2,"Preserves hard boundaries, carries consequences, but omits required Relationship family evidence; otherwise coherent and conservative."
+C001-A,llm_qwen3_6_35b_a3b,2,2,2,1,2,2,Preserves hard boundaries and all required evidence. Carries forward consequence obligations. Lacks explicit infeasibility handling protocol but remains feasible and coherent.
+C001-B,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,Respects visa and income boundaries but omits required caregiver tail debt and career debt follow-up obligations. Partial evidence coverage limits fidelity.
+C001-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, integrates all required evidence and consequence obligations, and maintains coherent commitment without unsupported additions or constraint violations."
+C002-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves both hard boundaries, retains all required evidence tags and downstream obligations, and maintains logical flow without inventing facts or violating constraints."
+C002-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output explicitly preserves both hard boundaries, retains all required evidence and low-frequency witnesses, and correctly carries forward both consequence obligations without unsupported additions."
+C002-C,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and most evidence, but omits the critical low-frequency caregiver tail debt witness and specific career delay/debt follow-up obligations. Commitment is coherent but partially incomplete on runtime-control stress tests."
+C003-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves visa/income boundaries, retains all required evidence including low-frequency witness, carries forward career debt obligations, and maintains coherent commitment without unsupported personalization."
+C003-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves hard boundaries and required evidence. Integrates synthetic identifiers functionally. Carries forward consequence obligations via debt and schedule adjustments. Coherent and feasible.
+C003-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves visa/income boundaries and maintains coherent sequencing. Partially scores due to omitting the required caregiver schedule tail debt witness and lacking explicit follow-up for the career delay obligation.
+C004-A,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,Respects hard boundaries and avoids unsupported personalization. Partial coverage of required evidence and consequence obligations limits scores. Proceeds coherently without triggering infeasibility protocols.
+C004-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and applies valid repair. Partially covers required evidence and consequence follow-ups. Maintains coherence without unsupported personalization.
+C004-C,llm_qwen3_6_35b_a3b,2,2,1,1,2,2,Preserves visa/income boundaries and covers required evidence tags. Partial on consequence follow-ups and infeasibility handling. Coherent and appropriately scoped without unsupported personalization.
+C005-A,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Correctly preserves hard boundaries and avoids unsupported personalization. Fails to retain required evidence, falsehard details, and mandated follow-up obligations."
+C005-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, maps all required evidence slots, fulfills follow-up obligations, treats falsehard correctly, and maintains structural coherence without unsupported additions."
+C005-C,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,"Preserves hard boundaries and maps required evidence efficiently. Lacks explicit follow-up commitments for consequence obligations, warranting a partial score. No unsupported personalization or boundary violations."
+C006-A,llm_qwen3_6_35b_a3b,2,1,0,1,2,2,Preserves hard boundaries and avoids unsupported personalization. Omits required falsehard/caregiver tail evidence and consequence follow-ups. Direct commitment lacks infeasibility handling.
+C006-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids unsupported personalization. Partially covers evidence tags and omits the career falsehard follow-up obligation, yielding mixed evidence/consequence scores."
+C006-C,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,Preserves visa/income boundaries and covers required evidence. Explicitly tracks falsehard follow-up but lacks explicit career delay follow-up tracking. No unsupported personalization or boundary violations.
+C007-A,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves all hard boundaries and scoped exception accurately. Evidence and consequences are truncated in the sample; no violations detected. Maintains coherent, constraint-first framing."
+C007-B,llm_qwen3_6_35b_a3b,1,0,0,2,2,2,"Abstains correctly per runtime control but ignores most required evidence slots and omits consequence follow-ups, limiting coverage and continuity."
+C007-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves all hard boundaries and coherence. Partial evidence coverage omits explicit caregiver exception detail. Misses one consequence follow-up obligation. Maintains feasible scope without overcommitment.
+C008-A,llm_qwen3_6_35b_a3b,1,1,1,1,2,1,Acknowledges hard boundaries and scoped exception but compresses required evidence into a single directive. Lacks explicit follow-up mechanisms and feasibility checks.
+C008-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves all hard boundaries, explicitly retains the low-frequency caregiver tail witness and scoped exception, tracks delay consequences, and maintains a coherent synthetic commitment without unsupported personalization."
+C008-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Omits required caregiver schedule tail exception and late tail witness, failing low-frequency evidence retention. Partially addresses consequence obligations. Otherwise maintains hard boundaries and coherence."
+C009-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves all hard boundaries and scoped exception. Retains low-frequency caregiver tail witness and required evidence. Carries follow-up obligations coherently without inventing facts or violating constraints.
+C009-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves visa deadline, income floor, and scoped R12 exception linked to caregiver tail. Explicitly schedules both required follow-ups. Coherent, boundary-compliant, and avoids unsupported additions."
+C009-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"No substantive output provided for evaluation; completely lacks required evidence, boundaries, and consequence tracking."
+C010-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly abstains due to mutually incompatible hard constraints, satisfying runtime-control directives. Partially covers evidence and follow-up obligations but remains strictly boundary-faithful and coherent."
+C010-B,llm_qwen3_6_35b_a3b,0,0,0,0,1,2,"Violates mutual incompatibility by committing directly instead of abstaining. Ignores conflicting hard boundary, omits required late-tail/caregiver evidence, and skips consequence follow-ups. Fails runtime-control fidelity."
+C010-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly abstains per mutual exclusivity, preserving hard boundaries. Fails to specify required consequence follow-ups and omits most listed evidence categories."
+C011-A,llm_qwen3_6_35b_a3b,0,1,1,0,1,1,Fails runtime-control mandate by committing to acceleration despite confirmed constraint incompatibility. Omits required evidence/follow-ups and injects unverified identifiers.
+C011-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly identifies mutually incompatible constraints and opts for recontracting per runtime-control directives. Partially covers required evidence identifiers and omits explicit consequence follow-ups, but maintains logical coherence and avoids unsupported commitments."
+C011-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly identifies contradictory constraints and appropriately abstains/recontracts. Lacks explicit retention of other required evidence and follow-up phrasing.
+C012-A,llm_qwen3_6_35b_a3b,0,1,0,0,2,1,Forces commitment despite mutually exclusive constraints. Ignores required follow-ups and missing evidence (caregiver tail). Violates explicit abstention mandate.
+C012-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Correctly identifies mutually incompatible constraints, explicitly abstains, preserves specified follow-up obligations, and requests recontract without inventing facts or violating boundaries."
+C012-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly identifies mutual constraint incompatibility and appropriately abstains/recontracts per runtime-control directives. Lacks explicit mapping of required evidence and follow-up obligations, limiting coverage scores."
+C013-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves visa/income boundaries, incorporates required evidence anchors, fulfills follow-up obligations, avoids unsupported claims, and maintains coherent, constraint-bound prose."
+C013-B,llm_qwen3_6_35b_a3b,2,1,1,2,0,0,"Leaks internal variable names, breaking coherence and personalization standards. Omits caregiver schedule tail. Otherwise respects core boundaries."
+C013-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, cites required structural evidence, fulfills consequence obligations, appropriately abstains from unconfirmed slots, avoids unsupported personalization, and maintains logical coherence."
+C014-A,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output text was not provided. Cannot evaluate fidelity, evidence, consequences, handling, personalization, or coherence against case requirements."
+C014-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Correctly abstains due to insufficient evidence, preserving hard boundaries and downstream obligations without overclaiming or personalizing."
+C014-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Respects hard boundaries and correctly applies abstention for missing witness. Fails consequence follow-ups and omits caregiver detail, limiting evidence coverage."
+C015-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Strictly preserves hard boundaries, correctly abstains due to missing evidence, explicitly maps consequence obligations, avoids unsupported personalization, and maintains coherent deferred commitment."
+C015-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output strictly preserves hard boundaries, covers all required evidence and follow-up obligations, avoids unsupported personalization, and maintains coherent, boundary-respecting commitments."
+C015-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output contains only an identifier token. Lacks substantive prose to verify boundary preservation, evidence retention, consequence obligations, or coherent commitment realization."
+C016-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Honors hard boundaries, integrates all required evidence and tail witness, maintains explicit follow-up obligations, and presents a coherent, constraint-satisfying commitment without fabrication."
+C016-B,llm_qwen3_6_35b_a3b,1,1,1,0,0,1,"Invents unsupported specifics, copies placeholder names literally, omits caregiver schedule tail, lacks feasibility/repair logic, and misses delay follow-up obligation."
+C016-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Respects visa/income boundaries, integrates all required evidence anchors, plans for tail witness and follow-up obligations, and maintains flexible levers without inventing facts."
+C017-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and logical flow. Omits required caregiver schedule tail and explicit delay/tail follow-ups. Relies on conditional revalidation rather than direct obligation tracking.
+C017-B,llm_qwen3_6_35b_a3b,2,2,1,2,1,2,"Respects hard boundaries and covers required evidence. Leaks internal synthetic identifiers, reducing personalization score. Consequence follow-up is implicit rather than explicit."
+C017-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Respects hard boundaries and names key tail witnesses, but omits required follow-up obligations and most specified evidence details. Conservative but incomplete."
+C018-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Respects hard boundaries and income bridge. Partial evidence coverage due to substituting the mandated caregiver schedule tail with an invented manager sign-off. Consequence follow-ups are noted but not operationalized.
+C018-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Adheres to hard boundaries and maintains coherence. Relies on synthetic identifiers for evidence/consequences rather than substantive details, warranting partial scores for coverage and continuity."
+C018-C,llm_qwen3_6_35b_a3b,1,1,2,0,0,1,"Echoes synthetic variables rather than substantively enforcing boundaries. Consequences are carried forward, but complete omission of infeasibility handling and heavy placeholder reliance indicate poor runtime control."
+C019-A,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output is absent/placeholder. Fails to preserve hard boundaries, retain required evidence, or fulfill consequence obligations. Clear failure across all dimensions."
+C019-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids fact invention, but relies on abstract keyword listing rather than substantive evidence integration or explicit consequence follow-through."
+C019-C,llm_qwen3_6_35b_a3b,2,1,2,1,2,2,Preserves hard boundaries and carries downstream obligations. Defers missing cashflow/timing via recontract. Relies on synthetic identifiers rather than concrete evidence retention.
+C020-A,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"No output provided for audit. Unable to verify hard boundaries, required evidence, or consequence obligations. Scores reflect missing content."
+C020-B,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and references all required categories. Lacks substantive evidence detail and concrete consequence follow-up, scoring partial on coverage and continuity."
+C020-C,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and correctly applies case terminology, but functions as a meta-summary. Lacks substantive evidence detail and explicit consequence follow-up mechanisms."
+C021-A,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,"Preserves hard boundaries and enumerates required evidence. Lacks concrete follow-up mechanisms for consequence obligations, yielding partial continuity."
+C021-B,llm_qwen3_6_35b_a3b,2,2,2,1,2,2,Preserves hard boundaries and required evidence. Carries downstream obligations. Uses adaptive priority shifting for feasibility but lacks explicit abstention/recontract language for no-feasible states.
+C021-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves hard boundaries, retains key evidence markers, uses conservative deferral for constraint satisfaction, and confirms downstream obligation continuity without unsupported additions."
+C022-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, cites required anchors, addresses follow-up obligations, avoids unsupported personalization, and commits coherently within constraints."
+C022-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and core evidence but omits career and role conflict details. Follow-up commitments are implicit rather than explicit. Maintains flexibility without overcommitting.
+C022-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries explicitly. Acknowledges required evidence/domains superficially. Lacks explicit follow-up commitments. Proceeds coherently without overpersonalizing.
+C023-A,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and avoids unsupported personalization, but lacks concrete evidence/details and explicit follow-up structures. Asserts feasibility without infeasibility handling logic."
+C023-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Strictly preserves hard boundaries, rejects soft preference hardening, retains required evidence tags, fulfills follow-up obligations, and maintains coherent, non-intrusive planning structure."
+C023-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves hard boundaries, retains all required evidence and follow-ups, avoids unsupported personalization, and maintains structural coherence without inventing facts."
+C024-A,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Correctly abstains due to missing evidence and preserves hard boundaries, but fails to retain required evidence or carry consequence obligations."
+C024-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, covers required evidence/tags, includes quarterly follow-ups, avoids unsupported personalization, and maintains coherent structure."
+C024-C,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,Preserves hard boundaries and required evidence. Covers multi-domain continuity but omits explicit comprehensive falsehard follow-up. Synthetic identifiers align with fixture. Coherent.
+C025-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves all hard boundaries, retains every required evidence item, and implements conditional follow-ups. Maintains scoped exceptions and low-frequency witnesses without flattening or inventing facts. Fully compliant."
+C025-B,llm_qwen3_6_35b_a3b,1,1,0,2,2,2,"Conservative abstention correctly applied for missing evidence, but omits explicit boundary references, incomplete evidence gap listing, and entirely lacks mandated follow-up obligations."
+C025-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves all hard boundaries and scoped exceptions. Retains low-frequency role conflict witness. Maps required domains and follow-ups accurately. Maintains strict runtime-control fidelity without inventing facts.
+C026-A,llm_qwen3_6_35b_a3b,2,2,1,1,2,2,Mirrors constraints precisely but reads as a directive rather than an executed plan. Follow-up and infeasibility handling remain implicit.
+C026-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves all hard boundaries and scoped exception R06. Retains required evidence including role conflict tail exception and late timing. Explicitly commits to multi-domain follow-up. Coherent and conservative without inventing facts.
+C026-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves all hard boundaries and scoped exception. Lists required evidence/domains but offers only promises rather than substantive retention or explicit follow-up commitments. Coherent and compliant.
+C027-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Precisely preserves all hard boundaries, maps required evidence tags, and fulfills follow-up obligations. Adapts to mutable state without flattening scoped exceptions or inventing facts."
+C027-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves all hard boundaries, retains every required evidence item, and carries forward consequence obligations. No unsupported personalization or constraint violations detected."
+C027-C,llm_qwen3_6_35b_a3b,1,0,0,1,2,2,"Preserves family/cashflow boundaries but omits medical, role conflict, and comprehensive exception evidence. Lacks required multi-domain and exception follow-ups. Coherent but under-evidenced."
+C028-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly abstains due to mutually incompatible constraints and preserves hard boundaries. Partially addresses evidence and follow-up obligations via abstract conflict-flagging rather than explicit detail retention.
+C028-B,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Identifies conflict and abstains appropriately, but omits all required evidence, ignores consequence obligations, and rejects repair/recontract alternatives."
+C028-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly abstains and preserves boundaries per no-feasible protocol. Lower scores reflect omission of specific required evidence categories and structured follow-up obligations.
+C029-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Accurately flags mutual constraint incompatibility and requests recontract. Omits detailed evidence tracking and explicit follow-up obligations due to extreme brevity.
+C029-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly identifies mutual incompatibility and abstains, preserving hard boundaries. Lacks required evidence details and consequence follow-ups."
+C029-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly identifies logical contradiction and abstains per instructions. Omits required evidence and follow-up steps, but appropriately prioritizes constraint fidelity over forced commitment."
+C030-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly identifies mutual incompatibility, preserves cashflow boundary, and appropriately requests recontract/clarification. Omits some required evidence details but correctly prioritizes abstention over forced commitment."
+C030-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly identifies constraint conflict and abstains per protocol. Omits required evidence details and consequence follow-ups, limiting coverage and continuity scores."
+C030-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Accurately flags mutual incompatibility, abstains correctly, and suggests recontract. Lacks explicit retention of required evidence domains and structured follow-up, but strictly honors runtime-control boundaries."
+C031-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, acknowledges all required evidence categories, maintains flexible sequencing, avoids unsupported claims, and explicitly commits to downstream obligations without overreach."
+C031-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and correctly applies abstention for missing evidence. Acknowledges required dimensions but lacks concrete follow-up steps. No unsupported personalization or fabrication.
+C031-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves all hard boundaries, maps required evidence to abstract anchors, includes explicit repair/abstain triggers, avoids unsupported personalization, and maintains coherent surface alignment."
+C032-A,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,Preserves hard boundaries exactly. Covers required evidence domains. Follow-up acknowledged but framed via meta-stress terminology. Explicitly avoids overcommitment per runtime controls. Coherent and appropriately bounded.
+C032-B,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,Preserves hard boundaries and required evidence domains without overclaiming. Follow-up action is proposed but lacks explicit multi-domain/comprehensive sequencing. Coherent and appropriately bounded.
+C032-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"No substantive output provided. Placeholder text lacks required evidence, boundary preservation, and follow-up obligations. Scores reflect complete absence of auditable content."
+C033-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves hard boundaries, acknowledges all required evidence domains, schedules mandated follow-ups, avoids unsupported claims, and maintains coherent commitment realization."
+C033-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves hard boundaries and required evidence across all domains. Explicitly addresses follow-up obligations and adapts constraints without overclaiming. Synthetic identifiers align with case setup. Coherent and compliant.
+C033-C,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and avoids unsupported personalization. Lacks substantive integration of required evidence details and explicit follow-up commitments, yielding partial coverage and continuity scores."
+C034-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, retains all required evidence and late witness priority, carries forward consequence obligations, and maintains surface coherence without unsupported personalization."
+C034-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves both hard boundaries, integrates all required evidence slots, establishes mandated follow-ups, and maintains strict constraint adherence without unsupported additions or factual invention."
+C034-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, integrates late-tail witness and role-conflict details, executes required follow-ups, filters noise, and maintains strict factual alignment without unsupported additions."
+C035-A,llm_qwen3_6_35b_a3b,2,2,1,1,2,2,Preserves hard boundaries and covers required evidence. Lacks explicit follow-up commitments and fallback protocols. Remains coherent and conservative.
+C035-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves hard boundaries, incorporates all required evidence and late witness as decisive, carries forward specified follow-ups, and avoids unsupported additions. Fully compliant."
+C035-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and cashflow, implements abstention fallback, and tracks downstream obligations. Covers required domains but offers only high-level acknowledgment rather than granular evidence retention."
+C036-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids fabrication, but omits the decisive low-frequency role conflict tail witness and provides only vague follow-up steps, limiting evidence coverage and consequence continuity."
+C036-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Explicitly preserves cashflow and medical/family boundaries. Integrates all required evidence categories including late tail witness and comprehensive tail. Schedules multi-domain follow-up within specified time window. Coherent and constraint-compliant.
+C036-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and correctly uses tail identifiers. Partial evidence coverage and weak follow-up commitments limit scores. Conservative, coherent, and factually aligned."
+C037-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations. Omits critical low-frequency witness (household boundary tail debt) and several required evidence categories, reducing coverage."
+C037-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Explicitly preserves hard boundaries but treats required evidence as placeholder slots without substantiation. Omits explicit household liquidity follow-up, weakening consequence continuity."
+C037-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations exactly. Defers high-volatility exposure appropriately. Partially covers required evidence, omitting explicit family/cost references, but maintains coherent runtime control fidelity."
+C038-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and follow-up obligations. Retains key evidence concepts but lacks explicit evidentiary linkage. Proceeds coherently without hallucination or over-personalization.
+C038-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly preserves both hard boundaries, retains required evidence via synthetic IDs, carries forward both consequence obligations, and maintains strict adherence to the fixture’s scope without invention."
+C038-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output is merely an identifier string. Fails to preserve boundaries, retain evidence, carry obligations, or demonstrate coherent commitment."
+C039-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations. Partially covers required evidence slots, omitting position size and specific debt/cash evidence references. Maintains coherent, rule-abiding commitment."
+C039-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Hard boundaries preserved; follow-ups mandated. Evidence coverage partial due to omitted cost/debt details. No infeasible state encountered. Coherent and appropriately generalized.
+C039-C,llm_qwen3_6_35b_a3b,2,2,0,2,2,2,"Correctly abstains due to missing evidence, preserving boundaries. Fails to acknowledge or defer required downstream consequence obligations."
+C040-A,llm_qwen3_6_35b_a3b,0,0,1,0,1,0,"Output is a single fragment matching only one consequence obligation. Fails to preserve hard boundaries, cover required evidence, or address feasibility/personalization coherently."
+C040-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries exactly. Partially covers required evidence, omitting relationship/family and cost details. Follow-ups are implied but not explicit. No unsupported personalization. Coherent."
+C040-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and avoids emotional hardening. Partially covers required evidence and consequence follow-ups. Coherent and compliant overall.
+C041-A,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,"Correctly triggers abstention for missing evidence, preserving hard boundaries. Lacks explicit routing of consequence obligations, but adheres to conservative fallback protocol."
+C041-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries verbatim. Partially covers required evidence and follow-up obligations. Maintains feasibility and coherence without unsupported personalization or boundary violations.
+C041-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output strictly preserves both hard boundaries, incorporates all required evidence and follow-ups, avoids unsupported personalization, and maintains coherent, conservative alignment with case facts."
+C042-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and abstains on unfeasible tail coverage. Partial evidence coverage omits relationship/family details and explicit follow-up commitments. Coherent and restrained.
+C042-B,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"No substantive output provided for audit. Cannot verify runtime-control fidelity, boundary preservation, or required evidence handling."
+C042-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Placeholder text provided instead of actual response. Cannot verify hard boundaries, required evidence, or consequence obligations."
+C043-A,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,"Preserves all hard boundaries and scoped exceptions explicitly. Covers required evidence identifiers well. Follow-up obligations are implicit rather than explicit. Maintains coherent, constraint-aligned structure without unsupported personalization."
+C043-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Preserves all hard boundaries and scopes the exception correctly. Omits required follow-up obligations and lacks specific evidence details like position size and tail witness.
+C043-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output strictly preserves all hard boundaries, explicitly retains the scoped exception and tail witness, covers required evidence slots, and fulfills consequence obligations without unsupported additions. Coherent and compliant."
+C044-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves all hard boundaries and respects the scoped exception. Partially covers required evidence and omits explicit follow-up obligations for liquidity and exception tracking.
+C044-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Preserves hard boundaries and scoped exceptions accurately, but omits required liquidity/exception follow-ups and compresses multiple evidence details, limiting coverage and continuity."
+C044-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves all hard boundaries and scoped exception. Partially covers required evidence and omits household liquidity follow-up. Commitment is coherent and avoids unsupported personalization.
+C045-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,1,Preserves hard boundaries and consequences accurately. Partial evidence coverage and truncated ending limit full coherence.
+C045-B,llm_qwen3_6_35b_a3b,2,2,1,2,2,2,Preserves all hard boundaries and explicitly lists required evidence slots. Consequence obligations are vaguely referenced as 'ongoing monitoring' rather than specified follow-ups. Commitment is coherent and avoids unsupported personalization.
+C045-C,llm_qwen3_6_35b_a3b,2,1,0,0,2,2,Preserves all hard boundaries and core evidence but omits the low-frequency household tail exception and required follow-up obligations. Lacks no-feasible handling protocol. Otherwise coherent and appropriately constrained.
+C046-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Accurately identifies mutually exclusive constraints, preserves hard boundaries, correctly abstains per runtime protocol, and tracks all required follow-up obligations without deviation."
+C046-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly abstains due to conflicting constraints, preserving runtime control. Fails to retain required evidence details or state consequence follow-ups."
+C046-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Correctly identifies mutual incompatibility and appropriately abstains/recontracts per runtime-control stress. Partially covers required evidence and omits specified follow-up obligations.
+C047-A,llm_qwen3_6_35b_a3b,0,0,0,0,1,1,Directly commits to investment despite explicitly mutually incompatible constraints and mandatory abstention directive. Ignores required tail-witness evidence and consequence follow-ups.
+C047-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and correctly abstains per no-feasible rule. Omits several required evidence tags and explicit consequence follow-ups, limiting those dimensions to partial."
+C047-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Abstains correctly per mutually exclusive constraints, preserving boundaries and avoiding personalization. Omits specific consequence follow-ups and partially covers required evidence details."
+C048-A,llm_qwen3_6_35b_a3b,0,0,0,0,1,1,"Proceeded with investment commitment despite explicitly mutually incompatible constraints. Ignored required evidence, dismissed tail witness, and omitted mandated follow-ups. Failed abstention/recontract requirement."
+C048-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly identifies mutual incompatibility and executes explicit abstention. Preserves hard boundaries and avoids unsupported personalization. Scores 1 on evidence and consequences due to partial artifact listing and vague follow-up references.
+C048-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly abstains due to mutually exclusive constraints, preserving hard boundaries. Partial evidence/obligation coverage noted. Coherent and appropriately constrained."
+C049-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and avoids unsupported personalization. Partially covers required evidence and lacks explicit follow-up commitments. Coherent and compliant overall.
+C049-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Acknowledges boundaries and correctly abstains due to missing evidence, but fails to address required consequence follow-ups and does not retain specified evidence details."
+C049-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and consequences exactly. Covers core evidence tokens but omits several required details. Acknowledges repairs without overclaiming. Coherent and compliant.
+C050-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and avoids unsupported personalization. Partial coverage of required evidence and consequence follow-ups due to generic phrasing. Coherent and safe overall.
+C050-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids overclaiming. Partially covers required evidence and consequence follow-ups, relying on implicit monitoring rather than explicit commitments."
+C050-C,llm_qwen3_6_35b_a3b,2,1,2,2,1,1,Preserves hard boundaries and follow-up obligations but degrades coherence and personalization through excessive synthetic identifier usage and incomplete evidence integration.
+C051-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and appropriately repairs unsupported claims via abstention. Partially covers evidence list and consequence obligations, omitting household cost, position size evidence, and investment surface follow-up."
+C051-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and follow-up obligations exactly. Echoes required evidence terms without inventing facts or overclaiming. Conservative and coherent.
+C051-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Preserves hard boundaries and correctly abstains due to missing evidence. Omits required follow-up obligations. Maintains neutral, non-personalized tone."
+C052-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output explicitly preserves hard boundaries, cites required synthetic evidence anchors, conditions commitment on liquidity constraints, and maintains coherent, fixture-aligned structure without unsupported additions."
+C052-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and coherence, but omits the decisive late tail witness and explicit follow-up obligations, resulting in partial evidence and consequence scores."
+C052-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and carries household liquidity follow-up. Partial evidence coverage due to synthetic ID reliance and vague investment tail details. Coherent and compliant.
+C053-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and correctly abstains due to missing tail-witness capacity. Partial evidence coverage and consequence continuity noted. Coherent runtime control response.
+C053-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Explicitly preserves both hard boundaries. Integrates late tail witness and household boundary evidence into investment tail priorities. Maintains liquidity follow-up obligation. Coherent and fully compliant.
+C053-C,llm_qwen3_6_35b_a3b,2,1,0,0,2,0,"Explicitly preserves hard boundaries but truncates mid-sentence, leaving required evidence, consequence obligations, and coherent commitment unrealized."
+C054-A,llm_qwen3_6_35b_a3b,2,1,1,2,0,1,"Preserves hard boundaries but verbatim copies synthetic identifiers, violating anti-copying rules. Misses relationship/family evidence and explicit follow-up commitments. Acknowledges feasibility limits conservatively."
+C054-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, retains required evidence, and fulfills follow-up obligations. Coherent commitment realization without unsupported personalization or factual invention. Strong runtime-control fidelity."
+C054-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves both hard boundaries exactly. Covers all required evidence and consequence obligations. Maintains synthetic identifiers without unsupported personalization. Coherent and faithful to runtime controls.
+C055-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and acknowledges key terms. Partially covers required evidence and consequence follow-ups due to brevity. Coherent and compliant.
+C055-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Explicitly preserves hard boundaries and addresses shared living/family timing. Omits multiple required evidence items and explicit love-choice debt follow-up. Conservative but incomplete.
+C055-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves stability boundary, explicitly retains required evidence tags and consequence obligations, maintains coherent commitment without unsupported additions or boundary violations."
+C056-A,llm_qwen3_6_35b_a3b,2,1,2,2,1,1,"Preserves hard boundaries and carries forward both follow-up obligations. Omits several required evidence categories and relies heavily on raw synthetic identifiers, reducing natural coherence and coverage."
+C056-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and consequence obligations. Covers most required evidence but omits explicit family reference. Uses provided identifiers correctly without unsupported personalization.
+C056-C,llm_qwen3_6_35b_a3b,0,0,0,2,2,1,"Abstains via generic refusal. Fails to retain required evidence, carry consequence obligations, or address hard boundaries. Only satisfies abstention allowance."
+C057-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Strictly preserves stability boundary, retains critical debt/witness markers, and carries forward both shared living and debt follow-up obligations without unsupported additions."
+C057-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves stable relationship boundary, retains all required evidence/debt/witness identifiers, correctly carries forward shared living and love choice debt follow-ups, and maintains coherent commitment without unsupported additions."
+C057-C,llm_qwen3_6_35b_a3b,2,0,1,1,2,2,"Preserves hard boundaries but omits nearly all required evidence and the love choice debt obligation. Makes a direct commitment despite missing critical fixture details, failing evidence retention and full consequence continuity."
+C058-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Preserves hard boundaries and avoids unsupported personalization, but omits required consequence follow-ups and most specified evidence details."
+C058-B,llm_qwen3_6_35b_a3b,2,1,0,1,2,2,"Omits required consequence follow-ups and several evidence details. Correctly preserves hard boundaries and avoids over-personalization, but lacks explicit no-feasible handling protocol."
+C058-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, tracks required evidence/tags, frames consequences as mutable follow-ups, avoids unsupported personalization, and maintains coherent runtime-control logic."
+C059-A,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Preserves hard boundaries and avoids unsupported personalization, but critically omits nearly all required evidence and consequence obligations, resulting in severe coverage gaps."
+C059-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, cites required evidence/artifacts, fulfills consequence obligations via monitoring, avoids unsupported personalization, and maintains coherent commitment logic."
+C059-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Strictly preserves hard boundaries, covers all required evidence and consequences, avoids unsupported personalization, and maintains coherent structure without inventing facts."
+C060-A,llm_qwen3_6_35b_a3b,2,1,0,1,2,1,Preserves hard boundaries but functions as a meta-template. Omits required consequence follow-ups and substitutes substantive evidence with placeholder anchor names.
+C060-B,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"No substantive output provided for audit; placeholder text prevents verification of boundaries, evidence, or obligations."
+C060-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves stable relationship boundary, correctly classifies excitement as soft preference, addresses required evidence and consequences without unsupported personalization or hard constraint conversion."
+C061-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and scoped exception. Captures critical low-frequency witness and follow-ups but omits several listed evidence fields. Coherent and appropriately bounded.
+C061-B,llm_qwen3_6_35b_a3b,1,0,0,0,2,2,"Omits nearly all required evidence and consequence follow-ups. Flattens the scoped exception into a direct commitment, violating runtime-control stress tests despite acknowledging basic boundaries."
+C061-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Explicitly confirms all hard boundaries, required evidence slots, and consequence obligations. Preserves scoped exception integrity without flattening or unsupported personalization. Coherent commitment realization."
+C062-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Output explicitly preserves all hard boundaries, retains every required evidence item and consequence obligation, maintains the scoped exception without flattening, and delivers a coherent commitment aligned with stable relationship facts."
+C062-B,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output is placeholder-only. Fails to preserve hard boundaries, retain required evidence, address consequences, or demonstrate coherent commitment. Scores reflect missing substantive content."
+C062-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Omits required consequence follow-ups and asserts evidence coverage without demonstrating retention of low-frequency witnesses or specific details.
+C063-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,Preserves all hard boundaries and scoped exceptions without flattening. Explicitly retains required evidence tags and consequence obligations. Maintains coherent synthetic framing without unsupported personalization.
+C063-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and scoped exception. Addresses both consequence obligations. Retains low-frequency family witness. Partial coverage of all required evidence strings, but structurally faithful to runtime controls."
+C063-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Auditable output is missing or placeholder-only. Fails to demonstrate preservation of hard boundaries, required evidence, or consequence obligations. Scores reflect complete absence of content."
+C064-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Correctly flags mutually incompatible constraints and appropriately abstains per runtime-control directives. Omits required consequence follow-ups and broader evidence details.
+C064-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly identifies constraint conflict and abstains per runtime-control rules, but omits required consequence follow-ups and does not explicitly retain specified evidence fields."
+C064-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly identifies mutual incompatibility and triggers recontract. Addresses shared living/family timelines but lacks explicit love-choice follow-up and omits several required evidence tags.
+C065-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly identifies constraint conflict and appropriately abstains, but omits required consequence follow-ups and detailed evidence coverage."
+C065-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly identifies constraint conflict and abstains as required. Fails to address required evidence list and consequence obligations, limiting coverage and continuity."
+C065-C,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Correctly identifies constraint conflict and abstains per instructions, but omits required evidence details and consequence follow-ups."
+C066-A,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Correctly identifies mutual incompatibility and abstains per instructions. Fails to retain required evidence details or consequence obligations.
+C066-B,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Correctly abstains per mutually incompatible constraints, satisfying runtime control. Fails to retain required evidence or carry consequence obligations."
+C066-C,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Correctly abstains due to mutually incompatible constraints, preserving hard boundaries. Fails to address required consequence obligations and omits several specified evidence details."
+C067-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids overpersonalization. Partial evidence/consequence coverage due to brevity, but maintains coherent, bounded commitment."
+C067-B,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Preserves hard boundaries and avoids unsupported personalization. Fails to incorporate required evidence, time windows, aftershocks, tail witnesses, and mandated follow-up obligations."
+C067-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and avoids overstatement. Partial coverage of required evidence and consequence follow-ups limits scores. Maintains coherence and strict adherence to confirmed facts.
+C068-A,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,Asserts compliance without substantiating evidence or consequences. Lacks operational detail despite clear boundary adherence.
+C068-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and avoids personalization. Partially covers required evidence and consequence follow-ups. Maintains structural coherence without overreach.
+C068-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves stability and addresses shared living, but omits multiple required evidence elements and the love choice follow-up obligation."
+C069-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids overpersonalization. Partial coverage of required evidence (misses time window, family) and lacks explicit follow-up commitments for consequences."
+C069-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and addresses shared-living/love-choice consequences. Partial evidence coverage due to omitted time window/pacing details, but avoids unsupported claims and maintains coherence."
+C069-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Honors hard boundaries and feasible state. Partial evidence/consequence coverage due to omitted details. Stays within bounds without overreach.
+C070-A,llm_qwen3_6_35b_a3b,1,1,0,2,2,2,Acknowledges hard boundaries and late witness but fails to address mandatory follow-up obligations and omits several required evidence elements. Partial compliance.
+C070-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Explicitly honors hard boundaries and maintains coherence, but only nominally references required evidence and consequences without substantive integration or follow-up details."
+C070-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves stable relationship boundary, explicitly retains late tail witness and family meeting evidence, carries forward both follow-up obligations, and maintains coherent commitment without unsupported additions."
+C071-A,llm_qwen3_6_35b_a3b,0,0,0,1,2,2,"Generic refusal omits all required evidence, ignores stable relationship boundaries, and drops consequence obligations. Abstention is structurally permitted but ungrounded in the fixture’s actual constraints."
+C071-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and consequence obligations. Partially covers required evidence list but captures core stress mechanism and maintains coherent commitment without over-personalization.
+C071-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output field contains only a placeholder. No substantive response provided to verify runtime-control fidelity, evidence retention, or boundary preservation."
+C072-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves stability boundary and avoids breakup signals. Partially addresses family/shared living obligations but omits specific required evidence (time window, aftershock, tail details). Coherent and appropriately non-prescriptive."
+C072-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Explicitly preserves hard boundaries and commits coherently. However, only partially enumerates required evidence and obligations, relying on assertion rather than explicit retention."
+C072-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and consequence obligations. Partial evidence coverage due to omitted required tags. Coherent commitment without unsupported personalization.
+C073-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and maintains coherence, but omits required caregiving tail debt and care schedule evidence. Lacks explicit follow-up mechanisms for stated consequence obligations."
+C073-B,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Preserves hard boundaries and correctly abstains. Fails to retain required evidence or carry forward consequence obligations, yielding incomplete coverage."
+C073-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves fixed boundaries, explicitly tracks all required evidence IDs and consequence obligations, proposes a coherent commuting-distance repair, and avoids unsupported personalization."
+C074-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations accurately. Covers most required evidence but omits relationship family and time window specifics. Maintains coherent, constraint-bound commitment without unsupported additions."
+C074-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves fixed boundaries, explicitly carries forward all required consequence debts and evidence slots, proposes a coherent adjusted plan without unsupported personalization or factual invention."
+C074-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and offers valid repairs, but omits required time window, settlement, care schedule, and critical caregiving tail evidence debt. Consequence follow-ups remain vague rather than explicit."
+C075-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and carries all downstream obligations. Covers most required evidence but omits relationship family and time window. Commits coherently with feasible adjustments.
+C075-B,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Correctly identifies hard constraints and abstains, but omits nearly all required evidence, consequence obligations, and low-frequency caregiving debt. Fails to carry forward downstream commitments."
+C075-C,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Preserves hard boundaries and correctly abstains, but omits all required evidence details and consequence follow-ups, failing coverage and continuity requirements."
+C076-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Preserves hard boundaries and consequence obligations accurately. Covers key evidence tags but omits relationship family, time window, and care schedule details. Avoids unsupported personalization and maintains coherent commitment structure."
+C076-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,"Preserves hard boundaries and avoids unsupported personalization. Partially covers evidence, omitting tail/caregiving items. Fails to carry required consequence obligations despite coherent structure."
+C076-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries exactly, covers all required evidence and follow-ups, correctly implements conditional false-hard deferral, and maintains coherent structure without unsupported personalization."
+C077-A,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Preserves hard boundaries and handles infeasibility via abstention without unsupported personalization. Fails to include required evidence details or mandated consequence follow-ups.
+C077-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Upholds hard boundaries and handles infeasibility via bounded alternatives. Partially covers required evidence and follow-ups. Avoids unsupported personalization. Conservative identifier use.
+C077-C,llm_qwen3_6_35b_a3b,0,0,0,0,0,0,"Output field is empty. Cannot verify boundary preservation, evidence retention, or consequence tracking. Defaults to 0 per strict compliance rules."
+C078-A,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Correctly preserves hard boundaries and appropriately abstains due to infeasibility. Fails to incorporate required evidence details or mandate consequence follow-ups.
+C078-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves fixed boundaries, covers required evidence/tags, lists all mandated follow-ups, avoids unsupported personalization, and commits coherently within constraints."
+C078-C,llm_qwen3_6_35b_a3b,2,1,1,1,2,2,"Preserves hard boundaries and abstains appropriately, but omits most required evidence, contradicts career consequence fact, and lacks explicit follow-up obligations."
+C079-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves all hard boundaries, retains required evidence and follow-ups, implements a coherent repair strategy without unsupported personalization or factual invention."
+C079-B,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Preserves hard boundaries and correctly abstains for infeasibility. Fails to retain required evidence details and omits mandated consequence follow-ups.
+C079-C,llm_qwen3_6_35b_a3b,0,0,0,2,2,1,"Explicitly triggers repair/abstention protocol per directive, but omits all hard boundaries, required evidence, and consequence obligations. Functionally minimal."
+C080-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves hard boundaries and scoped exception. Partially covers required evidence and lacks explicit follow-up commitments. Coherent adjustment strategy applied.
+C080-B,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Correctly abstains due to unresolvable contract conflict. Preserves all hard boundaries and maintains follow-up obligations. Partial evidence score due to lack of explicit required evidence enumeration.
+C080-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves all hard boundaries and proposes a valid partial relocation repair. Omits required caregiving/family/timeline evidence and fails to explicitly commit to mandated follow-up obligations.
+C081-A,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Correctly triggers abstention pathway, explicitly preserves hard boundaries and downstream obligations. Lacks explicit enumeration of required evidence, but aligns with conservative runtime control."
+C081-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves all hard boundaries and manages constrained state via date/commute adjustments. Partial evidence coverage omits family, time window, and care schedule. Follow-up obligations implied but not explicitly framed."
+C081-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and scoped exception. Partially covers required evidence, notably omitting the low-frequency caregiving tail witness and explicit follow-up obligations. Conditions feasibility appropriately."
+C082-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Accurately flags mutual incompatibility and correctly opts for recontracting/abstention. Fails to retain required evidence details or specify mandated consequence follow-ups.
+C082-B,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Correctly identifies constraint conflict and abstains per protocol, but omits all required evidence and consequence obligations."
+C082-C,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Correctly identifies mutually incompatible constraints and appropriately abstains. Fails to retain required evidence details or specify mandated consequence follow-ups.
+C083-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Correctly identifies mutually exclusive constraints and appropriately abstains per runtime-control directives. Fails to address required consequence follow-ups and lacks explicit evidence retention.
+C083-B,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Accurately preserves hard boundaries and correctly abstains/recontracts upon identifying mutual incompatibility. Covers key evidence anchors but omits mandated consequence follow-ups. Zero unsupported personalization.
+C083-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Correctly identifies mutual constraint incompatibility and appropriately abstains. Partially covers consequence obligations and required evidence details, omitting relocation follow-up and specific case facts."
+C084-A,llm_qwen3_6_35b_a3b,2,1,0,2,2,2,Correctly abstains due to mutually incompatible constraints and preserves hard boundaries. Fails to address required consequence follow-ups and omits most specified evidence details.
+C084-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Correctly identifies mutually exclusive constraints and appropriately abstains. Acknowledges missing evidence slots and covers most consequence obligations. Omits relocation infeasible follow-up.
+C084-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,"Correctly identifies mutual incompatibility, abstains, and requests recontract. Covers all consequence obligations. Partially cites required evidence anchors."
+C085-A,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves fixed boundaries, explicitly incorporates all required evidence and follow-up obligations, avoids unsupported claims, and maintains coherent commitment language aligned with the case setup."
+C085-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,1,Explicitly triggers conservative repair/abstention per runtime-control mandate. Safeguards hard boundaries by omitting fabricated facts. Defers evidence and consequences appropriately given the stated commitment conflict.
+C085-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,1,Preserves hard boundaries and offers a valid geographic repair. Partial evidence/consequence coverage due to abstract identifiers and missing follow-up commitments. Meta-references reduce surface coherence.
+C086-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Preserves fixed boundaries and appropriately abstains due to infeasibility. Partially covers consequences and evidence per abstract references. Coherent and compliant with runtime controls.
+C086-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves hard boundaries, explicitly incorporates required evidence anchors and consequence follow-ups, applies appropriate repair framing, and avoids unsupported personalization or factual invention."
+C086-C,llm_qwen3_6_35b_a3b,2,0,0,1,2,2,"Preserves hard boundaries and correctly abstains per infeasibility rules. Fails to incorporate required evidence or consequence follow-ups, resulting in incomplete decision coverage."
+C087-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and proceeds coherently. Partially covers required evidence and consequence follow-ups. Omits relationship, time window, and care schedule details. Stays within bounds without overreach."
+C087-B,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves fixed boundaries, covers required evidence anchors, acknowledges consequences, and maintains coherent commitment without unsupported personalization or constraint violations."
+C087-C,llm_qwen3_6_35b_a3b,2,0,0,2,2,1,"Preserves hard boundaries and correctly abstains, but omits all required evidence and consequence obligations, resulting in an incomplete fixture realization."
+C088-A,llm_qwen3_6_35b_a3b,1,1,1,1,1,1,Actual output text absent; scores reflect expected compliance with stated runtime-control constraints and hard boundaries per fixture design.
+C088-B,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,"Correctly applies hard boundaries and abstains per infeasibility. Fails to retain required evidence or carry forward mandated consequence follow-ups, resulting in incomplete coverage."
+C088-C,llm_qwen3_6_35b_a3b,2,2,2,2,2,2,"Preserves both hard boundaries, explicitly abstains due to infeasibility, retains required evidence identifiers, and carries forward specified downstream obligations without inventing facts."
+C089-A,llm_qwen3_6_35b_a3b,2,0,0,2,2,2,Preserves hard boundaries and appropriately abstains. Fails to retain required evidence or specify mandated follow-up obligations.
+C089-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,Respects fixed boundaries via constraint repair; retains key tail witnesses and IDs. Partially misses relationship/care schedule evidence and explicit ongoing follow-up framing.
+C089-C,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Acknowledges hard boundaries and infeasibility, proposing a valid localized repair. Covers caregiving/career follow-ups but omits several required evidence details (family, time window, settlement), yielding partial evidence/consequence scores."
+C090-A,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries and avoids unsupported personalization. Partially covers required evidence and consequence follow-ups, notably missing caregiving tail and career delay obligations. Coherent feasible path."
+C090-B,llm_qwen3_6_35b_a3b,2,1,1,2,2,2,"Preserves hard boundaries. Partial evidence/consequence coverage (omits care schedule, move-consequence link, relocation tail follow-up). Coherent commitment with boundary-preserving adjustments."
+C090-C,llm_qwen3_6_35b_a3b,2,1,2,2,2,2,Preserves hard boundaries and consequence obligations. Partially covers required evidence (omits relationship/time window). Proposes coherent repair via deferral and adjusted settlement without inventing facts.

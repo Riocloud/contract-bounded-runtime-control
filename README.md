@@ -12,7 +12,8 @@ server configuration.
 ## Contents
 
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
-- `data/results/`: sanitized matched-run score tables and aggregate summaries.
+- `data/results/`: sanitized matched-run score tables, long-history payload
+  diagnostics, production aggregate summaries, and aggregate summary tables.
 - `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
   and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
@@ -31,7 +32,10 @@ identifiers, contact information, billing records, individual timestamps, or
 identifiable life-event combinations.
 
 The deployment diagnostics discussed in the accompanying paper are
-aggregate-only; this repository does not publish session rows.
+aggregate-only; this repository does not publish session rows. Long-history
+payload diagnostics contain only synthetic fixture identifiers, method labels,
+provider-reported usage counts, and latency measurements; prompts and generated
+text are not included.
 
 The checked-in result CSVs are release artifacts, not raw run logs. They contain
 fixture identifiers, method labels, automatic score flags, aggregate metrics,
@@ -54,9 +58,10 @@ npm run check
 ```
 
 This writes model-judge summary files under `runs/llm-judge-summary/` and runs
-the automatic-metric, bootstrap-interval, model-judge, and privacy-boundary
-checks under `runs/`. It also validates the minimal public table test cases for
-the final appendix tables.
+the automatic-metric, bootstrap-interval, horizon-stability, long-history
+payload, model-judge, final-paper table, and privacy-boundary checks under
+`runs/`. It also validates the minimal public table test cases for the final
+appendix tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -71,12 +76,20 @@ npm run summarize:judge
 ```
 
 To recompute automatic metrics, paired bootstrap intervals, and horizon
-stability from the released per-row score table:
+stability from the released per-row score table, plus the long-history payload
+summary from the released latency diagnostic rows:
 
 ```bash
 npm run summarize:metrics
 npm run summarize:bootstrap
 npm run summarize:horizon
+npm run summarize:long-history
+```
+
+To validate the checked-in artifacts against the final paper table values:
+
+```bash
+npm run check:paper
 ```
 
 Additional checked-in aggregate files:
@@ -85,6 +98,13 @@ Additional checked-in aggregate files:
 - `data/results/backend-robustness-deepseek360.csv`: aggregate backend
   robustness check over three methods. Endpoint-dependent latency is omitted
   from this robustness table.
+- `data/results/long-history-payload-results.csv`: release-safe per-call usage
+  and latency rows for the long-history payload diagnostic.
+- `data/results/long-history-payload-summary.csv`: aggregate values reported in
+  the long-history payload table.
+- `data/results/production-data-wash-summary.csv` and
+  `data/results/production-runtime-coverage.csv`: aggregate-only production
+  data-wash denominators and runtime-object coverage.
 
 ## Re-run Model Calls
 
@@ -141,8 +161,9 @@ node scripts/run-llm-fidelity-audit.mjs \
   --pairwise=true
 ```
 
-To build a larger balanced judge sample from the released synthetic/composite
-fixtures and matched outputs:
+The final-paper 90-case blinded judge sample is checked in under
+`data/model_judge/balanced-90/`. To build a fresh balanced sample from the
+released synthetic/composite fixtures and matched score rows:
 
 ```bash
 npm run judge:sample
