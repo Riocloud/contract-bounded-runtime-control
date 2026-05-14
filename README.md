@@ -12,8 +12,9 @@ server configuration.
 ## Contents
 
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
-- `data/results/`: sanitized matched-run score tables, long-history payload
-  diagnostics, production aggregate summaries, and aggregate summary tables.
+- `data/results/`: sanitized matched-run score tables, backend sensitivity,
+  shadow-boundary diagnostics, long-history payload diagnostics, production
+  aggregate summaries, and aggregate summary tables.
 - `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
   and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
@@ -59,9 +60,9 @@ npm run check
 
 This writes model-judge summary files under `runs/llm-judge-summary/` and runs
 the automatic-metric, bootstrap-interval, horizon-stability, long-history
-payload, model-judge, judge-winner bootstrap, selector-baseline, release-table,
-and privacy-boundary checks under `runs/`. It also validates the minimal public
-table test cases for the release tables.
+payload, model-judge, judge-winner bootstrap, selector-baseline, boundary
+diagnostic, release-table, and privacy-boundary checks under `runs/`. It also
+validates the minimal public table test cases for the release tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -87,6 +88,7 @@ npm run summarize:bootstrap
 npm run summarize:horizon
 npm run summarize:long-history
 npm run summarize:selector-baselines
+npm run summarize:boundary
 ```
 
 To validate the checked-in artifacts against the release table values:
@@ -98,9 +100,18 @@ npm run check:release
 Additional checked-in aggregate files:
 
 - `data/results/cbea-ablation-metrics.csv`: 360-fixture CBEA/LCV ablations.
-- `data/results/backend-robustness-deepseek360.csv`: aggregate backend
-  robustness check over three methods. Endpoint-dependent latency is omitted
-  from this robustness table.
+- `data/results/backend-sensitivity-operating-points.csv`: 360-fixture gated
+  operating points for MiniMax-M2.7, DeepSeek-V4-Flash, and GPT-OSS-120B.
+- `data/results/hy3-output-budget-diagnostic.csv`: output-budget diagnostic for
+  Hy3-preview/Hunyuan3-preview. It is intentionally separate from the matched
+  360-fixture backend sensitivity table.
+- `data/results/shadow-oracle-overall.csv` and
+  `data/results/shadow-oracle-domain.csv`: uncompiled-context boundary
+  diagnostics. These measure visible facts outside the validator-covered
+  contract; they are not an extension of the covered guarantee.
+- `data/results/backend-robustness-deepseek360.csv`: legacy ungated DeepSeek
+  endpoint check retained for traceability. The current gated operating-point
+  comparison is `backend-sensitivity-operating-points.csv`.
 - `data/results/long-history-payload-results.csv`: release-safe per-call usage
   and latency rows for the long-history payload diagnostic.
 - `data/results/long-history-payload-summary.csv`: aggregate values reported in
@@ -124,6 +135,11 @@ over synthetic/composite fixtures. To re-run generation with your own provider:
 export PROVIDER_BASE_URL="https://api.example.com"
 export PROVIDER_MODEL="MiniMax-M2.7"
 export PROVIDER_API_KEY="..."
+# Optional: disable OpenAI JSON response_format for providers that reject it.
+export PROVIDER_RESPONSE_FORMAT="json_object"
+# Optional: provider-specific reasoning control. Use "none" to request no
+# explicit reasoning channel where supported by the provider.
+export PROVIDER_REASONING=""
 
 node scripts/run-cbea-lcv-real-pilot.mjs \
   --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json \

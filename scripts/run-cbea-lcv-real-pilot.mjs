@@ -102,7 +102,18 @@ function resolveProvider(env, preferredProvider = null) {
     keyEnv: selected.keyEnv,
     baseUrl: selected.baseUrl.replace(/\/+$/, ''),
     model: selected.model,
+    responseFormat: env.PROVIDER_RESPONSE_FORMAT || 'json_object',
+    reasoning: env.PROVIDER_REASONING || '',
   };
+}
+
+function providerReasoningPayload(reasoning) {
+  const normalized = String(reasoning || '').trim().toLowerCase();
+  if (!normalized) return null;
+  if (['none', 'false', 'disabled', 'off'].includes(normalized)) {
+    return { enabled: false };
+  }
+  return null;
 }
 
 function makeEvidenceUnits(fixture) {
@@ -393,6 +404,7 @@ async function callModel(providerConfig, messages, options) {
   const chatCompletionsUrl = providerConfig.baseUrl.endsWith('/v1')
     ? `${providerConfig.baseUrl}/chat/completions`
     : `${providerConfig.baseUrl}/v1/chat/completions`;
+  const reasoningPayload = providerReasoningPayload(providerConfig.reasoning);
   let response;
   try {
     response = await fetch(chatCompletionsUrl, {
@@ -406,7 +418,12 @@ async function callModel(providerConfig, messages, options) {
         messages,
         temperature: options.temperature,
         max_tokens: options.maxTokens,
-        response_format: { type: 'json_object' },
+        ...(
+          providerConfig.responseFormat && !['none', 'false', 'disabled'].includes(String(providerConfig.responseFormat).toLowerCase())
+            ? { response_format: { type: providerConfig.responseFormat } }
+            : {}
+        ),
+        ...(reasoningPayload ? { reasoning: reasoningPayload } : {}),
       }),
       signal: controller.signal,
     });

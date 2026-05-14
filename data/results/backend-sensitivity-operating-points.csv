@@ -1,0 +1,10 @@
+backend,method,attempted_runs,invalid_run_count,budget_exhausted_json_failures,outputs_at_or_above_budget,structured_commitment_availability_rate,hard_constraint_violation_rate,evidence_coverage_failure_rate,witness_drop_rate,consequence_continuity_failure_rate
+MiniMax-M2.7,raw_lcv,360,5,5,275,0.0361,0,0,0,0
+MiniMax-M2.7,long_context_lcv,360,1,1,287,0.0500,0,0,0,0
+MiniMax-M2.7,cbea_lcv_runtime,360,1,1,211,0.4944,0,0,0,0
+DeepSeek-V4-Flash,raw_lcv,360,0,0,0,0.0917,0,0,0,0
+DeepSeek-V4-Flash,long_context_lcv,360,0,0,0,0.0778,0,0,0,0
+DeepSeek-V4-Flash,cbea_lcv_runtime,360,0,0,0,0.6000,0,0,0,0
+GPT-OSS-120B,raw_lcv,360,0,0,7,0.0028,0,0,0,0
+GPT-OSS-120B,long_context_lcv,360,0,0,9,0.0056,0,0,0,0
+GPT-OSS-120B,cbea_lcv_runtime,360,1,0,15,0.5056,0,0,0,0

@@ -248,6 +248,41 @@ const selectorBaselines = {
   },
 };
 
+const backendSensitivity = {
+  'MiniMax-M2.7::raw_lcv': { attempted_runs: '360', invalid_run_count: '5', budget_exhausted_json_failures: '5', outputs_at_or_above_budget: '275', structured_commitment_availability_rate: '0.0361', hard_constraint_violation_rate: '0' },
+  'MiniMax-M2.7::long_context_lcv': { attempted_runs: '360', invalid_run_count: '1', budget_exhausted_json_failures: '1', outputs_at_or_above_budget: '287', structured_commitment_availability_rate: '0.0500', hard_constraint_violation_rate: '0' },
+  'MiniMax-M2.7::cbea_lcv_runtime': { attempted_runs: '360', invalid_run_count: '1', budget_exhausted_json_failures: '1', outputs_at_or_above_budget: '211', structured_commitment_availability_rate: '0.4944', hard_constraint_violation_rate: '0' },
+  'DeepSeek-V4-Flash::raw_lcv': { attempted_runs: '360', invalid_run_count: '0', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '0', structured_commitment_availability_rate: '0.0917', hard_constraint_violation_rate: '0' },
+  'DeepSeek-V4-Flash::long_context_lcv': { attempted_runs: '360', invalid_run_count: '0', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '0', structured_commitment_availability_rate: '0.0778', hard_constraint_violation_rate: '0' },
+  'DeepSeek-V4-Flash::cbea_lcv_runtime': { attempted_runs: '360', invalid_run_count: '0', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '0', structured_commitment_availability_rate: '0.6000', hard_constraint_violation_rate: '0' },
+  'GPT-OSS-120B::raw_lcv': { attempted_runs: '360', invalid_run_count: '0', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '7', structured_commitment_availability_rate: '0.0028', hard_constraint_violation_rate: '0' },
+  'GPT-OSS-120B::long_context_lcv': { attempted_runs: '360', invalid_run_count: '0', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '9', structured_commitment_availability_rate: '0.0056', hard_constraint_violation_rate: '0' },
+  'GPT-OSS-120B::cbea_lcv_runtime': { attempted_runs: '360', invalid_run_count: '1', budget_exhausted_json_failures: '0', outputs_at_or_above_budget: '15', structured_commitment_availability_rate: '0.5056', hard_constraint_violation_rate: '0' },
+};
+
+const shadowOverall = {
+  raw_prompt_stuffing: { attempted_runs: '360', structured_commitment_availability_rate: '0.7889', covered_hard_constraint_violation_rate: '0.1901', covered_evidence_coverage_failure_rate: '0.5246', covered_witness_drop_rate: '0.1972', covered_consequence_continuity_failure_rate: '0.8415', uncompiled_fact_recall: '0.5316', sparse_denominator: 'false' },
+  raw_lcv: { attempted_runs: '360', structured_commitment_availability_rate: '0.0361', covered_hard_constraint_violation_rate: '0', covered_evidence_coverage_failure_rate: '0', covered_witness_drop_rate: '0', covered_consequence_continuity_failure_rate: '0', uncompiled_fact_recall: '0.3674', sparse_denominator: 'true' },
+  long_context_lcv: { attempted_runs: '360', structured_commitment_availability_rate: '0.0500', covered_hard_constraint_violation_rate: '0', covered_evidence_coverage_failure_rate: '0', covered_witness_drop_rate: '0', covered_consequence_continuity_failure_rate: '0', uncompiled_fact_recall: '0.2380', sparse_denominator: 'true' },
+  validator_only: { attempted_runs: '360', structured_commitment_availability_rate: '0.4028', covered_hard_constraint_violation_rate: '0.2000', covered_evidence_coverage_failure_rate: '0.4276', covered_witness_drop_rate: '1.0000', covered_consequence_continuity_failure_rate: '1.0000', uncompiled_fact_recall: '0.0000', sparse_denominator: 'false' },
+  cbea_lcv_runtime: { attempted_runs: '360', structured_commitment_availability_rate: '0.4944', covered_hard_constraint_violation_rate: '0', covered_evidence_coverage_failure_rate: '0', covered_witness_drop_rate: '0', covered_consequence_continuity_failure_rate: '0', uncompiled_fact_recall: '0.0119', sparse_denominator: 'false' },
+};
+
+const shadowDomain = {
+  investment: { raw_prompt_stuffing: '0.5733', raw_lcv: '', long_context_lcv: '0', validator_only: '0', cbea_lcv_runtime: '0.0098' },
+  love_choice: { raw_prompt_stuffing: '0.5246', raw_lcv: '0.5193', long_context_lcv: '0.2292', validator_only: '0', cbea_lcv_runtime: '0.0053' },
+  career: { raw_prompt_stuffing: '0.4655', raw_lcv: '0.5000', long_context_lcv: '0.2456', validator_only: '0', cbea_lcv_runtime: '0.0132' },
+  relocation: { raw_prompt_stuffing: '0.5479', raw_lcv: '0', long_context_lcv: '0', validator_only: '0', cbea_lcv_runtime: '0.0133' },
+  comprehensive: { raw_prompt_stuffing: '0.5520', raw_lcv: '0.2222', long_context_lcv: '0.5000', validator_only: '0', cbea_lcv_runtime: '0.0187' },
+};
+
+const hy3Diagnostic = {
+  matched_budget_stopped: { fixtures: '360', methods: '3', attempted_runs: '64', invalid_run_count: '64', budget_exhausted_json_failures: '64', parseable_commitments: '0', token_budget: '2200' },
+  low_concurrency_check: { fixtures: '3', methods: '1', attempted_runs: '3', invalid_run_count: '3', budget_exhausted_json_failures: '3', parseable_commitments: '0', token_budget: '2200' },
+  extended_budget_sample: { fixtures: '1', methods: '1', attempted_runs: '1', invalid_run_count: '0', budget_exhausted_json_failures: '0', parseable_commitments: '1', token_budget: '8800' },
+  extended_budget_diagnostic: { fixtures: '12', methods: '3', attempted_runs: '27', invalid_run_count: '0', budget_exhausted_json_failures: '0', parseable_commitments: '27', token_budget: '8800' },
+};
+
 const longHistory = {
   MiniMax: { n_pairs: '50', raw_input_p50: '20401', cbea_input_p50: '5154', delta_input_p50: '15258', raw_output_p50: '700', cbea_output_p50: '700', delta_latency_mean_s: '1.74', delta_latency_p50_s: '1.54' },
   DeepSeek: { n_pairs: '50', raw_input_p50: '21364', cbea_input_p50: '5484', delta_input_p50: '15929', raw_output_p50: '700', cbea_output_p50: '700', delta_latency_mean_s: '2.06', delta_latency_p50_s: '1.97' },
@@ -293,6 +328,12 @@ assertCsvRows('data/results/judge-winner-bootstrap.csv', 'statistic', judgeWinne
 if (fs.existsSync('runs/judge-winner-bootstrap.csv')) assertCsvRows('runs/judge-winner-bootstrap.csv', 'statistic', judgeWinnerBootstrap);
 assertCsvRows('data/results/selector-baseline-mmr.csv', 'selector', selectorBaselines);
 if (fs.existsSync('runs/selector-baseline-mmr.csv')) assertCsvRows('runs/selector-baseline-mmr.csv', 'selector', selectorBaselines);
+
+const backendRows = readCsv('data/results/backend-sensitivity-operating-points.csv').map((row) => ({ ...row, key: `${row.backend}::${row.method}` }));
+for (const [key, fields] of Object.entries(backendSensitivity)) assertRowValues(backendRows.find((row) => row.key === key), fields, `data/results/backend-sensitivity-operating-points.csv:${key}`);
+assertCsvRows('data/results/shadow-oracle-overall.csv', 'method', shadowOverall);
+assertCsvRows('data/results/shadow-oracle-domain.csv', 'domain', shadowDomain);
+assertCsvRows('data/results/hy3-output-budget-diagnostic.csv', 'diagnostic', hy3Diagnostic);
 
 assertCsvRows('data/results/long-history-payload-summary.csv', 'endpoint', longHistory);
 if (fs.existsSync('runs/long-history-payload-summary.csv')) assertCsvRows('runs/long-history-payload-summary.csv', 'endpoint', longHistory);

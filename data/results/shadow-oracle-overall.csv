@@ -1,0 +1,6 @@
+method,attempted_runs,structured_commitment_availability_rate,covered_hard_constraint_violation_rate,covered_evidence_coverage_failure_rate,covered_witness_drop_rate,covered_consequence_continuity_failure_rate,uncompiled_fact_recall,sparse_denominator
+raw_prompt_stuffing,360,0.7889,0.1901,0.5246,0.1972,0.8415,0.5316,false
+raw_lcv,360,0.0361,0,0,0,0,0.3674,true
+long_context_lcv,360,0.0500,0,0,0,0,0.2380,true
+validator_only,360,0.4028,0.2000,0.4276,1.0000,1.0000,0.0000,false
+cbea_lcv_runtime,360,0.4944,0,0,0,0,0.0119,false
