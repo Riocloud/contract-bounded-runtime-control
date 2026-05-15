@@ -52,18 +52,29 @@ Requirements:
 
 - Node.js 20 or newer.
 - No package install is required for the included summary scripts.
+- No API key is required for the checked-in artifact validation path.
 
-Run:
+Reviewer quick start:
+
+```bash
+unzip recall-isnt-enough-bounding-commitments-arr-artifact-*.zip
+cd recall-isnt-enough-bounding-commitments-artifact
+node --version
+npm run check
+```
+
+From an already-unpacked artifact directory, run:
 
 ```bash
 npm run check
 ```
 
-This writes model-judge summary files under `runs/llm-judge-summary/` and runs
-the automatic-metric, bootstrap-interval, horizon-stability, long-history
-payload, model-judge, judge-winner bootstrap, selector-baseline, boundary
-diagnostic, release-table, and privacy-boundary checks under `runs/`. It also
-validates the minimal public table test cases for the release tables.
+This does not make provider calls. It writes reproduced summary files under
+`runs/`, including `runs/llm-judge-summary/`, and runs the automatic-metric,
+bootstrap-interval, horizon-stability, long-history payload, model-judge,
+judge-winner bootstrap, selector-baseline, boundary diagnostic, release-table,
+and privacy-boundary checks. It also validates the minimal public table test
+cases for the release tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 

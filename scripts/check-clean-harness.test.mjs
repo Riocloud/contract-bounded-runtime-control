@@ -23,6 +23,19 @@ function runNode(args, envOverrides = {}) {
   });
 }
 
+function runPrivacyCheckIn(cwd) {
+  return spawnSync(process.execPath, [path.join(repoRoot, 'scripts/check-privacy-boundary.mjs')], {
+    cwd,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      PROVIDER_API_KEY: '',
+      PROVIDER_BASE_URL: '',
+      PROVIDER_MODEL: '',
+    },
+  });
+}
+
 function runNodeAsync(args, envOverrides = {}) {
   return new Promise((resolve) => {
     const child = spawn(process.execPath, args, {
@@ -495,5 +508,36 @@ test('privacy check ignores local raw results workspace', () => {
     assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
   } finally {
     fs.rmSync(localResultsDir, { recursive: true, force: true });
+  }
+});
+
+test('privacy check ignores root results workspace without git metadata', () => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-privacy-nogit-'));
+  const localResultsDir = path.join(tempRoot, 'results', 'privacy-regression');
+  const localResultsPath = path.join(localResultsDir, 'raw-local-output.txt');
+  fs.mkdirSync(localResultsDir, { recursive: true });
+  fs.writeFileSync(path.join(tempRoot, 'README.md'), 'temporary artifact root\n');
+  fs.writeFileSync(localResultsPath, `${path.join('/', 'Users', 'example', 'local-only-output')}\n`);
+  try {
+    const result = runPrivacyCheckIn(tempRoot);
+    assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  } finally {
+    fs.rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('privacy check still scans released data results without git metadata', () => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-privacy-data-results-'));
+  const dataResultsDir = path.join(tempRoot, 'data', 'results');
+  const dataResultsPath = path.join(dataResultsDir, 'released.csv');
+  fs.mkdirSync(dataResultsDir, { recursive: true });
+  fs.writeFileSync(path.join(tempRoot, 'README.md'), 'temporary artifact root\n');
+  fs.writeFileSync(dataResultsPath, `${path.join('/', 'Users', 'example', 'released-leak')}\n`);
+  try {
+    const result = runPrivacyCheckIn(tempRoot);
+    assert.notEqual(result.status, 0, `${result.stderr}\n${result.stdout}`);
+    assert.match(result.stderr, /data\/results\/released\.csv/);
+  } finally {
+    fs.rmSync(tempRoot, { recursive: true, force: true });
   }
 });
