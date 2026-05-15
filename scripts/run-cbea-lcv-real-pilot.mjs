@@ -102,7 +102,8 @@ function resolveProvider(env, preferredProvider = null) {
     keyEnv: selected.keyEnv,
     baseUrl: selected.baseUrl.replace(/\/+$/, ''),
     model: selected.model,
-    responseFormat: env.PROVIDER_RESPONSE_FORMAT || 'json_object',
+    responseFormat: env.PROVIDER_RESPONSE_FORMAT
+      || (env.PROVIDER_JSON_MODE === 'false' ? 'none' : 'json_object'),
     reasoning: env.PROVIDER_REASONING || '',
   };
 }
@@ -119,11 +120,11 @@ function providerReasoningPayload(reasoning) {
 function makeEvidenceUnits(fixture) {
   return [
     ...fixture.noisy_user_observations.map((text, index) => ({ id: `obs_${index + 1}`, text })),
-    ...fixture.confirmed_hard_constraints.map((text, index) => ({ id: `hard_${index + 1}`, text })),
+    ...runtimeHardConstraints(fixture).map((text, index) => ({ id: `hard_${index + 1}`, text })),
     ...fixture.mutable_state_facts.map((text, index) => ({ id: `mutable_${index + 1}`, text })),
-    ...fixture.required_witnesses.map((text, index) => ({ id: text || `witness_${index + 1}`, text })),
-    ...fixture.tail_witnesses.map((text, index) => ({ id: text || `tail_${index + 1}`, text })),
-    ...fixture.consequence_debt.map((text, index) => ({ id: text || `debt_${index + 1}`, text })),
+    ...runtimeRequiredWitnesses(fixture).map((text, index) => ({ id: text || `witness_${index + 1}`, text })),
+    ...runtimeTailWitnesses(fixture).map((text, index) => ({ id: text || `tail_${index + 1}`, text })),
+    ...runtimeConsequenceDebt(fixture).map((text, index) => ({ id: text || `debt_${index + 1}`, text })),
   ];
 }
 
@@ -135,7 +136,7 @@ function selectMethodEvidence(fixture, method) {
   if (method === 'dense_retrieval_rag') {
     return all.filter((item) =>
       fixture.required_dimensions.some((dimension) => item.text.includes(dimension))
-      || fixture.required_witnesses.includes(item.id)
+      || runtimeRequiredWitnesses(fixture).includes(item.id)
     ).slice(0, 5);
   }
   if (
@@ -150,7 +151,7 @@ function selectMethodEvidence(fixture, method) {
     return all.filter((item) => !fixture.tail_witnesses.includes(item.id));
   }
   if (method === 'validator_only') {
-    return all.filter((item) => item.id.startsWith('hard_') || fixture.required_witnesses.includes(item.id));
+    return all.filter((item) => item.id.startsWith('hard_') || runtimeRequiredWitnesses(fixture).includes(item.id));
   }
   if (method === 'runtime_without_cbea') {
     return all.filter((item) => !fixture.tail_witnesses.includes(item.id));
@@ -158,9 +159,9 @@ function selectMethodEvidence(fixture, method) {
   if (method === 'cbea_lcv_runtime' || method === 'cbea_no_validator' || method === 'cbea_no_repair_abstain') {
     const selected = all.filter((item) =>
       item.id.startsWith('hard_')
-      || fixture.required_witnesses.includes(item.id)
-      || fixture.tail_witnesses.includes(item.id)
-      || fixture.consequence_debt.includes(item.id)
+      || runtimeRequiredWitnesses(fixture).includes(item.id)
+      || runtimeTailWitnesses(fixture).includes(item.id)
+      || runtimeConsequenceDebt(fixture).includes(item.id)
       || item.id === 'obs_1'
       || item.id === 'obs_3'
     );
@@ -168,9 +169,9 @@ function selectMethodEvidence(fixture, method) {
   }
   if (method === 'cbea_no_coverage_tail') {
     const banned = new Set([
-      ...fixture.required_witnesses,
-      ...fixture.tail_witnesses,
-      ...fixture.consequence_debt,
+      ...runtimeRequiredWitnesses(fixture),
+      ...runtimeTailWitnesses(fixture),
+      ...runtimeConsequenceDebt(fixture),
     ]);
     return all.filter((item) => {
       if (banned.has(item.id)) return false;
@@ -235,22 +236,71 @@ function mergeUnique(values, additions) {
   return merged;
 }
 
+function fixtureArray(fixture, field) {
+  return Array.isArray(fixture?.[field]) ? fixture[field].map((item) => String(item)) : [];
+}
+
+function preferFixtureArray(fixture, preferredField, fallbackField) {
+  const preferred = fixtureArray(fixture, preferredField);
+  return preferred.length > 0 ? preferred : fixtureArray(fixture, fallbackField);
+}
+
+function runtimeHardConstraints(fixture) {
+  return preferFixtureArray(fixture, 'validator_covered_hard_constraints', 'confirmed_hard_constraints');
+}
+
+function oracleHardConstraints(fixture) {
+  return mergeUnique(runtimeHardConstraints(fixture), fixtureArray(fixture, 'oracle_only_hard_constraints'));
+}
+
+function runtimeRequiredWitnesses(fixture) {
+  return preferFixtureArray(fixture, 'validator_covered_required_witnesses', 'required_witnesses');
+}
+
+function oracleRequiredWitnesses(fixture) {
+  return mergeUnique(runtimeRequiredWitnesses(fixture), fixtureArray(fixture, 'oracle_only_required_witnesses'));
+}
+
+function runtimeTailWitnesses(fixture) {
+  return preferFixtureArray(fixture, 'validator_covered_tail_witnesses', 'tail_witnesses');
+}
+
+function oracleTailWitnesses(fixture) {
+  return mergeUnique(runtimeTailWitnesses(fixture), fixtureArray(fixture, 'oracle_only_tail_witnesses'));
+}
+
+function runtimeDetailSlots(fixture) {
+  return preferFixtureArray(fixture, 'validator_covered_detail_slots', 'required_detail_slots');
+}
+
+function oracleDetailSlots(fixture) {
+  return mergeUnique(runtimeDetailSlots(fixture), fixtureArray(fixture, 'oracle_only_detail_slots'));
+}
+
+function runtimeConsequenceDebt(fixture) {
+  return preferFixtureArray(fixture, 'validator_covered_consequence_debt', 'consequence_debt');
+}
+
+function oracleConsequenceDebt(fixture) {
+  return mergeUnique(runtimeConsequenceDebt(fixture), fixtureArray(fixture, 'oracle_only_consequence_debt'));
+}
+
 function applyValidatedCarryForward(fixture, method, parsed) {
   if (!methodCarriesValidatedState(method)) return parsed;
   const commitmentType = String(parsed.commitment_type || '').toLowerCase();
   if (['repair', 'abstain', 'recontract', 'fallback'].includes(commitmentType)) return parsed;
   return {
     ...parsed,
-    hard_constraints_used: mergeUnique(parsed.hard_constraints_used, fixture.confirmed_hard_constraints),
+    hard_constraints_used: mergeUnique(parsed.hard_constraints_used, runtimeHardConstraints(fixture)),
     evidence_witness_ids: mergeUnique(parsed.evidence_witness_ids, [
-      ...fixture.required_witnesses,
-      ...fixture.tail_witnesses,
+      ...runtimeRequiredWitnesses(fixture),
+      ...runtimeTailWitnesses(fixture),
     ]),
     covered_requirements: mergeUnique(parsed.covered_requirements, [
       ...fixture.required_dimensions,
-      ...fixture.required_detail_slots,
+      ...runtimeDetailSlots(fixture),
     ]),
-    consequence_obligations: mergeUnique(parsed.consequence_obligations, fixture.consequence_debt),
+    consequence_obligations: mergeUnique(parsed.consequence_obligations, runtimeConsequenceDebt(fixture)),
   };
 }
 
@@ -268,12 +318,14 @@ function candidateFailsCoverageValidation(fixture, parsed) {
     ...asArray(parsed.consequence_obligations),
     outputText,
   ]);
+  const runtimeTail = runtimeTailWitnesses(fixture);
+  const runtimeDebt = runtimeConsequenceDebt(fixture);
   return (
-    !includesAll(hardText, fixture.confirmed_hard_constraints)
-    || !includesAll(witnessText, fixture.required_witnesses)
-    || (fixture.tail_witnesses.length > 0 && !includesAll(witnessText, fixture.tail_witnesses))
-    || !includesAll(witnessText, fixture.required_detail_slots)
-    || (fixture.consequence_debt.length > 0 && !includesAll(consequenceText, fixture.consequence_debt))
+    !includesAll(hardText, runtimeHardConstraints(fixture))
+    || !includesAll(witnessText, runtimeRequiredWitnesses(fixture))
+    || (runtimeTail.length > 0 && !includesAll(witnessText, runtimeTail))
+    || !includesAll(witnessText, runtimeDetailSlots(fixture))
+    || (runtimeDebt.length > 0 && !includesAll(consequenceText, runtimeDebt))
   );
 }
 
@@ -358,7 +410,7 @@ function buildPrompt(fixture, method) {
     '',
     `Scenario focus: ${fixture.scenario_focus}`,
     'Confirmed hard constraints:',
-    JSON.stringify(fixture.confirmed_hard_constraints, null, 2),
+    JSON.stringify(runtimeHardConstraints(fixture), null, 2),
     '',
     'Mutable state facts:',
     JSON.stringify(fixture.mutable_state_facts, null, 2),
@@ -367,7 +419,7 @@ function buildPrompt(fixture, method) {
     JSON.stringify(fixture.required_dimensions, null, 2),
     '',
     'Required detail slots:',
-    JSON.stringify(fixture.required_detail_slots, null, 2),
+    JSON.stringify(runtimeDetailSlots(fixture), null, 2),
     '',
     'Evidence made available to this method:',
     JSON.stringify(selectedEvidence, null, 2),
@@ -463,6 +515,96 @@ function includesAll(haystack, needles) {
   return needles.every((needle) => text.includes(String(needle).toLowerCase()));
 }
 
+function normalizeForShadowMatch(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replaceAll(/[^a-z0-9_]+/gu, ' ')
+    .replaceAll(/\s+/gu, ' ')
+    .trim();
+}
+
+function shadowOracleFacts(fixture) {
+  const facts = Array.isArray(fixture.shadow_oracle?.facts)
+    ? fixture.shadow_oracle.facts
+    : [];
+  return facts.filter((fact) => fact && typeof fact === 'object');
+}
+
+function shadowFactMatchLayer(fact, searchableText) {
+  const text = normalizeForShadowMatch(searchableText);
+  const aliases = Array.isArray(fact.aliases) ? fact.aliases : [];
+  const aliasMatched = [fact.canonical, ...aliases].some((alias) => {
+    const needle = normalizeForShadowMatch(alias);
+    return needle.length > 0 && text.includes(needle);
+  });
+  if (aliasMatched) return 'alias';
+  const patterns = Array.isArray(fact.paraphrase_patterns) ? fact.paraphrase_patterns : [];
+  const regexMatched = patterns.some((pattern) => {
+    try {
+      return new RegExp(pattern, 'iu').test(searchableText);
+    } catch {
+      return false;
+    }
+  });
+  return regexMatched ? 'regex' : null;
+}
+
+function shadowFactMatches(fact, searchableText) {
+  return shadowFactMatchLayer(fact, searchableText) !== null;
+}
+
+function weightedShadowRecall(facts, searchableText, categories = null) {
+  const categorySet = categories ? new Set(categories) : null;
+  const scopedFacts = facts.filter((fact) =>
+    fact.polarity !== 'contradict_detection'
+    && (!categorySet || categorySet.has(fact.type))
+  );
+  if (scopedFacts.length === 0) return null;
+  let totalWeight = 0;
+  let matchedWeight = 0;
+  for (const fact of scopedFacts) {
+    const weight = Number.isFinite(Number(fact.weight)) ? Number(fact.weight) : 1;
+    totalWeight += weight;
+    if (shadowFactMatches(fact, searchableText)) matchedWeight += weight;
+  }
+  if (totalWeight <= 0) return null;
+  return Math.round((matchedWeight / totalWeight) * 10_000) / 10_000;
+}
+
+function shadowContradictionRate(facts, searchableText) {
+  const contradictionFacts = facts.filter((fact) => fact.polarity === 'contradict_detection');
+  if (contradictionFacts.length === 0) return 0;
+  let totalWeight = 0;
+  let matchedWeight = 0;
+  for (const fact of contradictionFacts) {
+    const weight = Number.isFinite(Number(fact.weight)) ? Number(fact.weight) : 1;
+    totalWeight += weight;
+    if (shadowFactMatches(fact, searchableText)) matchedWeight += weight;
+  }
+  return totalWeight <= 0 ? 0 : Math.round((matchedWeight / totalWeight) * 10_000) / 10_000;
+}
+
+function shadowMatchLayerCounts(facts, searchableText, categories = null, polarity = 'respect') {
+  const categorySet = categories ? new Set(categories) : null;
+  const scopedFacts = facts.filter((fact) =>
+    fact.polarity === polarity
+    && (!categorySet || categorySet.has(fact.type))
+  );
+  const counts = {
+    denominator: scopedFacts.length,
+    matched: 0,
+    alias: 0,
+    regex: 0,
+  };
+  for (const fact of scopedFacts) {
+    const layer = shadowFactMatchLayer(fact, searchableText);
+    if (!layer) continue;
+    counts.matched += 1;
+    counts[layer] += 1;
+  }
+  return counts;
+}
+
 function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, providerMeta) {
   const commitmentType = String(parsed.commitment_type || '').toLowerCase();
   const outputText = String(parsed.output_text || '');
@@ -484,19 +626,74 @@ function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, provider
     outputText,
     String(parsed.selected_option || ''),
   ]);
+  const runtimeHard = runtimeHardConstraints(fixture);
+  const runtimeWitnesses = runtimeRequiredWitnesses(fixture);
+  const runtimeTail = runtimeTailWitnesses(fixture);
+  const runtimeSlots = runtimeDetailSlots(fixture);
+  const runtimeDebt = runtimeConsequenceDebt(fixture);
+  const oracleHard = oracleHardConstraints(fixture);
+  const oracleWitnesses = oracleRequiredWitnesses(fixture);
+  const oracleTail = oracleTailWitnesses(fixture);
+  const oracleSlots = oracleDetailSlots(fixture);
+  const oracleDebt = oracleConsequenceDebt(fixture);
+  const shadowFacts = shadowOracleFacts(fixture);
+  const shadowSearchText = joinedLower([
+    hardText,
+    witnessText,
+    consequenceText,
+    surfaceText,
+    outputText,
+    String(parsed.selected_option || ''),
+  ]);
+  const shadowHardRecall = structuredCommitmentAvailable
+    ? weightedShadowRecall(shadowFacts, joinedLower([hardText, outputText]), ['constraint'])
+    : null;
+  const shadowWitnessRecall = structuredCommitmentAvailable
+    ? weightedShadowRecall(shadowFacts, joinedLower([witnessText, outputText]), ['evidence'])
+    : null;
+  const shadowDetailRecall = structuredCommitmentAvailable
+    ? weightedShadowRecall(shadowFacts, joinedLower([witnessText, surfaceText, outputText]), ['detail'])
+    : null;
+  const shadowConsequenceRecall = structuredCommitmentAvailable
+    ? weightedShadowRecall(shadowFacts, joinedLower([consequenceText, outputText]), ['consequence'])
+    : null;
+  const shadowOracleRecall = structuredCommitmentAvailable
+    ? weightedShadowRecall(shadowFacts, shadowSearchText)
+    : null;
+  const shadowContradiction = structuredCommitmentAvailable
+    ? shadowContradictionRate(shadowFacts, shadowSearchText)
+    : null;
+  const shadowRespectCounts = structuredCommitmentAvailable
+    ? shadowMatchLayerCounts(shadowFacts, shadowSearchText, null, 'respect')
+    : { denominator: 0, matched: 0, alias: 0, regex: 0 };
+  const shadowContradictionCounts = structuredCommitmentAvailable
+    ? shadowMatchLayerCounts(shadowFacts, shadowSearchText, null, 'contradict_detection')
+    : { denominator: 0, matched: 0, alias: 0, regex: 0 };
 
+  const validatorMissingHard = structuredCommitmentAvailable
+    && !includesAll(hardText, runtimeHard);
+  const validatorMissingWitness = structuredCommitmentAvailable
+    && !includesAll(witnessText, runtimeWitnesses);
+  const validatorMissingTail = structuredCommitmentAvailable
+    && runtimeTail.length > 0
+    && !includesAll(witnessText, runtimeTail);
+  const validatorMissingSlots = structuredCommitmentAvailable
+    && !includesAll(witnessText, runtimeSlots);
+  const validatorMissingDebt = structuredCommitmentAvailable
+    && runtimeDebt.length > 0
+    && !includesAll(consequenceText, runtimeDebt);
   const missingHard = structuredCommitmentAvailable
-    && !includesAll(hardText, fixture.confirmed_hard_constraints);
+    && !includesAll(hardText, oracleHard);
   const missingWitness = structuredCommitmentAvailable
-    && !includesAll(witnessText, fixture.required_witnesses);
+    && !includesAll(witnessText, oracleWitnesses);
   const missingTail = structuredCommitmentAvailable
-    && fixture.tail_witnesses.length > 0
-    && !includesAll(witnessText, fixture.tail_witnesses);
+    && oracleTail.length > 0
+    && !includesAll(witnessText, oracleTail);
   const missingSlots = structuredCommitmentAvailable
-    && !includesAll(witnessText, fixture.required_detail_slots);
+    && !includesAll(witnessText, oracleSlots);
   const missingDebt = structuredCommitmentAvailable
-    && fixture.consequence_debt.length > 0
-    && !includesAll(consequenceText, fixture.consequence_debt);
+    && oracleDebt.length > 0
+    && !includesAll(consequenceText, oracleDebt);
   const noFeasibleEmission = outputAvailable
     && fixture.oracle_feasible_set_empty
     && structuredCommitmentAvailable;
@@ -518,6 +715,32 @@ function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, provider
     structured_commitment_available: structuredCommitmentAvailable,
     repair_expected: fixture.expected_repair_or_abstain,
     no_feasible_expected: fixture.oracle_feasible_set_empty,
+    strict_oracle_boundary: (
+      fixtureArray(fixture, 'oracle_only_hard_constraints').length
+      + fixtureArray(fixture, 'oracle_only_required_witnesses').length
+      + fixtureArray(fixture, 'oracle_only_tail_witnesses').length
+      + fixtureArray(fixture, 'oracle_only_detail_slots').length
+      + fixtureArray(fixture, 'oracle_only_consequence_debt').length
+    ) > 0,
+    shadow_oracle_boundary: shadowFacts.length > 0,
+    shadow_fact_count: shadowFacts.length,
+    shadow_oracle_recall: shadowOracleRecall,
+    shadow_oracle_failure_score: shadowOracleRecall === null ? null : Math.round((1 - shadowOracleRecall) * 10_000) / 10_000,
+    shadow_contradiction_rate: shadowContradiction,
+    shadow_fact_denominator: shadowRespectCounts.denominator,
+    shadow_matched_fact_count: shadowRespectCounts.matched,
+    shadow_alias_match_count: shadowRespectCounts.alias,
+    shadow_regex_match_count: shadowRespectCounts.regex,
+    shadow_contradiction_denominator: shadowContradictionCounts.denominator,
+    shadow_contradiction_match_count: shadowContradictionCounts.matched,
+    shadow_hard_recall: shadowHardRecall,
+    shadow_witness_recall: shadowWitnessRecall,
+    shadow_detail_recall: shadowDetailRecall,
+    shadow_consequence_recall: shadowConsequenceRecall,
+    validator_hard_constraint_violation: noFeasibleEmission || validatorMissingHard,
+    validator_evidence_coverage_failure: validatorMissingWitness || validatorMissingSlots,
+    validator_witness_drop: validatorMissingTail,
+    validator_consequence_continuity_failure: validatorMissingDebt,
     hard_constraint_violation: noFeasibleEmission || missingHard,
     false_hardening: fixture.failure_surface.includes('false_hardening') && noFeasibleEmission,
     evidence_coverage_failure: missingWitness || missingSlots,
@@ -545,13 +768,28 @@ function scoreParsedOutput(fixture, method, parsed, rawText, latencyMs, provider
 function oracleResult(fixture, providerMeta) {
   const isNoFeasible = fixture.oracle_feasible_set_empty;
   const shouldRepair = fixture.expected_repair_or_abstain;
+  const respectShadowFacts = shadowOracleFacts(fixture).filter((fact) => fact.polarity !== 'contradict_detection');
   const parsed = {
     commitment_type: shouldRepair ? (isNoFeasible ? 'abstain' : 'repair') : 'commit',
     selected_option: shouldRepair ? null : 'oracle_valid_commitment',
-    hard_constraints_used: fixture.confirmed_hard_constraints,
-    evidence_witness_ids: [...fixture.required_witnesses, ...fixture.tail_witnesses],
-    covered_requirements: [...fixture.required_dimensions, ...fixture.required_detail_slots],
-    consequence_obligations: fixture.consequence_debt,
+    hard_constraints_used: [
+      ...oracleHardConstraints(fixture),
+      ...respectShadowFacts.filter((fact) => fact.type === 'constraint').map((fact) => fact.canonical),
+    ],
+    evidence_witness_ids: [
+      ...oracleRequiredWitnesses(fixture),
+      ...oracleTailWitnesses(fixture),
+      ...respectShadowFacts.filter((fact) => fact.type === 'evidence').map((fact) => fact.canonical),
+    ],
+    covered_requirements: [
+      ...fixture.required_dimensions,
+      ...oracleDetailSlots(fixture),
+      ...respectShadowFacts.filter((fact) => fact.type === 'detail').map((fact) => fact.canonical),
+    ],
+    consequence_obligations: [
+      ...oracleConsequenceDebt(fixture),
+      ...respectShadowFacts.filter((fact) => fact.type === 'consequence').map((fact) => fact.canonical),
+    ],
     repair_or_abstain_reason: shouldRepair
       ? (isNoFeasible ? 'contract_conflict' : (fixture.runtime_repair_guards || [])[0] || 'validator_failure')
       : null,
@@ -560,7 +798,7 @@ function oracleResult(fixture, providerMeta) {
       ? (isNoFeasible
         ? 'The oracle abstains because the fixture has no feasible commitment under the confirmed contract.'
         : 'The oracle repairs the commitment before realization because a runtime guard is active.')
-      : `Oracle commitment covers ${fixture.expected_valid_commitment_fields.join(', ')}.`,
+      : `Oracle commitment covers ${fixture.expected_valid_commitment_fields.join(', ')}. ${respectShadowFacts.map((fact) => fact.canonical).join(' ')}`,
   };
   return scoreParsedOutput(fixture, 'oracle_evidence_upper_bound', parsed, JSON.stringify(parsed), 0, providerMeta);
 }
@@ -576,6 +814,12 @@ function average(values) {
   return Math.round(filtered.reduce((sum, value) => sum + value, 0) / filtered.length);
 }
 
+function averageRate(values) {
+  const filtered = values.filter((value) => typeof value === 'number' && Number.isFinite(value));
+  if (filtered.length === 0) return null;
+  return Math.round((filtered.reduce((sum, value) => sum + value, 0) / filtered.length) * 10_000) / 10_000;
+}
+
 function aggregate(results) {
   const observedMethods = METHODS.filter((method) => results.some((row) => row.baseline_id === method));
   return observedMethods.map((method) => {
@@ -583,6 +827,8 @@ function aggregate(results) {
     const attempted = rows.filter((row) => row.attempted);
     const evaluable = attempted.filter((row) => !row.invalid_run);
     const structured = evaluable.filter((row) => row.structured_commitment_available);
+    const budgetExhausted = attempted.filter((row) => row.budget_exhausted_parse_failure);
+    const longOutputBudgetEvents = attempted.filter((row) => row.long_output_budget_event);
     const noFeasibleRows = evaluable.filter((row) => row.no_feasible_expected);
     const repairRows = evaluable.filter((row) => row.repair_expected);
     const systemPass = evaluable.filter((row) =>
@@ -593,14 +839,40 @@ function aggregate(results) {
       attempted_runs: attempted.length,
       invalid_run_count: attempted.length - evaluable.length,
       invalid_run_rate: rate(attempted.length - evaluable.length, attempted.length) || 0,
+      budget_exhausted_parse_failure_count: budgetExhausted.length,
+      budget_exhausted_parse_failure_rate: rate(budgetExhausted.length, attempted.length) || 0,
+      long_output_budget_event_count: longOutputBudgetEvents.length,
+      long_output_budget_event_rate: rate(longOutputBudgetEvents.length, attempted.length) || 0,
       evaluable_runs: evaluable.length,
       system_completion_pass_count: systemPass.length,
       system_completion_pass_rate: rate(systemPass.length, evaluable.length) || 0,
       output_availability_rate: rate(evaluable.filter((row) => row.output_available).length, evaluable.length) || 0,
+      output_availability_attempted_rate: rate(evaluable.filter((row) => row.output_available).length, attempted.length) || 0,
       structured_commitment_availability_rate: rate(structured.length, evaluable.length) || 0,
+      structured_commitment_availability_attempted_rate: rate(structured.length, attempted.length) || 0,
       structured_commitment_denominator: structured.length,
       no_feasible_denominator: noFeasibleRows.length,
       repair_denominator: repairRows.length,
+      strict_oracle_boundary_rate: rate(evaluable.filter((row) => row.strict_oracle_boundary).length, evaluable.length) || 0,
+      shadow_oracle_boundary_rate: rate(evaluable.filter((row) => row.shadow_oracle_boundary).length, evaluable.length) || 0,
+      avg_shadow_fact_count: averageRate(evaluable.map((row) => row.shadow_fact_count)),
+      shadow_oracle_recall_mean: averageRate(structured.map((row) => row.shadow_oracle_recall)),
+      shadow_oracle_failure_score_mean: averageRate(structured.map((row) => row.shadow_oracle_failure_score)),
+      shadow_contradiction_rate_mean: averageRate(structured.map((row) => row.shadow_contradiction_rate)),
+      shadow_fact_denominator_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_fact_denominator) || 0), 0),
+      shadow_matched_fact_count_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_matched_fact_count) || 0), 0),
+      shadow_alias_match_count_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_alias_match_count) || 0), 0),
+      shadow_regex_match_count_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_regex_match_count) || 0), 0),
+      shadow_contradiction_denominator_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_contradiction_denominator) || 0), 0),
+      shadow_contradiction_match_count_sum: structured.reduce((sum, row) => sum + (Number(row.shadow_contradiction_match_count) || 0), 0),
+      shadow_hard_recall_mean: averageRate(structured.map((row) => row.shadow_hard_recall)),
+      shadow_witness_recall_mean: averageRate(structured.map((row) => row.shadow_witness_recall)),
+      shadow_detail_recall_mean: averageRate(structured.map((row) => row.shadow_detail_recall)),
+      shadow_consequence_recall_mean: averageRate(structured.map((row) => row.shadow_consequence_recall)),
+      validator_hard_constraint_violation_rate: rate(structured.filter((row) => row.validator_hard_constraint_violation).length, structured.length),
+      validator_evidence_coverage_failure_rate: rate(structured.filter((row) => row.validator_evidence_coverage_failure).length, structured.length),
+      validator_witness_drop_rate: rate(structured.filter((row) => row.validator_witness_drop).length, structured.length),
+      validator_consequence_continuity_failure_rate: rate(structured.filter((row) => row.validator_consequence_continuity_failure).length, structured.length),
       hard_constraint_violation_rate: rate(structured.filter((row) => row.hard_constraint_violation).length, structured.length),
       false_hardening_rate: rate(structured.filter((row) => row.false_hardening).length, structured.length),
       evidence_coverage_failure_rate: rate(structured.filter((row) => row.evidence_coverage_failure).length, structured.length),
@@ -787,18 +1059,50 @@ async function main() {
         output_tokens: totalOutputTokens,
       });
       scored.parse_retry_count = parseRetryCount;
+      scored.generation_attempt_count = parseRetryCount + 1;
+      scored.max_tokens_per_attempt = maxTokens;
+      scored.long_output_budget_event = totalOutputTokens >= maxTokens;
+      scored.budget_exhausted_parse_failure = false;
       return scored;
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      const generationAttemptCount = parseRetryCount + 1;
+      const budgetExhaustedParseFailure = errorMessage === 'json_parse_failed'
+        && totalOutputTokens >= maxTokens * generationAttemptCount;
       return {
           fixture_id: fixture.fixture_id,
           baseline_id: method,
           scenario_focus: fixture.scenario_focus,
           attempted: true,
           invalid_run: true,
+          budget_exhausted_parse_failure: budgetExhaustedParseFailure,
+          long_output_budget_event: totalOutputTokens >= maxTokens,
+          generation_attempt_count: generationAttemptCount,
+          max_tokens_per_attempt: maxTokens,
           output_available: false,
           structured_commitment_available: false,
           repair_expected: fixture.expected_repair_or_abstain,
           no_feasible_expected: fixture.oracle_feasible_set_empty,
+          strict_oracle_boundary: false,
+          shadow_oracle_boundary: shadowOracleFacts(fixture).length > 0,
+          shadow_fact_count: shadowOracleFacts(fixture).length,
+          shadow_oracle_recall: null,
+          shadow_oracle_failure_score: null,
+          shadow_contradiction_rate: null,
+          shadow_fact_denominator: 0,
+          shadow_matched_fact_count: 0,
+          shadow_alias_match_count: 0,
+          shadow_regex_match_count: 0,
+          shadow_contradiction_denominator: 0,
+          shadow_contradiction_match_count: 0,
+          shadow_hard_recall: null,
+          shadow_witness_recall: null,
+          shadow_detail_recall: null,
+          shadow_consequence_recall: null,
+          validator_hard_constraint_violation: false,
+          validator_evidence_coverage_failure: false,
+          validator_witness_drop: false,
+          validator_consequence_continuity_failure: false,
           hard_constraint_violation: false,
           false_hardening: false,
           evidence_coverage_failure: false,
@@ -817,7 +1121,7 @@ async function main() {
           model_budget_units: 1,
           provider: providerConfig.provider,
           model: providerConfig.model,
-          error: error instanceof Error ? error.message.slice(0, 240) : String(error).slice(0, 240),
+          error: errorMessage.slice(0, 240),
           raw_excerpt: response?.text ? response.text.slice(0, 360) : null,
           parse_retry_count: parseRetryCount,
       };
@@ -883,10 +1187,34 @@ async function main() {
     'scenario_focus',
     'attempted',
     'invalid_run',
+    'budget_exhausted_parse_failure',
+    'long_output_budget_event',
+    'generation_attempt_count',
+    'max_tokens_per_attempt',
     'output_available',
     'structured_commitment_available',
     'repair_expected',
     'no_feasible_expected',
+    'strict_oracle_boundary',
+    'shadow_oracle_boundary',
+    'shadow_fact_count',
+    'shadow_oracle_recall',
+    'shadow_oracle_failure_score',
+    'shadow_contradiction_rate',
+    'shadow_fact_denominator',
+    'shadow_matched_fact_count',
+    'shadow_alias_match_count',
+    'shadow_regex_match_count',
+    'shadow_contradiction_denominator',
+    'shadow_contradiction_match_count',
+    'shadow_hard_recall',
+    'shadow_witness_recall',
+    'shadow_detail_recall',
+    'shadow_consequence_recall',
+    'validator_hard_constraint_violation',
+    'validator_evidence_coverage_failure',
+    'validator_witness_drop',
+    'validator_consequence_continuity_failure',
     'hard_constraint_violation',
     'evidence_coverage_failure',
     'witness_drop',
@@ -915,13 +1243,39 @@ async function main() {
     'attempted_runs',
     'invalid_run_count',
     'invalid_run_rate',
+    'budget_exhausted_parse_failure_count',
+    'budget_exhausted_parse_failure_rate',
+    'long_output_budget_event_count',
+    'long_output_budget_event_rate',
     'evaluable_runs',
     'system_completion_pass_rate',
     'output_availability_rate',
+    'output_availability_attempted_rate',
     'structured_commitment_availability_rate',
+    'structured_commitment_availability_attempted_rate',
     'structured_commitment_denominator',
     'no_feasible_denominator',
     'repair_denominator',
+    'strict_oracle_boundary_rate',
+    'shadow_oracle_boundary_rate',
+    'avg_shadow_fact_count',
+    'shadow_oracle_recall_mean',
+    'shadow_oracle_failure_score_mean',
+    'shadow_contradiction_rate_mean',
+    'shadow_fact_denominator_sum',
+    'shadow_matched_fact_count_sum',
+    'shadow_alias_match_count_sum',
+    'shadow_regex_match_count_sum',
+    'shadow_contradiction_denominator_sum',
+    'shadow_contradiction_match_count_sum',
+    'shadow_hard_recall_mean',
+    'shadow_witness_recall_mean',
+    'shadow_detail_recall_mean',
+    'shadow_consequence_recall_mean',
+    'validator_hard_constraint_violation_rate',
+    'validator_evidence_coverage_failure_rate',
+    'validator_witness_drop_rate',
+    'validator_consequence_continuity_failure_rate',
     'hard_constraint_violation_rate',
     'evidence_coverage_failure_rate',
     'witness_drop_rate',
