@@ -1,9 +1,10 @@
-# Contract-Bounded Runtime Control Artifacts
+# Recall Isn't Enough: Bounding Commitments in Personalized Language Systems
 
 This repository contains a sanitized reproducibility package for experiments on
-contract-bounded runtime control in long-horizon personalized language systems.
-It is intended to support artifact review and follow-up replication of the
-synthetic/composite benchmark results.
+bounding commitments in long-horizon personalized language systems. It is
+intended to support artifact review and follow-up replication of the
+synthetic/composite benchmark results for "Recall Isn't Enough: Bounding
+Commitments in Personalized Language Systems."
 
 The repository does not contain write-up source, compiled documents, production
 backend code, raw production histories, user identifiers, credentials, or

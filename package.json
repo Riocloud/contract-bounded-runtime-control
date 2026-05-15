@@ -1,9 +1,9 @@
 {
-  "name": "contract-bounded-runtime-control",
+  "name": "recall-isnt-enough-artifacts",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Reproducibility artifacts for contract-bounded runtime control experiments over synthetic/composite fixtures.",
+  "description": "Reproducibility artifacts for Recall Isn't Enough: Bounding Commitments in Personalized Language Systems.",
   "scripts": {
     "generate:fixtures": "node scripts/generate-cbea-lcv-expanded-fixtures.mjs --replicates=12 --out=data/fixtures/cbea-lcv.expanded360.synthetic.json",
     "generate:fixtures:shadow": "node scripts/generate-cbea-lcv-v6-shadow-fixtures.mjs --out=data/fixtures/cbea-lcv.v6-shadow360.synthetic.json --stats=data/fixtures/cbea-lcv.v6-shadow360.stats.json",
