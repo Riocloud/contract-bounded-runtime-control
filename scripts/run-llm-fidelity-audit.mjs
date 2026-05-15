@@ -201,7 +201,7 @@ async function callJudge({ baseUrl, model, apiKey, prompt, timeoutMs }) {
         messages: [
           {
             role: 'system',
-            content: 'You are a careful rubric-based evaluator. Return only valid JSON.',
+            content: 'You are a careful scoring-schema evaluator. Return only valid JSON.',
           },
           { role: 'user', content: prompt },
         ],

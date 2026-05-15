@@ -22,7 +22,6 @@ server configuration.
   tables; these are not empirical evidence.
 - `scripts/`: fixture generation, matched-run, model-judge, summary, and
   privacy-boundary scripts.
-- `docs/rubric.md`: the fidelity scoring rubric used for the model-judge audit.
 
 ## Data Boundary
 
@@ -215,7 +214,7 @@ without changing the rest of the audit pipeline.
 
 The model-judge audit is diagnostic evidence, not human validation and not a
 real-world decision-quality evaluation. Judges score fidelity to
-synthetic/composite case facts on a 0--2 rubric and choose pairwise winners
+synthetic/composite case facts on a 0--2 scoring schema and choose pairwise winners
 among blinded outputs.
 
 The checked-in run manifests record model identifiers, concurrency, and timeout
