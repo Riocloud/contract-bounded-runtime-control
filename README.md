@@ -144,7 +144,7 @@ over synthetic/composite fixtures. To re-run generation with your own provider:
 
 ```bash
 export PROVIDER_BASE_URL="https://api.example.com"
-export PROVIDER_MODEL="MiniMax-M2.7"
+export PROVIDER_MODEL="provider-model-name"
 export PROVIDER_API_KEY="..."
 # Optional: disable OpenAI JSON response_format for providers that reject it.
 export PROVIDER_RESPONSE_FORMAT="json_object"
@@ -186,7 +186,7 @@ provide an annotation item CSV with the same columns used by
 
 ```bash
 export LLM_JUDGE_BASE_URL="https://api.example.com/v1"
-export LLM_JUDGE_MODEL="Qwen/Qwen3.6-35B-A3B"
+export LLM_JUDGE_MODEL="judge-model-name"
 export LLM_JUDGE_API_KEY="..."
 
 node scripts/run-llm-fidelity-audit.mjs \
@@ -197,16 +197,15 @@ node scripts/run-llm-fidelity-audit.mjs \
   --pairwise=true
 ```
 
-The release 90-case blinded judge sample is checked in under
-`data/model_judge/balanced-90/`. To build a fresh balanced sample from the
-released synthetic/composite fixtures and matched score rows:
+To build a fresh 90-case blinded judge sample from the released
+synthetic/composite fixtures and matched score rows:
 
 ```bash
 npm run judge:sample
 ```
 
-This writes a 90-case balanced sample under `data/model_judge/balanced-90/`.
-If you have a separate production profile file, `scripts/build-model-judge-sample.mjs`
+This writes the sample under `data/model_judge/balanced-90/`. If you have a
+separate production profile file, `scripts/build-model-judge-sample.mjs`
 also accepts `--profile=path/to/profile.json` so the sample can be reweighted
 without changing the rest of the audit pipeline.
 

@@ -7,7 +7,6 @@
   "scripts": {
     "generate:fixtures": "node scripts/generate-cbea-lcv-expanded-fixtures.mjs --replicates=12 --out=data/fixtures/cbea-lcv.expanded360.synthetic.json",
     "generate:fixtures:shadow": "node scripts/generate-cbea-lcv-v6-shadow-fixtures.mjs --out=data/fixtures/cbea-lcv.v6-shadow360.synthetic.json --stats=data/fixtures/cbea-lcv.v6-shadow360.stats.json",
-    "pilot:fixtures:shadow": "node scripts/build-shadow-pilot-fixtures.mjs --input=data/fixtures/cbea-lcv.v6-shadow360.synthetic.json --out=results/pilot_shadow/fixtures.json --manifest=results/pilot_shadow/fixture-selection.json",
     "summarize:metrics": "node scripts/summarize-automatic-metrics.mjs --input=data/results/real-pilot-results.csv --out=runs/automatic-metrics.csv",
     "summarize:bootstrap": "node scripts/bootstrap-headline-diffs.mjs --input=data/results/real-pilot-results.csv --out=runs/bootstrap-headline-diffs.csv",
     "summarize:horizon": "node scripts/summarize-horizon-stability.mjs --fixtures=data/fixtures/cbea-lcv.expanded360.synthetic.json --input=data/results/real-pilot-results.csv --out=runs/horizon-stability.csv",
