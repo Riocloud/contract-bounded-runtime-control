@@ -10,6 +10,9 @@ The repository does not contain write-up source, compiled documents, production
 backend code, raw production histories, user identifiers, credentials, or
 server configuration.
 
+For a paper-table-by-table mapping from reported results to released files and
+commands, see `REPRODUCTION_MANIFEST.md`.
+
 ## Contents
 
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
