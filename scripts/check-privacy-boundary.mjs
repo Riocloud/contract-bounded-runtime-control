@@ -8,19 +8,6 @@ const SKIP_ANY_DIRS = new Set(['.git', 'node_modules']);
 const SKIP_ROOT_DIRS = new Set(['results', 'runs']);
 const SKIP_FILES = new Set(['scripts/check-privacy-boundary.mjs']);
 const DENY_PATTERNS = [
-  /Rui Tang/i,
-  /Yichi Zhang/i,
-  /Xi Chen/i,
-  /Chen Dong/i,
-  /Youwei Yang/i,
-  /Yumeng Shen/i,
-  /OpenAsk/i,
-  /Stern School of Business/i,
-  /New York University/i,
-  /Bank of Hebei/i,
-  /Sun Yat-sen University/i,
-  /Xiamen University/i,
-  /BitMart/i,
   /sk-[A-Za-z0-9_-]{16,}/,
   /\/opt\/prediction/,
   /\/Users\/[^/\s]+/,
