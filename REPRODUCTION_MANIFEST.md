@@ -22,7 +22,7 @@ privacy-boundary check.
 | Shadow-oracle boundary diagnostic | `data/fixtures/cbea-lcv.v6-shadow360.synthetic.json`, `data/fixtures/cbea-lcv.v6-shadow360.stats.json`, `data/results/shadow-oracle-overall.csv`, `data/results/shadow-oracle-domain.csv` | `npm run summarize:boundary`, `npm run check:release` |
 | Long-history payload diagnostic | `data/results/long-history-payload-results.csv`, `data/results/long-history-payload-summary.csv` | `npm run summarize:long-history`, `npm run check:release` |
 | Selector-level MMR diagnostic | `data/fixtures/cbea-lcv.expanded360.synthetic.json`, `data/results/selector-baseline-mmr.csv` | `npm run summarize:selector-baselines`, `npm run check:release` |
-| Model-judge dimension summaries and winner choices | `data/model_judge/annotation-key.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run check:release` |
+| Model-judge dimension summaries and winner choices | `data/model_judge/balanced-90/annotation-items.csv`, `data/model_judge/balanced-90/annotation-key.csv`, `data/model_judge/annotation-key.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run check:release`; external judge replay uses `scripts/run-llm-fidelity-audit.mjs --items=data/model_judge/balanced-90/annotation-items.csv` |
 | Production aggregate diagnostics | `data/results/production-data-wash-summary.csv`, `data/results/production-runtime-coverage.csv` | `npm run check:release` |
 | Privacy boundary | released tracked files | `npm run check:privacy` |
 
@@ -35,4 +35,3 @@ is outside the default artifact-validation path:
 - model-judge calls: `scripts/run-llm-fidelity-audit.mjs`
 
 Use `runs/` or another ignored directory for any raw rerun outputs.
-

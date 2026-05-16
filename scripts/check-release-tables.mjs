@@ -344,5 +344,15 @@ assertEqual(readCsv('data/results/real-pilot-results.csv').length, 3240, 'real-p
 assertEqual(readCsv('data/results/long-history-payload-results.csv').length, 300, 'long-history payload release row count');
 assertEqual(readCsv('data/model_judge/combined-labels.csv').length, 540, 'combined model-judge label count');
 assertEqual(readCsv('data/model_judge/combined-pairwise.csv').length, 180, 'combined model-judge winner-selection count');
+assertEqual(readCsv('data/model_judge/balanced-90/annotation-key.csv').length, 270, 'balanced model-judge annotation-key count');
+const judgeItems = readCsv('data/model_judge/balanced-90/annotation-items.csv');
+assertEqual(judgeItems.length, 270, 'balanced model-judge item count');
+assertEqual(
+  judgeItems.filter((row) => String(row.output_text || '').trim()).length,
+  270,
+  'balanced model-judge nonempty output_text count',
+);
+const judgeSelectionManifest = JSON.parse(fs.readFileSync('data/model_judge/balanced-90/selection-manifest.json', 'utf8'));
+assertEqual(judgeSelectionManifest.selected_cases, 90, 'balanced model-judge selected case count');
 
 console.log(JSON.stringify({ release_table_check: 'passed' }, null, 2));
