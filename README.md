@@ -17,7 +17,7 @@ server configuration.
   shadow-boundary diagnostics, long-history payload diagnostics, production
   aggregate summaries, and aggregate summary tables.
 - `data/model_judge/`: blinded model-judge item CSV, labels, pairwise choices,
-  annotation keys, and run manifests.
+  annotation keys, scoring schema, and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
   tables; these are not empirical evidence.
 - `scripts/`: fixture generation, matched-run, model-judge, summary, and
@@ -217,6 +217,10 @@ The model-judge audit is diagnostic evidence, not human validation and not a
 real-world decision-quality evaluation. Judges score fidelity to
 synthetic/composite case facts on a 0--2 scoring schema and choose pairwise winners
 among blinded outputs.
+
+The human-readable scoring schema is documented in
+`data/model_judge/SCORING_SCHEMA.md`; the executable judge prompt is in
+`scripts/run-llm-fidelity-audit.mjs`.
 
 The checked-in run manifests record model identifiers, concurrency, and timeout
 settings. They intentionally omit API keys, endpoint URLs, precise calendar
