@@ -129,8 +129,8 @@ Additional checked-in aggregate files:
 - `data/results/backend-sensitivity-operating-points.csv`: 360-fixture gated
   operating points for MiniMax-M2.7, DeepSeek-V4-Flash, and GPT-OSS-120B.
 - `data/results/hy3-output-budget-diagnostic.csv`: output-budget diagnostic for
-  Hy3-preview/Hunyuan3-preview. It is intentionally separate from the matched
-  360-fixture backend sensitivity table.
+  Hy3-preview. It is intentionally separate from the matched 360-fixture
+  backend sensitivity table.
 - `data/results/shadow-oracle-overall.csv` and
   `data/results/shadow-oracle-domain.csv`: uncompiled-context boundary
   diagnostics. These measure visible facts outside the validator-covered
