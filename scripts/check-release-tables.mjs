@@ -206,10 +206,37 @@ const horizon = {
   'cbea_lcv_runtime::4-domain': { fixture_count: '72', structured_count: '39', hard_constraint_violation_rate: '0.0000', witness_drop_rate: '0.0000', consequence_continuity_failure_rate: '0.0000', repair_correctness_rate: '1.0000', avg_parse_retries: '0.14' },
 };
 
+const ablationMetrics = {
+  cbea_lcv_runtime: { attempted_runs: '360', invalid_run_count: '0', structured_commitment_availability_rate: '0.8361', hard_constraint_violation_rate: '0.0631', evidence_coverage_failure_rate: '0.0532', witness_drop_rate: '0.0465', consequence_continuity_failure_rate: '0.0498', no_feasible_emission_rate: '0.0066', abstention_repair_correctness_rate: '0.9508' },
+  cbea_no_validator: { attempted_runs: '360', invalid_run_count: '0', structured_commitment_availability_rate: '0.8583', hard_constraint_violation_rate: '0.1521', evidence_coverage_failure_rate: '0.1489', witness_drop_rate: '0.1553', consequence_continuity_failure_rate: '0.0971', no_feasible_emission_rate: '0.068', abstention_repair_correctness_rate: '0.5417' },
+  cbea_no_repair_abstain: { attempted_runs: '360', invalid_run_count: '0', structured_commitment_availability_rate: '1', hard_constraint_violation_rate: '0.2', evidence_coverage_failure_rate: '0.0222', witness_drop_rate: '0.025', consequence_continuity_failure_rate: '0.0139', no_feasible_emission_rate: '0.1667', abstention_repair_correctness_rate: '0' },
+  cbea_no_coverage_tail: { attempted_runs: '360', invalid_run_count: '0', structured_commitment_availability_rate: '0.8167', hard_constraint_violation_rate: '0.2143', evidence_coverage_failure_rate: '1', witness_drop_rate: '1', consequence_continuity_failure_rate: '1', no_feasible_emission_rate: '0.0068', abstention_repair_correctness_rate: '0.8657' },
+};
+
 const judgeSummary = {
   cbea_lcv_runtime: { n_outputs: '180', no_feasible_handling: '1.7944', surface_coherence: '1.8167', overall_mean: '1.6509' },
   raw_prompt_stuffing: { n_outputs: '180', no_feasible_handling: '1.7667', surface_coherence: '1.8778', overall_mean: '1.6778' },
   validator_only: { n_outputs: '180', no_feasible_handling: '1.5278', surface_coherence: '1.7889', overall_mean: '1.3843' },
+};
+
+const perJudgeSummary = {
+  'DS::cbea_lcv_runtime': { overall_mean: '1.6482', evidence_coverage: '1.1333', consequence_continuity: '1.3667', surface_coherence: '1.8333' },
+  'DS::raw_prompt_stuffing': { overall_mean: '1.6704', evidence_coverage: '1.2667', consequence_continuity: '1.3889', surface_coherence: '1.8778' },
+  'DS::validator_only': { overall_mean: '1.4444', evidence_coverage: '0.9111', consequence_continuity: '0.8111', surface_coherence: '1.8333' },
+  'QW::cbea_lcv_runtime': { overall_mean: '1.6537', evidence_coverage: '1.3111', consequence_continuity: '1.3222', surface_coherence: '1.8000' },
+  'QW::raw_prompt_stuffing': { overall_mean: '1.6852', evidence_coverage: '1.3444', consequence_continuity: '1.3444', surface_coherence: '1.8778' },
+  'QW::validator_only': { overall_mean: '1.3241', evidence_coverage: '0.7222', consequence_continuity: '0.5111', surface_coherence: '1.7444' },
+};
+
+const judgeAgreement = {
+  constraint_fidelity: { n: '270', exact_agreement_rate: '0.9222', within_1_agreement_rate: '0.9741' },
+  evidence_coverage: { n: '270', exact_agreement_rate: '0.6593', within_1_agreement_rate: '0.9556' },
+  consequence_continuity: { n: '270', exact_agreement_rate: '0.6630', within_1_agreement_rate: '0.9630' },
+  no_feasible_handling: { n: '270', exact_agreement_rate: '0.8111', within_1_agreement_rate: '0.9444' },
+  appropriate_personalization: { n: '270', exact_agreement_rate: '0.9296', within_1_agreement_rate: '0.9741' },
+  surface_coherence: { n: '270', exact_agreement_rate: '0.9185', within_1_agreement_rate: '0.9889' },
+  all_dimension_labels: { n: '1620', exact_agreement_rate: '0.8173', within_1_agreement_rate: '0.9667' },
+  case_level_winner: { n: '90', exact_agreement_rate: '0.6000', within_1_agreement_rate: '' },
 };
 
 const winnerSummary = {
@@ -328,6 +355,7 @@ assertCsvRows('data/results/judge-winner-bootstrap.csv', 'statistic', judgeWinne
 if (fs.existsSync('runs/judge-winner-bootstrap.csv')) assertCsvRows('runs/judge-winner-bootstrap.csv', 'statistic', judgeWinnerBootstrap);
 assertCsvRows('data/results/selector-baseline-mmr.csv', 'selector', selectorBaselines);
 if (fs.existsSync('runs/selector-baseline-mmr.csv')) assertCsvRows('runs/selector-baseline-mmr.csv', 'selector', selectorBaselines);
+assertCsvRows('data/results/cbea-ablation-metrics.csv', 'baseline_id', ablationMetrics);
 
 const backendRows = readCsv('data/results/backend-sensitivity-operating-points.csv').map((row) => ({ ...row, key: `${row.backend}::${row.method}` }));
 for (const [key, fields] of Object.entries(backendSensitivity)) assertRowValues(backendRows.find((row) => row.key === key), fields, `data/results/backend-sensitivity-operating-points.csv:${key}`);
@@ -340,9 +368,83 @@ if (fs.existsSync('runs/long-history-payload-summary.csv')) assertCsvRows('runs/
 assertCsvRows('data/results/production-data-wash-summary.csv', 'metric', production);
 assertCsvRows('data/results/production-runtime-coverage.csv', 'runtime_object', productionRuntimeCoverage);
 
+const perJudgeRows = readCsv('runs/llm-judge-summary/llm-fidelity-per-judge-summary.csv').map((row) => ({ ...row, key: `${row.judge}::${row.system}` }));
+for (const [key, fields] of Object.entries(perJudgeSummary)) {
+  assertRowValues(perJudgeRows.find((row) => row.key === key), fields, `runs/llm-judge-summary/llm-fidelity-per-judge-summary.csv:${key}`);
+}
+assertCsvRows('runs/llm-judge-summary/llm-fidelity-agreement.csv', 'dimension', judgeAgreement);
+
 assertEqual(readCsv('data/results/real-pilot-results.csv').length, 3240, 'real-pilot release row count');
 assertEqual(readCsv('data/results/long-history-payload-results.csv').length, 300, 'long-history payload release row count');
 assertEqual(readCsv('data/model_judge/combined-labels.csv').length, 540, 'combined model-judge label count');
 assertEqual(readCsv('data/model_judge/combined-pairwise.csv').length, 180, 'combined model-judge winner-selection count');
+assertEqual(readCsv('data/model_judge/balanced-90/annotation-key.csv').length, 270, 'balanced model-judge annotation-key count');
+const judgeItems = readCsv('data/model_judge/balanced-90/annotation-items.csv');
+assertEqual(judgeItems.length, 270, 'balanced model-judge item count');
+assertEqual(
+  judgeItems.filter((row) => String(row.output_text || '').trim()).length,
+  270,
+  'balanced model-judge nonempty output_text count',
+);
+const judgeSelectionManifest = JSON.parse(fs.readFileSync('data/model_judge/balanced-90/selection-manifest.json', 'utf8'));
+assertEqual(judgeSelectionManifest.selected_cases, 90, 'balanced model-judge selected case count');
+
+const modelOutputEvidence = readCsv('data/results/model-output-evidence.csv');
+assertEqual(modelOutputEvidence.length, 270, 'model-output evidence row count');
+assertEqual(
+  modelOutputEvidence.filter((row) => row.evidence_scope === 'model_judge_balanced90').length,
+  270,
+  'model-output evidence scope count',
+);
+assertEqual(
+  modelOutputEvidence.filter((row) => String(row.output_text || '').trim()).length,
+  270,
+  'model-output evidence nonempty output_text count',
+);
+const modelOutputEvidenceById = rowsBy(modelOutputEvidence, 'annotation_id');
+const judgeKeyRows = readCsv('data/model_judge/balanced-90/annotation-key.csv');
+const releaseRowsByFixtureBaseline = new Map(
+  readCsv('data/results/real-pilot-results.csv').map((row) => [`${row.fixture_id}::${row.baseline_id}`, row]),
+);
+const modelOutputEvidenceCounts = {};
+for (const keyRow of judgeKeyRows) {
+  const evidenceRow = modelOutputEvidenceById.get(keyRow.annotation_id);
+  assertRowValues(
+    evidenceRow,
+    {
+      fixture_id: keyRow.fixture_id,
+      baseline_id: keyRow.baseline_id,
+      judge_score_count: '2',
+    },
+    `data/results/model-output-evidence.csv:${keyRow.annotation_id}`,
+  );
+  modelOutputEvidenceCounts[keyRow.baseline_id] = (modelOutputEvidenceCounts[keyRow.baseline_id] ?? 0) + 1;
+  const releaseRow = releaseRowsByFixtureBaseline.get(`${keyRow.fixture_id}::${keyRow.baseline_id}`);
+  if (!releaseRow) throw new Error(`Missing release row for model-output evidence ${keyRow.fixture_id}::${keyRow.baseline_id}`);
+  for (const field of [
+    'structured_commitment_available',
+    'commitment_type',
+    'hard_constraint_violation',
+    'evidence_coverage_failure',
+    'witness_drop',
+    'consequence_continuity_failure',
+    'no_feasible_emission',
+    'repair_correct',
+    'inappropriate_personalization',
+    'surface_realization_failure',
+  ]) {
+    assertEqual(evidenceRow[field], releaseRow[field], `model-output evidence ${keyRow.annotation_id}.${field}`);
+  }
+}
+assertEqual(modelOutputEvidenceCounts.raw_prompt_stuffing, 90, 'model-output evidence raw_prompt_stuffing count');
+assertEqual(modelOutputEvidenceCounts.validator_only, 90, 'model-output evidence validator_only count');
+assertEqual(modelOutputEvidenceCounts.cbea_lcv_runtime, 90, 'model-output evidence cbea_lcv_runtime count');
+if (fs.existsSync('runs/model-output-evidence.csv')) {
+  assertEqual(
+    fs.readFileSync('runs/model-output-evidence.csv', 'utf8'),
+    fs.readFileSync('data/results/model-output-evidence.csv', 'utf8'),
+    'generated model-output evidence CSV',
+  );
+}
 
 console.log(JSON.stringify({ release_table_check: 'passed' }, null, 2));

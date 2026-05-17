@@ -1,0 +1,41 @@
+{
+  "fixture_count": 360,
+  "mean_validator_coverage": 0.8104,
+  "validator_covered_items": 4572,
+  "shadow_oracle_items": 1070,
+  "min_shadow_facts_per_fixture": 1,
+  "max_shadow_facts_per_fixture": 5,
+  "shadow_fact_count_distribution": {
+    "1": 74,
+    "2": 76,
+    "3": 66,
+    "4": 74,
+    "5": 70
+  },
+  "shadow_types": {
+    "consequence": 213,
+    "constraint": 208,
+    "detail": 210,
+    "evidence": 439
+  },
+  "shadow_polarities": {
+    "contradict_detection": 209,
+    "respect": 861
+  },
+  "scenario_focuses": [
+    "investment",
+    "love_choice",
+    "career",
+    "relocation",
+    "comprehensive"
+  ],
+  "failure_surfaces": [
+    "witness_drop",
+    "consequence_debt",
+    "no_feasible_candidate",
+    "hidden_exception",
+    "false_hardening",
+    "over_personalization",
+    "surface_mismatch"
+  ]
+}

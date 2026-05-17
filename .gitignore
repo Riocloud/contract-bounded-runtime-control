@@ -1,4 +1,6 @@
 runs/
+results/
+experimental/
 .env
 .env.*
 !.env.example
@@ -10,3 +12,4 @@ data/results/*-recovered.csv
 data/results/*-recovered.json
 data/results/*partial*
 data/results/*progress*
+data/fixtures/strict_v_archive/

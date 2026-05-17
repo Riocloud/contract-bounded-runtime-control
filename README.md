@@ -1,27 +1,31 @@
-# Contract-Bounded Runtime Control Artifacts
+# Recall Isn't Enough: Bounding Commitments in Personalized Language Systems
 
 This repository contains a sanitized reproducibility package for experiments on
-contract-bounded runtime control in long-horizon personalized language systems.
-It is intended to support artifact review and follow-up replication of the
-synthetic/composite benchmark results.
+bounding commitments in long-horizon personalized language systems. It is
+intended to support artifact review and follow-up replication of the
+synthetic/composite benchmark results for "Recall Isn't Enough: Bounding
+Commitments in Personalized Language Systems."
 
 The repository does not contain write-up source, compiled documents, production
 backend code, raw production histories, user identifiers, credentials, or
 server configuration.
+
+For a paper-table-by-table mapping from reported results to released files and
+commands, see `REPRODUCTION_MANIFEST.md`.
 
 ## Contents
 
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
 - `data/results/`: sanitized matched-run score tables, backend sensitivity,
   shadow-boundary diagnostics, long-history payload diagnostics, production
-  aggregate summaries, and aggregate summary tables.
-- `data/model_judge/`: model-judge labels, pairwise choices, annotation key,
-  and run manifests.
+  aggregate summaries, aggregate summary tables, and a sanitized model-output
+  evidence view for the blinded judge sample.
+- `data/model_judge/`: blinded model-judge item CSV, labels, pairwise choices,
+  annotation keys, scoring schema, and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
   tables; these are not empirical evidence.
 - `scripts/`: fixture generation, matched-run, model-judge, summary, and
   privacy-boundary scripts.
-- `docs/rubric.md`: the fidelity scoring rubric used for the model-judge audit.
 
 ## Data Boundary
 
@@ -40,10 +44,14 @@ included.
 
 The checked-in result CSVs are release artifacts, not raw run logs. They contain
 fixture identifiers, method labels, automatic score flags, aggregate metrics,
-token/cost summaries, and normalized model-family labels. They do not contain
-raw model outputs, provider responses, API endpoints, API keys, local machine
-paths, or exact run timestamps. Local reruns should write raw JSON and progress
-files under `runs/` or another ignored directory.
+token/cost summaries, and normalized model-family labels. The one output-bearing
+results view, `data/results/model-output-evidence.csv`, is a sanitized
+denormalized view of the 90-case blinded model-judge sample; it contains only
+synthetic/composite user-visible output text plus joined automatic and judge
+scores. The release does not contain provider responses, API endpoints, API
+keys, local machine paths, exact run timestamps, prompt dumps, or raw production
+histories. Local reruns should write raw JSON and progress files under `runs/`
+or another ignored directory.
 
 ## Reproduce Summary Tables
 
@@ -51,18 +59,29 @@ Requirements:
 
 - Node.js 20 or newer.
 - No package install is required for the included summary scripts.
+- No API key is required for the checked-in artifact validation path.
 
-Run:
+Reviewer quick start:
+
+```bash
+unzip recall-isnt-enough-bounding-commitments-arr-artifact-*.zip
+cd recall-isnt-enough-bounding-commitments-artifact
+node --version
+npm run check
+```
+
+From an already-unpacked artifact directory, run:
 
 ```bash
 npm run check
 ```
 
-This writes model-judge summary files under `runs/llm-judge-summary/` and runs
-the automatic-metric, bootstrap-interval, horizon-stability, long-history
-payload, model-judge, judge-winner bootstrap, selector-baseline, boundary
-diagnostic, release-table, and privacy-boundary checks under `runs/`. It also
-validates the minimal public table test cases for the release tables.
+This does not make provider calls. It writes reproduced summary files under
+`runs/`, including `runs/llm-judge-summary/`, and runs the automatic-metric,
+bootstrap-interval, horizon-stability, long-history payload, model-judge,
+judge-winner bootstrap, model-output evidence, selector-baseline, boundary
+diagnostic, release-table, and privacy-boundary checks. It also validates the
+minimal public table test cases for the release tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -75,6 +94,13 @@ To summarize the released model-judge labels only:
 ```bash
 npm run summarize:judge
 npm run summarize:judge-bootstrap
+```
+
+To rebuild the sanitized model-output evidence view from the released blinded
+judge sample and score files:
+
+```bash
+npm run summarize:model-output-evidence
 ```
 
 To recompute automatic metrics, paired bootstrap intervals, and horizon
@@ -103,8 +129,8 @@ Additional checked-in aggregate files:
 - `data/results/backend-sensitivity-operating-points.csv`: 360-fixture gated
   operating points for MiniMax-M2.7, DeepSeek-V4-Flash, and GPT-OSS-120B.
 - `data/results/hy3-output-budget-diagnostic.csv`: output-budget diagnostic for
-  Hy3-preview/Hunyuan3-preview. It is intentionally separate from the matched
-  360-fixture backend sensitivity table.
+  Hy3-preview. It is intentionally separate from the matched 360-fixture
+  backend sensitivity table.
 - `data/results/shadow-oracle-overall.csv` and
   `data/results/shadow-oracle-domain.csv`: uncompiled-context boundary
   diagnostics. These measure visible facts outside the validator-covered
@@ -118,6 +144,9 @@ Additional checked-in aggregate files:
   the long-history payload table.
 - `data/results/judge-winner-bootstrap.csv`: case-cluster bootstrap intervals
   over blinded model-judge winner selections.
+- `data/results/model-output-evidence.csv`: sanitized output-bearing evidence
+  view for the 90-case blinded model-judge sample, joined to automatic flags
+  and judge scores.
 - `data/results/selector-baseline-mmr.csv`: selector-level comparison between
   CBEA activation and an MMR relevance-diversity baseline at the same evidence
   budget. This diagnostic replays the fixed runtime activation policy used by
@@ -133,7 +162,7 @@ over synthetic/composite fixtures. To re-run generation with your own provider:
 
 ```bash
 export PROVIDER_BASE_URL="https://api.example.com"
-export PROVIDER_MODEL="MiniMax-M2.7"
+export PROVIDER_MODEL="provider-model-name"
 export PROVIDER_API_KEY="..."
 # Optional: disable OpenAI JSON response_format for providers that reject it.
 export PROVIDER_RESPONSE_FORMAT="json_object"
@@ -168,43 +197,48 @@ Use `scripts/merge-recovered-results.mjs` to merge recovered rows into a
 release-safe per-row score CSV. Do not commit the raw JSON outputs produced by
 reruns.
 
-To re-run the model-judge audit with an OpenAI-compatible judge endpoint,
-provide an annotation item CSV with the same columns used by
-`scripts/run-llm-fidelity-audit.mjs`: `annotation_id`, `case_id`,
-`system_label`, case metadata columns, and `output_text`.
+To re-run the model-judge audit with an OpenAI-compatible judge endpoint, use
+the released blinded item CSV. It contains synthetic/composite case references,
+blinded system labels, and user-visible output text, but no raw production
+history or identifiers.
 
 ```bash
 export LLM_JUDGE_BASE_URL="https://api.example.com/v1"
-export LLM_JUDGE_MODEL="Qwen/Qwen3.6-35B-A3B"
+export LLM_JUDGE_MODEL="judge-model-name"
 export LLM_JUDGE_API_KEY="..."
 
 node scripts/run-llm-fidelity-audit.mjs \
-  --items=path/to/annotation-items.csv \
+  --items=data/model_judge/balanced-90/annotation-items.csv \
   --out=runs/qwen-judge \
   --concurrency=6 \
   --timeout-ms=240000 \
   --pairwise=true
 ```
 
-The release 90-case blinded judge sample is checked in under
-`data/model_judge/balanced-90/`. To build a fresh balanced sample from the
-released synthetic/composite fixtures and matched score rows:
+To build a fresh 90-case blinded judge sample from a local output-bearing result
+CSV:
 
 ```bash
 npm run judge:sample
 ```
 
-This writes a 90-case balanced sample under `data/model_judge/balanced-90/`.
-If you have a separate production profile file, `scripts/build-model-judge-sample.mjs`
-also accepts `--profile=path/to/profile.json` so the sample can be reweighted
-without changing the rest of the audit pipeline.
+This writes the sample under `data/model_judge/balanced-90/`. The checked-in
+release score table is sanitized and does not contain raw output columns, so the
+included `data/model_judge/balanced-90/annotation-items.csv` is the replay input
+for the reported judge audit. If you have a separate production profile file,
+`scripts/build-model-judge-sample.mjs` also accepts `--profile=path/to/profile.json`
+so the sample can be reweighted without changing the rest of the audit pipeline.
 
 ## Model-Judge Audit Scope
 
 The model-judge audit is diagnostic evidence, not human validation and not a
 real-world decision-quality evaluation. Judges score fidelity to
-synthetic/composite case facts on a 0--2 rubric and choose pairwise winners
+synthetic/composite case facts on a 0--2 scoring schema and choose pairwise winners
 among blinded outputs.
+
+The human-readable scoring schema is documented in
+`data/model_judge/SCORING_SCHEMA.md`; the executable judge prompt is in
+`scripts/run-llm-fidelity-audit.mjs`.
 
 The checked-in run manifests record model identifiers, concurrency, and timeout
 settings. They intentionally omit API keys, endpoint URLs, precise calendar

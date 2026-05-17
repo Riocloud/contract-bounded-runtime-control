@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
 
-function runNode(args) {
+function runNode(args, envOverrides = {}) {
   return spawnSync(process.execPath, args, {
     cwd: repoRoot,
     encoding: 'utf8',
@@ -18,7 +18,46 @@ function runNode(args) {
       PROVIDER_API_KEY: '',
       PROVIDER_BASE_URL: '',
       PROVIDER_MODEL: '',
+      ...envOverrides,
     },
+  });
+}
+
+function runPrivacyCheckIn(cwd) {
+  return spawnSync(process.execPath, [path.join(repoRoot, 'scripts/check-privacy-boundary.mjs')], {
+    cwd,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      PROVIDER_API_KEY: '',
+      PROVIDER_BASE_URL: '',
+      PROVIDER_MODEL: '',
+    },
+  });
+}
+
+function syntheticEmailLeak() {
+  return ['released-leak', 'example.invalid'].join(String.fromCharCode(64));
+}
+
+function runNodeAsync(args, envOverrides = {}) {
+  return new Promise((resolve) => {
+    const child = spawn(process.execPath, args, {
+      cwd: repoRoot,
+      env: {
+        ...process.env,
+        PROVIDER_API_KEY: '',
+        PROVIDER_BASE_URL: '',
+        PROVIDER_MODEL: '',
+        ...envOverrides,
+      },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    let stdout = '';
+    let stderr = '';
+    child.stdout.on('data', (chunk) => { stdout += chunk; });
+    child.stderr.on('data', (chunk) => { stderr += chunk; });
+    child.on('close', (status) => resolve({ status, stdout, stderr }));
   });
 }
 
@@ -170,7 +209,133 @@ test('LCV-gated CBEA carries compiled consequence obligations forward structural
 
   assert.match(source, /function applyValidatedCarryForward/);
   assert.match(source, /methodCarriesValidatedState\(method\)/);
-  assert.match(source, /consequence_obligations:\s*mergeUnique\(parsed\.consequence_obligations,\s*fixture\.consequence_debt\)/);
+  assert.match(source, /consequence_obligations:\s*mergeUnique\(parsed\.consequence_obligations,\s*runtimeConsequenceDebt\(fixture\)\)/);
+});
+
+test('v6 shadow fixture generator preserves shape without leaking scoring labels', () => {
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-v6-shadow-fixtures-'));
+  const outPath = path.join(outDir, 'shadow.json');
+  const statsPath = path.join(outDir, 'stats.json');
+  const result = runNode([
+    'scripts/generate-cbea-lcv-v6-shadow-fixtures.mjs',
+    `--out=${outPath}`,
+    `--stats=${statsPath}`,
+  ]);
+
+  assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  const fixtures = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+  const stats = JSON.parse(fs.readFileSync(statsPath, 'utf8'));
+  assert.equal(fixtures.length, 360);
+  assert.equal(fixtures.every((fixture) => Array.isArray(fixture.turns) && fixture.turns.length >= 3), true);
+  assert.equal(fixtures.every((fixture) => fixture.shadow_oracle.facts.length >= 1), true);
+  assert.equal(fixtures.every((fixture) => fixture.shadow_oracle.facts.length <= 5), true);
+  assert.ok(new Set(fixtures.map((fixture) => fixture.shadow_oracle.facts.length)).size > 1);
+  assert.equal(stats.min_shadow_facts_per_fixture, 1);
+  assert.equal(stats.max_shadow_facts_per_fixture, 5);
+  assert.equal(fixtures.every((fixture) => fixture.shadow_oracle.noise_density_score >= 0.3), true);
+  assert.equal(new Set(fixtures.map((fixture) => fixture.scenario_focus)).size, 5);
+
+  const [first] = fixtures;
+  const [firstFact] = first.shadow_oracle.facts;
+  const visibleArchive = first.noisy_user_observations.join('\n');
+  assert.ok(firstFact.aliases.some((alias) => visibleArchive.includes(alias)));
+  assert.doesNotMatch(visibleArchive, /shadow_oracle|fact_id|sh[0-9]+|oracle_only|deferred_|hidden_/);
+  assert.ok(firstFact.aliases.length >= 3);
+  assert.ok(firstFact.paraphrase_patterns.length >= 1);
+
+  const promptDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-v6-shadow-prompt-'));
+  const promptResult = runNode([
+    'scripts/run-cbea-lcv-real-pilot.mjs',
+    `--fixtures=${outPath}`,
+    '--limit=1',
+    '--methods=raw_prompt_stuffing',
+    '--dump-prompts',
+    `--out=${promptDir}`,
+  ]);
+  assert.equal(promptResult.status, 0, `${promptResult.stderr}\n${promptResult.stdout}`);
+  const promptDump = fs.readFileSync(path.join(promptDir, 'prompt-dump.jsonl'), 'utf8');
+  assert.ok(firstFact.aliases.some((alias) => promptDump.includes(alias)));
+  assert.doesNotMatch(promptDump, /shadow_oracle|fact_id|aliases|weight|turn_due_by|polarity|oracle_only_hard_constraints|deferred_predicates|turn_of_first_violation_check|h_star|E_star|F_star/);
+});
+
+test('oracle upper bound covers shadow oracle facts with continuous recall metrics', () => {
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-shadow-oracle-'));
+  const fixturesPath = path.join(outDir, 'fixtures.json');
+  fs.writeFileSync(fixturesPath, `${JSON.stringify([
+    {
+      fixture_id: 'shadow_oracle_001',
+      scenario_focus: 'investment',
+      noisy_user_observations: [
+        'Keep emergency cash outside speculative trades, and schedule a family cash review after any rebalance.',
+      ],
+      confirmed_hard_constraints: ['covered_hard_constraint'],
+      validator_covered_hard_constraints: ['covered_hard_constraint'],
+      mutable_state_facts: ['mutable_state_fact'],
+      required_dimensions: ['finance'],
+      required_detail_slots: ['covered_detail_slot'],
+      validator_covered_detail_slots: ['covered_detail_slot'],
+      required_witnesses: ['covered_witness'],
+      validator_covered_required_witnesses: ['covered_witness'],
+      tail_witnesses: ['covered_tail_witness'],
+      validator_covered_tail_witnesses: ['covered_tail_witness'],
+      consequence_debt: ['covered_consequence_debt'],
+      validator_covered_consequence_debt: ['covered_consequence_debt'],
+      shadow_oracle: {
+        facts: [
+          {
+            id: 'sh1',
+            canonical: 'emergency cash outside speculative trades',
+            aliases: ['emergency cash outside speculative trades', 'cash outside speculative trades', 'cash reserve separate from speculation'],
+            paraphrase_patterns: ['cash\\s+(outside|separate).*speculative'],
+            type: 'constraint',
+            weight: 1,
+            turn_due_by: 2,
+            polarity: 'respect',
+            embedded_in_turns: [1],
+          },
+          {
+            id: 'sh2',
+            canonical: 'family cash review after any rebalance',
+            aliases: ['family cash review after any rebalance', 'review cash after rebalance', 'cash review after rebalancing'],
+            paraphrase_patterns: ['cash\\s+review.*rebalance'],
+            type: 'consequence',
+            weight: 1,
+            turn_due_by: 3,
+            polarity: 'respect',
+            embedded_in_turns: [1],
+          },
+        ],
+        noise_density_score: 0.5,
+      },
+      runtime_repair_guards: [],
+      oracle_feasible_set_empty: false,
+      expected_repair_or_abstain: false,
+      expected_valid_commitment_fields: ['decision'],
+      failure_surface: ['hidden_exception'],
+    },
+  ], null, 2)}\n`);
+
+  const result = runNode([
+    'scripts/run-cbea-lcv-real-pilot.mjs',
+    `--fixtures=${fixturesPath}`,
+    '--methods=oracle_evidence_upper_bound',
+    `--out=${outDir}`,
+    '--max-parse-retries=0',
+  ]);
+
+  assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  const [row] = JSON.parse(fs.readFileSync(path.join(outDir, 'real-pilot-results.json'), 'utf8'));
+  assert.equal(row.shadow_oracle_boundary, true);
+  assert.equal(row.shadow_fact_count, 2);
+  assert.equal(row.shadow_oracle_recall, 1);
+  assert.equal(row.shadow_oracle_failure_score, 0);
+  assert.equal(row.shadow_hard_recall, 1);
+  assert.equal(row.shadow_consequence_recall, 1);
+  assert.equal(row.shadow_contradiction_rate, 0);
+  assert.equal(row.shadow_fact_denominator, 2);
+  assert.equal(row.shadow_matched_fact_count, 2);
+  assert.equal(row.shadow_alias_match_count, 2);
+  assert.equal(row.shadow_regex_match_count, 0);
 });
 
 test('raw and long-context LCV-gated baselines are runnable prompt-dump methods', () => {
@@ -335,4 +500,48 @@ test('selector diagnostic compares CBEA against an MMR retrieval baseline', () =
   assert.match(output, /^selector,fixture_count,avg_selected,hard_constraint_recall,required_witness_recall,tail_witness_recall,consequence_debt_recall,control_evidence_recall/m);
   assert.match(output, /^cbea_lcv_selector,24,/m);
   assert.match(output, /^mmr_relevance_diversity,24,/m);
+});
+
+test('privacy check ignores local raw results workspace', () => {
+  const localResultsDir = path.join(repoRoot, 'results', 'privacy-regression');
+  const localResultsPath = path.join(localResultsDir, 'raw-local-output.txt');
+  fs.mkdirSync(localResultsDir, { recursive: true });
+  fs.writeFileSync(localResultsPath, `${syntheticEmailLeak()}\n`);
+  try {
+    const result = runNode(['scripts/check-privacy-boundary.mjs']);
+    assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  } finally {
+    fs.rmSync(localResultsDir, { recursive: true, force: true });
+  }
+});
+
+test('privacy check ignores root results workspace without git metadata', () => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-privacy-nogit-'));
+  const localResultsDir = path.join(tempRoot, 'results', 'privacy-regression');
+  const localResultsPath = path.join(localResultsDir, 'raw-local-output.txt');
+  fs.mkdirSync(localResultsDir, { recursive: true });
+  fs.writeFileSync(path.join(tempRoot, 'README.md'), 'temporary artifact root\n');
+  fs.writeFileSync(localResultsPath, `${syntheticEmailLeak()}\n`);
+  try {
+    const result = runPrivacyCheckIn(tempRoot);
+    assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
+  } finally {
+    fs.rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('privacy check still scans released data results without git metadata', () => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'cbea-privacy-data-results-'));
+  const dataResultsDir = path.join(tempRoot, 'data', 'results');
+  const dataResultsPath = path.join(dataResultsDir, 'released.csv');
+  fs.mkdirSync(dataResultsDir, { recursive: true });
+  fs.writeFileSync(path.join(tempRoot, 'README.md'), 'temporary artifact root\n');
+  fs.writeFileSync(dataResultsPath, `${syntheticEmailLeak()}\n`);
+  try {
+    const result = runPrivacyCheckIn(tempRoot);
+    assert.notEqual(result.status, 0, `${result.stderr}\n${result.stdout}`);
+    assert.match(result.stderr, /data\/results\/released\.csv/);
+  } finally {
+    fs.rmSync(tempRoot, { recursive: true, force: true });
+  }
 });
