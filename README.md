@@ -97,32 +97,6 @@ To validate the checked-in artifacts against the release table values:
 npm run check:release
 ```
 
-## Local CBEA Finance Demo
-
-This repository also includes a small local prototype for extending CBEA into
-market-agent workflows. It does not call external APIs, execute trades, or
-provide investment advice. It takes sample market claims plus a dynamic budget
-state, runs an evidence-bounded commitment gate, and writes a local commitment
-ledger, diagnostics CSV, and market brief.
-
-```bash
-npm run finance:demo
-```
-
-Outputs are written under `runs/cbea-finance-demo/`:
-
-- `commitment-ledger.jsonl`
-- `gate-diagnostics.csv`
-- `market-brief.md`
-
-To test the local finance gate:
-
-```bash
-npm run test:finance
-```
-
-See `prototypes/cbea-finance/README.md` for the claim schema and workflow.
-
 Additional checked-in aggregate files:
 
 - `data/results/cbea-ablation-metrics.csv`: 360-fixture CBEA/LCV ablations.

@@ -18,8 +18,6 @@
     "make:task-shards": "node scripts/make-cbea-task-shards.mjs",
     "merge:result-shards": "node scripts/merge-result-shards.mjs",
     "rescore:results": "node scripts/rescore-cbea-results.mjs",
-    "finance:demo": "node prototypes/cbea-finance/scripts/gate.mjs --input=prototypes/cbea-finance/data/market-claims.sample.json --budget=prototypes/cbea-finance/data/budget-state.sample.json --out=runs/cbea-finance-demo",
-    "test:finance": "node --test prototypes/cbea-finance/scripts/gate.test.mjs",
     "test:harness": "node --test scripts/check-clean-harness.test.mjs",
     "check:privacy": "node scripts/check-privacy-boundary.mjs",
     "check:table-cases": "node scripts/check-public-table-cases.mjs",
