@@ -389,4 +389,62 @@ assertEqual(
 const judgeSelectionManifest = JSON.parse(fs.readFileSync('data/model_judge/balanced-90/selection-manifest.json', 'utf8'));
 assertEqual(judgeSelectionManifest.selected_cases, 90, 'balanced model-judge selected case count');
 
+const modelOutputEvidence = readCsv('data/results/model-output-evidence.csv');
+assertEqual(modelOutputEvidence.length, 270, 'model-output evidence row count');
+assertEqual(
+  modelOutputEvidence.filter((row) => row.evidence_scope === 'model_judge_balanced90').length,
+  270,
+  'model-output evidence scope count',
+);
+assertEqual(
+  modelOutputEvidence.filter((row) => String(row.output_text || '').trim()).length,
+  270,
+  'model-output evidence nonempty output_text count',
+);
+const modelOutputEvidenceById = rowsBy(modelOutputEvidence, 'annotation_id');
+const judgeKeyRows = readCsv('data/model_judge/balanced-90/annotation-key.csv');
+const releaseRowsByFixtureBaseline = new Map(
+  readCsv('data/results/real-pilot-results.csv').map((row) => [`${row.fixture_id}::${row.baseline_id}`, row]),
+);
+const modelOutputEvidenceCounts = {};
+for (const keyRow of judgeKeyRows) {
+  const evidenceRow = modelOutputEvidenceById.get(keyRow.annotation_id);
+  assertRowValues(
+    evidenceRow,
+    {
+      fixture_id: keyRow.fixture_id,
+      baseline_id: keyRow.baseline_id,
+      judge_score_count: '2',
+    },
+    `data/results/model-output-evidence.csv:${keyRow.annotation_id}`,
+  );
+  modelOutputEvidenceCounts[keyRow.baseline_id] = (modelOutputEvidenceCounts[keyRow.baseline_id] ?? 0) + 1;
+  const releaseRow = releaseRowsByFixtureBaseline.get(`${keyRow.fixture_id}::${keyRow.baseline_id}`);
+  if (!releaseRow) throw new Error(`Missing release row for model-output evidence ${keyRow.fixture_id}::${keyRow.baseline_id}`);
+  for (const field of [
+    'structured_commitment_available',
+    'commitment_type',
+    'hard_constraint_violation',
+    'evidence_coverage_failure',
+    'witness_drop',
+    'consequence_continuity_failure',
+    'no_feasible_emission',
+    'repair_correct',
+    'inappropriate_personalization',
+    'surface_realization_failure',
+  ]) {
+    assertEqual(evidenceRow[field], releaseRow[field], `model-output evidence ${keyRow.annotation_id}.${field}`);
+  }
+}
+assertEqual(modelOutputEvidenceCounts.raw_prompt_stuffing, 90, 'model-output evidence raw_prompt_stuffing count');
+assertEqual(modelOutputEvidenceCounts.validator_only, 90, 'model-output evidence validator_only count');
+assertEqual(modelOutputEvidenceCounts.cbea_lcv_runtime, 90, 'model-output evidence cbea_lcv_runtime count');
+if (fs.existsSync('runs/model-output-evidence.csv')) {
+  assertEqual(
+    fs.readFileSync('runs/model-output-evidence.csv', 'utf8'),
+    fs.readFileSync('data/results/model-output-evidence.csv', 'utf8'),
+    'generated model-output evidence CSV',
+  );
+}
+
 console.log(JSON.stringify({ release_table_check: 'passed' }, null, 2));

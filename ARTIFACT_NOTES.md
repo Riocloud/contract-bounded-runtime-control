@@ -23,6 +23,8 @@ The artifact intentionally contains:
 - released scored result rows and aggregate diagnostics;
 - model-judge blinded item CSV, annotation keys, combined labels, pairwise
   winner choices, and run manifests;
+- a sanitized `data/results/model-output-evidence.csv` view that joins the
+  90-case blinded judge-sample outputs to automatic flags and judge scores;
 - scripts for metric summaries, bootstrap intervals, selector diagnostics,
   release-table checks, and privacy-boundary checks.
 
@@ -30,12 +32,13 @@ The artifact intentionally does not contain:
 
 - raw production histories, user identifiers, session rows, credentials, API
   endpoints, or server configuration;
-- raw provider responses, prompt dumps, or exact run timestamps;
+- raw provider responses, prompt dumps, full provider JSON, or exact run
+  timestamps;
 
 The model-judge summaries in the paper are reproducible from the released
 blinded item CSV, labels, pairwise winner choices, annotation keys, manifests,
-and scripts. Full judge-call replay requires an external OpenAI-compatible judge
-endpoint.
+scripts, and sanitized model-output evidence view. Full judge-call replay
+requires an external OpenAI-compatible judge endpoint.
 
 ## Interpreting the Scope
 

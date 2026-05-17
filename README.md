@@ -18,7 +18,8 @@ commands, see `REPRODUCTION_MANIFEST.md`.
 - `data/fixtures/`: synthetic/composite fixtures and JSON schema.
 - `data/results/`: sanitized matched-run score tables, backend sensitivity,
   shadow-boundary diagnostics, long-history payload diagnostics, production
-  aggregate summaries, and aggregate summary tables.
+  aggregate summaries, aggregate summary tables, and a sanitized model-output
+  evidence view for the blinded judge sample.
 - `data/model_judge/`: blinded model-judge item CSV, labels, pairwise choices,
   annotation keys, scoring schema, and run manifests.
 - `data/test_cases/`: minimal synthetic shape checks for the final appendix
@@ -43,10 +44,14 @@ included.
 
 The checked-in result CSVs are release artifacts, not raw run logs. They contain
 fixture identifiers, method labels, automatic score flags, aggregate metrics,
-token/cost summaries, and normalized model-family labels. They do not contain
-raw model outputs, provider responses, API endpoints, API keys, local machine
-paths, or exact run timestamps. Local reruns should write raw JSON and progress
-files under `runs/` or another ignored directory.
+token/cost summaries, and normalized model-family labels. The one output-bearing
+results view, `data/results/model-output-evidence.csv`, is a sanitized
+denormalized view of the 90-case blinded model-judge sample; it contains only
+synthetic/composite user-visible output text plus joined automatic and judge
+scores. The release does not contain provider responses, API endpoints, API
+keys, local machine paths, exact run timestamps, prompt dumps, or raw production
+histories. Local reruns should write raw JSON and progress files under `runs/`
+or another ignored directory.
 
 ## Reproduce Summary Tables
 
@@ -74,9 +79,9 @@ npm run check
 This does not make provider calls. It writes reproduced summary files under
 `runs/`, including `runs/llm-judge-summary/`, and runs the automatic-metric,
 bootstrap-interval, horizon-stability, long-history payload, model-judge,
-judge-winner bootstrap, selector-baseline, boundary diagnostic, release-table,
-and privacy-boundary checks. It also validates the minimal public table test
-cases for the release tables.
+judge-winner bootstrap, model-output evidence, selector-baseline, boundary
+diagnostic, release-table, and privacy-boundary checks. It also validates the
+minimal public table test cases for the release tables.
 
 To regenerate the 360 synthetic/composite fixtures:
 
@@ -89,6 +94,13 @@ To summarize the released model-judge labels only:
 ```bash
 npm run summarize:judge
 npm run summarize:judge-bootstrap
+```
+
+To rebuild the sanitized model-output evidence view from the released blinded
+judge sample and score files:
+
+```bash
+npm run summarize:model-output-evidence
 ```
 
 To recompute automatic metrics, paired bootstrap intervals, and horizon
@@ -132,6 +144,9 @@ Additional checked-in aggregate files:
   the long-history payload table.
 - `data/results/judge-winner-bootstrap.csv`: case-cluster bootstrap intervals
   over blinded model-judge winner selections.
+- `data/results/model-output-evidence.csv`: sanitized output-bearing evidence
+  view for the 90-case blinded model-judge sample, joined to automatic flags
+  and judge scores.
 - `data/results/selector-baseline-mmr.csv`: selector-level comparison between
   CBEA activation and an MMR relevance-diversity baseline at the same evidence
   budget. This diagnostic replays the fixed runtime activation policy used by

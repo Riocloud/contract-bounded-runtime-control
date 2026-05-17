@@ -22,9 +22,17 @@ privacy-boundary check.
 | Shadow-oracle boundary diagnostic | `data/fixtures/cbea-lcv.v6-shadow360.synthetic.json`, `data/fixtures/cbea-lcv.v6-shadow360.stats.json`, `data/results/shadow-oracle-overall.csv`, `data/results/shadow-oracle-domain.csv` | `npm run summarize:boundary`, `npm run check:release` |
 | Long-history payload diagnostic | `data/results/long-history-payload-results.csv`, `data/results/long-history-payload-summary.csv` | `npm run summarize:long-history`, `npm run check:release` |
 | Selector-level MMR diagnostic | `data/fixtures/cbea-lcv.expanded360.synthetic.json`, `data/results/selector-baseline-mmr.csv` | `npm run summarize:selector-baselines`, `npm run check:release` |
-| Model-judge dimension summaries and winner choices | `data/model_judge/balanced-90/annotation-items.csv`, `data/model_judge/balanced-90/annotation-key.csv`, `data/model_judge/annotation-key.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run check:release`; external judge replay uses `scripts/run-llm-fidelity-audit.mjs --items=data/model_judge/balanced-90/annotation-items.csv` |
+| Model-judge dimension summaries, winner choices, and output evidence | `data/model_judge/balanced-90/annotation-items.csv`, `data/model_judge/balanced-90/annotation-key.csv`, `data/model_judge/annotation-key.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run summarize:model-output-evidence`, `npm run check:release`; external judge replay uses `scripts/run-llm-fidelity-audit.mjs --items=data/model_judge/balanced-90/annotation-items.csv` |
 | Production aggregate diagnostics | `data/results/production-data-wash-summary.csv`, `data/results/production-runtime-coverage.csv` | `npm run check:release` |
 | Privacy boundary | released tracked files | `npm run check:privacy` |
+
+## Output Evidence Boundary
+
+`data/results/model-output-evidence.csv` is a reproducible, sanitized join over
+the released 90-case blinded model-judge sample, automatic flags, judge labels,
+and pairwise winner choices. It is output-bearing evidence for the model-judge
+diagnostics, not a full provider raw-log dump and not a claim that every matched
+360-fixture row includes raw provider JSON in the artifact.
 
 ## Paper Experiment Coverage
 
@@ -34,8 +42,8 @@ privacy-boundary check.
 | Table 2, Figure 2, Table 15 | Matched 360-fixture MiniMax-M2.7 comparison over nine variants | `data/results/real-pilot-results.csv`, `data/results/real-pilot-metrics.csv` | `npm run summarize:metrics`, `npm run check:release` | Covered from released scored rows |
 | Figure 3, Table 17 | Backend sensitivity over MiniMax-M2.7, DeepSeek-V4-Flash, and GPT-OSS-120B | `data/results/backend-sensitivity-operating-points.csv` | `npm run check:release` | Covered from released aggregate rows |
 | Appendix K | Hy3-preview output-budget diagnostic | `data/results/hy3-output-budget-diagnostic.csv` | `npm run check:release` | Covered from released aggregate rows |
-| Table 3, Table 20 | Blinded model-judge winner and bootstrap summaries | `data/model_judge/balanced-90/annotation-items.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/results/judge-winner-bootstrap.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run check:release` | Covered from released judge items, labels, and pairwise choices |
-| Table 21, Table 22 | Per-judge descriptive means and inter-judge agreement | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv` | `npm run summarize:judge`, `npm run check:release` | Covered from released labels and pairwise choices |
+| Table 3, Table 20 | Blinded model-judge winner and bootstrap summaries | `data/model_judge/balanced-90/annotation-items.csv`, `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/results/judge-winner-bootstrap.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:judge-bootstrap`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered from released judge items, output evidence, labels, and pairwise choices |
+| Table 21, Table 22 | Per-judge descriptive means and inter-judge agreement | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered from released labels, pairwise choices, and output evidence |
 | Appendix A, Table 4 | Anonymous artifact card | `README.md`, `ARTIFACT_NOTES.md`, this manifest | Manual inspection plus `npm run check:privacy` | Covered |
 | Appendix B, Table 5, Table 6 | Comparison interfaces and fixed CBEA/LCV reporting details | `scripts/run-cbea-lcv-real-pilot.mjs`, `data/fixtures/cbea-lcv.expanded360.synthetic.json`, `README.md` | `npm run test:harness` | Covered by harness logic and documentation |
 | Appendix C, Table 7 | Privacy-safe production data-wash denominators | `data/results/production-data-wash-summary.csv`, `data/results/production-runtime-coverage.csv` | `npm run check:release` | Covered as aggregate-only diagnostics |
@@ -54,7 +62,7 @@ privacy-boundary check.
 |---|---|---|---|---|
 | Table 1 | Runtime objects and failure surfaces | `scripts/run-cbea-lcv-real-pilot.mjs`, `data/fixtures/cbea-lcv.schema.json` | `npm run test:harness` | Covered as implementation structure |
 | Table 2 | Matched offline operating points over 360 fixtures | `data/results/real-pilot-results.csv`, `data/results/real-pilot-metrics.csv` | `npm run summarize:metrics`, `npm run check:release` | Covered |
-| Table 3 | Model-judge diagnostic means and winner share | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/model_judge/balanced-90/annotation-items.csv` | `npm run summarize:judge`, `npm run check:release` | Covered |
+| Table 3 | Model-judge diagnostic means and winner share | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `data/model_judge/balanced-90/annotation-items.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered |
 | Table 4 | Anonymous reproducibility artifact card | `README.md`, `ARTIFACT_NOTES.md`, `REPRODUCTION_MANIFEST.md` | `npm run check:privacy` plus manual inspection | Covered |
 | Table 5 | Comparison set for the matched offline run | `README.md`, `scripts/run-cbea-lcv-real-pilot.mjs` | `npm run test:harness` | Covered as method configuration |
 | Table 6 | Fixed CBEA/LCV reporting details | `scripts/run-cbea-lcv-real-pilot.mjs`, `scripts/summarize-selector-baselines.mjs` | `npm run test:harness`, `npm run summarize:selector-baselines` | Covered as method configuration |
@@ -71,9 +79,9 @@ privacy-boundary check.
 | Table 17 | Backend sensitivity over 360 fixtures x 3 methods x 3 backends | `data/results/backend-sensitivity-operating-points.csv` | `npm run check:release` | Covered |
 | Table 18 | Shadow-oracle boundary diagnostic | `data/results/shadow-oracle-overall.csv`, `data/fixtures/cbea-lcv.v6-shadow360.synthetic.json` | `npm run summarize:boundary`, `npm run check:release` | Covered |
 | Table 19 | Per-domain uncompiled-fact recall | `data/results/shadow-oracle-domain.csv`, `data/fixtures/cbea-lcv.v6-shadow360.synthetic.json` | `npm run summarize:boundary`, `npm run check:release` | Covered |
-| Table 20 | Case-cluster bootstrap over model-judge winner selections | `data/model_judge/combined-pairwise.csv`, `data/results/judge-winner-bootstrap.csv` | `npm run summarize:judge-bootstrap`, `npm run check:release` | Covered |
-| Table 21 | Per-judge descriptive means | `data/model_judge/combined-labels.csv`, `runs/llm-judge-summary/llm-fidelity-per-judge-summary.csv` | `npm run summarize:judge`, `npm run check:release` | Covered |
-| Table 22 | Agreement between two model judges | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `runs/llm-judge-summary/llm-fidelity-agreement.csv` | `npm run summarize:judge`, `npm run check:release` | Covered |
+| Table 20 | Case-cluster bootstrap over model-judge winner selections | `data/model_judge/combined-pairwise.csv`, `data/results/judge-winner-bootstrap.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge-bootstrap`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered |
+| Table 21 | Per-judge descriptive means | `data/model_judge/combined-labels.csv`, `runs/llm-judge-summary/llm-fidelity-per-judge-summary.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered |
+| Table 22 | Agreement between two model judges | `data/model_judge/combined-labels.csv`, `data/model_judge/combined-pairwise.csv`, `runs/llm-judge-summary/llm-fidelity-agreement.csv`, `data/results/model-output-evidence.csv` | `npm run summarize:judge`, `npm run summarize:model-output-evidence`, `npm run check:release` | Covered |
 
 ## External Reruns
 
